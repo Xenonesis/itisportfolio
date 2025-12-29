@@ -66,10 +66,10 @@ export default function Home() {
     }
   };
   return (
-    <main className="text-zinc-900 dark:text-zinc-100 max-w-xl mx-auto px-4 py-4 mt-2 relative">
+    <main className="text-zinc-800 dark:text-zinc-100 max-w-2xl mx-auto px-6 py-8 mt-4 relative page-transition">
       {/* Theme Toggle - Fixed Position */}
-      <div className="fixed top-4 right-4 z-50">
-        <div className="bg-white/80 dark:bg-zinc-800/80 backdrop-blur-md rounded-full p-1 shadow-lg border border-zinc-200 dark:border-zinc-700 hover:shadow-xl transition-all duration-300">
+      <div className="fixed top-5 right-5 z-50">
+        <div className="glass-card p-1.5 shadow-lg hover:shadow-xl transition-all duration-300 hover-lift">
           <ThemeToggle />
         </div>
       </div>
@@ -77,25 +77,25 @@ export default function Home() {
       <AnimateIn variant="fadeUp">
         {" "}
         {/* Spotify Music Section */}{" "}
-        <section className="mb-3">
+        <section className="mb-8">
           <AnimateIn variant="fadeUp" delay={0.1}>
-            <div className="relative bg-white dark:bg-zinc-900 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden border-glow-effect">
-              <div className="pt-3 px-3 pb-2">
-                <div className="flex items-center gap-2">
+            <div className="soft-container overflow-hidden shine-effect">
+              <div className="pt-4 px-4 pb-3">
+                <div className="flex items-center gap-2.5">
                   <svg
-                    className="w-4 h-4 text-green-500"
+                    className="w-5 h-5 text-green-500"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
                     <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.84-.179-.84-.66 0-.479.359-.78.719-.84 4.561-1.021 8.52-.621 11.64 1.32.42.18.479.659.301 1.02l-.238.061zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.481.78.241 1.2zm.120-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z" />
-                  </svg>                  <h2 className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+                  </svg>                  <h2 className="text-sm font-semibold text-zinc-600 dark:text-zinc-300 tracking-wide">
                     Vibing to while I code
                   </h2>
                 </div>
               </div>
-              <div className="px-2 pb-1">
-                <div className="overflow-hidden rounded-lg">                  <iframe
-                  style={{ borderRadius: "12px" }}
+              <div className="px-3 pb-2">
+                <div className="overflow-hidden rounded-xl">                  <iframe
+                  style={{ borderRadius: "16px" }}
                   src="https://open.spotify.com/embed/playlist/0vvXsWCC9xrXsKd4FyS8kM?utm_source=generator&theme=0"
                   width="100%"
                   height="152"
@@ -110,17 +110,17 @@ export default function Home() {
             </div>
           </AnimateIn>
         </section>
-        <section className="mb-10">          <AnimateIn variant="fadeUp" delay={0.2}>
-          <h1 className="text-xl font-medium tracking-tight mb-3">
+        <section className="mb-14">          <AnimateIn variant="fadeUp" delay={0.2}>
+          <h1 className="text-2xl sm:text-3xl font-semibold tracking-tight mb-4 heading-expressive">
             <span>Hey, I&apos;m Aditya ᯓᡣ𐭩</span>
           </h1>
         </AnimateIn>
           <AnimateIn variant="fadeUp" delay={0.4}>
-            <p className="text-sm text-zinc-600 dark:text-zinc-400 max-w-xl mb-5">
+            <p className="text-base text-zinc-500 dark:text-zinc-400 max-w-xl mb-6 leading-relaxed">
               Cybersecurity Specialist & Full-Stack Developer
             </p>
           </AnimateIn>{" "}          <AnimateIn variant="fadeUp" delay={0.5}>
-            <div className="flex items-center gap-2 mb-5">
+            <div className="flex items-center gap-3 mb-6">
               {/* <Tooltip content="Some of my Random awesome memories">
                 <Link
                   href="/gallery"
@@ -147,10 +147,10 @@ export default function Home() {
                   href="/Aditya.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 border border-blue-300 dark:border-blue-700 text-blue-700 dark:text-blue-400 text-xs font-medium rounded-md hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors duration-200"
+                  className="btn-soft inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-teal-500/10 to-cyan-500/10 dark:from-teal-500/20 dark:to-cyan-500/20 border border-teal-400/30 dark:border-teal-500/30 text-teal-700 dark:text-teal-400 text-sm font-medium rounded-xl hover:from-teal-500/15 hover:to-cyan-500/15 dark:hover:from-teal-500/25 dark:hover:to-cyan-500/25 focus-ring"
                 >
                   <svg
-                    className="w-3 h-3"
+                    className="w-4 h-4"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -168,32 +168,35 @@ export default function Home() {
             </div>
           </AnimateIn>
           <AnimateIn variant="fadeUp" delay={0.6}>
-            <div className="flex items-center gap-5">
+            <div className="flex items-center gap-6">
               <SocialMedia />
             </div>
           </AnimateIn>{" "}
         </section>
       </AnimateIn>      <AnimateIn variant="fadeUp" delay={0.2}>
 
+        {/* Section Divider */}
+        <div className="section-divider" />
+
         {/* Education Section */}
-        <section className="mb-10">
+        <section className="mb-14">
           <AnimateIn variant="reveal" delay={0.25}>
-            <h2 className="text-lg font-medium tracking-tight mb-3 inline-block">
-              Education▼
+            <h2 className="text-xl font-semibold tracking-tight mb-5 inline-block heading-expressive">
+              Education<span className="text-teal-500 dark:text-teal-400 ml-1">▼</span>
             </h2>
           </AnimateIn>
           <div className="space-y-6">
             <AnimateIn variant="fadeLeft" delay={0.3}>
-              <div className="group hover:translate-x-1 transition-all duration-300 ease-out">
-                <div className="flex flex-col sm:flex-row sm:items-baseline justify-between mb-1">
-                  <h3 className="text-md font-medium">
+              <div className="group soft-container p-5 hover-lift">
+                <div className="flex flex-col sm:flex-row sm:items-baseline justify-between mb-2">
+                  <h3 className="text-lg font-medium">
                     BCA in Cybersecurity
                   </h3>
-                  <span className="text-xs text-zinc-400 dark:text-zinc-500">
+                  <span className="text-sm text-zinc-400 dark:text-zinc-500 font-medium">
                     2022 - 2025
                   </span>
                 </div>
-                <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-2">
+                <p className="text-sm text-zinc-500 dark:text-zinc-400">
                   Sushant University, Delhi, India
                 </p>
               </div>
@@ -201,17 +204,20 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Section Divider */}
+        <div className="section-divider" />
+
         {/* Projects */}
       </AnimateIn>      <AnimateIn variant="fadeUp" delay={0.3}>
-        <section className="mb-10">
+        <section className="mb-14">
           <AnimateIn variant="reveal" delay={0.35}>
-            <h2 className="text-lg font-medium tracking-tight mb-3 inline-block">
-              Projects▼
+            <h2 className="text-xl font-semibold tracking-tight mb-6 inline-block heading-expressive">
+              Projects<span className="text-teal-500 dark:text-teal-400 ml-1">▼</span>
             </h2>
           </AnimateIn>
-          <div className="space-y-8">
+          <div className="space-y-5">
             {" "}
-            <ul className="space-y-8">
+            <ul className="space-y-5">
               {visibleProjects.map((project, index) => {
                 const delay =
                   isProjectsExpanded && index >= initialProjectCount
@@ -219,18 +225,18 @@ export default function Home() {
                     : 0.35 + index * 0.1;
                 return (
                   <AnimateIn key={index} variant="fadeLeft" delay={delay}>
-                    <li className="group hover:translate-x-1 transition-all duration-300 ease-out">
-                      <div className="flex items-baseline justify-between mb-1">
-                        <h3 className="text-md font-medium">{project.title}</h3>
-                        <div className="flex flex-row gap-2">
+                    <li className="soft-container p-5 hover-lift shine-effect">
+                      <div className="flex items-start justify-between mb-3">
+                        <h3 className="text-lg font-medium">{project.title}</h3>
+                        <div className="flex flex-row gap-3">
                           {project.github ? (
                             <a
                               href={project.github}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="flex items-center gap-1 text-xs text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+                              className="flex items-center gap-1.5 text-sm text-zinc-500 dark:text-zinc-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors font-medium"
                             >
-                              GitHub <ExternalLink className="w-3 h-3" />
+                              GitHub <ExternalLink className="w-3.5 h-3.5" />
                             </a>
                           ) : null}
                           {project.link ? (
@@ -238,26 +244,23 @@ export default function Home() {
                               href={project.link}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="flex items-center gap-1 text-xs text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+                              className="flex items-center gap-1.5 text-sm text-zinc-500 dark:text-zinc-400 hover:text-coral-500 dark:hover:text-orange-400 transition-colors font-medium"
                             >
-                              View <ExternalLink className="w-3 h-3" />
+                              View <ExternalLink className="w-3.5 h-3.5" />
                             </a>
                           ) : null}
                         </div>
                       </div>
-                      <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-2">
+                      <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-4 leading-relaxed">
                         {project.description}
                       </p>
                       <div className="flex flex-wrap gap-2">
                         {project.technologies.map((tech, techIndex) => (
                           <span
                             key={techIndex}
-                            className="text-xs text-zinc-400 dark:text-zinc-500"
+                            className="inline-flex items-center px-2.5 py-1 text-xs font-medium rounded-full bg-gradient-to-r from-teal-500/8 to-cyan-500/8 dark:from-teal-500/15 dark:to-cyan-500/15 text-zinc-600 dark:text-zinc-400 border border-teal-500/10 dark:border-teal-500/20"
                           >
                             {tech}
-                            {techIndex < project.technologies.length - 1
-                              ? " /"
-                              : ""}
                           </span>
                         ))}
                       </div>
@@ -269,7 +272,7 @@ export default function Home() {
             {projects.length > initialProjectCount && (
               <button
                 onClick={() => setIsProjectsExpanded(!isProjectsExpanded)}
-                className="flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors mx-auto"
+                className="flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400 hover:text-teal-600 dark:hover:text-teal-400 transition-all duration-300 mx-auto font-medium py-3 px-5 rounded-xl hover:bg-zinc-100/50 dark:hover:bg-zinc-800/50"
               >
                 {isProjectsExpanded ? (
                   <>
@@ -284,15 +287,18 @@ export default function Home() {
             )}
           </div>
         </section>
+
+        {/* Section Divider */}
+        <div className="section-divider" />
       </AnimateIn>{" "}      <AnimateIn variant="fadeUp" delay={0.4}>
-        <section className="mb-10">
+        <section className="mb-14">
           <AnimateIn variant="reveal" delay={0.45}>
-            <h2 className="text-lg font-medium tracking-tight mb-3 inline-block">
-              Experience▼
+            <h2 className="text-xl font-semibold tracking-tight mb-6 inline-block heading-expressive">
+              Experience<span className="text-coral-500 dark:text-orange-400 ml-1">▼</span>
             </h2>
           </AnimateIn>
-          <div className="space-y-8">
-            <ul className="space-y-8">
+          <div className="space-y-5">
+            <ul className="space-y-5">
               {visibleExperience.map((job, index) => {
                 const delay =
                   0.45 +
@@ -302,29 +308,26 @@ export default function Home() {
                   0.1;
                 return (
                   <AnimateIn key={index} variant="fadeLeft" delay={delay}>
-                    <li className="group hover:translate-x-1 transition-all duration-300 ease-out">
-                      <div className="flex flex-col sm:flex-row sm:items-baseline justify-between mb-1">
-                        <h3 className="text-md font-medium">
+                    <li className="soft-container p-5 hover-lift shine-effect">
+                      <div className="flex flex-col sm:flex-row sm:items-start justify-between mb-2 gap-1">
+                        <h3 className="text-lg font-medium">
                           {job.role} {job.role === "Freelance" ? "" : "at"}{" "}
-                          {job.company}
+                          <span className="text-teal-600 dark:text-teal-400">{job.company}</span>
                         </h3>
-                        <span className="text-xs text-zinc-400 dark:text-zinc-500">
+                        <span className="text-sm text-zinc-400 dark:text-zinc-500 font-medium whitespace-nowrap">
                           {job.period}
                         </span>
                       </div>
-                      <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-2">
+                      <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-4 leading-relaxed">
                         {job.description}
                       </p>
                       <div className="flex flex-wrap gap-2">
                         {job.technologies.map((tech, techIndex) => (
                           <span
                             key={techIndex}
-                            className="text-xs text-zinc-400 dark:text-zinc-500"
+                            className="inline-flex items-center px-2.5 py-1 text-xs font-medium rounded-full bg-gradient-to-r from-orange-500/8 to-amber-500/8 dark:from-orange-500/15 dark:to-amber-500/15 text-zinc-600 dark:text-zinc-400 border border-orange-500/10 dark:border-orange-500/20"
                           >
                             {tech}
-                            {techIndex < job.technologies.length - 1
-                              ? " /"
-                              : ""}
                           </span>
                         ))}
                       </div>
@@ -336,7 +339,7 @@ export default function Home() {
             {experience.length > initialExperienceCount && (
               <button
                 onClick={() => setIsExperienceExpanded(!isExperienceExpanded)}
-                className="flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors mx-auto"
+                className="flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400 hover:text-orange-600 dark:hover:text-orange-400 transition-all duration-300 mx-auto font-medium py-3 px-5 rounded-xl hover:bg-zinc-100/50 dark:hover:bg-zinc-800/50"
               >
                 {isExperienceExpanded ? (
                   <>
@@ -351,38 +354,46 @@ export default function Home() {
             )}
           </div>
         </section>
+
+        {/* Section Divider */}
+        <div className="section-divider" />
       </AnimateIn>{" "}      <AnimateIn variant="fadeUp" delay={0.6}>
-        <section className="mb-10">
+        <section className="mb-14">
           <AnimateIn variant="reveal" delay={0.65}>
-            <h2 className="text-lg font-medium tracking-tight mb-3 inline-block">
-              Tools & Stack▼
+            <h2 className="text-xl font-semibold tracking-tight mb-6 inline-block heading-expressive">
+              Tools & Stack<span className="text-purple-500 dark:text-purple-400 ml-1">▼</span>
             </h2>
           </AnimateIn>
-          <div className="grid grid-cols-5 sm:grid-cols-7 gap-y-6 gap-x-12">
-            {tools.map(({ logo, title }, index) => (
-              <AnimateIn
-                key={index}
-                variant="scale"
-                delay={0.65 + index * 0.03}
-              >
-                <div className="flex flex-col items-center group">
-                  <div className="relative h-6 w-6 sm:h-8 sm:w-8 mb-3 transition-all duration-300 ease-out group-hover:scale-110 group-hover:-translate-y-1">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={logo}
-                      alt={`${title} logo`}
-                      className="object-contain drop-shadow-md"
-                      loading="eager"
-                    />
+          <div className="soft-container p-6">
+            <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-6">
+              {tools.map(({ logo, title }, index) => (
+                <AnimateIn
+                  key={index}
+                  variant="scale"
+                  delay={0.65 + index * 0.03}
+                >
+                  <div className="flex flex-col items-center group cursor-pointer">
+                    <div className="relative h-8 w-8 sm:h-10 sm:w-10 mb-2 p-2 rounded-xl bg-gradient-to-br from-white to-zinc-50 dark:from-zinc-800 dark:to-zinc-900 shadow-sm border border-zinc-100 dark:border-zinc-700/50 transition-all duration-300 ease-out group-hover:scale-110 group-hover:-translate-y-1 group-hover:shadow-md">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={logo}
+                        alt={`${title} logo`}
+                        className="object-contain w-full h-full drop-shadow-sm"
+                        loading="eager"
+                      />
+                    </div>
+                    <span className="text-xs text-zinc-500 dark:text-zinc-400 text-center whitespace-nowrap font-medium opacity-80 group-hover:opacity-100 transition-opacity">
+                      {title}
+                    </span>
                   </div>
-                  <span className="text-xs text-zinc-500 dark:text-zinc-400 text-center whitespace-nowrap">
-                    {title}
-                  </span>
-                </div>
-              </AnimateIn>
-            ))}
+                </AnimateIn>
+              ))}
+            </div>
           </div>
         </section>
+
+        {/* Section Divider */}
+        <div className="section-divider" />
 
         {/* GitHub Contributions */}
         <GitHubContributions />
@@ -419,20 +430,24 @@ export default function Home() {
             ))}
           </div>
         </section> */}
+
+        {/* Section Divider */}
+        <div className="section-divider" />
+
         {/* </AnimateIn>{" "}      <AnimateIn variant="fadeUp" delay={1.0}> */}
-        <section className="mb-8">
+        <section className="mb-12">
           <AnimateIn variant="reveal" delay={1.05}>
-            <div className="text-center">
-              <h2 className="text-2xl sm:text-2xl font-bold tracking-tight mb-3">
+            <div className="text-center glass-card p-8 rounded-2xl">
+              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-4 heading-expressive">
                 Get in Touch
               </h2>
-              <p className="text-sm text-zinc-600 dark:text-zinc-400 max-w-md mx-auto">
+              <p className="text-base text-zinc-600 dark:text-zinc-400 max-w-lg mx-auto leading-relaxed">
                 DM me on{" "}
                 <a
                   href="mailto:itisaddy7@gmail.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300 transition-colors"
+                  className="text-teal-600 hover:text-teal-700 dark:text-teal-400 dark:hover:text-teal-300 transition-colors font-medium underline decoration-teal-500/30 underline-offset-2 hover:decoration-teal-500"
                 >
                   Email
                 </a>
@@ -441,7 +456,7 @@ export default function Home() {
                   href="https://www.linkedin.com/in/itisaddy/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300 transition-colors"
+                  className="text-teal-600 hover:text-teal-700 dark:text-teal-400 dark:hover:text-teal-300 transition-colors font-medium underline decoration-teal-500/30 underline-offset-2 hover:decoration-teal-500"
                 >
                   LinkedIn
                 </a>{" "}
@@ -452,30 +467,24 @@ export default function Home() {
         </section>
       </AnimateIn>      <AnimateIn variant="fadeUp" delay={1.2}>
         {" "}
-        <footer className="pt-4 text-xs text-zinc-400 dark:text-zinc-500 flex justify-between items-center relative">
-          {/* Dynamic Lighting Effect */}
-          <div className="absolute inset-0 pointer-events-none overflow-hidden">
-            {/* Primary light beam */}
-            <div className="absolute left-1/4 top-1/2 w-32 h-8 -translate-y-1/2 bg-gradient-to-r from-transparent via-blue-400/20 to-transparent dark:via-blue-500/15 blur-sm animate-light-sweep-1"></div>
-            {/* Secondary light beam */}
-            <div className="absolute right-1/4 top-1/2 w-28 h-6 -translate-y-1/2 bg-gradient-to-l from-transparent via-purple-400/15 to-transparent dark:via-purple-500/10 blur-sm animate-light-sweep-2"></div>
-            {/* Ambient glow */}
-            <div className="absolute left-1/2 top-1/2 w-64 h-12 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-transparent via-pink-400/10 to-transparent dark:via-pink-500/8 blur-md animate-light-pulse"></div>
+        <footer className="pt-6 pb-4 text-sm text-zinc-500 dark:text-zinc-400 flex justify-between items-center relative glass-card px-6 py-4 rounded-2xl mb-4">
+          {/* Subtle gradient overlay */}
+          <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-2xl">
+            <div className="absolute inset-0 bg-gradient-to-r from-teal-500/5 via-transparent to-purple-500/5 dark:from-teal-500/3 dark:to-purple-500/3"></div>
           </div>
 
           <Link
             href="https://iaddy.netlify.app"
-            className="hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors flex items-center gap-2 relative z-10"
+            className="hover:text-teal-600 dark:hover:text-teal-400 transition-colors flex items-center gap-2 relative z-10 font-medium"
           >
             iaddy.netlify.app
-            {/* <ArrowUpRight className="w-3 h-3 transform rotate-12" /> */}
           </Link>
           <div
             onClick={handleHeartRain}
-            className="cursor-pointer hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors select-none hover:scale-105 transform duration-200 relative z-10"
+            className="cursor-pointer hover:text-coral-600 dark:hover:text-orange-400 transition-all select-none hover:scale-105 transform duration-300 relative z-10 font-medium"
             title="Click for some love rain!"
           >
-            Built with <span className="text-lg">♥</span>
+            Built with <span className="text-xl animate-pulse">♥</span>
           </div>
         </footer>
       </AnimateIn>

@@ -3,6 +3,7 @@
 import SocialMedia from "@/components/SocialMedia";
 import { AnimateIn } from "@/components/animations/AnimateIn";
 import { Tooltip } from "@/components/Tooltip";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import { ExternalLink, ChevronDown, ChevronUp } from "lucide-react";
 import { useState } from "react";
 import Link from "next/link";
@@ -64,7 +65,14 @@ export default function Home() {
     }
   };
   return (
-    <main className="text-zinc-900 dark:text-zinc-100 max-w-xl mx-auto px-4 py-4 mt-2">
+    <main className="text-zinc-900 dark:text-zinc-100 max-w-xl mx-auto px-4 py-4 mt-2 relative">
+      {/* Theme Toggle - Fixed Position */}
+      <div className="fixed top-4 right-4 z-50">
+        <div className="bg-white/80 dark:bg-zinc-800/80 backdrop-blur-md rounded-full p-1 shadow-lg border border-zinc-200 dark:border-zinc-700 hover:shadow-xl transition-all duration-300">
+          <ThemeToggle />
+        </div>
+      </div>
+      
       <AnimateIn variant="fadeUp">
         {" "}
         {/* Spotify Music Section */}{" "}
@@ -135,7 +143,7 @@ export default function Home() {
               </Tooltip>{" "} */}
               <Tooltip content="Hire me please 🥺">
                 <a
-                  href="/resume.pdf"
+                  href="/Aditya.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 px-3 py-1.5 border border-blue-300 dark:border-blue-700 text-blue-700 dark:text-blue-400 text-xs font-medium rounded-md hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors duration-200"

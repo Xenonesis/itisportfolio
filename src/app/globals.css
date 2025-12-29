@@ -114,17 +114,18 @@
 
 /* Grid Background Pattern */
 .grid-background {
-  background-color: #18181b;
-  background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.01) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.01) 1px, transparent 1px);
+  background-color: #fafafa;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
   background-size: 20px 20px;
 }
 
 .dark .grid-background {
   background-color: #18181b;
-  background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.02) 1px,
+      transparent 1px
+    ),
     linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
   background-size: 20px 20px;
 }
@@ -142,7 +143,8 @@
   }
 
   html * {
-    transition: color 350ms ease, background-color 350ms ease, border-color 350ms ease, opacity 350ms ease, transform 350ms ease;
+    transition: color 350ms ease, background-color 350ms ease,
+      border-color 350ms ease, opacity 350ms ease, transform 350ms ease;
   }
 }
 
@@ -310,26 +312,56 @@
 
 @keyframes border-glow {
   0% {
-    border-image: linear-gradient(90deg, rgba(59, 130, 246, 0.3), rgba(139, 92, 246, 0.2), rgba(236, 72, 153, 0.3)) 1;
+    border-image: linear-gradient(
+        90deg,
+        rgba(59, 130, 246, 0.3),
+        rgba(139, 92, 246, 0.2),
+        rgba(236, 72, 153, 0.3)
+      )
+      1;
     box-shadow: 0 0 8px rgba(59, 130, 246, 0.15);
   }
   33% {
-    border-image: linear-gradient(90deg, rgba(139, 92, 246, 0.3), rgba(236, 72, 153, 0.2), rgba(16, 185, 129, 0.3)) 1;
+    border-image: linear-gradient(
+        90deg,
+        rgba(139, 92, 246, 0.3),
+        rgba(236, 72, 153, 0.2),
+        rgba(16, 185, 129, 0.3)
+      )
+      1;
     box-shadow: 0 0 8px rgba(139, 92, 246, 0.15);
   }
   66% {
-    border-image: linear-gradient(90deg, rgba(236, 72, 153, 0.3), rgba(16, 185, 129, 0.2), rgba(59, 130, 246, 0.3)) 1;
+    border-image: linear-gradient(
+        90deg,
+        rgba(236, 72, 153, 0.3),
+        rgba(16, 185, 129, 0.2),
+        rgba(59, 130, 246, 0.3)
+      )
+      1;
     box-shadow: 0 0 8px rgba(236, 72, 153, 0.15);
   }
   100% {
-    border-image: linear-gradient(90deg, rgba(59, 130, 246, 0.3), rgba(139, 92, 246, 0.2), rgba(236, 72, 153, 0.3)) 1;
+    border-image: linear-gradient(
+        90deg,
+        rgba(59, 130, 246, 0.3),
+        rgba(139, 92, 246, 0.2),
+        rgba(236, 72, 153, 0.3)
+      )
+      1;
     box-shadow: 0 0 8px rgba(59, 130, 246, 0.15);
   }
 }
 
 .border-glow-effect {
   border: 1px solid;
-  border-image: linear-gradient(90deg, rgba(59, 130, 246, 0.3), rgba(139, 92, 246, 0.2), rgba(236, 72, 153, 0.3)) 1;
+  border-image: linear-gradient(
+      90deg,
+      rgba(59, 130, 246, 0.3),
+      rgba(139, 92, 246, 0.2),
+      rgba(236, 72, 153, 0.3)
+    )
+    1;
   animation: border-glow 6s ease-in-out infinite;
 }
 

@@ -4,6 +4,7 @@ import SocialMedia from "@/components/SocialMedia";
 import { AnimateIn } from "@/components/animations/AnimateIn";
 import { Tooltip } from "@/components/Tooltip";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { GitHubContributions } from "@/components/GitHubContributions";
 import { ExternalLink, ChevronDown, ChevronUp } from "lucide-react";
 import { useState } from "react";
 import Link from "next/link";
@@ -382,6 +383,9 @@ export default function Home() {
             ))}
           </div>
         </section>
+
+        {/* GitHub Contributions */}
+        <GitHubContributions />
         {/* </AnimateIn>{" "}      <AnimateIn variant="fadeUp" delay={0.8}> */}
         {/* <section className="mb-10">
           <AnimateIn variant="reveal" delay={0.85}>

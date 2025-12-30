@@ -5,6 +5,7 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import { Metadata, Viewport } from "next";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { Analytics } from "@vercel/analytics/react";
+import ParticlesBackground from "@/components/backgrounds/ParticlesBackground";
 
 type Props = {
   children: React.ReactNode;
@@ -28,7 +29,10 @@ const RootLayout: React.FC<Props> = ({ children }) => {
       </head>
       <body className="font-geist-sans bg-white overscroll-none dark:bg-zinc-900 grid-background">
         <ThemeProvider defaultTheme="system" storageKey="ahmet-theme">
-          {children}
+          <ParticlesBackground />
+          <div className="relative z-10">
+            {children}
+          </div>
         </ThemeProvider>
       </body>
       <GoogleAnalytics gaId="G-M80GLPRQFQ" />

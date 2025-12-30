@@ -147,38 +147,41 @@
   position: relative;
   min-height: 100vh;
   background: linear-gradient(
-    135deg,
+    180deg,
     rgba(250, 250, 250, 1) 0%,
-    rgba(255, 255, 255, 1) 50%,
-    rgba(245, 245, 245, 1) 100%
+    rgba(255, 255, 255, 1) 30%,
+    rgba(250, 252, 252, 1) 70%,
+    rgba(248, 250, 250, 1) 100%
   );
 }
 
 .dark .dot-grid-bg-container {
   background: linear-gradient(
-    135deg,
+    180deg,
     rgba(24, 24, 27, 1) 0%,
-    rgba(18, 18, 21, 1) 50%,
+    rgba(18, 18, 21, 1) 30%,
+    rgba(20, 20, 24, 1) 70%,
     rgba(24, 24, 27, 1) 100%
   );
 }
 
-/* Ensure dot grid doesn't interfere with content */
+/* Ensure dot grid has smooth rendering */
 .dot-grid-bg {
-  opacity: 0.65;
-  transition: opacity 0.5s ease;
+  opacity: 0.75;
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .dark .dot-grid-bg {
-  opacity: 0.55;
+  opacity: 0.65;
 }
 
 /* Smooth canvas rendering */
 canvas.dot-grid-bg {
-  image-rendering: optimizeSpeed;
-  image-rendering: -moz-crisp-edges;
-  image-rendering: -webkit-optimize-contrast;
+  image-rendering: auto;
+  -webkit-font-smoothing: antialiased;
   will-change: contents;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 @layer base {

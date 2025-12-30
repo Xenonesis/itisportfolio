@@ -11,8 +11,11 @@ const DotGrid = dynamic(() => import("./DotGrid"), {
 
 export const DotGridBackground = () => {
   const [isDark, setIsDark] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
+    
     // Check the actual class on the document element
     const checkTheme = () => {
       setIsDark(document.documentElement.classList.contains("dark"));
@@ -31,31 +34,34 @@ export const DotGridBackground = () => {
     return () => observer.disconnect();
   }, []);
 
-  // Theme-aware colors - softer, more subtle for portfolio
+  // Theme-aware colors - refined for smooth visual experience
   const lightConfig = {
-    baseColor: "#d4d4d8", // zinc-300 - subtle gray
-    activeColor: "#14b8a6", // teal-500 - matches your accent
+    baseColor: "#a1a1aa", // zinc-400 - softer gray for better visibility
+    activeColor: "#0d9488", // teal-600 - richer teal
   };
 
   const darkConfig = {
-    baseColor: "#3f3f46", // zinc-700 - subtle dark gray
-    activeColor: "#2dd4bf", // teal-400 - matches your accent
+    baseColor: "#52525b", // zinc-600 - brighter for dark mode
+    activeColor: "#2dd4bf", // teal-400 - vibrant teal
   };
 
   const config = isDark ? darkConfig : lightConfig;
 
+  // Don't render until mounted to prevent hydration mismatch
+  if (!mounted) return null;
+
   return (
     <DotGrid
-      dotSize={4}
-      gap={22}
+      dotSize={5}
+      gap={24}
       baseColor={config.baseColor}
       activeColor={config.activeColor}
-      proximity={100}
-      speedTrigger={80}
-      shockRadius={200}
-      shockStrength={4}
-      resistance={600}
-      returnDuration={1.2}
+      proximity={140}
+      speedTrigger={60}
+      shockRadius={280}
+      shockStrength={5}
+      resistance={500}
+      returnDuration={1.8}
       className="dot-grid-bg"
     />
   );

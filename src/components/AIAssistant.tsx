@@ -8,6 +8,7 @@ interface GitHubRepo {
   description: string;
   language: string;
   stargazers_count: number;
+  forks_count: number;
   html_url: string;
   topics: string[];
 }
@@ -41,6 +42,25 @@ const suggestedQuestions = [
   "What's your experience?",
 ];
 
+// Skeleton Loader Component
+function MessageSkeleton() {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      className="flex justify-start"
+    >
+      <div className="max-w-[85%] w-64 bg-white dark:bg-zinc-800 rounded-2xl rounded-bl-md shadow-sm border border-zinc-100 dark:border-zinc-700/50 p-4 space-y-3">
+        {/* Skeleton lines */}
+        <div className="h-3 bg-gradient-to-r from-zinc-200 via-zinc-100 to-zinc-200 dark:from-zinc-700 dark:via-zinc-600 dark:to-zinc-700 rounded-full animate-shimmer bg-[length:200%_100%]" />
+        <div className="h-3 bg-gradient-to-r from-zinc-200 via-zinc-100 to-zinc-200 dark:from-zinc-700 dark:via-zinc-600 dark:to-zinc-700 rounded-full animate-shimmer bg-[length:200%_100%] w-[90%]" style={{ animationDelay: "0.1s" }} />
+        <div className="h-3 bg-gradient-to-r from-zinc-200 via-zinc-100 to-zinc-200 dark:from-zinc-700 dark:via-zinc-600 dark:to-zinc-700 rounded-full animate-shimmer bg-[length:200%_100%] w-[75%]" style={{ animationDelay: "0.2s" }} />
+        <div className="h-3 bg-gradient-to-r from-zinc-200 via-zinc-100 to-zinc-200 dark:from-zinc-700 dark:via-zinc-600 dark:to-zinc-700 rounded-full animate-shimmer bg-[length:200%_100%] w-[85%]" style={{ animationDelay: "0.3s" }} />
+      </div>
+    </motion.div>
+  );
+}
+
 export function AIAssistant() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
@@ -60,9 +80,9 @@ export function AIAssistant() {
         const userData = await userRes.json();
         setUser(userData);
 
-        // Fetch repositories
+        // Fetch repositories with more details
         const reposRes = await fetch(
-          `https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=10`
+          `https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=pushed&per_page=15`
         );
         const reposData = await reposRes.json();
         setRepos(reposData);
@@ -77,7 +97,7 @@ export function AIAssistant() {
   // Auto-scroll to bottom
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages]);
+  }, [messages, isTyping]);
 
   // Focus input when opened
   useEffect(() => {
@@ -92,12 +112,12 @@ export function AIAssistant() {
       const welcomeMessage: Message = {
         id: "welcome",
         role: "assistant",
-        content: `Hey there! 👋 I'm Aditya's AI assistant powered by Groq. I can tell you about his projects, skills, experience, and more. What would you like to know?`,
+        content: `Hey there! 👋 I'm Aditya's AI assistant powered by Groq. I have real-time access to his GitHub (${user?.public_repos || "many"} repos, ${user?.followers || "growing"} followers) and full knowledge of his portfolio. Ask me anything!`,
         timestamp: new Date(),
       };
       setMessages([welcomeMessage]);
     }
-  }, [isOpen, messages.length]);
+  }, [isOpen, messages.length, user]);
 
   const sendMessageToAI = async (userMessage: string): Promise<string> => {
     try {
@@ -110,17 +130,30 @@ export function AIAssistant() {
       // Add the new user message
       chatHistory.push({ role: "user" as const, content: userMessage });
 
-      // Prepare GitHub data for context
+      // Extract unique languages from repos
+      const languages = [...new Set(repos.map((r) => r.language).filter(Boolean))];
+
+      // Prepare comprehensive GitHub data for context
       const githubData = {
         repos: user?.public_repos,
         followers: user?.followers,
         following: user?.following,
-        topRepos: repos.slice(0, 5).map((repo) => ({
+        languages: languages.slice(0, 8),
+        topRepos: repos.slice(0, 10).map((repo) => ({
           name: repo.name,
           description: repo.description || "",
           language: repo.language || "",
+          stargazers_count: repo.stargazers_count || 0,
+          forks_count: repo.forks_count || 0,
         })),
       };
+
+      // Get current time for context
+      const currentTime = new Date().toLocaleString("en-IN", {
+        timeZone: "Asia/Kolkata",
+        dateStyle: "full",
+        timeStyle: "short",
+      });
 
       const response = await fetch("/api/chat", {
         method: "POST",
@@ -130,6 +163,7 @@ export function AIAssistant() {
         body: JSON.stringify({
           messages: chatHistory,
           githubData,
+          currentTime,
         }),
       });
 
@@ -195,13 +229,27 @@ export function AIAssistant() {
     if (isTyping) return;
     setInput(question);
     setTimeout(() => {
-      const fakeEvent = { key: "Enter", shiftKey: false, preventDefault: () => {} } as React.KeyboardEvent;
-      handleKeyDown(fakeEvent);
+      handleSend();
     }, 100);
   };
 
   return (
     <>
+      {/* Shimmer animation style */}
+      <style jsx global>{`
+        @keyframes shimmer {
+          0% {
+            background-position: 200% 0;
+          }
+          100% {
+            background-position: -200% 0;
+          }
+        }
+        .animate-shimmer {
+          animation: shimmer 1.5s ease-in-out infinite;
+        }
+      `}</style>
+
       {/* Floating AI Button */}
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
@@ -237,19 +285,12 @@ export function AIAssistant() {
               stroke="currentColor"
               viewBox="0 0 24 24"
             >
-              {/* Chat bubble with sparkle */}
+              {/* Chat bubble */}
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth={2}
                 d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-              />
-              {/* Sparkle */}
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M12 3v1m0-1V2m4.95 2.05l-.707.707M5.05 5.05l.707.707M19 12h1m-1 0h-1"
               />
             </motion.svg>
           )}
@@ -287,7 +328,7 @@ export function AIAssistant() {
                 <h3 className="font-semibold text-sm">Aditya&apos;s AI Assistant</h3>
                 <p className="text-xs text-white/80 flex items-center gap-1">
                   <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
-                  Powered by Groq AI
+                  Powered by Groq • {user?.public_repos || "..."} repos
                 </p>
               </div>
               <button
@@ -322,23 +363,8 @@ export function AIAssistant() {
                 </motion.div>
               ))}
 
-              {/* Typing Indicator */}
-              {isTyping && (
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="flex justify-start"
-                >
-                  <div className="bg-white dark:bg-zinc-800 px-4 py-3 rounded-2xl rounded-bl-md shadow-sm border border-zinc-100 dark:border-zinc-700/50">
-                    <div className="flex gap-1.5 items-center">
-                      <span className="w-2 h-2 bg-teal-500 rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
-                      <span className="w-2 h-2 bg-teal-500 rounded-full animate-bounce" style={{ animationDelay: "150ms" }} />
-                      <span className="w-2 h-2 bg-teal-500 rounded-full animate-bounce" style={{ animationDelay: "300ms" }} />
-                      <span className="text-xs text-zinc-400 ml-2">AI is thinking...</span>
-                    </div>
-                  </div>
-                </motion.div>
-              )}
+              {/* Skeleton Loader */}
+              {isTyping && <MessageSkeleton />}
 
               <div ref={messagesEndRef} />
             </div>

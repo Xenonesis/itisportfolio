@@ -28,7 +28,7 @@ const RootLayout: React.FC<Props> = ({ children }) => {
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
-      <body className="font-geist-sans bg-white overscroll-none dark:bg-zinc-900 dot-grid-bg-container">
+      <body className="font-geist-sans bg-background overscroll-none dot-grid-bg-container">
         <ThemeProvider defaultTheme="system" storageKey="ahmet-theme">
           <DotGridBackground />
           <div className="relative z-10">

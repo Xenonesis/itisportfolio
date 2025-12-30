@@ -85,7 +85,7 @@
 }
 
 .dark {
-  --background: oklch(0.16 0.015 260);
+  --background: #0C0C0C;
   --foreground: oklch(0.96 0.005 60);
   --card: oklch(0.2 0.015 260);
   --card-foreground: oklch(0.96 0.005 60);
@@ -133,7 +133,7 @@
 }
 
 .dark .grid-background {
-  background-color: #18181b;
+  background-color: #0C0C0C;
   background-image: linear-gradient(
       rgba(255, 255, 255, 0.02) 1px,
       transparent 1px
@@ -158,10 +158,10 @@
 .dark .dot-grid-bg-container {
   background: linear-gradient(
     180deg,
-    rgba(24, 24, 27, 1) 0%,
-    rgba(18, 18, 21, 1) 30%,
-    rgba(20, 20, 24, 1) 70%,
-    rgba(24, 24, 27, 1) 100%
+    rgba(12, 12, 12, 1) 0%,
+    rgba(12, 12, 12, 1) 30%,
+    rgba(12, 12, 12, 1) 70%,
+    rgba(12, 12, 12, 1) 100%
   );
 }
 
@@ -488,7 +488,7 @@ canvas.dot-grid-bg {
 /* Custom Scrollbar for GitHub Contributions */
 .scrollbar-thin {
   scrollbar-width: thin;
-  scrollbar-color: #3f3f46 #18181b;
+  scrollbar-color: #3f3f46 #0C0C0C;
 }
 
 .scrollbar-thin::-webkit-scrollbar {
@@ -496,7 +496,7 @@ canvas.dot-grid-bg {
 }
 
 .scrollbar-thin::-webkit-scrollbar-track {
-  background: #18181b;
+  background: #0C0C0C;
   border-radius: 3px;
 }
 
@@ -535,11 +535,11 @@ canvas.dot-grid-bg {
 
 /* Dark mode override - using :is(.dark *) for Tailwind v4 compatibility */
 .scrollbar-thin-light:is(.dark *) {
-  scrollbar-color: #3f3f46 #18181b;
+  scrollbar-color: #3f3f46 #0C0C0C;
 }
 
 .scrollbar-thin-light:is(.dark *)::-webkit-scrollbar-track {
-  background: #18181b;
+  background: #0C0C0C;
 }
 
 .scrollbar-thin-light:is(.dark *)::-webkit-scrollbar-thumb {
@@ -578,13 +578,13 @@ canvas.dot-grid-bg {
 html.dark .contribution-scrollbar,
 .dark .contribution-scrollbar,
 .contribution-scrollbar:is(.dark *) {
-  scrollbar-color: #3f3f46 #27272a !important;
+  scrollbar-color: #3f3f46 #0C0C0C !important;
 }
 
 html.dark .contribution-scrollbar::-webkit-scrollbar-track,
 .dark .contribution-scrollbar::-webkit-scrollbar-track,
 .contribution-scrollbar:is(.dark *)::-webkit-scrollbar-track {
-  background: #27272a !important;
+  background: #0C0C0C !important;
   border-radius: 4px;
 }
 

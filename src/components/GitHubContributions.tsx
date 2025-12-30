@@ -23,6 +23,7 @@ export function GitHubContributions() {
   const [contributions, setContributions] = useState<ContributionDay[]>([]);
   const [totalContributions, setTotalContributions] = useState(0);
   const [loading, setLoading] = useState(true);
+  const [showMore, setShowMore] = useState(false);
 
   useEffect(() => {
     // Fetch GitHub user stats
@@ -268,62 +269,81 @@ export function GitHubContributions() {
         </div>
       </AnimateIn>
 
-      {/* Stats Cards */}
-      <AnimateIn variant="fadeUp" delay={0.85}>
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-          {/* Followers */}
-          <div className="glass-card p-5 text-center hover-lift group">
-            <div className="flex justify-center mb-2">
-              <svg className="w-5 h-5 text-blue-500 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-              </svg>
-            </div>
-            <p className="text-xs text-zinc-500 dark:text-zinc-400 mb-1">Followers</p>
-            <p className="text-xl font-bold text-zinc-900 dark:text-zinc-100">
-              {stats?.followers ?? "—"}
-            </p>
-          </div>
+      {/* Show More Button */}
+      <div className="flex justify-center mt-2 mb-6">
+        <button
+          onClick={() => setShowMore(!showMore)}
+          className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-zinc-600 dark:text-zinc-400 bg-white/50 dark:bg-zinc-800/50 rounded-full hover:bg-white dark:hover:bg-zinc-800 border border-zinc-200/50 dark:border-zinc-700/50 transition-all hover:scale-105 hover:shadow-sm"
+        >
+          {showMore ? "Show Less" : "Show More Stats"}
+          <svg
+            className={`w-4 h-4 transition-transform duration-200 ${showMore ? "rotate-180" : ""}`}
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+      </div>
 
-          {/* Following */}
-          <div className="glass-card p-5 text-center hover-lift group">
-            <div className="flex justify-center mb-2">
-              <svg className="w-5 h-5 text-blue-500 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
-              </svg>
+      {showMore && (
+        <AnimateIn variant="fadeUp" delay={0.1}>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            {/* Followers */}
+            <div className="glass-card p-5 text-center hover-lift group">
+              <div className="flex justify-center mb-2">
+                <svg className="w-5 h-5 text-blue-500 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+              </div>
+              <p className="text-xs text-zinc-500 dark:text-zinc-400 mb-1">Followers</p>
+              <p className="text-xl font-bold text-zinc-900 dark:text-zinc-100">
+                {stats?.followers ?? "—"}
+              </p>
             </div>
-            <p className="text-xs text-zinc-500 dark:text-zinc-400 mb-1">Following</p>
-            <p className="text-xl font-bold text-zinc-900 dark:text-zinc-100">
-              {stats?.following ?? "—"}
-            </p>
-          </div>
 
-          {/* Public Repos */}
-          <div className="glass-card p-5 text-center hover-lift group">
-            <div className="flex justify-center mb-2">
-              <svg className="w-5 h-5 text-pink-500 dark:text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
-              </svg>
+            {/* Following */}
+            <div className="glass-card p-5 text-center hover-lift group">
+              <div className="flex justify-center mb-2">
+                <svg className="w-5 h-5 text-blue-500 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
+                </svg>
+              </div>
+              <p className="text-xs text-zinc-500 dark:text-zinc-400 mb-1">Following</p>
+              <p className="text-xl font-bold text-zinc-900 dark:text-zinc-100">
+                {stats?.following ?? "—"}
+              </p>
             </div>
-            <p className="text-xs text-zinc-500 dark:text-zinc-400 mb-1">Repositories</p>
-            <p className="text-xl font-bold text-zinc-900 dark:text-zinc-100">
-              {stats?.public_repos ?? "—"}
-            </p>
-          </div>
 
-          {/* Contributions */}
-          <div className="glass-card p-5 text-center hover-lift group">
-            <div className="flex justify-center mb-2">
-              <svg className="w-5 h-5 text-teal-500 dark:text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-              </svg>
+            {/* Public Repos */}
+            <div className="glass-card p-5 text-center hover-lift group">
+              <div className="flex justify-center mb-2">
+                <svg className="w-5 h-5 text-pink-500 dark:text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+                </svg>
+              </div>
+              <p className="text-xs text-zinc-500 dark:text-zinc-400 mb-1">Repositories</p>
+              <p className="text-xl font-bold text-zinc-900 dark:text-zinc-100">
+                {stats?.public_repos ?? "—"}
+              </p>
             </div>
-            <p className="text-xs text-zinc-500 dark:text-zinc-400 mb-1">Contributions</p>
-            <p className="text-xl font-bold text-zinc-900 dark:text-zinc-100">
-              {totalContributions.toLocaleString()}
-            </p>
+
+            {/* Contributions */}
+            <div className="glass-card p-5 text-center hover-lift group">
+              <div className="flex justify-center mb-2">
+                <svg className="w-5 h-5 text-teal-500 dark:text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                </svg>
+              </div>
+              <p className="text-xs text-zinc-500 dark:text-zinc-400 mb-1">Contributions</p>
+              <p className="text-xl font-bold text-zinc-900 dark:text-zinc-100">
+                {totalContributions.toLocaleString()}
+              </p>
+            </div>
           </div>
-        </div>
-      </AnimateIn>
+        </AnimateIn>
+      )}
     </section>
   );
 }

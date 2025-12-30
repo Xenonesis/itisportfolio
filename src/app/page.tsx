@@ -69,7 +69,7 @@ export default function Home() {
   return (
     <main className="text-zinc-800 dark:text-zinc-100 max-w-2xl mx-auto px-6 py-8 mt-4 relative page-transition">
       {/* Subtle content backdrop for readability over dot grid */}
-      <div className="absolute inset-0 -z-10 mx-4 rounded-3xl bg-white/40 dark:bg-zinc-900/40 backdrop-blur-sm" />
+      <div className="absolute inset-0 -z-10 mx-4 rounded-3xl bg-white/40 dark:bg-background/40 backdrop-blur-sm" />
       
       {/* Theme Toggle - Fixed Position */}
       <div className="fixed top-5 right-5 z-50">

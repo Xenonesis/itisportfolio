@@ -310,7 +310,7 @@ export function AIAssistant() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            className="fixed bottom-24 right-6 z-50 w-[380px] max-w-[calc(100vw-48px)] h-[520px] max-h-[calc(100vh-140px)] rounded-2xl overflow-hidden shadow-2xl border border-zinc-200 dark:border-zinc-700/50 bg-white dark:bg-zinc-900 flex flex-col"
+            className="fixed bottom-24 right-6 z-50 w-[380px] max-w-[calc(100vw-48px)] h-[520px] max-h-[calc(100vh-140px)] rounded-2xl overflow-hidden shadow-2xl border border-zinc-200 dark:border-zinc-700/50 bg-white dark:bg-background flex flex-col"
           >
             {/* Header */}
             <div className="px-4 py-3 bg-gradient-to-r from-teal-500 to-cyan-600 dark:from-teal-600 dark:to-cyan-700 text-white flex items-center gap-3">
@@ -342,7 +342,7 @@ export function AIAssistant() {
             </div>
 
             {/* Messages */}
-            <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-zinc-50 dark:bg-zinc-900/50">
+            <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-zinc-50 dark:bg-background/50">
               {messages.map((message) => (
                 <motion.div
                   key={message.id}
@@ -371,7 +371,7 @@ export function AIAssistant() {
 
             {/* Suggested Questions (only show when few messages) */}
             {messages.length <= 2 && !isTyping && (
-              <div className="px-4 py-2 border-t border-zinc-100 dark:border-zinc-800 bg-white dark:bg-zinc-900">
+              <div className="px-4 py-2 border-t border-zinc-100 dark:border-zinc-800 bg-white dark:bg-background">
                 <div className="flex flex-wrap gap-2">
                   {suggestedQuestions.slice(0, 3).map((question, index) => (
                     <button
@@ -388,7 +388,7 @@ export function AIAssistant() {
             )}
 
             {/* Input */}
-            <div className="p-3 border-t border-zinc-100 dark:border-zinc-800 bg-white dark:bg-zinc-900">
+            <div className="p-3 border-t border-zinc-100 dark:border-zinc-800 bg-white dark:bg-background">
               <div className="flex gap-2">
                 <input
                   ref={inputRef}

@@ -23,6 +23,13 @@ export default function Home() {
   const visibleExperience = isExperienceExpanded
     ? experience
     : experience.slice(0, initialExperienceCount);
+
+  const [isCertificationsExpanded, setIsCertificationsExpanded] = useState(false);
+  const initialCertificationCount = 6;
+  const visibleCertifications = isCertificationsExpanded
+    ? certifications
+    : certifications.slice(0, initialCertificationCount);
+
   const handleHeartRain = () => {
     const duration = 3000; // 3 seconds
     const animationEnd = Date.now() + duration;
@@ -446,41 +453,118 @@ export default function Home() {
         {/* Section Divider */}
         <div className="section-divider" />
 
-        {/* GitHub Contributions */}
-        <GitHubContributions />
-        {/* </AnimateIn>{" "}      <AnimateIn variant="fadeUp" delay={0.8}> */}
-        {/* <section className="mb-10">
-          <AnimateIn variant="reveal" delay={0.85}>
-            <h2 className="text-lg font-medium tracking-tight mb-3 inline-block">
-              Achievements▼
+        {/* Certifications Section */}
+        <section className="mb-14">
+          <AnimateIn variant="reveal" delay={0.7}>
+            <h2 className="text-xl font-semibold tracking-tight mb-6 inline-block heading-expressive">
+              Certifications<span className="text-blue-500 dark:text-blue-400 ml-1">▼</span>
             </h2>
           </AnimateIn>
-          <div className="space-y-3">
+          <div className="space-y-4">
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {visibleCertifications.map((cert, index) => {
+                const delay = 0.7 + index * 0.05;
+                return (
+                  <AnimateIn key={index} variant="scale" delay={delay}>
+                    <li className="soft-container p-4 hover-lift shine-effect h-full">
+                      <div className="flex flex-col h-full">
+                        <h3 className="text-sm font-medium mb-1 line-clamp-2">{cert.title}</h3>
+                        <p className="text-xs text-zinc-500 dark:text-zinc-400 mb-3">
+                          {cert.issuer} • {cert.date}
+                        </p>
+                        <div className="flex gap-2 mt-auto">
+                          {cert.viewUrl && (
+                            <a
+                              href={cert.viewUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-1 px-2.5 py-1 text-xs font-medium rounded-lg bg-gradient-to-r from-blue-500/10 to-cyan-500/10 dark:from-blue-500/20 dark:to-cyan-500/20 text-blue-600 dark:text-blue-400 border border-blue-500/20 dark:border-blue-500/30 hover:from-blue-500/15 hover:to-cyan-500/15 transition-all"
+                            >
+                              <ExternalLink className="w-3 h-3" />
+                              View
+                            </a>
+                          )}
+                        </div>
+                      </div>
+                    </li>
+                  </AnimateIn>
+                );
+              })}
+            </ul>
+            {certifications.length > initialCertificationCount && (
+              <button
+                onClick={() => setIsCertificationsExpanded(!isCertificationsExpanded)}
+                className="flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 mx-auto font-medium py-3 px-5 rounded-xl hover:bg-zinc-100/50 dark:hover:bg-muted/50"
+              >
+                {isCertificationsExpanded ? (
+                  <>
+                    Show Less <ChevronUp className="w-4 h-4" />
+                  </>
+                ) : (
+                  <>
+                    Show All Certifications ({certifications.length}) <ChevronDown className="w-4 h-4" />
+                  </>
+                )}
+              </button>
+            )}
+          </div>
+        </section>
+
+        {/* Section Divider */}
+        <div className="section-divider" />
+
+        {/* Achievements Section */}
+        <section className="mb-14">
+          <AnimateIn variant="reveal" delay={0.75}>
+            <h2 className="text-xl font-semibold tracking-tight mb-6 inline-block heading-expressive">
+              Achievements<span className="text-amber-500 dark:text-amber-400 ml-1">▼</span>
+            </h2>
+          </AnimateIn>
+          <div className="space-y-4">
             {achievements.map((achievement, index) => (
               <AnimateIn
                 key={index}
                 variant="fadeLeft"
-                delay={0.85 + index * 0.1}
+                delay={0.75 + index * 0.1}
               >
-                <div className="group hover:translate-x-1 transition-all duration-300 ease-out">
-                  <div className="flex items-start gap-3">
-                    <div className="text-sm text-zinc-600 dark:text-zinc-400 mt-0.5">
+                <div className="soft-container p-5 hover-lift shine-effect">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500/20 to-orange-500/20 dark:from-amber-500/30 dark:to-orange-500/30 flex items-center justify-center text-xl">
                       🏆
                     </div>
-                    <div>
-                      <h3 className="text-sm font-medium text-zinc-900 dark:text-zinc-100">
-                        {achievement.title}
-                      </h3>
-                      <p className="text-xs text-zinc-500 dark:text-zinc-400">
-                        {achievement.event}
+                    <div className="flex-1">
+                      <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-1 mb-2">
+                        <h3 className="text-base font-medium text-zinc-800 dark:text-zinc-100">
+                          {achievement.title}
+                        </h3>
+                        <span className="text-xs text-zinc-400 dark:text-zinc-500 font-medium whitespace-nowrap">
+                          {achievement.period}
+                        </span>
+                      </div>
+                      <p className="text-sm text-amber-600 dark:text-amber-400 font-medium mb-2">
+                        {achievement.organization}
                       </p>
+                      <ul className="space-y-1">
+                        {achievement.highlights.map((highlight, hIndex) => (
+                          <li key={hIndex} className="text-sm text-zinc-500 dark:text-zinc-400 flex items-start gap-2">
+                            <span className="text-amber-500 mt-1">•</span>
+                            <span>{highlight}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
                 </div>
               </AnimateIn>
             ))}
           </div>
-        </section> */}
+        </section>
+
+        {/* Section Divider */}
+        <div className="section-divider" />
+
+        {/* GitHub Contributions */}
+        <GitHubContributions />
 
         {/* Section Divider */}
         <div className="section-divider" />
@@ -897,6 +981,166 @@ const tools = [
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg",
     title: "macOS",
     url: "https://www.apple.com/macos/",
+  },
+];
+
+const certifications = [
+  {
+    title: "Foundations of Cybersecurity",
+    issuer: "Google",
+    date: "Aug 2024",
+    viewUrl: "https://www.coursera.org/account/accomplishments/verify/IL7I0RLBABX3",
+  },
+  {
+    title: "Cisco Cyber Threat Management",
+    issuer: "CISCO",
+    date: "Jul 2024",
+    viewUrl: "https://www.credly.com/badges/1207700f-4d5d-4abb-a474-811a6d1eff23/linked_in_profile",
+  },
+  {
+    title: "OSForensics Triage Certification",
+    issuer: "PassMark Software",
+    date: "Jul 2024",
+    viewUrl: "https://iaddy.netlify.app/pdf/os.pdf",
+  },
+  {
+    title: "Cisco Computer Hardware Basics",
+    issuer: "CISCO",
+    date: "Jul 2024",
+    viewUrl: "https://iaddy.netlify.app/pdf/chb.pdf",
+  },
+  {
+    title: "Cybersecurity for Everyone",
+    issuer: "University of Maryland",
+    date: "Jul 2024",
+    viewUrl: "https://www.coursera.org/account/accomplishments/verify/N66VEGBQ6V4U",
+  },
+  {
+    title: "Endpoint Security",
+    issuer: "Cisco",
+    date: "Jul 2024",
+    viewUrl: "https://www.credly.com/badges/47017e02-d9b2-45e3-bf63-732d622fcb66/linked_in_profile",
+  },
+  {
+    title: "ISO 27001 Course",
+    issuer: "AKITRA",
+    date: "Nov 2024",
+    viewUrl: "https://akitra.com/tutor-certificate/?cert_hash=39c932cf67346187",
+  },
+  {
+    title: "Digital Footprint",
+    issuer: "United Latino Students Association",
+    date: "Aug 2024",
+    viewUrl: "https://www.coursera.org/account/accomplishments/verify/VMA0NCWZEVLW",
+  },
+  {
+    title: "Ethical Hacker",
+    issuer: "Cisco",
+    date: "Jul 2024",
+    viewUrl: "https://www.credly.com/badges/302ac20c-baba-46d5-a3c5-0ff6b32d6072/linked_in_profile",
+  },
+  {
+    title: "Introduction to Cybersecurity",
+    issuer: "Cisco",
+    date: "Jul 2024",
+    viewUrl: "https://www.credly.com/badges/f6e3d7cb-b6bf-401f-b87a-447cca3abbcc/linked_in_profile",
+  },
+  {
+    title: "Introduction to Prompt Engineering for Generative AI",
+    issuer: "LinkedIn",
+    date: "Jul 2024",
+    viewUrl: "https://www.linkedin.com/learning/certificates/71de56a2fe68bd1be82dd6a5d850fa6b1f5115d360826695dcc0d754ae2114b2",
+  },
+  {
+    title: "Network Support and Security",
+    issuer: "Cisco",
+    date: "Jul 2024",
+    viewUrl: "https://www.credly.com/badges/fa483dac-72a2-41b4-93a0-07612bdab2d2/linked_in_profile",
+  },
+  {
+    title: "Recent Advances in Freeform Electronics",
+    issuer: "Yonsei University",
+    date: "Jul 2024",
+    viewUrl: "https://www.coursera.org/account/accomplishments/records/JAZQVPFQPMPD",
+  },
+  {
+    title: "Technical Support Fundamental",
+    issuer: "Google",
+    date: "Jul 2024",
+    viewUrl: "https://www.coursera.org/account/accomplishments/verify/6RWVRXZAWC7K",
+  },
+  {
+    title: "Computer Architecture: Digital Components",
+    issuer: "Great Learning",
+    date: "Jun 2024",
+    viewUrl: "https://www.mygreatlearning.com/certificate/JSZTDVTQ",
+  },
+  {
+    title: "Excel for Beginners",
+    issuer: "Great Learning",
+    date: "Jun 2024",
+    viewUrl: "https://verify.mygreatlearning.com/verify/SEOWJXSX",
+  },
+  {
+    title: "Excel for Intermediate Level",
+    issuer: "Great Learning",
+    date: "Jun 2024",
+    viewUrl: "https://verify.mygreatlearning.com/verify/JHQLFQLH",
+  },
+  {
+    title: "Introduction to Cyber Security",
+    issuer: "Great Learning",
+    date: "Jun 2024",
+    viewUrl: "https://verify.mygreatlearning.com/verify/GFZIVCBN",
+  },
+  {
+    title: "Linux Tutorial",
+    issuer: "Great Learning",
+    date: "Jun 2024",
+    viewUrl: "https://www.mygreatlearning.com/certificate/TFTTJANZ",
+  },
+  {
+    title: "Linux Tutorial - Networking Basics",
+    issuer: "Cisco",
+    date: "Jun 2024",
+    viewUrl: "https://www.credly.com/badges/a5d0606f-50f4-49ce-a499-0fb635f12328/linked_in_profile",
+  },
+  {
+    title: "Prompt Engineering for ChatGPT",
+    issuer: "Great Learning",
+    date: "Jun 2024",
+    viewUrl: "https://www.mygreatlearning.com/certificate/BIARRAZQ",
+  },
+];
+
+const achievements = [
+  {
+    title: "University Sports Leader",
+    organization: "Sushant University",
+    period: "2023 - 2024",
+    highlights: [
+      "Led the university's sports teams, organizing and managing multiple events that increased student participation by 30%.",
+      "Spearheaded inter-university competitions, securing top positions in regional tournaments.",
+    ],
+  },
+  {
+    title: "NSS Leader (President)",
+    organization: "National Service Scheme",
+    period: "2023 - Present",
+    highlights: [
+      "Coordinated and led various community service initiatives, driving awareness on key social issues.",
+      "Managed a team of 320+ volunteers, organizing events and workshops focusing on health and education.",
+    ],
+  },
+  {
+    title: "Subhead at Gaming Nexus (Gaming Club)",
+    organization: "Gaming Nexus",
+    period: "2023 - Present",
+    highlights: [
+      "Oversaw gaming tournaments and interactive workshops aimed at promoting esports on campus.",
+      "Facilitated strategic partnerships with external gaming sponsors, leading to a 50% increase in club funding.",
+      "Mentored new members in strategy-based games, focusing on team-building and competitive gaming skills.",
+    ],
   },
 ];
 

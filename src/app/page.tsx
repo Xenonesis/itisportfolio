@@ -418,8 +418,8 @@ export default function Home() {
                   variant="scale"
                   delay={0.65 + index * 0.03}
                 >
-                  <div className="flex flex-col items-center group cursor-pointer">
-                    <div className="relative h-8 w-8 sm:h-10 sm:w-10 mb-2 p-2 rounded-xl bg-gradient-to-br from-white to-zinc-50 dark:from-zinc-800 dark:to-zinc-900 shadow-sm border border-zinc-100 dark:border-zinc-700/50 transition-all duration-300 ease-out group-hover:scale-110 group-hover:-translate-y-1 group-hover:shadow-md">
+                  <div className="relative flex flex-col items-center group cursor-pointer">
+                    <div className="relative h-8 w-8 sm:h-10 sm:w-10 p-2 rounded-xl bg-gradient-to-br from-white to-zinc-50 dark:from-zinc-800 dark:to-zinc-900 shadow-sm border border-zinc-100 dark:border-zinc-700/50 transition-all duration-300 ease-out group-hover:scale-110 group-hover:-translate-y-1 group-hover:shadow-md">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src={logo}
@@ -428,7 +428,7 @@ export default function Home() {
                         loading="eager"
                       />
                     </div>
-                    <span className="text-xs text-zinc-500 dark:text-zinc-400 text-center whitespace-nowrap font-medium opacity-80 group-hover:opacity-100 transition-opacity">
+                    <span className="absolute -bottom-10 left-1/2 -translate-x-1/2 px-2 py-1 bg-white dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 text-xs rounded-md shadow-lg border border-zinc-100 dark:border-zinc-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-10">
                       {title}
                     </span>
                   </div>
@@ -678,6 +678,28 @@ const experience = [
 
 
 const tools = [
+  // Cybersecurity
+  {
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg",
+    title: "Kali Linux",
+  },
+  {
+    logo: "https://upload.wikimedia.org/wikipedia/commons/c/c6/Wireshark_icon_new.png",
+    title: "Wireshark",
+  },
+  {
+    logo: "https://www.kali.org/tools/metasploit-framework/images/metasploit-framework-logo.svg",
+    title: "Metasploit",
+  },
+  {
+    logo: "https://nmap.org/images/nmap-logo-256x256.png",
+    title: "Nmap",
+  },
+  {
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/archlinux/archlinux-original.svg",
+    title: "Arch Linux",
+  },
+
   // Programming Languages
   {
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
@@ -686,6 +708,14 @@ const tools = [
   {
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
     title: "JavaScript",
+  },
+  {
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
+    title: "C++",
+  },
+  {
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg",
+    title: "Go",
   },
   {
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
@@ -698,6 +728,10 @@ const tools = [
   {
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
     title: "TypeScript",
+  },
+  {
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
+    title: "Java",
   },
 
   // Web Development
@@ -721,6 +755,32 @@ const tools = [
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
     title: "Node.js",
   },
+  {
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+    title: "Next.js",
+  },
+  {
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
+    title: "TailwindCSS",
+  },
+  {
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg",
+    title: "GraphQL",
+  },
+
+  // Mobile Development
+  {
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg",
+    title: "Android",
+  },
+  {
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg",
+    title: "Flutter",
+  },
+  {
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg",
+    title: "Kotlin",
+  },
 
   // Cloud & DevOps
   {
@@ -732,8 +792,16 @@ const tools = [
     title: "Docker",
   },
   {
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg",
-    title: "Linux",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg",
+    title: "Kubernetes",
+  },
+  {
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg",
+    title: "Google Cloud",
+  },
+  {
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg",
+    title: "Azure",
   },
 
   // Database & Tools
@@ -750,5 +818,39 @@ const tools = [
   {
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg",
     title: "TensorFlow",
+  },
+  {
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg",
+    title: "PyTorch",
+  },
+  {
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg",
+    title: "Pandas",
+  },
+  {
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg",
+    title: "NumPy",
+  },
+  {
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg",
+    title: "OpenCV",
+  },
+
+  // Operating Systems
+  {
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg",
+    title: "Linux",
+  },
+  {
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ubuntu/ubuntu-plain.svg",
+    title: "Ubuntu",
+  },
+  {
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg",
+    title: "Windows",
+  },
+  {
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg",
+    title: "macOS",
   },
 ];

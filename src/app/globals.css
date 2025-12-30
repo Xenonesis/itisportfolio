@@ -533,21 +533,72 @@ canvas.dot-grid-bg {
   background: #a1a1aa;
 }
 
-/* Dark mode override */
-.dark .scrollbar-thin-light {
+/* Dark mode override - using :is(.dark *) for Tailwind v4 compatibility */
+.scrollbar-thin-light:is(.dark *) {
   scrollbar-color: #3f3f46 #18181b;
 }
 
-.dark .scrollbar-thin-light::-webkit-scrollbar-track {
+.scrollbar-thin-light:is(.dark *)::-webkit-scrollbar-track {
   background: #18181b;
 }
 
-.dark .scrollbar-thin-light::-webkit-scrollbar-thumb {
+.scrollbar-thin-light:is(.dark *)::-webkit-scrollbar-thumb {
   background: #3f3f46;
 }
 
-.dark .scrollbar-thin-light::-webkit-scrollbar-thumb:hover {
+.scrollbar-thin-light:is(.dark *)::-webkit-scrollbar-thumb:hover {
   background: #52525b;
+}
+
+/* GitHub Contributions Scrollbar - Light mode */
+.contribution-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #d4d4d8 #f4f4f5;
+}
+
+.contribution-scrollbar::-webkit-scrollbar {
+  height: 6px;
+}
+
+.contribution-scrollbar::-webkit-scrollbar-track {
+  background: #f4f4f5;
+  border-radius: 4px;
+}
+
+.contribution-scrollbar::-webkit-scrollbar-thumb {
+  background: #d4d4d8;
+  border-radius: 4px;
+}
+
+.contribution-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #a1a1aa;
+}
+
+/* GitHub Contributions Scrollbar - Dark mode */
+html.dark .contribution-scrollbar,
+.dark .contribution-scrollbar,
+.contribution-scrollbar:is(.dark *) {
+  scrollbar-color: #3f3f46 #27272a !important;
+}
+
+html.dark .contribution-scrollbar::-webkit-scrollbar-track,
+.dark .contribution-scrollbar::-webkit-scrollbar-track,
+.contribution-scrollbar:is(.dark *)::-webkit-scrollbar-track {
+  background: #27272a !important;
+  border-radius: 4px;
+}
+
+html.dark .contribution-scrollbar::-webkit-scrollbar-thumb,
+.dark .contribution-scrollbar::-webkit-scrollbar-thumb,
+.contribution-scrollbar:is(.dark *)::-webkit-scrollbar-thumb {
+  background: #52525b !important;
+  border-radius: 4px;
+}
+
+html.dark .contribution-scrollbar::-webkit-scrollbar-thumb:hover,
+.dark .contribution-scrollbar::-webkit-scrollbar-thumb:hover,
+.contribution-scrollbar:is(.dark *)::-webkit-scrollbar-thumb:hover {
+  background: #71717a !important;
 }
 
 /* ===================================

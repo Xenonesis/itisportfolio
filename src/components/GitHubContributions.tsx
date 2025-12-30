@@ -195,16 +195,17 @@ export function GitHubContributions() {
         {/* Contribution Graph Container */}
         <div className="soft-container p-5 sm:p-6 overflow-hidden mb-5 shine-effect">
           {/* Month Labels */}
-          <div className="flex mb-2 text-xs text-zinc-500 dark:text-zinc-500 overflow-x-auto">
+          <div className="flex mb-2 text-xs text-zinc-500 dark:text-zinc-400 overflow-x-auto contribution-scrollbar">
             <div className="w-8 flex-shrink-0"></div>
-            <div className="flex gap-0" style={{ minWidth: weeks.length * 13 }}>
+            <div className="flex gap-0" style={{ minWidth: weeks.length * 14 }}>
               {displayMonths.map((item, index) => (
                 <span
                   key={index}
                   className="flex-shrink-0"
                   style={{ 
+                    minWidth: '28px',
                     width: index < displayMonths.length - 1 
-                      ? `${((displayMonths[index + 1]?.startIndex || contributions.length) - item.startIndex) / 7 * 13}px`
+                      ? `${Math.max(28, ((displayMonths[index + 1]?.startIndex || contributions.length) - item.startIndex) / 7 * 14)}px`
                       : 'auto'
                   }}
                 >
@@ -215,7 +216,7 @@ export function GitHubContributions() {
           </div>
 
           {/* Contribution Grid */}
-          <div className="flex overflow-x-auto pb-2 scrollbar-thin-light dark:scrollbar-thin">
+          <div className="flex overflow-x-auto pb-2 contribution-scrollbar">
             <div className="flex-shrink-0 w-8 flex flex-col justify-between text-xs text-zinc-400 dark:text-zinc-600 py-1">
               <span></span>
               <span>Mon</span>

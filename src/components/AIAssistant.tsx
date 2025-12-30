@@ -50,7 +50,7 @@ function MessageSkeleton() {
       animate={{ opacity: 1, y: 0 }}
       className="flex justify-start"
     >
-      <div className="max-w-[85%] w-64 bg-white dark:bg-zinc-800 rounded-2xl rounded-bl-md shadow-sm border border-zinc-100 dark:border-zinc-700/50 p-4 space-y-3">
+      <div className="max-w-[85%] w-64 bg-white dark:bg-card rounded-2xl rounded-bl-md shadow-sm border border-zinc-100 dark:border-zinc-700/50 p-4 space-y-3">
         {/* Skeleton lines */}
         <div className="h-3 bg-gradient-to-r from-zinc-200 via-zinc-100 to-zinc-200 dark:from-zinc-700 dark:via-zinc-600 dark:to-zinc-700 rounded-full animate-shimmer bg-[length:200%_100%]" />
         <div className="h-3 bg-gradient-to-r from-zinc-200 via-zinc-100 to-zinc-200 dark:from-zinc-700 dark:via-zinc-600 dark:to-zinc-700 rounded-full animate-shimmer bg-[length:200%_100%] w-[90%]" style={{ animationDelay: "0.1s" }} />
@@ -354,7 +354,7 @@ export function AIAssistant() {
                     className={`max-w-[85%] px-4 py-2.5 rounded-2xl text-sm leading-relaxed ${
                       message.role === "user"
                         ? "bg-gradient-to-br from-teal-500 to-cyan-600 text-white rounded-br-md"
-                        : "bg-white dark:bg-zinc-800 text-zinc-700 dark:text-zinc-200 shadow-sm border border-zinc-100 dark:border-zinc-700/50 rounded-bl-md"
+                        : "bg-white dark:bg-card text-zinc-700 dark:text-zinc-200 shadow-sm border border-zinc-100 dark:border-zinc-700/50 rounded-bl-md"
                     }`}
                     style={{ whiteSpace: "pre-wrap" }}
                   >
@@ -378,7 +378,7 @@ export function AIAssistant() {
                       key={index}
                       onClick={() => handleSuggestedQuestion(question)}
                       disabled={isTyping}
-                      className="px-3 py-1.5 text-xs font-medium rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 hover:bg-teal-100 dark:hover:bg-teal-900/30 hover:text-teal-700 dark:hover:text-teal-400 transition-colors disabled:opacity-50"
+                      className="px-3 py-1.5 text-xs font-medium rounded-full bg-zinc-100 dark:bg-muted text-zinc-600 dark:text-zinc-400 hover:bg-teal-100 dark:hover:bg-teal-900/30 hover:text-teal-700 dark:hover:text-teal-400 transition-colors disabled:opacity-50"
                     >
                       {question}
                     </button>
@@ -398,7 +398,7 @@ export function AIAssistant() {
                   onKeyDown={handleKeyDown}
                   placeholder="Ask me anything..."
                   disabled={isTyping}
-                  className="flex-1 px-4 py-2.5 text-sm bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500/50 focus:border-teal-500 text-zinc-800 dark:text-zinc-200 placeholder:text-zinc-400 dark:placeholder:text-zinc-500 disabled:opacity-50"
+                  className="flex-1 px-4 py-2.5 text-sm bg-zinc-100 dark:bg-muted border border-zinc-200 dark:border-zinc-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500/50 focus:border-teal-500 text-zinc-800 dark:text-zinc-200 placeholder:text-zinc-400 dark:placeholder:text-zinc-500 disabled:opacity-50"
                 />
                 <button
                   onClick={handleSend}

@@ -170,7 +170,7 @@ export default function Home() {
               {/* <Tooltip content="Some of my Random awesome memories">
                 <Link
                   href="/gallery"
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 border border-zinc-300 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 text-xs font-medium rounded-md hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors duration-200"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 border border-zinc-300 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 text-xs font-medium rounded-md hover:bg-zinc-100 dark:hover:bg-muted transition-colors duration-200"
                 >
                   <svg
                     className="w-3 h-3"
@@ -318,7 +318,7 @@ export default function Home() {
             {projects.length > initialProjectCount && (
               <button
                 onClick={() => setIsProjectsExpanded(!isProjectsExpanded)}
-                className="flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400 hover:text-teal-600 dark:hover:text-teal-400 transition-all duration-300 mx-auto font-medium py-3 px-5 rounded-xl hover:bg-zinc-100/50 dark:hover:bg-zinc-800/50"
+                className="flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400 hover:text-teal-600 dark:hover:text-teal-400 transition-all duration-300 mx-auto font-medium py-3 px-5 rounded-xl hover:bg-zinc-100/50 dark:hover:bg-muted/50"
               >
                 {isProjectsExpanded ? (
                   <>
@@ -385,7 +385,7 @@ export default function Home() {
             {experience.length > initialExperienceCount && (
               <button
                 onClick={() => setIsExperienceExpanded(!isExperienceExpanded)}
-                className="flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400 hover:text-orange-600 dark:hover:text-orange-400 transition-all duration-300 mx-auto font-medium py-3 px-5 rounded-xl hover:bg-zinc-100/50 dark:hover:bg-zinc-800/50"
+                className="flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400 hover:text-orange-600 dark:hover:text-orange-400 transition-all duration-300 mx-auto font-medium py-3 px-5 rounded-xl hover:bg-zinc-100/50 dark:hover:bg-muted/50"
               >
                 {isExperienceExpanded ? (
                   <>

@@ -112,7 +112,7 @@ export function GitHubContributions() {
   const getContributionColor = (level: number) => {
     // 2025 Minimalist - Muted teal accent colors
     const colors = [
-      "bg-zinc-200/60 dark:bg-zinc-800/60", // Level 0
+      "bg-zinc-200/60 dark:bg-muted/60", // Level 0
       "bg-teal-200 dark:bg-teal-900/50", // Level 1
       "bg-teal-400 dark:bg-teal-700/60", // Level 2
       "bg-teal-500 dark:bg-teal-500/70", // Level 3
@@ -169,7 +169,7 @@ export function GitHubContributions() {
   if (loading) {
     return (
       <div className="animate-pulse">
-        <div className="h-40 bg-zinc-200 dark:bg-zinc-800 rounded-xl"></div>
+        <div className="h-40 bg-zinc-200 dark:bg-muted rounded-xl"></div>
       </div>
     );
   }
@@ -273,7 +273,7 @@ export function GitHubContributions() {
       <div className="flex justify-center mt-2 mb-6">
         <button
           onClick={() => setShowMore(!showMore)}
-          className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-zinc-600 dark:text-zinc-400 bg-white/50 dark:bg-zinc-800/50 rounded-full hover:bg-white dark:hover:bg-zinc-800 border border-zinc-200/50 dark:border-zinc-700/50 transition-all hover:scale-105 hover:shadow-sm"
+          className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-zinc-600 dark:text-zinc-400 bg-white/50 dark:bg-muted/50 rounded-full hover:bg-white dark:hover:bg-muted border border-zinc-200/50 dark:border-zinc-700/50 transition-all hover:scale-105 hover:shadow-sm"
         >
           {showMore ? "Show Less" : "Show More Stats"}
           <svg

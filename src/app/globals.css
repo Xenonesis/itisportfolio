@@ -142,6 +142,45 @@
   background-size: 20px 20px;
 }
 
+/* Dot Grid Background Container */
+.dot-grid-bg-container {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(
+    135deg,
+    rgba(250, 250, 250, 1) 0%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(245, 245, 245, 1) 100%
+  );
+}
+
+.dark .dot-grid-bg-container {
+  background: linear-gradient(
+    135deg,
+    rgba(24, 24, 27, 1) 0%,
+    rgba(18, 18, 21, 1) 50%,
+    rgba(24, 24, 27, 1) 100%
+  );
+}
+
+/* Ensure dot grid doesn't interfere with content */
+.dot-grid-bg {
+  opacity: 0.65;
+  transition: opacity 0.5s ease;
+}
+
+.dark .dot-grid-bg {
+  opacity: 0.55;
+}
+
+/* Smooth canvas rendering */
+canvas.dot-grid-bg {
+  image-rendering: optimizeSpeed;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  will-change: contents;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -516,29 +555,33 @@
 .soft-container {
   background: linear-gradient(
     145deg,
-    rgba(255, 255, 255, 0.9),
-    rgba(250, 250, 250, 0.95)
+    rgba(255, 255, 255, 0.95),
+    rgba(250, 250, 250, 0.98)
   );
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-radius: 1.5rem;
-  border: 1px solid rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.05);
   box-shadow: 
-    0 4px 6px -1px rgba(0, 0, 0, 0.03),
-    0 2px 4px -2px rgba(0, 0, 0, 0.02),
-    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    0 4px 6px -1px rgba(0, 0, 0, 0.04),
+    0 2px 4px -2px rgba(0, 0, 0, 0.03),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .dark .soft-container {
   background: linear-gradient(
     145deg,
-    rgba(38, 38, 45, 0.95),
-    rgba(28, 28, 35, 0.98)
+    rgba(38, 38, 45, 0.97),
+    rgba(28, 28, 35, 0.99)
   );
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 
-    0 4px 6px -1px rgba(0, 0, 0, 0.15),
-    0 2px 4px -2px rgba(0, 0, 0, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.03);
+    0 4px 6px -1px rgba(0, 0, 0, 0.2),
+    0 2px 4px -2px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
 .soft-container:hover {
@@ -558,18 +601,18 @@
 
 /* Glassmorphism Cards - Humanized Trend */
 .glass-card {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
   border-radius: 1.25rem;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
 }
 
 .dark .glass-card {
-  background: rgba(30, 30, 40, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  background: rgba(30, 30, 40, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
 }
 
 /* Typography-First Headings - Trend 2 */

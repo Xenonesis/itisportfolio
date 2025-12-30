@@ -5,7 +5,7 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import { Metadata, Viewport } from "next";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { Analytics } from "@vercel/analytics/react";
-import ParticlesBackground from "@/components/backgrounds/ParticlesBackground";
+import DotGridBackground from "@/components/backgrounds/DotGridBackground";
 
 type Props = {
   children: React.ReactNode;
@@ -27,9 +27,9 @@ const RootLayout: React.FC<Props> = ({ children }) => {
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
-      <body className="font-geist-sans bg-white overscroll-none dark:bg-zinc-900 grid-background">
+      <body className="font-geist-sans bg-white overscroll-none dark:bg-zinc-900 dot-grid-bg-container">
         <ThemeProvider defaultTheme="system" storageKey="ahmet-theme">
-          <ParticlesBackground />
+          <DotGridBackground />
           <div className="relative z-10">
             {children}
           </div>

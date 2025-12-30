@@ -6,6 +6,7 @@ import { Metadata, Viewport } from "next";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { Analytics } from "@vercel/analytics/react";
 import DotGridBackground from "@/components/backgrounds/DotGridBackground";
+import { AIAssistant } from "@/components/AIAssistant";
 
 type Props = {
   children: React.ReactNode;
@@ -33,6 +34,7 @@ const RootLayout: React.FC<Props> = ({ children }) => {
           <div className="relative z-10">
             {children}
           </div>
+          <AIAssistant />
         </ThemeProvider>
       </body>
       <GoogleAnalytics gaId="G-M80GLPRQFQ" />

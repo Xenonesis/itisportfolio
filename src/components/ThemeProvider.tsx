@@ -11,47 +11,74 @@ type ThemeProviderProps = {
 };
 
 type ThemeProviderState = {
+  /** User selection */
   theme: Theme;
+  /** The effective theme after resolving "system" */
+  resolvedTheme: Exclude<Theme, "system">;
   setTheme: (theme: Theme) => void;
 };
 
 const initialState: ThemeProviderState = {
   theme: "system",
+  resolvedTheme: "light",
   setTheme: () => null,
 };
 
 const ThemeProviderContext = createContext<ThemeProviderState>(initialState);
 
 export function ThemeProvider({ children, defaultTheme = "system", storageKey = "theme", ...props }: ThemeProviderProps) {
-  const [theme, setTheme] = useState<Theme>(defaultTheme);
+  const getSystemTheme = (): Exclude<Theme, "system"> => {
+    if (typeof window === "undefined") return "light";
+    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  };
 
+  const [theme, setThemeState] = useState<Theme>(defaultTheme);
+  const [resolvedTheme, setResolvedTheme] = useState<Exclude<Theme, "system">>(getSystemTheme());
+
+  // Load persisted theme selection
   useEffect(() => {
     const savedTheme = localStorage.getItem(storageKey) as Theme | null;
-    if (savedTheme) {
-      setTheme(savedTheme);
-    } else if (defaultTheme === "system") {
-      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-      setTheme(systemTheme);
+    if (savedTheme === "light" || savedTheme === "dark" || savedTheme === "system") {
+      setThemeState(savedTheme);
+      return;
     }
+
+    setThemeState(defaultTheme);
   }, [defaultTheme, storageKey]);
 
+  // Track OS theme changes (only relevant when theme === "system")
+  useEffect(() => {
+    const media = window.matchMedia?.("(prefers-color-scheme: dark)");
+    if (!media) return;
+
+    const update = () => setResolvedTheme(media.matches ? "dark" : "light");
+    update();
+
+    // Safari < 14 support
+    if (typeof media.addEventListener === "function") {
+      media.addEventListener("change", update);
+      return () => media.removeEventListener("change", update);
+    }
+
+    media.addListener(update);
+    return () => media.removeListener(update);
+  }, []);
+
+  // Apply theme class to <html>
   useEffect(() => {
     const root = window.document.documentElement;
     root.classList.remove("light", "dark");
 
-    if (theme === "system") {
-      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-      root.classList.add(systemTheme);
-    } else {
-      root.classList.add(theme);
-    }
-  }, [theme]);
+    const effectiveTheme = theme === "system" ? resolvedTheme : theme;
+    root.classList.add(effectiveTheme);
+  }, [resolvedTheme, theme]);
 
-  const value = {
+  const value: ThemeProviderState = {
     theme,
-    setTheme: (theme: Theme) => {
-      localStorage.setItem(storageKey, theme);
-      setTheme(theme);
+    resolvedTheme: theme === "system" ? resolvedTheme : theme,
+    setTheme: (nextTheme: Theme) => {
+      localStorage.setItem(storageKey, nextTheme);
+      setThemeState(nextTheme);
     },
   };
 

@@ -36,10 +36,10 @@ const GITHUB_USERNAME = "Xenonesis";
 
 const suggestedQuestions = [
   "Tell me about yourself",
-  "What are your top projects?",
-  "What skills do you have?",
+  "What projects have you built?",
+  "What are your technical skills?",
   "How can I contact you?",
-  "What's your experience?",
+  "Describe your work experience",
 ];
 
 // Skeleton Loader Component
@@ -51,13 +51,45 @@ function MessageSkeleton() {
       className="flex justify-start"
     >
       <div className="max-w-[85%] w-64 bg-white dark:bg-card rounded-2xl rounded-bl-md shadow-sm border border-zinc-100 dark:border-zinc-700/50 p-4 space-y-3">
-        {/* Skeleton lines */}
         <div className="h-3 bg-gradient-to-r from-zinc-200 via-zinc-100 to-zinc-200 dark:from-zinc-700 dark:via-zinc-600 dark:to-zinc-700 rounded-full animate-shimmer bg-[length:200%_100%]" />
         <div className="h-3 bg-gradient-to-r from-zinc-200 via-zinc-100 to-zinc-200 dark:from-zinc-700 dark:via-zinc-600 dark:to-zinc-700 rounded-full animate-shimmer bg-[length:200%_100%] w-[90%]" style={{ animationDelay: "0.1s" }} />
         <div className="h-3 bg-gradient-to-r from-zinc-200 via-zinc-100 to-zinc-200 dark:from-zinc-700 dark:via-zinc-600 dark:to-zinc-700 rounded-full animate-shimmer bg-[length:200%_100%] w-[75%]" style={{ animationDelay: "0.2s" }} />
         <div className="h-3 bg-gradient-to-r from-zinc-200 via-zinc-100 to-zinc-200 dark:from-zinc-700 dark:via-zinc-600 dark:to-zinc-700 rounded-full animate-shimmer bg-[length:200%_100%] w-[85%]" style={{ animationDelay: "0.3s" }} />
       </div>
     </motion.div>
+  );
+}
+
+// Copy Button Component
+function CopyButton({ text }: { text: string }) {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error("Failed to copy:", err);
+    }
+  };
+
+  return (
+    <button
+      onClick={handleCopy}
+      className="opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-zinc-100 dark:hover:bg-zinc-700 rounded"
+      title="Copy message"
+    >
+      {copied ? (
+        <svg className="w-3.5 h-3.5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+        </svg>
+      ) : (
+        <svg className="w-3.5 h-3.5 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+        </svg>
+      )}
+    </button>
   );
 }
 
@@ -68,6 +100,7 @@ export function AIAssistant() {
   const [isTyping, setIsTyping] = useState(false);
   const [repos, setRepos] = useState<GitHubRepo[]>([]);
   const [user, setUser] = useState<GitHubUser | null>(null);
+  const [showClearConfirm, setShowClearConfirm] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -75,12 +108,10 @@ export function AIAssistant() {
   useEffect(() => {
     const fetchGitHubData = async () => {
       try {
-        // Fetch user profile
         const userRes = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}`);
         const userData = await userRes.json();
         setUser(userData);
 
-        // Fetch repositories with more details
         const reposRes = await fetch(
           `https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=pushed&per_page=15`
         );
@@ -112,28 +143,24 @@ export function AIAssistant() {
       const welcomeMessage: Message = {
         id: "welcome",
         role: "assistant",
-        content: `Hey there! 👋 I'm Aditya's AI assistant powered by Groq. I have real-time access to his GitHub (${user?.public_repos || "many"} repos, ${user?.followers || "growing"} followers) and full knowledge of his portfolio. Ask me anything!`,
+        content: `Welcome. I'm Aditya's AI portfolio assistant.\n\nI can provide information about:\n• Projects and technical work\n• Skills and expertise\n• Professional experience\n• Contact details\n\nHow may I assist you?`,
         timestamp: new Date(),
       };
       setMessages([welcomeMessage]);
     }
-  }, [isOpen, messages.length, user]);
+  }, [isOpen, messages.length]);
 
   const sendMessageToAI = async (userMessage: string): Promise<string> => {
     try {
-      // Prepare chat history for context
       const chatHistory = messages.slice(-8).map((msg) => ({
         role: msg.role,
         content: msg.content,
       }));
 
-      // Add the new user message
       chatHistory.push({ role: "user" as const, content: userMessage });
 
-      // Extract unique languages from repos
       const languages = [...new Set(repos.map((r) => r.language).filter(Boolean))];
 
-      // Prepare comprehensive GitHub data for context
       const githubData = {
         repos: user?.public_repos,
         followers: user?.followers,
@@ -148,7 +175,6 @@ export function AIAssistant() {
         })),
       };
 
-      // Get current time for context
       const currentTime = new Date().toLocaleString("en-IN", {
         timeZone: "Asia/Kolkata",
         dateStyle: "full",
@@ -175,7 +201,7 @@ export function AIAssistant() {
       return data.message;
     } catch (error) {
       console.error("Error calling AI:", error);
-      return "I apologize, but I'm having trouble connecting right now. Please try again in a moment! 🙏";
+      return "I apologize, but I'm experiencing connection issues. Please try again shortly.";
     }
   };
 
@@ -209,7 +235,7 @@ export function AIAssistant() {
       const errorMessage: Message = {
         id: (Date.now() + 1).toString(),
         role: "assistant",
-        content: "Sorry, I encountered an error. Please try again! 🙏",
+        content: "An error occurred. Please try again.",
         timestamp: new Date(),
       };
       setMessages((prev) => [...prev, errorMessage]);
@@ -231,6 +257,18 @@ export function AIAssistant() {
     setTimeout(() => {
       handleSend();
     }, 100);
+  };
+
+  const handleClearChat = () => {
+    setMessages([]);
+    setShowClearConfirm(false);
+  };
+
+  const formatTimestamp = (date: Date) => {
+    return date.toLocaleTimeString("en-US", {
+      hour: "2-digit",
+      minute: "2-digit",
+    });
   };
 
   return (
@@ -285,7 +323,6 @@ export function AIAssistant() {
               stroke="currentColor"
               viewBox="0 0 24 24"
             >
-              {/* Chat bubble */}
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -296,7 +333,6 @@ export function AIAssistant() {
           )}
         </AnimatePresence>
         
-        {/* Pulse animation when closed */}
         {!isOpen && (
           <span className="absolute inset-0 rounded-full bg-teal-400 animate-ping opacity-20" />
         )}
@@ -310,7 +346,7 @@ export function AIAssistant() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            className="fixed bottom-24 right-6 z-50 w-[380px] max-w-[calc(100vw-48px)] h-[520px] max-h-[calc(100vh-140px)] rounded-2xl overflow-hidden shadow-2xl border border-zinc-200 dark:border-zinc-700/50 bg-white dark:bg-background flex flex-col"
+            className="fixed bottom-24 right-6 z-50 w-[400px] max-w-[calc(100vw-48px)] h-[560px] max-h-[calc(100vh-140px)] rounded-2xl overflow-hidden shadow-2xl border border-zinc-200 dark:border-zinc-700/50 bg-white dark:bg-background flex flex-col"
           >
             {/* Header */}
             <div className="px-4 py-3 bg-gradient-to-r from-teal-500 to-cyan-600 dark:from-teal-600 dark:to-cyan-700 text-white flex items-center gap-3">
@@ -325,21 +361,66 @@ export function AIAssistant() {
                 )}
               </div>
               <div className="flex-1">
-                <h3 className="font-semibold text-sm">Aditya&apos;s AI Assistant</h3>
-                <p className="text-xs text-white/80 flex items-center gap-1">
-                  <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
-                  Powered by Groq • {user?.public_repos || "..."} repos
+                <h3 className="font-semibold text-sm">Portfolio Assistant</h3>
+                <p className="text-xs text-white/80 flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-green-400"></span>
+                  {user?.public_repos || "—"} repositories • Powered by Groq
                 </p>
               </div>
-              <button
-                onClick={() => setIsOpen(false)}
-                className="p-1.5 hover:bg-white/20 rounded-lg transition-colors"
-              >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
+              
+              {/* Header Actions */}
+              <div className="flex items-center gap-1">
+                {/* Clear Chat Button */}
+                <button
+                  onClick={() => setShowClearConfirm(true)}
+                  className="p-1.5 hover:bg-white/20 rounded-lg transition-colors"
+                  title="Clear chat"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                  </svg>
+                </button>
+                
+                {/* Minimize Button */}
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="p-1.5 hover:bg-white/20 rounded-lg transition-colors"
+                  title="Minimize"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+              </div>
             </div>
+
+            {/* Clear Confirmation */}
+            <AnimatePresence>
+              {showClearConfirm && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  className="bg-amber-50 dark:bg-amber-900/20 border-b border-amber-200 dark:border-amber-800 px-4 py-2 flex items-center justify-between"
+                >
+                  <span className="text-xs text-amber-800 dark:text-amber-200">Clear conversation?</span>
+                  <div className="flex gap-2">
+                    <button
+                      onClick={handleClearChat}
+                      className="px-2 py-1 text-xs bg-amber-600 text-white rounded hover:bg-amber-700 transition-colors"
+                    >
+                      Clear
+                    </button>
+                    <button
+                      onClick={() => setShowClearConfirm(false)}
+                      className="px-2 py-1 text-xs bg-zinc-200 dark:bg-zinc-700 text-zinc-700 dark:text-zinc-300 rounded hover:bg-zinc-300 dark:hover:bg-zinc-600 transition-colors"
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
 
             {/* Messages */}
             <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-zinc-50 dark:bg-background/50">
@@ -348,17 +429,26 @@ export function AIAssistant() {
                   key={message.id}
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className={`flex ${message.role === "user" ? "justify-end" : "justify-start"}`}
+                  className={`flex ${message.role === "user" ? "justify-end" : "justify-start"} group`}
                 >
-                  <div
-                    className={`max-w-[85%] px-4 py-2.5 rounded-2xl text-sm leading-relaxed ${
-                      message.role === "user"
-                        ? "bg-gradient-to-br from-teal-500 to-cyan-600 text-white rounded-br-md"
-                        : "bg-white dark:bg-card text-zinc-700 dark:text-zinc-200 shadow-sm border border-zinc-100 dark:border-zinc-700/50 rounded-bl-md"
-                    }`}
-                    style={{ whiteSpace: "pre-wrap" }}
-                  >
-                    {message.content}
+                  <div className="flex flex-col max-w-[85%]">
+                    <div
+                      className={`px-4 py-2.5 rounded-2xl text-sm leading-relaxed ${
+                        message.role === "user"
+                          ? "bg-gradient-to-br from-teal-500 to-cyan-600 text-white rounded-br-md"
+                          : "bg-white dark:bg-card text-zinc-700 dark:text-zinc-200 shadow-sm border border-zinc-100 dark:border-zinc-700/50 rounded-bl-md"
+                      }`}
+                      style={{ whiteSpace: "pre-wrap" }}
+                    >
+                      {message.content}
+                    </div>
+                    {/* Message Footer */}
+                    <div className={`flex items-center gap-2 mt-1 ${message.role === "user" ? "justify-end" : "justify-start"}`}>
+                      <span className="text-[10px] text-zinc-400 dark:text-zinc-500">
+                        {formatTimestamp(message.timestamp)}
+                      </span>
+                      {message.role === "assistant" && <CopyButton text={message.content} />}
+                    </div>
                   </div>
                 </motion.div>
               ))}
@@ -369,9 +459,10 @@ export function AIAssistant() {
               <div ref={messagesEndRef} />
             </div>
 
-            {/* Suggested Questions (only show when few messages) */}
+            {/* Suggested Questions */}
             {messages.length <= 2 && !isTyping && (
               <div className="px-4 py-2 border-t border-zinc-100 dark:border-zinc-800 bg-white dark:bg-background">
+                <p className="text-[10px] text-zinc-400 dark:text-zinc-500 mb-2 uppercase tracking-wide">Quick Questions</p>
                 <div className="flex flex-wrap gap-2">
                   {suggestedQuestions.slice(0, 3).map((question, index) => (
                     <button
@@ -396,7 +487,7 @@ export function AIAssistant() {
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={handleKeyDown}
-                  placeholder="Ask me anything..."
+                  placeholder="Ask about projects, skills, or experience..."
                   disabled={isTyping}
                   className="flex-1 px-4 py-2.5 text-sm bg-zinc-100 dark:bg-muted border border-zinc-200 dark:border-zinc-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500/50 focus:border-teal-500 text-zinc-800 dark:text-zinc-200 placeholder:text-zinc-400 dark:placeholder:text-zinc-500 disabled:opacity-50"
                 />
@@ -410,6 +501,15 @@ export function AIAssistant() {
                   </svg>
                 </button>
               </div>
+              
+              {/* Character count */}
+              {input.length > 0 && (
+                <div className="text-right mt-1">
+                  <span className={`text-[10px] ${input.length > 500 ? "text-amber-500" : "text-zinc-400"}`}>
+                    {input.length}/500
+                  </span>
+                </div>
+              )}
             </div>
           </motion.div>
         )}

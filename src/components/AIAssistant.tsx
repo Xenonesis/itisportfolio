@@ -35,15 +35,85 @@ interface Message {
 
 const GITHUB_USERNAME = "Xenonesis";
 
-const suggestedQuestions = [
+// Initial suggested questions
+const initialQuestions = [
   "Tell me about yourself",
   "What projects have you built?",
   "What are your technical skills?",
   "How can I contact you?",
-  "Describe your work experience",
-  "What certifications do you have?",
-  "What technologies do you specialize in?",
 ];
+
+// Contextual follow-up questions based on topics discussed
+const contextualQuestions: Record<string, string[]> = {
+  projects: [
+    "Tell me more about Cinesphere",
+    "What is Juris.AI about?",
+    "Which project is your favorite?",
+    "Any upcoming projects?",
+  ],
+  skills: [
+    "What's your strongest skill?",
+    "How did you learn cybersecurity?",
+    "Do you have any certifications?",
+    "What technologies do you prefer?",
+  ],
+  experience: [
+    "What do you do at Prarang?",
+    "Tell me about your mentoring role",
+    "What's your cybersecurity experience?",
+    "Are you open to new opportunities?",
+  ],
+  contact: [
+    "What's your email address?",
+    "Are you on LinkedIn?",
+    "Can I see your resume?",
+    "Where are you located?",
+  ],
+  education: [
+    "What degree do you have?",
+    "What did you study?",
+    "Tell me about your university",
+    "What's your specialization?",
+  ],
+  default: [
+    "Tell me about your projects",
+    "What experience do you have?",
+    "What are your top skills?",
+    "How can I hire you?",
+  ],
+};
+
+// Function to get contextual suggestions based on chat history
+function getContextualSuggestions(messages: Message[]): string[] {
+  if (messages.length <= 1) {
+    return initialQuestions;
+  }
+
+  // Analyze the last few messages to determine context
+  const recentContent = messages
+    .slice(-4)
+    .map((m) => m.content.toLowerCase())
+    .join(" ");
+
+  // Determine topic based on keywords
+  if (recentContent.includes("project") || recentContent.includes("cinesphere") || recentContent.includes("juris")) {
+    return contextualQuestions.projects;
+  }
+  if (recentContent.includes("skill") || recentContent.includes("technology") || recentContent.includes("python") || recentContent.includes("react")) {
+    return contextualQuestions.skills;
+  }
+  if (recentContent.includes("experience") || recentContent.includes("work") || recentContent.includes("job") || recentContent.includes("intern")) {
+    return contextualQuestions.experience;
+  }
+  if (recentContent.includes("contact") || recentContent.includes("email") || recentContent.includes("linkedin") || recentContent.includes("hire")) {
+    return contextualQuestions.contact;
+  }
+  if (recentContent.includes("education") || recentContent.includes("degree") || recentContent.includes("university") || recentContent.includes("study")) {
+    return contextualQuestions.education;
+  }
+
+  return contextualQuestions.default;
+}
 
 // Quick Links for portfolio sections
 const quickLinks = [
@@ -730,14 +800,16 @@ export function AIAssistant() {
               <div ref={messagesEndRef} />
             </div>
 
-            {/* Suggested Questions */}
-            {messages.length <= 2 && !isTyping && (
+            {/* Suggested Questions - Always visible with contextual suggestions */}
+            {!isTyping && (
               <div className="px-4 py-2 border-t border-zinc-100 dark:border-zinc-800 bg-white dark:bg-background">
-                <p className="text-[10px] text-zinc-400 dark:text-zinc-500 mb-2 uppercase tracking-wide">Quick Questions</p>
+                <p className="text-[10px] text-zinc-400 dark:text-zinc-500 mb-2 uppercase tracking-wide">
+                  {messages.length <= 1 ? "Quick Questions" : "Follow-up Questions"}
+                </p>
                 <div className="flex flex-wrap gap-2">
-                  {suggestedQuestions.slice(0, 4).map((question, index) => (
+                  {getContextualSuggestions(messages).slice(0, 4).map((question, index) => (
                     <button
-                      key={index}
+                      key={`${question}-${index}`}
                       onClick={() => handleSuggestedQuestion(question)}
                       disabled={isTyping}
                       className="px-3 py-1.5 text-xs font-medium rounded-full bg-zinc-100 dark:bg-muted text-zinc-600 dark:text-zinc-400 hover:bg-teal-100 dark:hover:bg-teal-900/30 hover:text-teal-700 dark:hover:text-teal-400 transition-colors disabled:opacity-50"

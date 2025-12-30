@@ -412,14 +412,19 @@ export default function Home() {
           </AnimateIn>
           <div className="soft-container p-6">
             <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-6">
-              {tools.map(({ logo, title }, index) => (
+              {tools.map(({ logo, title, url }, index) => (
                 <AnimateIn
                   key={index}
                   variant="scale"
                   delay={0.65 + index * 0.03}
                 >
-                  <div className="relative flex flex-col items-center group cursor-pointer">
-                    <div className="relative h-8 w-8 sm:h-10 sm:w-10 p-2 rounded-xl bg-gradient-to-br from-white to-zinc-50 dark:from-zinc-800 dark:to-zinc-900 shadow-sm border border-zinc-100 dark:border-zinc-700/50 transition-all duration-300 ease-out group-hover:scale-110 group-hover:-translate-y-1 group-hover:shadow-md">
+                  <a 
+                    href={url} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="relative flex flex-col items-center group cursor-pointer"
+                  >
+                    <div className="relative h-8 w-8 sm:h-10 sm:w-10 p-2 rounded-xl bg-gradient-to-br from-white to-zinc-50 dark:from-zinc-800 dark:to-zinc-900 shadow-sm border border-zinc-100 dark:border-zinc-700/50 transition-all duration-300 ease-out group-hover:scale-110 group-hover:-translate-y-1 group-hover:shadow-md group-hover:border-teal-400/50 dark:group-hover:border-teal-500/50">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src={logo}
@@ -431,7 +436,7 @@ export default function Home() {
                     <span className="absolute -bottom-10 left-1/2 -translate-x-1/2 px-2 py-1 bg-white dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 text-xs rounded-md shadow-lg border border-zinc-100 dark:border-zinc-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-10">
                       {title}
                     </span>
-                  </div>
+                  </a>
                 </AnimateIn>
               ))}
             </div>
@@ -682,175 +687,216 @@ const tools = [
   {
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg",
     title: "Kali Linux",
+    url: "https://www.kali.org/",
   },
   {
     logo: "https://upload.wikimedia.org/wikipedia/commons/c/c6/Wireshark_icon_new.png",
     title: "Wireshark",
+    url: "https://www.wireshark.org/",
   },
   {
     logo: "https://www.kali.org/tools/metasploit-framework/images/metasploit-framework-logo.svg",
     title: "Metasploit",
+    url: "https://www.metasploit.com/",
   },
   {
     logo: "https://nmap.org/images/nmap-logo-256x256.png",
     title: "Nmap",
+    url: "https://nmap.org/",
   },
   {
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/archlinux/archlinux-original.svg",
     title: "Arch Linux",
+    url: "https://archlinux.org/",
   },
 
   // Programming Languages
   {
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
     title: "Python",
+    url: "https://www.python.org/",
   },
   {
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
     title: "JavaScript",
+    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
   },
   {
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
     title: "C++",
+    url: "https://isocpp.org/",
   },
   {
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg",
     title: "Go",
+    url: "https://go.dev/",
   },
   {
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
     title: "PHP",
+    url: "https://www.php.net/",
   },
   {
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rust/rust-original.svg",
     title: "Rust",
+    url: "https://www.rust-lang.org/",
   },
   {
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
     title: "TypeScript",
+    url: "https://www.typescriptlang.org/",
   },
   {
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
     title: "Java",
+    url: "https://www.java.com/",
   },
 
   // Web Development
   {
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
     title: "HTML",
+    url: "https://developer.mozilla.org/en-US/docs/Web/HTML",
   },
   {
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
     title: "CSS",
+    url: "https://developer.mozilla.org/en-US/docs/Web/CSS",
   },
   {
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg",
     title: "Laravel",
+    url: "https://laravel.com/",
   },
   {
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
     title: "React",
+    url: "https://react.dev/",
   },
   {
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
     title: "Node.js",
+    url: "https://nodejs.org/",
   },
   {
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
     title: "Next.js",
+    url: "https://nextjs.org/",
   },
   {
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
     title: "TailwindCSS",
+    url: "https://tailwindcss.com/",
   },
   {
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg",
     title: "GraphQL",
+    url: "https://graphql.org/",
   },
 
   // Mobile Development
   {
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg",
     title: "Android",
+    url: "https://developer.android.com/",
   },
   {
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg",
     title: "Flutter",
+    url: "https://flutter.dev/",
   },
   {
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg",
     title: "Kotlin",
+    url: "https://kotlinlang.org/",
   },
 
   // Cloud & DevOps
   {
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
     title: "AWS",
+    url: "https://aws.amazon.com/",
   },
   {
     logo: "https://res.cloudinary.com/deczqhug9/image/upload/v1756794076/docker-logo_enztlc.png",
     title: "Docker",
+    url: "https://www.docker.com/",
   },
   {
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg",
     title: "Kubernetes",
+    url: "https://kubernetes.io/",
   },
   {
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg",
     title: "Google Cloud",
+    url: "https://cloud.google.com/",
   },
   {
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg",
     title: "Azure",
+    url: "https://azure.microsoft.com/",
   },
 
   // Database & Tools
   {
     logo: "https://www.vectorlogo.zone/logos/mysql/mysql-official.svg",
     title: "MySQL",
+    url: "https://www.mysql.com/",
   },
   {
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
     title: "Git",
+    url: "https://git-scm.com/",
   },
 
   // AI/ML
   {
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg",
     title: "TensorFlow",
+    url: "https://www.tensorflow.org/",
   },
   {
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg",
     title: "PyTorch",
+    url: "https://pytorch.org/",
   },
   {
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg",
     title: "Pandas",
+    url: "https://pandas.pydata.org/",
   },
   {
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg",
     title: "NumPy",
+    url: "https://numpy.org/",
   },
   {
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg",
     title: "OpenCV",
+    url: "https://opencv.org/",
   },
 
   // Operating Systems
   {
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg",
     title: "Linux",
+    url: "https://www.linux.org/",
   },
   {
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ubuntu/ubuntu-plain.svg",
     title: "Ubuntu",
+    url: "https://ubuntu.com/",
   },
   {
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg",
     title: "Windows",
+    url: "https://www.microsoft.com/windows",
   },
   {
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg",
     title: "macOS",
+    url: "https://www.apple.com/macos/",
   },
 ];
+

@@ -33,22 +33,6 @@ interface Message {
 
 const GITHUB_USERNAME = "Xenonesis";
 
-// Pre-defined responses based on keywords
-const portfolioInfo = {
-  name: "Aditya Kumar Tiwari",
-  title: "Cybersecurity Specialist & Full-Stack Developer",
-  email: "itisaddy7@gmail.com",
-  linkedin: "https://www.linkedin.com/in/itisaddy/",
-  location: "Delhi, India",
-  education: "BCA in Cybersecurity from Sushant University (2022-2025)",
-  skills: [
-    "Python", "JavaScript", "TypeScript", "PHP", "Rust",
-    "React", "Node.js", "Laravel", "AWS", "Docker",
-    "Cybersecurity", "Penetration Testing", "AI/ML"
-  ],
-  interests: ["Cybersecurity", "Full-Stack Development", "AI/ML", "Open Source"],
-};
-
 const suggestedQuestions = [
   "Tell me about yourself",
   "What are your top projects?",
@@ -108,153 +92,61 @@ export function AIAssistant() {
       const welcomeMessage: Message = {
         id: "welcome",
         role: "assistant",
-        content: `Hey there! 👋 I'm Aditya's AI assistant. I can tell you about his projects, skills, experience, and more. What would you like to know?`,
+        content: `Hey there! 👋 I'm Aditya's AI assistant powered by Groq. I can tell you about his projects, skills, experience, and more. What would you like to know?`,
         timestamp: new Date(),
       };
       setMessages([welcomeMessage]);
     }
   }, [isOpen, messages.length]);
 
-  const generateResponse = (query: string): string => {
-    const lowerQuery = query.toLowerCase();
+  const sendMessageToAI = async (userMessage: string): Promise<string> => {
+    try {
+      // Prepare chat history for context
+      const chatHistory = messages.slice(-8).map((msg) => ({
+        role: msg.role,
+        content: msg.content,
+      }));
 
-    // About/Introduction
-    if (lowerQuery.includes("about") || lowerQuery.includes("yourself") || lowerQuery.includes("who") || lowerQuery.includes("introduce")) {
-      return `I'm ${portfolioInfo.name}, a ${portfolioInfo.title} based in ${portfolioInfo.location}. 
+      // Add the new user message
+      chatHistory.push({ role: "user" as const, content: userMessage });
 
-I'm currently pursuing my ${portfolioInfo.education}. I love building secure, scalable applications and exploring the intersection of cybersecurity and AI.
+      // Prepare GitHub data for context
+      const githubData = {
+        repos: user?.public_repos,
+        followers: user?.followers,
+        following: user?.following,
+        topRepos: repos.slice(0, 5).map((repo) => ({
+          name: repo.name,
+          description: repo.description || "",
+          language: repo.language || "",
+        })),
+      };
 
-I'm passionate about open source and have ${user?.public_repos || "multiple"} public repositories on GitHub! 🚀`;
-    }
+      const response = await fetch("/api/chat", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          messages: chatHistory,
+          githubData,
+        }),
+      });
 
-    // Projects
-    if (lowerQuery.includes("project") || lowerQuery.includes("work") || lowerQuery.includes("built") || lowerQuery.includes("portfolio")) {
-      const topRepos = repos.slice(0, 5);
-      if (topRepos.length > 0) {
-        const projectList = topRepos
-          .map((repo) => `• **${repo.name}** - ${repo.description || "No description"} ${repo.language ? `(${repo.language})` : ""}`)
-          .join("\n");
-        return `Here are some of my recent projects:\n\n${projectList}\n\nYou can find all my projects on GitHub: github.com/${GITHUB_USERNAME} 💻`;
+      if (!response.ok) {
+        throw new Error("Failed to get AI response");
       }
-      return "I have several exciting projects including Cinesphere (movie website), Juris.AI (legal AI platform), and PropDekho (real estate platform). Check them out on GitHub!";
+
+      const data = await response.json();
+      return data.message;
+    } catch (error) {
+      console.error("Error calling AI:", error);
+      return "I apologize, but I'm having trouble connecting right now. Please try again in a moment! 🙏";
     }
-
-    // Skills
-    if (lowerQuery.includes("skill") || lowerQuery.includes("tech") || lowerQuery.includes("language") || lowerQuery.includes("stack") || lowerQuery.includes("tools")) {
-      const languages = repos
-        .map((r) => r.language)
-        .filter(Boolean)
-        .filter((v, i, a) => a.indexOf(v) === i);
-      
-      return `My technical arsenal includes:
-
-🔐 **Cybersecurity**: Penetration Testing, SIEM, Network Security, Vulnerability Assessment
-
-💻 **Languages**: ${portfolioInfo.skills.slice(0, 5).join(", ")}
-
-🛠️ **Frameworks & Tools**: React, Node.js, Laravel, Docker, AWS
-
-📊 **Currently exploring**: AI/ML, Rust, Cloud Security
-
-${languages.length > 0 ? `\nMost used languages on GitHub: ${languages.slice(0, 5).join(", ")}` : ""}`;
-    }
-
-    // Contact
-    if (lowerQuery.includes("contact") || lowerQuery.includes("reach") || lowerQuery.includes("email") || lowerQuery.includes("hire") || lowerQuery.includes("connect")) {
-      return `Great! You can reach out to Aditya through:
-
-📧 **Email**: ${portfolioInfo.email}
-💼 **LinkedIn**: linkedin.com/in/itisaddy
-🐙 **GitHub**: github.com/${GITHUB_USERNAME}
-
-Feel free to DM for collaborations, job opportunities, or just a friendly chat about cybersecurity and development! 🤝`;
-    }
-
-    // Experience
-    if (lowerQuery.includes("experience") || lowerQuery.includes("job") || lowerQuery.includes("work history") || lowerQuery.includes("career")) {
-      return `Here's my professional journey:
-
-🔧 **Laravel Developer** @ Prarang (Sept-Oct 2025)
-   PHP, Laravel, Cloud Computing
-
-👨‍🏫 **Mentor (Part-time)** @ JhaMobii Technologies (Aug 2024 - Present)
-   Cybersecurity mentorship, Team guidance
-
-🛡️ **Cybersecurity Intern** @ Null (Jun 2024 - Present)
-   SIEM Tools, Network Security, Incident Response
-
-🤖 **Cybersecurity & AI/ML Intern** @ Quantam Pvt. Ltd. (Oct 2024 - Present)
-   AI/ML applications in security`;
-    }
-
-    // Education
-    if (lowerQuery.includes("education") || lowerQuery.includes("study") || lowerQuery.includes("degree") || lowerQuery.includes("college") || lowerQuery.includes("university")) {
-      return `🎓 **Education**
-
-I'm pursuing a **BCA in Cybersecurity** from **Sushant University**, Delhi, India (2022-2025).
-
-My coursework focuses on network security, ethical hacking, cryptography, and secure software development. I complement my studies with hands-on projects and internships! 📚`;
-    }
-
-    // GitHub stats
-    if (lowerQuery.includes("github") || lowerQuery.includes("repo") || lowerQuery.includes("contribution") || lowerQuery.includes("open source")) {
-      return `My GitHub stats:
-
-📦 **Repositories**: ${user?.public_repos || "20+"}
-👥 **Followers**: ${user?.followers || "Growing!"}
-⭐ **Following**: ${user?.following || "Community members"}
-
-I'm active in open source and love contributing to interesting projects. Check out my profile: github.com/${GITHUB_USERNAME} 🌟`;
-    }
-
-    // Fun/Personal
-    if (lowerQuery.includes("hobby") || lowerQuery.includes("fun") || lowerQuery.includes("free time") || lowerQuery.includes("interest")) {
-      return `When I'm not coding or breaking things (ethically! 😄), I enjoy:
-
-🎵 Listening to music while coding (check out my Spotify playlist on the portfolio!)
-🎮 Gaming and exploring new technologies
-📖 Reading about cybersecurity and AI trends
-🌐 Contributing to open source projects
-
-I believe in continuous learning and staying updated with the latest in tech! 🚀`;
-    }
-
-    // Greeting
-    if (lowerQuery.includes("hello") || lowerQuery.includes("hi") || lowerQuery.includes("hey") || lowerQuery === "yo") {
-      return `Hey! 👋 Great to meet you! I'm here to help you learn about Aditya's work and experience. 
-
-You can ask me about:
-• Projects and portfolio
-• Technical skills
-• Work experience
-• Education
-• How to get in touch
-
-What interests you most? 😊`;
-    }
-
-    // Thank you
-    if (lowerQuery.includes("thank") || lowerQuery.includes("thanks") || lowerQuery.includes("bye") || lowerQuery.includes("goodbye")) {
-      return `You're welcome! 🙏 It was great chatting with you. 
-
-Don't hesitate to reach out to Aditya if you'd like to collaborate or have any opportunities. Have a fantastic day! 👋✨`;
-    }
-
-    // Default response
-    return `That's an interesting question! 🤔 
-
-While I might not have a specific answer for that, here's what I can help you with:
-
-• **Projects**: Ask about my portfolio and GitHub repos
-• **Skills**: Technical stack and expertise areas  
-• **Experience**: Work history and internships
-• **Contact**: How to reach out for opportunities
-
-Try asking something like "What are your top projects?" or "Tell me about your skills" 💡`;
   };
 
   const handleSend = async () => {
-    if (!input.trim()) return;
+    if (!input.trim() || isTyping) return;
 
     const userMessage: Message = {
       id: Date.now().toString(),
@@ -264,22 +156,32 @@ Try asking something like "What are your top projects?" or "Tell me about your s
     };
 
     setMessages((prev) => [...prev, userMessage]);
+    const userInput = input.trim();
     setInput("");
     setIsTyping(true);
 
-    // Simulate typing delay
-    await new Promise((resolve) => setTimeout(resolve, 800 + Math.random() * 700));
+    try {
+      const response = await sendMessageToAI(userInput);
+      const assistantMessage: Message = {
+        id: (Date.now() + 1).toString(),
+        role: "assistant",
+        content: response,
+        timestamp: new Date(),
+      };
 
-    const response = generateResponse(input);
-    const assistantMessage: Message = {
-      id: (Date.now() + 1).toString(),
-      role: "assistant",
-      content: response,
-      timestamp: new Date(),
-    };
-
-    setIsTyping(false);
-    setMessages((prev) => [...prev, assistantMessage]);
+      setMessages((prev) => [...prev, assistantMessage]);
+    } catch (error) {
+      console.error("Error:", error);
+      const errorMessage: Message = {
+        id: (Date.now() + 1).toString(),
+        role: "assistant",
+        content: "Sorry, I encountered an error. Please try again! 🙏",
+        timestamp: new Date(),
+      };
+      setMessages((prev) => [...prev, errorMessage]);
+    } finally {
+      setIsTyping(false);
+    }
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
@@ -290,8 +192,12 @@ Try asking something like "What are your top projects?" or "Tell me about your s
   };
 
   const handleSuggestedQuestion = (question: string) => {
+    if (isTyping) return;
     setInput(question);
-    setTimeout(() => handleSend(), 100);
+    setTimeout(() => {
+      const fakeEvent = { key: "Enter", shiftKey: false, preventDefault: () => {} } as React.KeyboardEvent;
+      handleKeyDown(fakeEvent);
+    }, 100);
   };
 
   return (
@@ -379,7 +285,10 @@ Try asking something like "What are your top projects?" or "Tell me about your s
               </div>
               <div className="flex-1">
                 <h3 className="font-semibold text-sm">Aditya&apos;s AI Assistant</h3>
-                <p className="text-xs text-white/80">Powered by GitHub • Always online</p>
+                <p className="text-xs text-white/80 flex items-center gap-1">
+                  <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
+                  Powered by Groq AI
+                </p>
               </div>
               <button
                 onClick={() => setIsOpen(false)}
@@ -421,10 +330,11 @@ Try asking something like "What are your top projects?" or "Tell me about your s
                   className="flex justify-start"
                 >
                   <div className="bg-white dark:bg-zinc-800 px-4 py-3 rounded-2xl rounded-bl-md shadow-sm border border-zinc-100 dark:border-zinc-700/50">
-                    <div className="flex gap-1.5">
-                      <span className="w-2 h-2 bg-zinc-400 dark:bg-zinc-500 rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
-                      <span className="w-2 h-2 bg-zinc-400 dark:bg-zinc-500 rounded-full animate-bounce" style={{ animationDelay: "150ms" }} />
-                      <span className="w-2 h-2 bg-zinc-400 dark:bg-zinc-500 rounded-full animate-bounce" style={{ animationDelay: "300ms" }} />
+                    <div className="flex gap-1.5 items-center">
+                      <span className="w-2 h-2 bg-teal-500 rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
+                      <span className="w-2 h-2 bg-teal-500 rounded-full animate-bounce" style={{ animationDelay: "150ms" }} />
+                      <span className="w-2 h-2 bg-teal-500 rounded-full animate-bounce" style={{ animationDelay: "300ms" }} />
+                      <span className="text-xs text-zinc-400 ml-2">AI is thinking...</span>
                     </div>
                   </div>
                 </motion.div>
@@ -434,14 +344,15 @@ Try asking something like "What are your top projects?" or "Tell me about your s
             </div>
 
             {/* Suggested Questions (only show when few messages) */}
-            {messages.length <= 2 && (
+            {messages.length <= 2 && !isTyping && (
               <div className="px-4 py-2 border-t border-zinc-100 dark:border-zinc-800 bg-white dark:bg-zinc-900">
                 <div className="flex flex-wrap gap-2">
                   {suggestedQuestions.slice(0, 3).map((question, index) => (
                     <button
                       key={index}
                       onClick={() => handleSuggestedQuestion(question)}
-                      className="px-3 py-1.5 text-xs font-medium rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 hover:bg-teal-100 dark:hover:bg-teal-900/30 hover:text-teal-700 dark:hover:text-teal-400 transition-colors"
+                      disabled={isTyping}
+                      className="px-3 py-1.5 text-xs font-medium rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 hover:bg-teal-100 dark:hover:bg-teal-900/30 hover:text-teal-700 dark:hover:text-teal-400 transition-colors disabled:opacity-50"
                     >
                       {question}
                     </button>
@@ -460,7 +371,8 @@ Try asking something like "What are your top projects?" or "Tell me about your s
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={handleKeyDown}
                   placeholder="Ask me anything..."
-                  className="flex-1 px-4 py-2.5 text-sm bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500/50 focus:border-teal-500 text-zinc-800 dark:text-zinc-200 placeholder:text-zinc-400 dark:placeholder:text-zinc-500"
+                  disabled={isTyping}
+                  className="flex-1 px-4 py-2.5 text-sm bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500/50 focus:border-teal-500 text-zinc-800 dark:text-zinc-200 placeholder:text-zinc-400 dark:placeholder:text-zinc-500 disabled:opacity-50"
                 />
                 <button
                   onClick={handleSend}

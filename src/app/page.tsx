@@ -113,15 +113,49 @@ export default function Home() {
             </div>
           </AnimateIn>
         </section>
-        <section className="mb-14">          <AnimateIn variant="fadeUp" delay={0.2}>
-          <h1 className="text-2xl sm:text-3xl font-semibold tracking-tight mb-4 heading-expressive">
-            <span>Hey, I&apos;m Aditya ᯓᡣ𐭩</span>
-          </h1>
-        </AnimateIn>
-          <AnimateIn variant="fadeUp" delay={0.4}>
-            <p className="text-base text-zinc-500 dark:text-zinc-400 max-w-xl mb-6 leading-relaxed">
-              Cybersecurity Specialist & Full-Stack Developer
-            </p>
+        <section className="mb-14">
+          <AnimateIn variant="fadeUp" delay={0.2}>
+            <div className="flex items-center gap-4 mb-4">
+              {/* Profile Picture */}
+              <div className="relative">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden ring-2 ring-zinc-200 dark:ring-zinc-700 shadow-lg bg-gradient-to-br from-teal-400 to-cyan-500">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/1.jpg"
+                    alt="Aditya profile photo"
+                    className="w-full h-full object-cover"
+                    loading="eager"
+                  />
+                </div>
+              </div>
+              
+              {/* Name and Info */}
+              <div className="flex flex-col">
+                <div className="flex items-center gap-2">
+                  <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100">
+                    Aditya Kumar Tiwari
+                  </h1>
+                  {/* Verified Badge */}
+                  <svg
+                    className="w-5 h-5 text-teal-500 dark:text-teal-400"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    <path
+                      fillRule="evenodd"
+                      d="M8.603 3.799A4.49 4.49 0 0112 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 013.498 1.307 4.491 4.491 0 011.307 3.497A4.49 4.49 0 0121.75 12a4.49 4.49 0 01-1.549 3.397 4.491 4.491 0 01-1.307 3.497 4.491 4.491 0 01-3.497 1.307A4.49 4.49 0 0112 21.75a4.49 4.49 0 01-3.397-1.549 4.49 4.49 0 01-3.498-1.306 4.491 4.491 0 01-1.307-3.498A4.49 4.49 0 012.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 011.307-3.497 4.49 4.49 0 013.497-1.307zm7.007 6.387a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <p className="text-sm sm:text-base text-zinc-500 dark:text-zinc-400">
+                  Cybersecurity Specialist & Full-Stack Developer{" "}
+                  <span className="text-zinc-400 dark:text-zinc-500">//</span>{" "}
+                  <span className="text-teal-600 dark:text-teal-400 font-medium">Solo</span>
+                </p>
+              </div>
+            </div>
           </AnimateIn>{" "}          <AnimateIn variant="fadeUp" delay={0.5}>
             <div className="flex items-center gap-3 mb-6">
               {/* <Tooltip content="Some of my Random awesome memories">

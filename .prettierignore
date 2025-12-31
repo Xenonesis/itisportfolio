@@ -1,0 +1,10 @@
+.next
+out
+node_modules
+package-lock.json
+bun.lock
+*.pdf
+*.jpg
+*.jpeg
+*.png
+*.svg

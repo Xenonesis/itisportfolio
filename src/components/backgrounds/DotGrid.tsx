@@ -79,14 +79,14 @@ const DotGrid: React.FC<DotGridProps> = ({
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const dotsRef = useRef<Dot[]>([]);
   const animationFrameRef = useRef<number>(0);
-  const mouseRef = useRef({ 
-    x: -1000, 
-    y: -1000, 
-    prevX: -1000, 
-    prevY: -1000, 
+  const mouseRef = useRef({
+    x: -1000,
+    y: -1000,
+    prevX: -1000,
+    prevY: -1000,
     speed: 0,
     smoothX: -1000,
-    smoothY: -1000
+    smoothY: -1000,
   });
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
   const timeRef = useRef(0);
@@ -138,92 +138,91 @@ const DotGrid: React.FC<DotGridProps> = ({
   };
 
   // Draw all dots with smooth interpolation
-  const draw = useCallback((timestamp: number) => {
-    const canvas = canvasRef.current;
-    const ctx = canvas?.getContext("2d");
-    if (!canvas || !ctx) return;
+  const drawFrame = useCallback(
+    (timestamp: number) => {
+      const canvas = canvasRef.current;
+      const ctx = canvas?.getContext("2d");
+      if (!canvas || !ctx) return;
 
-    // Calculate delta time for consistent animation speed
-    const deltaTime = timestamp - lastTimeRef.current;
-    lastTimeRef.current = timestamp;
-    timeRef.current += deltaTime * 0.001;
+      // Calculate delta time for consistent animation speed
+      const deltaTime = timestamp - lastTimeRef.current;
+      lastTimeRef.current = timestamp;
+      timeRef.current += deltaTime * 0.001;
 
-    // Smooth interpolation factor (higher = faster response)
-    const smoothFactor = Math.min(deltaTime * 0.008, 0.15);
-    const positionSmoothFactor = Math.min(deltaTime * 0.012, 0.2);
+      // Smooth interpolation factor (higher = faster response)
+      const smoothFactor = Math.min(deltaTime * 0.008, 0.15);
+      const positionSmoothFactor = Math.min(deltaTime * 0.012, 0.2);
 
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    const mouse = mouseRef.current;
-    
-    // Smooth mouse position
-    mouse.smoothX = lerp(mouse.smoothX, mouse.x, smoothFactor * 2);
-    mouse.smoothY = lerp(mouse.smoothY, mouse.y, smoothFactor * 2);
+      const mouse = mouseRef.current;
 
-    dotsRef.current.forEach((dot) => {
-      const distance = getDistance(mouse.smoothX, mouse.smoothY, dot.x, dot.y);
-      const proximityFactor = Math.max(0, 1 - distance / proximity);
-      const isNear = distance < proximity;
+      // Smooth mouse position
+      mouse.smoothX = lerp(mouse.smoothX, mouse.x, smoothFactor * 2);
+      mouse.smoothY = lerp(mouse.smoothY, mouse.y, smoothFactor * 2);
 
-      // Calculate target values based on proximity
-      if (isNear) {
-        // Ease in with cubic function for smoother activation
-        const easedFactor = proximityFactor * proximityFactor * (3 - 2 * proximityFactor);
-        dot.targetAlpha = 0.35 + easedFactor * 0.65;
-        dot.targetScale = 1 + easedFactor * 0.8;
-        dot.hue = easedFactor;
-        
-        // Subtle magnetic effect - dots slightly attracted to cursor
-        const angle = Math.atan2(mouse.smoothY - dot.y, mouse.smoothX - dot.x);
-        const magnetStrength = easedFactor * 3;
-        dot.targetX = dot.originX + Math.cos(angle) * magnetStrength;
-        dot.targetY = dot.originY + Math.sin(angle) * magnetStrength;
-      } else {
-        dot.targetAlpha = 0.35;
-        dot.targetScale = 1;
-        dot.hue = 0;
-        dot.targetX = dot.originX;
-        dot.targetY = dot.originY;
-      }
+      dotsRef.current.forEach((dot) => {
+        const distance = getDistance(mouse.smoothX, mouse.smoothY, dot.x, dot.y);
+        const proximityFactor = Math.max(0, 1 - distance / proximity);
+        const isNear = distance < proximity;
 
-      // Smooth interpolation for all properties
-      dot.alpha = lerp(dot.alpha, dot.targetAlpha, smoothFactor);
-      dot.scale = lerp(dot.scale, dot.targetScale, smoothFactor);
-      dot.x = lerp(dot.x, dot.targetX, positionSmoothFactor);
-      dot.y = lerp(dot.y, dot.targetY, positionSmoothFactor);
+        // Calculate target values based on proximity
+        if (isNear) {
+          // Ease in with cubic function for smoother activation
+          const easedFactor = proximityFactor * proximityFactor * (3 - 2 * proximityFactor);
+          dot.targetAlpha = 0.35 + easedFactor * 0.65;
+          dot.targetScale = 1 + easedFactor * 0.8;
+          dot.hue = easedFactor;
 
-      // Color interpolation
-      const color = lerpColor(baseColor, activeColor, dot.hue);
-      
-      // Calculate final size with subtle breathing effect
-      const breathe = Math.sin(timeRef.current * 0.5 + dot.originX * 0.01 + dot.originY * 0.01) * 0.1;
-      const finalSize = (dotSize * dot.scale * (1 + breathe)) / 2;
+          // Subtle magnetic effect - dots slightly attracted to cursor
+          const angle = Math.atan2(mouse.smoothY - dot.y, mouse.smoothX - dot.x);
+          const magnetStrength = easedFactor * 3;
+          dot.targetX = dot.originX + Math.cos(angle) * magnetStrength;
+          dot.targetY = dot.originY + Math.sin(angle) * magnetStrength;
+        } else {
+          dot.targetAlpha = 0.35;
+          dot.targetScale = 1;
+          dot.hue = 0;
+          dot.targetX = dot.originX;
+          dot.targetY = dot.originY;
+        }
 
-      // Draw dot with glow effect for active dots
-      if (dot.hue > 0.1) {
-        // Outer glow
-        const glowSize = finalSize * (1 + dot.hue * 1.5);
-        const gradient = ctx.createRadialGradient(
-          dot.x, dot.y, 0,
-          dot.x, dot.y, glowSize * 2
-        );
-        gradient.addColorStop(0, `rgba(${color.r}, ${color.g}, ${color.b}, ${dot.alpha * 0.3})`);
-        gradient.addColorStop(1, `rgba(${color.r}, ${color.g}, ${color.b}, 0)`);
+        // Smooth interpolation for all properties
+        dot.alpha = lerp(dot.alpha, dot.targetAlpha, smoothFactor);
+        dot.scale = lerp(dot.scale, dot.targetScale, smoothFactor);
+        dot.x = lerp(dot.x, dot.targetX, positionSmoothFactor);
+        dot.y = lerp(dot.y, dot.targetY, positionSmoothFactor);
+
+        // Color interpolation
+        const color = lerpColor(baseColor, activeColor, dot.hue);
+
+        // Calculate final size with subtle breathing effect
+        const breathe =
+          Math.sin(timeRef.current * 0.5 + dot.originX * 0.01 + dot.originY * 0.01) * 0.1;
+        const finalSize = (dotSize * dot.scale * (1 + breathe)) / 2;
+
+        // Draw dot with glow effect for active dots
+        if (dot.hue > 0.1) {
+          // Outer glow
+          const glowSize = finalSize * (1 + dot.hue * 1.5);
+          const gradient = ctx.createRadialGradient(dot.x, dot.y, 0, dot.x, dot.y, glowSize * 2);
+          gradient.addColorStop(0, `rgba(${color.r}, ${color.g}, ${color.b}, ${dot.alpha * 0.3})`);
+          gradient.addColorStop(1, `rgba(${color.r}, ${color.g}, ${color.b}, 0)`);
+          ctx.beginPath();
+          ctx.arc(dot.x, dot.y, glowSize * 2, 0, Math.PI * 2);
+          ctx.fillStyle = gradient;
+          ctx.fill();
+        }
+
+        // Draw main dot
         ctx.beginPath();
-        ctx.arc(dot.x, dot.y, glowSize * 2, 0, Math.PI * 2);
-        ctx.fillStyle = gradient;
+        ctx.arc(dot.x, dot.y, finalSize, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${color.r}, ${color.g}, ${color.b}, ${dot.alpha})`;
         ctx.fill();
-      }
-
-      // Draw main dot
-      ctx.beginPath();
-      ctx.arc(dot.x, dot.y, finalSize, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(${color.r}, ${color.g}, ${color.b}, ${dot.alpha})`;
-      ctx.fill();
-    });
-
-    animationFrameRef.current = requestAnimationFrame(draw);
-  }, [baseColor, activeColor, dotSize, proximity]);
+      });
+    },
+    [baseColor, activeColor, dotSize, proximity],
+  );
 
   // Handle mouse movement with smooth tracking
   const handleMouseMove = useCallback(
@@ -278,13 +277,13 @@ const DotGrid: React.FC<DotGridProps> = ({
               targetY: dot.originY,
               duration: returnDuration,
               ease: "power3.out",
-              delay: distance / waveRadius * 0.1,
+              delay: (distance / waveRadius) * 0.1,
             });
           }
         });
       }
     },
-    [proximity, speedTrigger, maxSpeed, resistance, returnDuration]
+    [proximity, speedTrigger, maxSpeed, resistance, returnDuration],
   );
 
   // Handle click ripple effect
@@ -320,7 +319,7 @@ const DotGrid: React.FC<DotGridProps> = ({
 
           // Animate with wave delay for ripple effect
           const delay = (distance / shockRadius) * 0.15;
-          
+
           dot.animation = gsap.to(dot, {
             targetX: dot.originX,
             targetY: dot.originY,
@@ -331,7 +330,7 @@ const DotGrid: React.FC<DotGridProps> = ({
         }
       });
     },
-    [shockRadius, shockStrength, returnDuration]
+    [shockRadius, shockStrength, returnDuration],
   );
 
   // Handle mouse leave
@@ -345,7 +344,7 @@ const DotGrid: React.FC<DotGridProps> = ({
   // Handle resize with debounce
   useEffect(() => {
     let resizeTimeout: ReturnType<typeof setTimeout>;
-    
+
     const updateDimensions = () => {
       clearTimeout(resizeTimeout);
       resizeTimeout = setTimeout(() => {
@@ -375,12 +374,12 @@ const DotGrid: React.FC<DotGridProps> = ({
     canvas.height = dimensions.height * dpr;
     canvas.style.width = `${dimensions.width}px`;
     canvas.style.height = `${dimensions.height}px`;
-    
+
     const ctx = canvas.getContext("2d");
     if (ctx) {
       ctx.scale(dpr, dpr);
     }
-    
+
     initDots();
   }, [dimensions, initDots]);
 
@@ -390,9 +389,14 @@ const DotGrid: React.FC<DotGridProps> = ({
     if (!canvas) return;
 
     lastTimeRef.current = performance.now();
-    
+
+    const renderFrame = (timestamp: number) => {
+      drawFrame(timestamp);
+      animationFrameRef.current = requestAnimationFrame(renderFrame);
+    };
+
     // Start drawing
-    animationFrameRef.current = requestAnimationFrame(draw);
+    animationFrameRef.current = requestAnimationFrame(renderFrame);
 
     // Add event listeners
     globalThis.addEventListener("mousemove", handleMouseMove, { passive: true });
@@ -405,7 +409,7 @@ const DotGrid: React.FC<DotGridProps> = ({
       globalThis.removeEventListener("click", handleClick);
       globalThis.removeEventListener("mouseleave", handleMouseLeave);
     };
-  }, [draw, handleMouseMove, handleClick, handleMouseLeave]);
+  }, [drawFrame, handleMouseMove, handleClick, handleMouseLeave]);
 
   return (
     <canvas

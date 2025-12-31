@@ -78,7 +78,6 @@ const projectLinks = [
     name: "Meet AI",
     url: "https://github.com/myselfsandip/meet-ai",
   },
-
 ];
 
 const socialLinks = [

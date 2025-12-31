@@ -42,11 +42,13 @@ This API powers the AI chat assistant feature of the portfolio. It provides an e
 ## 🔗 Base URL
 
 ### Production
+
 ```
 https://iaddy.netlify.app/api
 ```
 
 ### Development
+
 ```
 http://localhost:3000/api
 ```
@@ -60,11 +62,13 @@ http://localhost:3000/api
 The API uses server-side authentication with Groq API key stored in environment variables.
 
 **Environment Variable**:
+
 ```bash
 GROQ_API_KEY=gsk_xxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
 **Security Notes**:
+
 - ✅ API key is never exposed to client
 - ✅ All requests are processed server-side
 - ✅ No client-side authentication required
@@ -85,11 +89,13 @@ Send a message to the AI assistant and receive a response.
 **URL**: `/api/chat`
 
 **Headers**:
+
 ```http
 Content-Type: application/json
 ```
 
 **Body**:
+
 ```typescript
 {
   messages: Array<{
@@ -117,6 +123,7 @@ Content-Type: application/json
 #### Response
 
 **Success (200)**:
+
 ```typescript
 {
   message: string;
@@ -129,6 +136,7 @@ Content-Type: application/json
 ```
 
 **Error (500)**:
+
 ```typescript
 {
   error: string;
@@ -139,36 +147,36 @@ Content-Type: application/json
 #### Example Request
 
 ```javascript
-const response = await fetch('/api/chat', {
-  method: 'POST',
+const response = await fetch("/api/chat", {
+  method: "POST",
   headers: {
-    'Content-Type': 'application/json',
+    "Content-Type": "application/json",
   },
   body: JSON.stringify({
     messages: [
       {
-        role: 'user',
-        content: 'Tell me about your cybersecurity projects'
-      }
+        role: "user",
+        content: "Tell me about your cybersecurity projects",
+      },
     ],
     githubData: {
       repos: 42,
       followers: 150,
       following: 50,
-      languages: ['TypeScript', 'Python', 'Rust'],
+      languages: ["TypeScript", "Python", "Rust"],
       topRepos: [
         {
-          name: 'portfolio',
-          description: 'Personal portfolio website',
-          language: 'TypeScript',
+          name: "portfolio",
+          description: "Personal portfolio website",
+          language: "TypeScript",
           stargazers_count: 25,
           forks_count: 5,
-          html_url: 'https://github.com/Xenonesis/portfolio'
-        }
-      ]
+          html_url: "https://github.com/Xenonesis/portfolio",
+        },
+      ],
     },
-    currentTime: 'Wednesday, December 31, 2025 at 10:30 AM'
-  })
+    currentTime: "Wednesday, December 31, 2025 at 10:30 AM",
+  }),
 });
 
 const data = await response.json();
@@ -205,12 +213,13 @@ interface Message {
 
 **Fields**:
 
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-| `role` | string | Yes | Message sender type |
-| `content` | string | Yes | Message text content |
+| Field     | Type   | Required | Description          |
+| --------- | ------ | -------- | -------------------- |
+| `role`    | string | Yes      | Message sender type  |
+| `content` | string | Yes      | Message text content |
 
 **Role Types**:
+
 - `user`: Messages from the user
 - `assistant`: AI-generated responses
 - `system`: System instructions (managed server-side)
@@ -233,13 +242,13 @@ interface GitHubData {
 
 **Fields**:
 
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-| `repos` | number | No | Total public repositories |
-| `followers` | number | No | GitHub followers count |
-| `following` | number | No | Following count |
-| `languages` | string[] | No | Programming languages used |
-| `topRepos` | GitHubRepo[] | No | Top repositories (sorted by recent push) |
+| Field       | Type         | Required | Description                              |
+| ----------- | ------------ | -------- | ---------------------------------------- |
+| `repos`     | number       | No       | Total public repositories                |
+| `followers` | number       | No       | GitHub followers count                   |
+| `following` | number       | No       | Following count                          |
+| `languages` | string[]     | No       | Programming languages used               |
+| `topRepos`  | GitHubRepo[] | No       | Top repositories (sorted by recent push) |
 
 ---
 
@@ -258,14 +267,14 @@ interface GitHubRepo {
 
 **Fields**:
 
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-| `name` | string | Yes | Repository name |
-| `description` | string | Yes | Repository description |
-| `language` | string | Yes | Primary programming language |
-| `stargazers_count` | number | Yes | Number of stars |
-| `forks_count` | number | Yes | Number of forks |
-| `html_url` | string | Yes | Repository URL |
+| Field              | Type   | Required | Description                  |
+| ------------------ | ------ | -------- | ---------------------------- |
+| `name`             | string | Yes      | Repository name              |
+| `description`      | string | Yes      | Repository description       |
+| `language`         | string | Yes      | Primary programming language |
+| `stargazers_count` | number | Yes      | Number of stars              |
+| `forks_count`      | number | Yes      | Number of forks              |
+| `html_url`         | string | Yes      | Repository URL               |
 
 ---
 
@@ -283,11 +292,11 @@ interface Usage {
 
 **Fields**:
 
-| Field | Type | Description |
-|-------|------|-------------|
-| `prompt_tokens` | number | Tokens used in the prompt |
+| Field               | Type   | Description                 |
+| ------------------- | ------ | --------------------------- |
+| `prompt_tokens`     | number | Tokens used in the prompt   |
 | `completion_tokens` | number | Tokens used in the response |
-| `total_tokens` | number | Total tokens consumed |
+| `total_tokens`      | number | Total tokens consumed       |
 
 ---
 
@@ -302,10 +311,10 @@ interface ErrorResponse {
 
 **Fields**:
 
-| Field | Type | Description |
-|-------|------|-------------|
-| `error` | string | Human-readable error message |
-| `details` | any | Optional error details |
+| Field     | Type   | Description                  |
+| --------- | ------ | ---------------------------- |
+| `error`   | string | Human-readable error message |
+| `details` | any    | Optional error details       |
 
 ---
 
@@ -313,17 +322,18 @@ interface ErrorResponse {
 
 ### Error Codes
 
-| Status Code | Error Type | Description |
-|-------------|------------|-------------|
-| `200` | Success | Request successful |
-| `400` | Bad Request | Invalid request format |
-| `500` | Internal Server Error | Server-side error |
-| `502` | Bad Gateway | Groq API error |
-| `503` | Service Unavailable | Service temporarily unavailable |
+| Status Code | Error Type            | Description                     |
+| ----------- | --------------------- | ------------------------------- |
+| `200`       | Success               | Request successful              |
+| `400`       | Bad Request           | Invalid request format          |
+| `500`       | Internal Server Error | Server-side error               |
+| `502`       | Bad Gateway           | Groq API error                  |
+| `503`       | Service Unavailable   | Service temporarily unavailable |
 
 ### Error Messages
 
 #### Missing API Key
+
 ```json
 {
   "error": "Groq API key not configured"
@@ -337,6 +347,7 @@ interface ErrorResponse {
 ---
 
 #### AI Response Failed
+
 ```json
 {
   "error": "Failed to get AI response",
@@ -354,6 +365,7 @@ interface ErrorResponse {
 ---
 
 #### Invalid Request Format
+
 ```json
 {
   "error": "Invalid request format",
@@ -374,32 +386,31 @@ interface ErrorResponse {
 
 ```typescript
 try {
-  const response = await fetch('/api/chat', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ messages })
+  const response = await fetch("/api/chat", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ messages }),
   });
 
   if (!response.ok) {
     const error = await response.json();
-    throw new Error(error.error || 'Request failed');
+    throw new Error(error.error || "Request failed");
   }
 
   const data = await response.json();
   return data;
-  
 } catch (error) {
-  console.error('API Error:', error);
-  
+  console.error("API Error:", error);
+
   // Handle specific error types
-  if (error.message.includes('Rate limit')) {
+  if (error.message.includes("Rate limit")) {
     // Show rate limit message to user
-  } else if (error.message.includes('API key')) {
+  } else if (error.message.includes("API key")) {
     // Show configuration error
   } else {
     // Show generic error message
   }
-  
+
   return null;
 }
 ```
@@ -413,11 +424,13 @@ try {
 The API is subject to Groq's rate limits:
 
 **Free Tier**:
+
 - **Requests**: 30 requests/minute
 - **Tokens**: 14,400 tokens/minute
 - **Daily**: 14,400 requests/day
 
 **Recommended Practices**:
+
 - ✅ Implement client-side debouncing
 - ✅ Cache responses when possible
 - ✅ Show loading states to prevent duplicate requests
@@ -431,7 +444,7 @@ const debouncedSend = useCallback(
   debounce(async (message: string) => {
     await sendMessage(message);
   }, 500),
-  []
+  [],
 );
 
 // Prevent duplicate requests
@@ -439,7 +452,7 @@ const [isLoading, setIsLoading] = useState(false);
 
 const handleSend = async () => {
   if (isLoading) return;
-  
+
   setIsLoading(true);
   try {
     await sendMessage(input);
@@ -457,14 +470,12 @@ const handleSend = async () => {
 
 ```typescript
 // Simple message
-const response = await fetch('/api/chat', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
+const response = await fetch("/api/chat", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
   body: JSON.stringify({
-    messages: [
-      { role: 'user', content: 'Hello!' }
-    ]
-  })
+    messages: [{ role: "user", content: "Hello!" }],
+  }),
 });
 
 const data = await response.json();
@@ -478,15 +489,15 @@ console.log(data.message); // "Hello! How can I help you today?"
 ```typescript
 // Multi-turn conversation
 const messages = [
-  { role: 'user', content: 'What projects have you worked on?' },
-  { role: 'assistant', content: 'I have several projects including...' },
-  { role: 'user', content: 'Tell me more about the first one' }
+  { role: "user", content: "What projects have you worked on?" },
+  { role: "assistant", content: "I have several projects including..." },
+  { role: "user", content: "Tell me more about the first one" },
 ];
 
-const response = await fetch('/api/chat', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({ messages })
+const response = await fetch("/api/chat", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ messages }),
 });
 
 const data = await response.json();
@@ -498,42 +509,42 @@ const data = await response.json();
 
 ```typescript
 // Fetch GitHub data
-const githubUser = await fetch('https://api.github.com/users/Xenonesis');
+const githubUser = await fetch("https://api.github.com/users/Xenonesis");
 const userData = await githubUser.json();
 
-const githubRepos = await fetch('https://api.github.com/users/Xenonesis/repos?sort=pushed&per_page=5');
+const githubRepos = await fetch(
+  "https://api.github.com/users/Xenonesis/repos?sort=pushed&per_page=5",
+);
 const reposData = await githubRepos.json();
 
 // Send to AI with GitHub context
-const response = await fetch('/api/chat', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
+const response = await fetch("/api/chat", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
   body: JSON.stringify({
-    messages: [
-      { role: 'user', content: 'What are your most recent projects?' }
-    ],
+    messages: [{ role: "user", content: "What are your most recent projects?" }],
     githubData: {
       repos: userData.public_repos,
       followers: userData.followers,
       following: userData.following,
-      topRepos: reposData.map(repo => ({
+      topRepos: reposData.map((repo) => ({
         name: repo.name,
         description: repo.description,
         language: repo.language,
         stargazers_count: repo.stargazers_count,
         forks_count: repo.forks_count,
-        html_url: repo.html_url
-      }))
+        html_url: repo.html_url,
+      })),
     },
-    currentTime: new Date().toLocaleString('en-US', {
-      weekday: 'long',
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-      hour: 'numeric',
-      minute: 'numeric'
-    })
-  })
+    currentTime: new Date().toLocaleString("en-US", {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+      hour: "numeric",
+      minute: "numeric",
+    }),
+  }),
 });
 ```
 
@@ -606,11 +617,11 @@ export const useChat = () => {
 // Usage in component
 function ChatComponent() {
   const { messages, isLoading, sendMessage } = useChat();
-  
+
   const handleSend = async () => {
     await sendMessage('Hello!');
   };
-  
+
   return (
     <div>
       {messages.map((msg, i) => (
@@ -633,10 +644,10 @@ function ChatComponent() {
 #### Fetch API (Built-in)
 
 ```typescript
-const response = await fetch('/api/chat', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({ messages })
+const response = await fetch("/api/chat", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ messages }),
 });
 const data = await response.json();
 ```
@@ -644,12 +655,10 @@ const data = await response.json();
 #### Axios
 
 ```typescript
-import axios from 'axios';
+import axios from "axios";
 
-const { data } = await axios.post('/api/chat', {
-  messages: [
-    { role: 'user', content: 'Hello' }
-  ]
+const { data } = await axios.post("/api/chat", {
+  messages: [{ role: "user", content: "Hello" }],
 });
 console.log(data.message);
 ```
@@ -657,26 +666,25 @@ console.log(data.message);
 #### SWR (React)
 
 ```typescript
-import useSWR from 'swr';
+import useSWR from "swr";
 
-const fetcher = (url: string, messages: Message[]) => 
+const fetcher = (url: string, messages: Message[]) =>
   fetch(url, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ messages })
-  }).then(r => r.json());
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ messages }),
+  }).then((r) => r.json());
 
 function useChat(messages: Message[]) {
-  const { data, error, mutate } = useSWR(
-    ['/api/chat', messages],
-    ([url, messages]) => fetcher(url, messages)
+  const { data, error, mutate } = useSWR(["/api/chat", messages], ([url, messages]) =>
+    fetcher(url, messages),
   );
 
   return {
     response: data,
     isLoading: !error && !data,
     isError: error,
-    refresh: mutate
+    refresh: mutate,
   };
 }
 ```
@@ -775,31 +783,39 @@ Import this JSON into Postman:
 The AI assistant has built-in knowledge about:
 
 ### Personal Information
+
 - Name: Aditya Kumar Tiwari
 - Title: Cybersecurity Specialist & Full-Stack Developer
 - Location: Delhi, India
 - Contact: itisaddy7@gmail.com
 
 ### Education
+
 - BCA in Cybersecurity
 - Sushant University (2022-2025)
 
 ### Projects (6 Total)
+
 Each with:
+
 - Name and description
 - Technologies used
 - GitHub repository
 - Live demo links
 
 ### Work Experience (4 Positions)
+
 Each with:
+
 - Company name
 - Role and duration
 - Key responsibilities
 - Technologies used
 
 ### Skills (40+ Total)
+
 Organized by category:
+
 - Languages
 - Frameworks
 - Databases
@@ -808,6 +824,7 @@ Organized by category:
 - Cybersecurity Tools
 
 ### Communication Style
+
 - Professional and concise
 - No cartoon emojis
 - Uses professional symbols: → • ✓ ★ ◆
@@ -819,19 +836,19 @@ Organized by category:
 
 ### Response Times
 
-| Metric | Average | 95th Percentile |
-|--------|---------|-----------------|
-| API Latency | 800ms | 1.2s |
-| Groq Response | 600ms | 1.0s |
-| Total Time | 1.4s | 2.2s |
+| Metric        | Average | 95th Percentile |
+| ------------- | ------- | --------------- |
+| API Latency   | 800ms   | 1.2s            |
+| Groq Response | 600ms   | 1.0s            |
+| Total Time    | 1.4s    | 2.2s            |
 
 ### Token Usage
 
-| Message Type | Avg Prompt Tokens | Avg Completion Tokens |
-|--------------|-------------------|----------------------|
-| Simple question | 450 | 150 |
-| Detailed query | 550 | 300 |
-| With GitHub data | 650 | 250 |
+| Message Type     | Avg Prompt Tokens | Avg Completion Tokens |
+| ---------------- | ----------------- | --------------------- |
+| Simple question  | 450               | 150                   |
+| Detailed query   | 550               | 300                   |
+| With GitHub data | 650               | 250                   |
 
 ### Optimization Tips
 
@@ -845,6 +862,7 @@ Organized by category:
 ## 📝 API Changelog
 
 ### Version 2.0.0 (2025-12-31)
+
 - ✨ Added GitHub data integration
 - ✨ Added token usage tracking
 - ✨ Enhanced portfolio context (257 lines)
@@ -853,6 +871,7 @@ Organized by category:
 - 🐛 Fixed conversation history handling
 
 ### Version 1.0.0 (2025-10-01)
+
 - ✨ Initial API release
 - ✨ Basic chat functionality
 - ✨ Portfolio context integration
@@ -864,23 +883,26 @@ Organized by category:
 ### Best Practices
 
 1. **Never expose API keys client-side**
+
    ```typescript
    // ❌ BAD
    const apiKey = "gsk_xxxxx";
-   
+
    // ✅ GOOD
    // Use environment variables server-side only
    const apiKey = process.env.GROQ_API_KEY;
    ```
 
 2. **Validate input**
+
    ```typescript
    if (!messages || !Array.isArray(messages)) {
-     return Response.json({ error: 'Invalid messages' }, { status: 400 });
+     return Response.json({ error: "Invalid messages" }, { status: 400 });
    }
    ```
 
 3. **Sanitize user content**
+
    ```typescript
    const sanitizedContent = content.trim().slice(0, 500);
    ```
@@ -904,6 +926,7 @@ Organized by category:
 ### Reporting Issues
 
 When reporting API issues, include:
+
 - Request payload (sanitized)
 - Response received
 - Expected behavior
@@ -928,6 +951,6 @@ When reporting API issues, include:
 
 ---
 
-*Last Updated: December 31, 2025*
+_Last Updated: December 31, 2025_
 
 </div>

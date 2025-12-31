@@ -62,6 +62,7 @@ A clear and concise description of what the bug is.
 
 **To Reproduce**
 Steps to reproduce the behavior:
+
 1. Go to '...'
 2. Click on '...'
 3. Scroll down to '...'
@@ -74,9 +75,10 @@ A clear and concise description of what you expected to happen.
 If applicable, add screenshots to help explain your problem.
 
 **Environment:**
- - OS: [e.g. macOS, Windows, Linux]
- - Browser: [e.g. Chrome 120, Firefox 121]
- - Version: [e.g. 1.0.0]
+
+- OS: [e.g. macOS, Windows, Linux]
+- Browser: [e.g. Chrome 120, Firefox 121]
+- Version: [e.g. 1.0.0]
 
 **Additional context**
 Add any other context about the problem here.
@@ -227,14 +229,14 @@ portfolio/
 
 ### Key Files
 
-| File | Purpose | When to Edit |
-|------|---------|--------------|
-| `src/app/page.tsx` | Main portfolio page | Adding/modifying sections |
-| `src/components/AIAssistant.tsx` | AI chat component | AI features |
-| `src/app/api/chat/route.ts` | Chat API endpoint | Backend logic |
-| `src/app/globals.css` | Global styles | Design changes |
-| `src/utilities/socialMedia.ts` | Social links | Contact info |
-| `next.config.mjs` | Next.js settings | Build config |
+| File                             | Purpose             | When to Edit              |
+| -------------------------------- | ------------------- | ------------------------- |
+| `src/app/page.tsx`               | Main portfolio page | Adding/modifying sections |
+| `src/components/AIAssistant.tsx` | AI chat component   | AI features               |
+| `src/app/api/chat/route.ts`      | Chat API endpoint   | Backend logic             |
+| `src/app/globals.css`            | Global styles       | Design changes            |
+| `src/utilities/socialMedia.ts`   | Social links        | Contact info              |
+| `next.config.mjs`                | Next.js settings    | Build config              |
 
 ---
 
@@ -258,14 +260,14 @@ interface ButtonProps {
   disabled?: boolean;
 }
 
-export const Button: React.FC<ButtonProps> = ({ 
-  label, 
-  onClick, 
+export const Button: React.FC<ButtonProps> = ({
+  label,
+  onClick,
   variant = "primary",
-  disabled = false 
+  disabled = false
 }) => {
   return (
-    <button 
+    <button
       onClick={onClick}
       disabled={disabled}
       className={`btn btn-${variant}`}
@@ -299,11 +301,11 @@ export const Button = (props: any) => {
  */
 const useTheme = () => {
   const [theme, setTheme] = useState<"light" | "dark">("light");
-  
+
   const toggleTheme = useCallback(() => {
-    setTheme(prev => prev === "light" ? "dark" : "light");
+    setTheme((prev) => (prev === "light" ? "dark" : "light"));
   }, []);
-  
+
   return { theme, toggleTheme };
 };
 
@@ -364,17 +366,17 @@ const ANIMATION_DURATION = 0.3;
 export const MyComponent: React.FC<MyComponentProps> = ({ title }) => {
   // 4a. Hooks
   const [isVisible, setIsVisible] = useState(false);
-  
+
   // 4b. Effects
   useEffect(() => {
     setIsVisible(true);
   }, []);
-  
+
   // 4c. Handlers
   const handleClick = () => {
     console.log("Clicked");
   };
-  
+
   // 4d. Render
   return (
     <motion.div
@@ -407,18 +409,18 @@ We follow [Conventional Commits](https://www.conventionalcommits.org/) specifica
 
 ### Types
 
-| Type | Description | Example |
-|------|-------------|---------|
-| `feat` | New feature | `feat(chat): add export conversation` |
-| `fix` | Bug fix | `fix(theme): resolve dark mode flash` |
-| `docs` | Documentation only | `docs(readme): update installation steps` |
-| `style` | Code style changes | `style(button): fix indentation` |
-| `refactor` | Code refactoring | `refactor(api): simplify chat logic` |
-| `perf` | Performance improvements | `perf(canvas): optimize dot rendering` |
-| `test` | Adding tests | `test(utils): add unit tests` |
-| `chore` | Maintenance tasks | `chore(deps): update dependencies` |
-| `ci` | CI/CD changes | `ci(github): add deployment workflow` |
-| `build` | Build system changes | `build(webpack): update config` |
+| Type       | Description              | Example                                   |
+| ---------- | ------------------------ | ----------------------------------------- |
+| `feat`     | New feature              | `feat(chat): add export conversation`     |
+| `fix`      | Bug fix                  | `fix(theme): resolve dark mode flash`     |
+| `docs`     | Documentation only       | `docs(readme): update installation steps` |
+| `style`    | Code style changes       | `style(button): fix indentation`          |
+| `refactor` | Code refactoring         | `refactor(api): simplify chat logic`      |
+| `perf`     | Performance improvements | `perf(canvas): optimize dot rendering`    |
+| `test`     | Adding tests             | `test(utils): add unit tests`             |
+| `chore`    | Maintenance tasks        | `chore(deps): update dependencies`        |
+| `ci`       | CI/CD changes            | `ci(github): add deployment workflow`     |
+| `build`    | Build system changes     | `build(webpack): update config`           |
 
 ### Examples
 
@@ -447,7 +449,7 @@ BREAKING CHANGE: Response now returns { data, error } instead of { message }"
 - ✅ Use imperative mood: "move cursor to..." not "moves cursor to..."
 - ✅ First line max 72 characters
 - ✅ Reference issues: "fix #123" or "closes #456"
-- ✅ Explain *what* and *why*, not *how*
+- ✅ Explain _what_ and _why_, not _how_
 
 ---
 
@@ -500,6 +502,7 @@ Describe the tests you ran:
 - [ ] Accessibility testing
 
 **Test Configuration:**
+
 - Node version: 18.x
 - npm version: 9.x
 - Browser: Chrome 120
@@ -551,16 +554,16 @@ Add any other context about the PR here.
 
 We use labels to categorize issues:
 
-| Label | Description | Color |
-|-------|-------------|-------|
-| `bug` | Something isn't working | 🔴 Red |
-| `enhancement` | New feature or request | 🟢 Green |
-| `documentation` | Documentation improvements | 🔵 Blue |
-| `good first issue` | Good for newcomers | 🟣 Purple |
-| `help wanted` | Extra attention is needed | 🟡 Yellow |
-| `question` | Further information is requested | 💬 Gray |
-| `wontfix` | This will not be worked on | ⚫ Black |
-| `duplicate` | This issue already exists | 🟠 Orange |
+| Label              | Description                      | Color     |
+| ------------------ | -------------------------------- | --------- |
+| `bug`              | Something isn't working          | 🔴 Red    |
+| `enhancement`      | New feature or request           | 🟢 Green  |
+| `documentation`    | Documentation improvements       | 🔵 Blue   |
+| `good first issue` | Good for newcomers               | 🟣 Purple |
+| `help wanted`      | Extra attention is needed        | 🟡 Yellow |
+| `question`         | Further information is requested | 💬 Gray   |
+| `wontfix`          | This will not be worked on       | ⚫ Black  |
+| `duplicate`        | This issue already exists        | 🟠 Orange |
 
 ### Creating Quality Issues
 
@@ -575,6 +578,7 @@ We use labels to categorize issues:
 When I toggle to dark mode and refresh the page, it reverts to light mode.
 
 **Steps to Reproduce:**
+
 1. Go to homepage
 2. Click theme toggle to switch to dark mode
 3. Refresh the page
@@ -584,6 +588,7 @@ When I toggle to dark mode and refresh the page, it reverts to light mode.
 Theme preference should persist across refreshes using localStorage.
 
 **Environment:**
+
 - Browser: Chrome 120
 - OS: macOS 14.1
 - Device: MacBook Pro 2021
@@ -604,6 +609,7 @@ Maybe we need to use `useEffect` to read from localStorage after mount?
 Before submitting your PR, test the following:
 
 #### Functionality
+
 - [ ] All features work as expected
 - [ ] No console errors or warnings
 - [ ] API endpoints return correct responses
@@ -611,18 +617,21 @@ Before submitting your PR, test the following:
 - [ ] Links navigate correctly
 
 #### Responsive Design
+
 - [ ] Mobile (320px - 767px)
 - [ ] Tablet (768px - 1023px)
 - [ ] Desktop (1024px+)
 - [ ] Large screens (1920px+)
 
 #### Browser Compatibility
+
 - [ ] Chrome (latest)
 - [ ] Firefox (latest)
 - [ ] Safari (latest)
 - [ ] Edge (latest)
 
 #### Accessibility
+
 - [ ] Keyboard navigation works
 - [ ] Screen reader friendly
 - [ ] Sufficient color contrast
@@ -630,6 +639,7 @@ Before submitting your PR, test the following:
 - [ ] Alt text on images
 
 #### Performance
+
 - [ ] Page load time < 3s
 - [ ] No layout shifts (CLS)
 - [ ] Smooth animations (60fps)
@@ -667,12 +677,12 @@ Update documentation when you:
 
 ### Documentation Files
 
-| File | Purpose |
-|------|---------|
-| `README.md` | Main documentation |
+| File              | Purpose                 |
+| ----------------- | ----------------------- |
+| `README.md`       | Main documentation      |
 | `CONTRIBUTING.md` | Contribution guidelines |
-| `CHANGELOG.md` | Version history |
-| `API.md` | API documentation |
+| `CHANGELOG.md`    | Version history         |
+| `API.md`          | API documentation       |
 
 ### JSDoc Comments
 
@@ -684,7 +694,7 @@ Add JSDoc for exported functions:
  * @param {string} username - GitHub username
  * @returns {Promise<GitHubUser>} User data
  * @throws {Error} If user not found
- * 
+ *
  * @example
  * const user = await fetchGitHubUser("Xenonesis");
  * console.log(user.name); // "Aditya Kumar Tiwari"
@@ -718,12 +728,12 @@ Contributors will be:
 
 ### Contributor Roles
 
-| Role | Responsibilities |
-|------|------------------|
-| **Contributor** | Submit PRs, report issues |
-| **Reviewer** | Review PRs, provide feedback |
-| **Maintainer** | Merge PRs, manage releases |
-| **Owner** | Final decision on project direction |
+| Role            | Responsibilities                    |
+| --------------- | ----------------------------------- |
+| **Contributor** | Submit PRs, report issues           |
+| **Reviewer**    | Review PRs, provide feedback        |
+| **Maintainer**  | Merge PRs, manage releases          |
+| **Owner**       | Final decision on project direction |
 
 ---
 

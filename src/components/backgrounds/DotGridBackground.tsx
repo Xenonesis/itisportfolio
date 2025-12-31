@@ -15,7 +15,7 @@ export const DotGridBackground = () => {
 
   useEffect(() => {
     setMounted(true);
-    
+
     // Check the actual class on the document element
     const checkTheme = () => {
       setIsDark(document.documentElement.classList.contains("dark"));

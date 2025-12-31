@@ -131,16 +131,10 @@ export const VisitorGreeting = () => {
     >
       <div className="flex items-center gap-3 mb-2">
         <div className="flex items-center gap-2">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img 
-            src={systemInfo.osIcon} 
-            alt={systemInfo.os} 
-            className="w-5 h-5 object-contain"
-          />
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img 
-            src={systemInfo.browserIcon} 
-            alt={systemInfo.browser} 
+          <img src={systemInfo.osIcon} alt={systemInfo.os} className="w-5 h-5 object-contain" />
+          <img
+            src={systemInfo.browserIcon}
+            alt={systemInfo.browser}
             className="w-5 h-5 object-contain"
           />
         </div>
@@ -156,8 +150,7 @@ export const VisitorGreeting = () => {
         </div>
       </div>
       <p className="text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed">
-        <span className="text-zinc-400 dark:text-zinc-500">→</span>{" "}
-        {systemInfo.message}
+        <span className="text-zinc-400 dark:text-zinc-500">→</span> {systemInfo.message}
       </p>
     </div>
   );

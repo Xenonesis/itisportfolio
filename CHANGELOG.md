@@ -25,6 +25,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### 🚀 Planned Features
+
 - Blog section with MDX support
 - Project gallery with detailed case studies
 - Contact form with email integration
@@ -38,6 +39,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [2.0.0] - 2025-12-31
 
 ### ✨ Added
+
 - **AI Chat Assistant**: Groq-powered LLaMA 3.3 70B integration
   - Real-time GitHub data fetching
   - Conversation export (TXT/JSON)
@@ -87,6 +89,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - API.md for endpoint documentation
 
 ### 🔄 Changed
+
 - **Next.js 16.1.1**: Upgraded to latest version with Turbopack
 - **React 19.2.3**: Updated to React 19 with new features
 - **TailwindCSS 4**: Migrated to TailwindCSS v4
@@ -95,6 +98,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Project Structure**: Reorganized components and utilities
 
 ### 🐛 Fixed
+
 - Theme flash on page load (hydration issue)
 - Mobile navigation overflow
 - Canvas performance on low-end devices
@@ -103,6 +107,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Dark mode color contrast ratios
 
 ### 🔒 Security
+
 - Environment variable validation
 - API key protection
 - Input sanitization for AI chat
@@ -110,6 +115,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - XSS prevention measures
 
 ### 📦 Dependencies
+
 - Added `groq-sdk` for AI integration
 - Added `three` and `@react-three/fiber` for 3D effects
 - Added `motion` (Framer Motion) for animations
@@ -122,6 +128,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.5.0] - 2025-11-15
 
 ### ✨ Added
+
 - **Spotify Integration**: Embedded playlist player
 - **Social Media Links**: GitHub, LinkedIn, X, Email icons
 - **Custom Icons**: SVG icon components
@@ -130,12 +137,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Analytics**: Vercel Analytics integration
 
 ### 🔄 Changed
+
 - Improved mobile responsiveness
 - Enhanced color scheme
 - Updated typography scale
 - Refined spacing system
 
 ### 🐛 Fixed
+
 - Safari-specific CSS bugs
 - Mobile menu transitions
 - Image loading optimization
@@ -146,6 +155,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.0] - 2025-10-01
 
 ### ✨ Added
+
 - **Initial Release**: Basic portfolio structure
 - **Home Page**: Profile, About, Projects, Experience sections
 - **Links Page**: Centralized link hub
@@ -156,6 +166,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **ESLint**: Code linting
 
 ### 📝 Project Setup
+
 - Git repository initialization
 - Package.json configuration
 - TypeScript configuration
@@ -167,6 +178,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.1.0] - 2025-09-15 (Beta)
 
 ### ✨ Added
+
 - Project concept and planning
 - Technology stack selection
 - Design mockups
@@ -176,12 +188,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## 📊 Version Statistics
 
-| Version | Release Date | Lines of Code | Components | Features |
-|---------|--------------|---------------|------------|----------|
-| 2.0.0 | 2025-12-31 | ~3,500 | 25+ | AI Chat, Backgrounds, Animations |
-| 1.5.0 | 2025-11-15 | ~2,000 | 15 | Spotify, Social Links |
-| 1.0.0 | 2025-10-01 | ~1,200 | 10 | Basic Portfolio |
-| 0.1.0 | 2025-09-15 | ~500 | 5 | Prototype |
+| Version | Release Date | Lines of Code | Components | Features                         |
+| ------- | ------------ | ------------- | ---------- | -------------------------------- |
+| 2.0.0   | 2025-12-31   | ~3,500        | 25+        | AI Chat, Backgrounds, Animations |
+| 1.5.0   | 2025-11-15   | ~2,000        | 15         | Spotify, Social Links            |
+| 1.0.0   | 2025-10-01   | ~1,200        | 10         | Basic Portfolio                  |
+| 0.1.0   | 2025-09-15   | ~500          | 5          | Prototype                        |
 
 ---
 
@@ -192,12 +204,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 #### Breaking Changes
 
 1. **API Response Format Changed**:
+
    ```typescript
    // Old (1.x)
    { message: "response text" }
-   
+
    // New (2.0)
-   { 
+   {
      message: "response text",
      usage: {
        prompt_tokens: 450,
@@ -208,16 +221,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
    ```
 
 2. **Environment Variables**:
+
    ```bash
    # New required variable
    GROQ_API_KEY=your_key_here
    ```
 
 3. **Theme System**:
+
    ```typescript
    // Old
    const { theme } = useTheme(); // returns "light" | "dark"
-   
+
    // New
    const { theme, resolvedTheme } = useTheme();
    // theme: "light" | "dark" | "system"
@@ -227,17 +242,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 #### Update Steps
 
 1. **Update Dependencies**:
+
    ```bash
    npm install
    ```
 
 2. **Update Environment Variables**:
+
    ```bash
    # Add to .env.local
    GROQ_API_KEY=your_groq_api_key
    ```
 
 3. **Update Next.js Config**:
+
    ```javascript
    // next.config.mjs
    const nextConfig = {
@@ -274,11 +292,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Resolved Issues
 
 ✅ **Canvas Performance** (Fixed in 2.0.0):
+
 - Optimized dot grid rendering
 - Reduced particle count on mobile
 - Implemented RequestAnimationFrame
 
 ✅ **Hydration Errors** (Fixed in 2.0.0):
+
 - Fixed theme provider hydration
 - Resolved client/server mismatch
 - Added proper SSR handling
@@ -288,6 +308,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## 🔮 Roadmap
 
 ### Version 2.1.0 (Q1 2026)
+
 - [ ] Blog section with MDX
 - [ ] Advanced search functionality
 - [ ] Project filtering and sorting
@@ -295,6 +316,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [ ] Performance optimizations
 
 ### Version 2.2.0 (Q2 2026)
+
 - [ ] Contact form with validation
 - [ ] Newsletter integration
 - [ ] Comments system
@@ -302,6 +324,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [ ] RSS feed
 
 ### Version 3.0.0 (Q3 2026)
+
 - [ ] CMS integration (Sanity/Contentful)
 - [ ] Multi-language support (i18n)
 - [ ] Advanced SEO features
@@ -313,6 +336,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## 📈 Performance Improvements
 
 ### Version 2.0.0
+
 - **Lighthouse Score**: 95+ → 98+
 - **First Load JS**: 220KB → 180KB
 - **LCP**: 2.1s → 1.4s
@@ -320,6 +344,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Bundle Size**: Reduced by 18%
 
 ### Version 1.5.0
+
 - **Lighthouse Score**: 90+ → 95+
 - **Image Optimization**: WebP format adoption
 - **Code Splitting**: Implemented dynamic imports
@@ -330,6 +355,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## 🎨 Design Changes
 
 ### Version 2.0.0
+
 - **New Color Palette**: Enhanced teal/orange accent colors
 - **Typography**: Upgraded to Geist Sans/Mono fonts
 - **Spacing**: Refined spacing scale
@@ -337,6 +363,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Components**: Redesigned AI chat interface
 
 ### Version 1.5.0
+
 - **Dark Mode**: Improved contrast ratios
 - **Mobile UI**: Enhanced touch targets
 - **Icons**: Custom SVG icon set
@@ -349,12 +376,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Version 2.0.0
 
 #### Build System
+
 - Next.js 16 with Turbopack
 - Static export mode
 - Optimized bundle splitting
 - ESM module support
 
 #### Dependencies
+
 ```json
 {
   "next": "16.1.1",
@@ -368,6 +397,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ```
 
 #### Configuration
+
 - TypeScript strict mode enabled
 - ESLint with Next.js rules
 - Tailwind CSS v4 configuration
@@ -378,6 +408,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## 📝 Documentation Updates
 
 ### Version 2.0.0
+
 - ✅ README.md: Expanded to 1,158+ lines
 - ✅ CONTRIBUTING.md: Added comprehensive guidelines
 - ✅ CHANGELOG.md: Version history tracking
@@ -385,6 +416,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - ✅ Code Comments: JSDoc for all major functions
 
 ### Version 1.5.0
+
 - ✅ README.md: Initial comprehensive documentation
 - ✅ Setup Guide: Installation and deployment
 - ✅ Component Docs: Basic component documentation
@@ -394,6 +426,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## 🙏 Contributors
 
 ### Version 2.0.0
+
 - **Aditya Kumar Tiwari** ([@Xenonesis](https://github.com/Xenonesis))
   - AI chat assistant implementation
   - Background system development
@@ -401,6 +434,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Documentation overhaul
 
 ### Version 1.x
+
 - **Aditya Kumar Tiwari** ([@Xenonesis](https://github.com/Xenonesis))
   - Initial project setup
   - Core features implementation
@@ -411,6 +445,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## 📊 Project Metrics
 
 ### Code Statistics (2.0.0)
+
 ```
 Total Lines of Code:    ~3,500
 TypeScript Files:       25
@@ -422,6 +457,7 @@ Documentation Lines:   4,500+
 ```
 
 ### Component Breakdown
+
 ```
 AIAssistant.tsx:             794 lines
 DotGrid.tsx:                 423 lines
@@ -469,8 +505,8 @@ We welcome feedback on all releases! Please:
 
 ---
 
-*For detailed commit history, see [GitHub Commits](https://github.com/Xenonesis/portfolio/commits/main)*
+_For detailed commit history, see [GitHub Commits](https://github.com/Xenonesis/portfolio/commits/main)_
 
-*Last Updated: December 31, 2025*
+_Last Updated: December 31, 2025_
 
 </div>

@@ -14,9 +14,7 @@ import confetti from "canvas-confetti";
 export default function Home() {
   const [isProjectsExpanded, setIsProjectsExpanded] = useState(false);
   const initialProjectCount = 3;
-  const visibleProjects = isProjectsExpanded
-    ? projects
-    : projects.slice(0, initialProjectCount);
+  const visibleProjects = isProjectsExpanded ? projects : projects.slice(0, initialProjectCount);
 
   const [isExperienceExpanded, setIsExperienceExpanded] = useState(false);
   const initialExperienceCount = 2;
@@ -77,14 +75,12 @@ export default function Home() {
     <main className="text-zinc-800 dark:text-zinc-100 max-w-2xl mx-auto px-6 py-8 mt-4 relative page-transition">
       {/* Subtle content backdrop for readability over dot grid */}
       <div className="absolute inset-0 -z-10 mx-4 rounded-3xl bg-white/40 dark:bg-background/40 backdrop-blur-sm" />
-      
       {/* Theme Toggle - Fixed Position */}
       <div className="fixed top-5 right-5 z-50">
         <div className="glass-card p-1.5 shadow-lg hover:shadow-xl transition-all duration-300 hover-lift">
           <ThemeToggle />
         </div>
       </div>
-      
       <AnimateIn variant="fadeUp">
         {" "}
         {/* Combined Visitor Greeting + Spotify Section */}
@@ -95,15 +91,11 @@ export default function Home() {
               <div className="p-4 border-b border-zinc-200/50 dark:border-zinc-700/50">
                 <VisitorGreeting />
               </div>
-              
+
               {/* Spotify Section */}
               <div className="pt-3 px-4 pb-3">
                 <div className="flex items-center gap-2.5 mb-3">
-                  <svg
-                    className="w-5 h-5 text-green-500"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
+                  <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.84-.179-.84-.66 0-.479.359-.78.719-.84 4.561-1.021 8.52-.621 11.64 1.32.42.18.479.659.301 1.02l-.238.061zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.481.78.241 1.2zm.120-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z" />
                   </svg>
                   <h2 className="text-sm font-semibold text-zinc-600 dark:text-zinc-300 tracking-wide">
@@ -135,7 +127,6 @@ export default function Home() {
               {/* Profile Picture */}
               <div className="relative">
                 <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden ring-2 ring-zinc-200 dark:ring-zinc-700 shadow-lg bg-gradient-to-br from-teal-400 to-cyan-500">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src="/1.jpg"
                     alt="Aditya profile photo"
@@ -144,7 +135,7 @@ export default function Home() {
                   />
                 </div>
               </div>
-              
+
               {/* Name and Info */}
               <div className="flex flex-col">
                 <div className="flex items-center gap-2">
@@ -167,12 +158,13 @@ export default function Home() {
                 </div>
                 <p className="text-sm sm:text-base text-zinc-500 dark:text-zinc-400">
                   Cybersecurity Specialist & Full-Stack Developer{" "}
-                  <span className="text-zinc-400 dark:text-zinc-500">//</span>{" "}
+                  <span className="text-zinc-400 dark:text-zinc-500">{"//"}</span>{" "}
                   <span className="text-teal-600 dark:text-teal-400 font-medium">Solo</span>
                 </p>
               </div>
             </div>
-          </AnimateIn>{" "}          <AnimateIn variant="fadeUp" delay={0.5}>
+          </AnimateIn>{" "}
+          <AnimateIn variant="fadeUp" delay={0.5}>
             <div className="flex items-center gap-3 mb-6">
               {/* <Tooltip content="Some of my Random awesome memories">
                 <Link
@@ -202,12 +194,7 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="btn-soft inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-teal-500/10 to-cyan-500/10 dark:from-teal-500/20 dark:to-cyan-500/20 border border-teal-400/30 dark:border-teal-500/30 text-teal-700 dark:text-teal-400 text-sm font-medium rounded-xl hover:from-teal-500/15 hover:to-cyan-500/15 dark:hover:from-teal-500/25 dark:hover:to-cyan-500/25 focus-ring"
                 >
-                  <svg
-                    className="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -226,8 +213,8 @@ export default function Home() {
             </div>
           </AnimateIn>{" "}
         </section>
-      </AnimateIn>      <AnimateIn variant="fadeUp" delay={0.2}>
-
+      </AnimateIn>{" "}
+      <AnimateIn variant="fadeUp" delay={0.2}>
         {/* Section Divider */}
         <div className="section-divider" />
 
@@ -242,15 +229,13 @@ export default function Home() {
             <AnimateIn variant="fadeLeft" delay={0.3}>
               <div className="group soft-container p-5 hover-lift">
                 <div className="flex flex-col sm:flex-row sm:items-baseline justify-between mb-2">
-                  <h3 className="text-lg font-medium">
-                    BCA in Cybersecurity
-                  </h3>
+                  <h3 className="text-lg font-medium">BCA in Cybersecurity</h3>
                   <span className="text-sm text-zinc-400 dark:text-zinc-500 font-medium">
                     2022 - 2025
                   </span>
                 </div>
                 <p className="text-sm text-zinc-500 dark:text-zinc-400">
-                  Sushant University, Delhi, India
+                  Sushant University, Gurugram, India
                 </p>
               </div>
             </AnimateIn>
@@ -261,7 +246,8 @@ export default function Home() {
         <div className="section-divider" />
 
         {/* Projects */}
-      </AnimateIn>      <AnimateIn variant="fadeUp" delay={0.3}>
+      </AnimateIn>{" "}
+      <AnimateIn variant="fadeUp" delay={0.3}>
         <section className="mb-14">
           <AnimateIn variant="reveal" delay={0.35}>
             <h2 className="text-xl font-semibold tracking-tight mb-6 inline-block heading-expressive">
@@ -343,7 +329,8 @@ export default function Home() {
 
         {/* Section Divider */}
         <div className="section-divider" />
-      </AnimateIn>{" "}      <AnimateIn variant="fadeUp" delay={0.4}>
+      </AnimateIn>{" "}
+      <AnimateIn variant="fadeUp" delay={0.4}>
         <section className="mb-14">
           <AnimateIn variant="reveal" delay={0.45}>
             <h2 className="text-xl font-semibold tracking-tight mb-6 inline-block heading-expressive">
@@ -355,10 +342,7 @@ export default function Home() {
               {visibleExperience.map((job, index) => {
                 const delay =
                   0.45 +
-                  (index < initialExperienceCount
-                    ? index
-                    : index - initialExperienceCount) *
-                  0.1;
+                  (index < initialExperienceCount ? index : index - initialExperienceCount) * 0.1;
                 return (
                   <AnimateIn key={index} variant="fadeLeft" delay={delay}>
                     <li className="soft-container p-5 hover-lift shine-effect">
@@ -410,7 +394,8 @@ export default function Home() {
 
         {/* Section Divider */}
         <div className="section-divider" />
-      </AnimateIn>{" "}      <AnimateIn variant="fadeUp" delay={0.6}>
+      </AnimateIn>{" "}
+      <AnimateIn variant="fadeUp" delay={0.6}>
         <section className="mb-14">
           <AnimateIn variant="reveal" delay={0.65}>
             <h2 className="text-xl font-semibold tracking-tight mb-6 inline-block heading-expressive">
@@ -420,19 +405,14 @@ export default function Home() {
           <div className="soft-container p-6">
             <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-6">
               {tools.map(({ logo, title, url }, index) => (
-                <AnimateIn
-                  key={index}
-                  variant="scale"
-                  delay={0.65 + index * 0.03}
-                >
-                  <a 
-                    href={url} 
-                    target="_blank" 
+                <AnimateIn key={index} variant="scale" delay={0.65 + index * 0.03}>
+                  <a
+                    href={url}
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="relative flex flex-col items-center group cursor-pointer"
                   >
                     <div className="relative h-8 w-8 sm:h-10 sm:w-10 p-2 rounded-xl bg-gradient-to-br from-white to-zinc-50 dark:from-zinc-800 dark:to-zinc-900 shadow-sm border border-zinc-100 dark:border-zinc-700/50 transition-all duration-300 ease-out group-hover:scale-110 group-hover:-translate-y-1 group-hover:shadow-md group-hover:border-teal-400/50 dark:group-hover:border-teal-500/50">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src={logo}
                         alt={`${title} logo`}
@@ -502,7 +482,8 @@ export default function Home() {
                   </>
                 ) : (
                   <>
-                    Show All Certifications ({certifications.length}) <ChevronDown className="w-4 h-4" />
+                    Show All Certifications ({certifications.length}){" "}
+                    <ChevronDown className="w-4 h-4" />
                   </>
                 )}
               </button>
@@ -522,11 +503,7 @@ export default function Home() {
           </AnimateIn>
           <div className="space-y-4">
             {achievements.map((achievement, index) => (
-              <AnimateIn
-                key={index}
-                variant="fadeLeft"
-                delay={0.75 + index * 0.1}
-              >
+              <AnimateIn key={index} variant="fadeLeft" delay={0.75 + index * 0.1}>
                 <div className="soft-container p-5 hover-lift shine-effect">
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500/20 to-orange-500/20 dark:from-amber-500/30 dark:to-orange-500/30 flex items-center justify-center text-xl">
@@ -546,7 +523,10 @@ export default function Home() {
                       </p>
                       <ul className="space-y-1">
                         {achievement.highlights.map((highlight, hIndex) => (
-                          <li key={hIndex} className="text-sm text-zinc-500 dark:text-zinc-400 flex items-start gap-2">
+                          <li
+                            key={hIndex}
+                            className="text-sm text-zinc-500 dark:text-zinc-400 flex items-start gap-2"
+                          >
                             <span className="text-amber-500 mt-1">•</span>
                             <span>{highlight}</span>
                           </li>
@@ -600,7 +580,8 @@ export default function Home() {
             </div>
           </AnimateIn>
         </section>
-      </AnimateIn>      <AnimateIn variant="fadeUp" delay={1.2}>
+      </AnimateIn>{" "}
+      <AnimateIn variant="fadeUp" delay={1.2}>
         {" "}
         <footer className="pt-6 pb-4 text-sm text-zinc-500 dark:text-zinc-400 flex justify-between items-center relative glass-card px-6 py-4 rounded-2xl mb-4">
           {/* Subtle gradient overlay */}
@@ -634,12 +615,7 @@ const projects = [
       "A feature-rich movie website providing high-rated movies for free. Explore trending films, detailed information, and curated recommendations for entertainment enthusiasts.",
     link: "https://thecinesphere.netlify.app/",
     github: "https://github.com/Xenonesis/Cinesphere",
-    technologies: [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "API Integration"
-    ]
+    technologies: ["HTML", "CSS", "JavaScript", "API Integration"],
   },
   {
     title: "Juris.AI",
@@ -647,12 +623,7 @@ const projects = [
       "AI-driven legal assistance platform built with TypeScript. Provides intelligent legal guidance and document analysis using advanced AI capabilities.",
     link: "",
     github: "https://github.com/Xenonesis/Juris.AI",
-    technologies: [
-      "TypeScript",
-      "AI/ML",
-      "React",
-      "Node.js"
-    ]
+    technologies: ["TypeScript", "AI/ML", "React", "Node.js"],
   },
   {
     title: "PropDekho",
@@ -660,12 +631,7 @@ const projects = [
       "Modern real estate platform for property exploration. Browse listings, view property details, and connect with real estate opportunities.",
     link: "",
     github: "https://github.com/Xenonesis/Propdekho",
-    technologies: [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "Responsive Design"
-    ]
+    technologies: ["HTML", "CSS", "JavaScript", "Responsive Design"],
   },
   {
     title: "Flappy",
@@ -673,12 +639,7 @@ const projects = [
       "A fun 2D Flappy Bird clone built using vanilla HTML, CSS, and JavaScript. Classic arcade gameplay with smooth animations.",
     link: "",
     github: "https://github.com/Xenonesis/NS-Flappy-Bird.git",
-    technologies: [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "Game Development"
-    ]
+    technologies: ["HTML", "CSS", "JavaScript", "Game Development"],
   },
   {
     title: "sysmonrust",
@@ -686,11 +647,7 @@ const projects = [
       "High-performance system monitoring tool built in Rust. Monitor CPU, memory, and system resources with a lightweight and efficient solution.",
     link: "",
     github: "https://github.com/Xenonesis/sysmonrust",
-    technologies: [
-      "Rust",
-      "Systems Programming",
-      "CLI"
-    ]
+    technologies: ["Rust", "Systems Programming", "CLI"],
   },
   {
     title: "Real Estate Chatbot",
@@ -698,16 +655,9 @@ const projects = [
       "Intelligent chatbot for real estate inquiries. Provides automated responses and assistance for property-related questions.",
     link: "",
     github: "https://github.com/Xenonesis/Real-state-BOT.git",
-    technologies: [
-      "Python",
-      "Chatbot",
-      "NLP"
-    ]
+    technologies: ["Python", "Chatbot", "NLP"],
   },
 ];
-
-
-
 
 const experience = [
   {
@@ -716,13 +666,7 @@ const experience = [
     period: "Sept 2025 - Oct 2025",
     description:
       "Specialized in PHP and Laravel framework development for building robust web applications. Developed dynamic solutions and implemented cloud computing for scalable deployment.",
-    technologies: [
-      "PHP",
-      "Laravel",
-      "JavaScript",
-      "Python",
-      "Cloud Computing",
-    ],
+    technologies: ["PHP", "Laravel", "JavaScript", "Python", "Cloud Computing"],
   },
   {
     role: "Mentor (Part-time)",
@@ -730,12 +674,7 @@ const experience = [
     period: "Aug 2024 - Present",
     description:
       "Providing technical mentorship in cybersecurity to junior professionals and interns. Guiding team members through vulnerability assessments, threat analysis, and incident response strategies.",
-    technologies: [
-      "Cybersecurity",
-      "Penetration Testing",
-      "Security Frameworks",
-      "Cloud Security",
-    ],
+    technologies: ["Cybersecurity", "Penetration Testing", "Security Frameworks", "Cloud Security"],
   },
   {
     role: "Cybersecurity Intern",
@@ -743,12 +682,7 @@ const experience = [
     period: "Jun 2024 - Present",
     description:
       "Conducted vulnerability assessments and implemented robust network security protocols. Worked with remote teams to secure client systems and gained hands-on experience with SIEM tools.",
-    technologies: [
-      "SIEM Tools",
-      "Firewall Configuration",
-      "Network Security",
-      "Incident Response",
-    ],
+    technologies: ["SIEM Tools", "Firewall Configuration", "Network Security", "Incident Response"],
   },
   {
     role: "Cybersecurity and AI/ML Intern",
@@ -756,15 +690,9 @@ const experience = [
     period: "Oct 2024 - Present",
     description:
       "Focused on hands-on projects in cybersecurity and AI/ML, applying theoretical knowledge to real-world challenges. Enhanced understanding of cybersecurity protocols and AI/ML applications.",
-    technologies: [
-      "AI/ML",
-      "Cybersecurity",
-      "Data Protection",
-      "Python",
-    ],
+    technologies: ["AI/ML", "Cybersecurity", "Data Protection", "Python"],
   },
 ];
-
 
 const tools = [
   // Cybersecurity
@@ -1049,7 +977,8 @@ const certifications = [
     title: "Introduction to Prompt Engineering for Generative AI",
     issuer: "LinkedIn",
     date: "Jul 2024",
-    viewUrl: "https://www.linkedin.com/learning/certificates/71de56a2fe68bd1be82dd6a5d850fa6b1f5115d360826695dcc0d754ae2114b2",
+    viewUrl:
+      "https://www.linkedin.com/learning/certificates/71de56a2fe68bd1be82dd6a5d850fa6b1f5115d360826695dcc0d754ae2114b2",
   },
   {
     title: "Network Support and Security",
@@ -1143,4 +1072,3 @@ const achievements = [
     ],
   },
 ];
-

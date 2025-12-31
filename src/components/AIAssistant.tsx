@@ -96,19 +96,43 @@ function getContextualSuggestions(messages: Message[]): string[] {
     .join(" ");
 
   // Determine topic based on keywords
-  if (recentContent.includes("project") || recentContent.includes("cinesphere") || recentContent.includes("juris")) {
+  if (
+    recentContent.includes("project") ||
+    recentContent.includes("cinesphere") ||
+    recentContent.includes("juris")
+  ) {
     return contextualQuestions.projects;
   }
-  if (recentContent.includes("skill") || recentContent.includes("technology") || recentContent.includes("python") || recentContent.includes("react")) {
+  if (
+    recentContent.includes("skill") ||
+    recentContent.includes("technology") ||
+    recentContent.includes("python") ||
+    recentContent.includes("react")
+  ) {
     return contextualQuestions.skills;
   }
-  if (recentContent.includes("experience") || recentContent.includes("work") || recentContent.includes("job") || recentContent.includes("intern")) {
+  if (
+    recentContent.includes("experience") ||
+    recentContent.includes("work") ||
+    recentContent.includes("job") ||
+    recentContent.includes("intern")
+  ) {
     return contextualQuestions.experience;
   }
-  if (recentContent.includes("contact") || recentContent.includes("email") || recentContent.includes("linkedin") || recentContent.includes("hire")) {
+  if (
+    recentContent.includes("contact") ||
+    recentContent.includes("email") ||
+    recentContent.includes("linkedin") ||
+    recentContent.includes("hire")
+  ) {
     return contextualQuestions.contact;
   }
-  if (recentContent.includes("education") || recentContent.includes("degree") || recentContent.includes("university") || recentContent.includes("study")) {
+  if (
+    recentContent.includes("education") ||
+    recentContent.includes("degree") ||
+    recentContent.includes("university") ||
+    recentContent.includes("study")
+  ) {
     return contextualQuestions.education;
   }
 
@@ -133,9 +157,18 @@ function MessageSkeleton() {
     >
       <div className="max-w-[85%] w-64 bg-white dark:bg-card rounded-2xl rounded-bl-md shadow-sm border border-zinc-100 dark:border-zinc-700/50 p-4 space-y-3">
         <div className="h-3 bg-gradient-to-r from-zinc-200 via-zinc-100 to-zinc-200 dark:from-zinc-700 dark:via-zinc-600 dark:to-zinc-700 rounded-full animate-shimmer bg-[length:200%_100%]" />
-        <div className="h-3 bg-gradient-to-r from-zinc-200 via-zinc-100 to-zinc-200 dark:from-zinc-700 dark:via-zinc-600 dark:to-zinc-700 rounded-full animate-shimmer bg-[length:200%_100%] w-[90%]" style={{ animationDelay: "0.1s" }} />
-        <div className="h-3 bg-gradient-to-r from-zinc-200 via-zinc-100 to-zinc-200 dark:from-zinc-700 dark:via-zinc-600 dark:to-zinc-700 rounded-full animate-shimmer bg-[length:200%_100%] w-[75%]" style={{ animationDelay: "0.2s" }} />
-        <div className="h-3 bg-gradient-to-r from-zinc-200 via-zinc-100 to-zinc-200 dark:from-zinc-700 dark:via-zinc-600 dark:to-zinc-700 rounded-full animate-shimmer bg-[length:200%_100%] w-[85%]" style={{ animationDelay: "0.3s" }} />
+        <div
+          className="h-3 bg-gradient-to-r from-zinc-200 via-zinc-100 to-zinc-200 dark:from-zinc-700 dark:via-zinc-600 dark:to-zinc-700 rounded-full animate-shimmer bg-[length:200%_100%] w-[90%]"
+          style={{ animationDelay: "0.1s" }}
+        />
+        <div
+          className="h-3 bg-gradient-to-r from-zinc-200 via-zinc-100 to-zinc-200 dark:from-zinc-700 dark:via-zinc-600 dark:to-zinc-700 rounded-full animate-shimmer bg-[length:200%_100%] w-[75%]"
+          style={{ animationDelay: "0.2s" }}
+        />
+        <div
+          className="h-3 bg-gradient-to-r from-zinc-200 via-zinc-100 to-zinc-200 dark:from-zinc-700 dark:via-zinc-600 dark:to-zinc-700 rounded-full animate-shimmer bg-[length:200%_100%] w-[85%]"
+          style={{ animationDelay: "0.3s" }}
+        />
       </div>
     </motion.div>
   );
@@ -162,12 +195,27 @@ function CopyButton({ text }: { text: string }) {
       title="Copy message"
     >
       {copied ? (
-        <svg className="w-3.5 h-3.5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg
+          className="w-3.5 h-3.5 text-green-500"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
         </svg>
       ) : (
-        <svg className="w-3.5 h-3.5 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+        <svg
+          className="w-3.5 h-3.5 text-zinc-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+          />
         </svg>
       )}
     </button>
@@ -175,12 +223,12 @@ function CopyButton({ text }: { text: string }) {
 }
 
 // Reaction Buttons Component
-function ReactionButtons({ 
-  messageId, 
-  currentReaction, 
-  onReact 
-}: { 
-  messageId: string; 
+function ReactionButtons({
+  messageId,
+  currentReaction,
+  onReact,
+}: {
+  messageId: string;
   currentReaction?: "like" | "dislike" | null;
   onReact: (messageId: string, reaction: "like" | "dislike") => void;
 }) {
@@ -189,27 +237,47 @@ function ReactionButtons({
       <button
         onClick={() => onReact(messageId, "like")}
         className={`p-1 rounded transition-colors ${
-          currentReaction === "like" 
-            ? "bg-green-100 dark:bg-green-900/30 text-green-600" 
+          currentReaction === "like"
+            ? "bg-green-100 dark:bg-green-900/30 text-green-600"
             : "hover:bg-zinc-100 dark:hover:bg-zinc-700 text-zinc-400"
         }`}
         title="Helpful"
       >
-        <svg className="w-3.5 h-3.5" fill={currentReaction === "like" ? "currentColor" : "none"} stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5" />
+        <svg
+          className="w-3.5 h-3.5"
+          fill={currentReaction === "like" ? "currentColor" : "none"}
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"
+          />
         </svg>
       </button>
       <button
         onClick={() => onReact(messageId, "dislike")}
         className={`p-1 rounded transition-colors ${
-          currentReaction === "dislike" 
-            ? "bg-red-100 dark:bg-red-900/30 text-red-600" 
+          currentReaction === "dislike"
+            ? "bg-red-100 dark:bg-red-900/30 text-red-600"
             : "hover:bg-zinc-100 dark:hover:bg-zinc-700 text-zinc-400"
         }`}
         title="Not helpful"
       >
-        <svg className="w-3.5 h-3.5" fill={currentReaction === "dislike" ? "currentColor" : "none"} stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 14H5.236a2 2 0 01-1.789-2.894l3.5-7A2 2 0 018.736 3h4.018a2 2 0 01.485.06l3.76.94m-7 10v5a2 2 0 002 2h.096c.5 0 .905-.405.905-.904 0-.715.211-1.413.608-2.008L17 13V4m-7 10h2m5-10h2a2 2 0 012 2v6a2 2 0 01-2 2h-2.5" />
+        <svg
+          className="w-3.5 h-3.5"
+          fill={currentReaction === "dislike" ? "currentColor" : "none"}
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M10 14H5.236a2 2 0 01-1.789-2.894l3.5-7A2 2 0 018.736 3h4.018a2 2 0 01.485.06l3.76.94m-7 10v5a2 2 0 002 2h.096c.5 0 .905-.405.905-.904 0-.715.211-1.413.608-2.008L17 13V4m-7 10h2m5-10h2a2 2 0 012 2v6a2 2 0 01-2 2h-2.5"
+          />
         </svg>
       </button>
     </div>
@@ -240,7 +308,7 @@ export function AIAssistant() {
         setUser(userData);
 
         const reposRes = await fetch(
-          `https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=pushed&per_page=15`
+          `https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=pushed&per_page=15`,
         );
         const reposData = await reposRes.json();
         setRepos(reposData);
@@ -295,60 +363,63 @@ export function AIAssistant() {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [isOpen]);
 
-  const sendMessageToAI = useCallback(async (userMessage: string): Promise<string> => {
-    try {
-      const chatHistory = messages.slice(-8).map((msg) => ({
-        role: msg.role,
-        content: msg.content,
-      }));
+  const sendMessageToAI = useCallback(
+    async (userMessage: string): Promise<string> => {
+      try {
+        const chatHistory = messages.slice(-8).map((msg) => ({
+          role: msg.role,
+          content: msg.content,
+        }));
 
-      chatHistory.push({ role: "user" as const, content: userMessage });
+        chatHistory.push({ role: "user" as const, content: userMessage });
 
-      const languages = [...new Set(repos.map((r) => r.language).filter(Boolean))];
+        const languages = [...new Set(repos.map((r) => r.language).filter(Boolean))];
 
-      const githubData = {
-        repos: user?.public_repos,
-        followers: user?.followers,
-        following: user?.following,
-        languages: languages.slice(0, 8),
-        topRepos: repos.slice(0, 10).map((repo) => ({
-          name: repo.name,
-          description: repo.description || "",
-          language: repo.language || "",
-          stargazers_count: repo.stargazers_count || 0,
-          forks_count: repo.forks_count || 0,
-        })),
-      };
+        const githubData = {
+          repos: user?.public_repos,
+          followers: user?.followers,
+          following: user?.following,
+          languages: languages.slice(0, 8),
+          topRepos: repos.slice(0, 10).map((repo) => ({
+            name: repo.name,
+            description: repo.description || "",
+            language: repo.language || "",
+            stargazers_count: repo.stargazers_count || 0,
+            forks_count: repo.forks_count || 0,
+          })),
+        };
 
-      const currentTime = new Date().toLocaleString("en-IN", {
-        timeZone: "Asia/Kolkata",
-        dateStyle: "full",
-        timeStyle: "short",
-      });
+        const currentTime = new Date().toLocaleString("en-IN", {
+          timeZone: "Asia/Kolkata",
+          dateStyle: "full",
+          timeStyle: "short",
+        });
 
-      const response = await fetch("/api/chat", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          messages: chatHistory,
-          githubData,
-          currentTime,
-        }),
-      });
+        const response = await fetch("/api/chat", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            messages: chatHistory,
+            githubData,
+            currentTime,
+          }),
+        });
 
-      if (!response.ok) {
-        throw new Error("Failed to get AI response");
+        if (!response.ok) {
+          throw new Error("Failed to get AI response");
+        }
+
+        const data = await response.json();
+        return data.message;
+      } catch (error) {
+        console.error("Error calling AI:", error);
+        return "I apologize, but I'm experiencing connection issues. Please try again shortly.";
       }
-
-      const data = await response.json();
-      return data.message;
-    } catch (error) {
-      console.error("Error calling AI:", error);
-      return "I apologize, but I'm experiencing connection issues. Please try again shortly.";
-    }
-  }, [messages, repos, user]);
+    },
+    [messages, repos, user],
+  );
 
   const handleSend = async () => {
     if (!input.trim() || isTyping) return;
@@ -392,7 +463,7 @@ export function AIAssistant() {
 
   const handleRegenerate = async () => {
     if (!lastQuery || isTyping) return;
-    
+
     // Remove last assistant message
     setMessages((prev) => prev.slice(0, -1));
     setIsTyping(true);
@@ -440,8 +511,8 @@ export function AIAssistant() {
       prev.map((msg) =>
         msg.id === messageId
           ? { ...msg, reaction: msg.reaction === reaction ? null : reaction }
-          : msg
-      )
+          : msg,
+      ),
     );
   };
 
@@ -512,8 +583,12 @@ export function AIAssistant() {
       {/* Shimmer animation style */}
       <style jsx global>{`
         @keyframes shimmer {
-          0% { background-position: 200% 0; }
-          100% { background-position: -200% 0; }
+          0% {
+            background-position: 200% 0;
+          }
+          100% {
+            background-position: -200% 0;
+          }
         }
         .animate-shimmer {
           animation: shimmer 1.5s ease-in-out infinite;
@@ -543,7 +618,12 @@ export function AIAssistant() {
               stroke="currentColor"
               viewBox="0 0 24 24"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
             </motion.svg>
           ) : (
             <motion.svg
@@ -565,7 +645,7 @@ export function AIAssistant() {
             </motion.svg>
           )}
         </AnimatePresence>
-        
+
         {!isOpen && (
           <span className="absolute inset-0 rounded-full bg-teal-400 animate-ping opacity-20" />
         )}
@@ -585,11 +665,10 @@ export function AIAssistant() {
             <div className="px-4 py-3 bg-gradient-to-r from-teal-500 to-cyan-600 dark:from-teal-600 dark:to-cyan-700 text-white flex items-center gap-3">
               <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center overflow-hidden">
                 {user?.avatar_url ? (
-                  // eslint-disable-next-line @next/next/no-img-element
                   <img src={user.avatar_url} alt="Avatar" className="w-full h-full object-cover" />
                 ) : (
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z" />
                   </svg>
                 )}
               </div>
@@ -600,7 +679,7 @@ export function AIAssistant() {
                   {user?.public_repos || "—"} repos • Groq AI
                 </p>
               </div>
-              
+
               {/* Header Actions */}
               <div className="flex items-center gap-0.5">
                 {/* Quick Links */}
@@ -611,10 +690,15 @@ export function AIAssistant() {
                     title="Quick links"
                   >
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"
+                      />
                     </svg>
                   </button>
-                  
+
                   <AnimatePresence>
                     {showQuickLinks && (
                       <motion.div
@@ -646,10 +730,15 @@ export function AIAssistant() {
                     title="Export chat"
                   >
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                      />
                     </svg>
                   </button>
-                  
+
                   <AnimatePresence>
                     {showExportMenu && (
                       <motion.div
@@ -682,7 +771,12 @@ export function AIAssistant() {
                   title="Clear chat"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                    />
                   </svg>
                 </button>
 
@@ -694,13 +788,23 @@ export function AIAssistant() {
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     {isExpanded ? (
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 9V4.5M9 9H4.5M9 9L3.75 3.75M9 15v4.5M9 15H4.5M9 15l-5.25 5.25M15 9h4.5M15 9V4.5M15 9l5.25-5.25M15 15h4.5M15 15v4.5m0-4.5l5.25 5.25" />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 9V4.5M9 9H4.5M9 9L3.75 3.75M9 15v4.5M9 15H4.5M9 15l-5.25 5.25M15 9h4.5M15 9V4.5M15 9l5.25-5.25M15 15h4.5M15 15v4.5m0-4.5l5.25 5.25"
+                      />
                     ) : (
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"
+                      />
                     )}
                   </svg>
                 </button>
-                
+
                 {/* Minimize */}
                 <button
                   onClick={() => setIsOpen(false)}
@@ -708,7 +812,12 @@ export function AIAssistant() {
                   title="Minimize (Esc)"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
                   </svg>
                 </button>
               </div>
@@ -723,7 +832,9 @@ export function AIAssistant() {
                   exit={{ opacity: 0, height: 0 }}
                   className="bg-amber-50 dark:bg-amber-900/20 border-b border-amber-200 dark:border-amber-800 px-4 py-2 flex items-center justify-between"
                 >
-                  <span className="text-xs text-amber-800 dark:text-amber-200">Clear conversation?</span>
+                  <span className="text-xs text-amber-800 dark:text-amber-200">
+                    Clear conversation?
+                  </span>
                   <div className="flex gap-2">
                     <button
                       onClick={handleClearChat}
@@ -763,15 +874,17 @@ export function AIAssistant() {
                       {message.content}
                     </div>
                     {/* Message Footer */}
-                    <div className={`flex items-center gap-2 mt-1 ${message.role === "user" ? "justify-end" : "justify-start"}`}>
+                    <div
+                      className={`flex items-center gap-2 mt-1 ${message.role === "user" ? "justify-end" : "justify-start"}`}
+                    >
                       <span className="text-[10px] text-zinc-400 dark:text-zinc-500">
                         {formatTimestamp(message.timestamp)}
                       </span>
                       {message.role === "assistant" && (
                         <>
                           <CopyButton text={message.content} />
-                          <ReactionButtons 
-                            messageId={message.id} 
+                          <ReactionButtons
+                            messageId={message.id}
                             currentReaction={message.reaction}
                             onReact={handleReaction}
                           />
@@ -782,8 +895,18 @@ export function AIAssistant() {
                               className="opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-zinc-100 dark:hover:bg-zinc-700 rounded text-zinc-400"
                               title="Regenerate response"
                             >
-                              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                              <svg
+                                className="w-3.5 h-3.5"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth={2}
+                                  d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+                                />
                               </svg>
                             </button>
                           )}
@@ -807,16 +930,18 @@ export function AIAssistant() {
                   {messages.length <= 1 ? "Quick Questions" : "Follow-up Questions"}
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  {getContextualSuggestions(messages).slice(0, 4).map((question, index) => (
-                    <button
-                      key={`${question}-${index}`}
-                      onClick={() => handleSuggestedQuestion(question)}
-                      disabled={isTyping}
-                      className="px-3 py-1.5 text-xs font-medium rounded-full bg-zinc-100 dark:bg-muted text-zinc-600 dark:text-zinc-400 hover:bg-teal-100 dark:hover:bg-teal-900/30 hover:text-teal-700 dark:hover:text-teal-400 transition-colors disabled:opacity-50"
-                    >
-                      {question}
-                    </button>
-                  ))}
+                  {getContextualSuggestions(messages)
+                    .slice(0, 4)
+                    .map((question, index) => (
+                      <button
+                        key={`${question}-${index}`}
+                        onClick={() => handleSuggestedQuestion(question)}
+                        disabled={isTyping}
+                        className="px-3 py-1.5 text-xs font-medium rounded-full bg-zinc-100 dark:bg-muted text-zinc-600 dark:text-zinc-400 hover:bg-teal-100 dark:hover:bg-teal-900/30 hover:text-teal-700 dark:hover:text-teal-400 transition-colors disabled:opacity-50"
+                      >
+                        {question}
+                      </button>
+                    ))}
                 </div>
               </div>
             )}
@@ -841,18 +966,25 @@ export function AIAssistant() {
                   className="px-4 py-2.5 bg-gradient-to-r from-teal-500 to-cyan-600 text-white rounded-xl hover:from-teal-600 hover:to-cyan-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+                    />
                   </svg>
                 </button>
               </div>
-              
+
               {/* Footer info */}
               <div className="flex justify-between items-center mt-2 px-1">
                 <span className="text-[10px] text-zinc-400 dark:text-zinc-500">
                   Press Ctrl+K to toggle • Esc to close
                 </span>
                 {input.length > 0 && (
-                  <span className={`text-[10px] ${input.length > 450 ? "text-amber-500" : "text-zinc-400"}`}>
+                  <span
+                    className={`text-[10px] ${input.length > 450 ? "text-amber-500" : "text-zinc-400"}`}
+                  >
                     {input.length}/500
                   </span>
                 )}

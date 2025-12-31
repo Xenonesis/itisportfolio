@@ -1,12 +1,12 @@
 "use client";
 
-import dynamic from 'next/dynamic';
-import { useEffect, useState } from 'react';
+import dynamic from "next/dynamic";
+import { useEffect, useState } from "react";
 
 // Dynamic import to avoid SSR issues with WebGL
-const Particles = dynamic(() => import('./Particles'), {
+const Particles = dynamic(() => import("./Particles"), {
   ssr: false,
-  loading: () => null
+  loading: () => null,
 });
 
 export const ParticlesBackground = () => {
@@ -15,7 +15,7 @@ export const ParticlesBackground = () => {
   useEffect(() => {
     // Check the actual class on the document element
     const checkTheme = () => {
-      setIsDark(document.documentElement.classList.contains('dark'));
+      setIsDark(document.documentElement.classList.contains("dark"));
     };
 
     // Initial check
@@ -25,15 +25,15 @@ export const ParticlesBackground = () => {
     const observer = new MutationObserver(checkTheme);
     observer.observe(document.documentElement, {
       attributes: true,
-      attributeFilter: ['class']
+      attributeFilter: ["class"],
     });
 
     return () => observer.disconnect();
   }, []);
 
   // Colors suitable for both light and dark themes
-  const lightModeColors = ['#14b8a6', '#06b6d4', '#8b5cf6', '#a1a1aa'];
-  const darkModeColors = ['#2dd4bf', '#22d3ee', '#a78bfa', '#ffffff'];
+  const lightModeColors = ["#14b8a6", "#06b6d4", "#8b5cf6", "#a1a1aa"];
+  const darkModeColors = ["#2dd4bf", "#22d3ee", "#a78bfa", "#ffffff"];
 
   return (
     <Particles

@@ -31,9 +31,7 @@ const RootLayout: React.FC<Props> = ({ children }) => {
       <body className="font-geist-sans bg-background overscroll-none dot-grid-bg-container">
         <ThemeProvider defaultTheme="system" storageKey="ahmet-theme">
           <DotGridBackground />
-          <div className="relative z-10">
-            {children}
-          </div>
+          <div className="relative z-10">{children}</div>
           <AIAssistant />
         </ThemeProvider>
       </body>
@@ -56,13 +54,12 @@ export const metadata: Metadata = {
     default: "Aditya Kumar Tiwari",
     template: `%s - Aditya Kumar Tiwari`,
   },
-  description: "Cybersecurity Specialist & Full-Stack Developer. Explore my projects, experience, and get in touch for collaboration.",
+  description:
+    "Cybersecurity Specialist & Full-Stack Developer. Explore my projects, experience, and get in touch for collaboration.",
   icons: {
-    icon: '/icon.svg', // or '/icon.png' if using the dynamic approach
+    icon: "/icon.svg", // or '/icon.png' if using the dynamic approach
   },
   openGraph: {
     images: [],
   },
 };
-
-

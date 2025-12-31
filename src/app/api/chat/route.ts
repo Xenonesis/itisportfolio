@@ -21,7 +21,7 @@ const PORTFOLIO_CONTEXT = `You are Aditya Kumar Tiwari's professional AI portfol
 • Full Name: Aditya Kumar Tiwari
 • Title: Cybersecurity Specialist & Full-Stack Developer
 • Status: Solo Developer
-• Location: Delhi, India
+• Location: Gurugram, India
 • Email: itisaddy7@gmail.com
 • LinkedIn: linkedin.com/in/itisaddy
 • GitHub: github.com/Xenonesis
@@ -29,7 +29,7 @@ const PORTFOLIO_CONTEXT = `You are Aditya Kumar Tiwari's professional AI portfol
 
 === EDUCATION ===
 • Degree: BCA (Bachelor of Computer Applications) in Cybersecurity
-• University: Sushant University, Delhi, India
+• University: Sushant University, Gurugram, India
 • Duration: 2022 - 2025
 • Focus Areas: Network Security, Ethical Hacking, Cryptography, Secure Software Development
 
@@ -169,12 +169,9 @@ interface RequestBody {
 export async function POST(request: NextRequest) {
   try {
     const apiKey = process.env.GROQ_API_KEY;
-    
+
     if (!apiKey) {
-      return NextResponse.json(
-        { error: "Groq API key not configured" },
-        { status: 500 }
-      );
+      return NextResponse.json({ error: "Groq API key not configured" }, { status: 500 });
     }
 
     const body: RequestBody = await request.json();
@@ -182,7 +179,7 @@ export async function POST(request: NextRequest) {
 
     // Build dynamic context with real-time GitHub data
     let dynamicContext = PORTFOLIO_CONTEXT;
-    
+
     // Add current time context
     if (currentTime) {
       dynamicContext += `\n\n=== CURRENT TIME ===\nCurrent Date/Time: ${currentTime}\n`;
@@ -212,10 +209,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Prepare messages for Groq API
-    const groqMessages = [
-      { role: "system", content: dynamicContext },
-      ...messages.slice(-10),
-    ];
+    const groqMessages = [{ role: "system", content: dynamicContext }, ...messages.slice(-10)];
 
     const response = await fetch(GROQ_API_URL, {
       method: "POST",
@@ -238,22 +232,21 @@ export async function POST(request: NextRequest) {
       console.error("Groq API error:", errorData);
       return NextResponse.json(
         { error: "Failed to get AI response", details: errorData },
-        { status: response.status }
+        { status: response.status },
       );
     }
 
     const data = await response.json();
-    const aiMessage = data.choices[0]?.message?.content || "I apologize, but I couldn't generate a response. Please try again.";
+    const aiMessage =
+      data.choices[0]?.message?.content ||
+      "I apologize, but I couldn't generate a response. Please try again.";
 
-    return NextResponse.json({ 
+    return NextResponse.json({
       message: aiMessage,
-      usage: data.usage
+      usage: data.usage,
     });
   } catch (error) {
     console.error("Chat API error:", error);
-    return NextResponse.json(
-      { error: "Internal server error" },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: "Internal server error" }, { status: 500 });
   }
 }

@@ -13,7 +13,13 @@ type AnimateInProps = {
   once?: boolean;
 };
 
-export function AnimateIn({ children, delay = 0, className = "", variant = "fadeUp", once = true }: AnimateInProps) {
+export function AnimateIn({
+  children,
+  delay = 0,
+  className = "",
+  variant = "fadeUp",
+  once = true,
+}: AnimateInProps) {
   const [isVisible, setIsVisible] = useState(false);
   const [hasAnimated, setHasAnimated] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -36,7 +42,7 @@ export function AnimateIn({ children, delay = 0, className = "", variant = "fade
             }
           });
         },
-        { threshold: 0.1 }
+        { threshold: 0.1 },
       );
 
       const currentRef = ref.current;

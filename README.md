@@ -49,24 +49,25 @@
 <div align="center">
 
 ### 🎨 **Design Philosophy**
-*Minimalism meets modern web design trends of 2025*
+
+_Minimalism meets modern web design trends of 2025_
 
 </div>
 
 ### Core Features
 
-| Feature | Description | Status |
-|---------|-------------|--------|
-| 🌓 **Theme Toggle** | Seamless dark/light/system theme switching with persistent storage | ✅ Active |
-| 🤖 **AI Chat Assistant** | Groq-powered AI portfolio assistant with context-aware responses | ✅ Active |
-| 🎆 **Dynamic Backgrounds** | Interactive dot grid & particle systems with WebGL | ✅ Active |
-| ✨ **Smooth Animations** | Custom animation framework with IntersectionObserver | ✅ Active |
-| 🎵 **Spotify Integration** | Embedded playlist showcasing current music vibes | ✅ Active |
-| 📊 **GitHub Contributions** | Live GitHub activity heatmap with real-time data | ✅ Active |
-| 🖥️ **Visitor Detection** | Browser/OS detection with personalized greetings | ✅ Active |
-| 📱 **Fully Responsive** | Mobile-first design optimized for all devices | ✅ Active |
-| ⚡ **Turbopack** | Lightning-fast development with Next.js 16 Turbopack | ✅ Active |
-| 📈 **Analytics** | Vercel Analytics & Google Analytics integration | ✅ Active |
+| Feature                     | Description                                                        | Status    |
+| --------------------------- | ------------------------------------------------------------------ | --------- |
+| 🌓 **Theme Toggle**         | Seamless dark/light/system theme switching with persistent storage | ✅ Active |
+| 🤖 **AI Chat Assistant**    | Groq-powered AI portfolio assistant with context-aware responses   | ✅ Active |
+| 🎆 **Dynamic Backgrounds**  | Interactive dot grid & particle systems with WebGL                 | ✅ Active |
+| ✨ **Smooth Animations**    | Custom animation framework with IntersectionObserver               | ✅ Active |
+| 🎵 **Spotify Integration**  | Embedded playlist showcasing current music vibes                   | ✅ Active |
+| 📊 **GitHub Contributions** | Live GitHub activity heatmap with real-time data                   | ✅ Active |
+| 🖥️ **Visitor Detection**    | Browser/OS detection with personalized greetings                   | ✅ Active |
+| 📱 **Fully Responsive**     | Mobile-first design optimized for all devices                      | ✅ Active |
+| ⚡ **Turbopack**            | Lightning-fast development with Next.js 16 Turbopack               | ✅ Active |
+| 📈 **Analytics**            | Vercel Analytics & Google Analytics integration                    | ✅ Active |
 
 ---
 
@@ -87,6 +88,7 @@ The portfolio features a **custom-built AI assistant** powered by **Groq's LLaMA
 - **Chat History**: Maintains conversation context (last 8 messages)
 
 **Environment Variable Required:**
+
 ```bash
 GROQ_API_KEY=your_groq_api_key_here
 ```
@@ -96,6 +98,7 @@ GROQ_API_KEY=your_groq_api_key_here
 Two sophisticated background systems that adapt to theme changes:
 
 #### 1. **Dot Grid Background** (Active by default)
+
 - Canvas-based animated dot grid
 - Mouse proximity detection (140px radius)
 - Physics-based shock wave effects
@@ -104,6 +107,7 @@ Two sophisticated background systems that adapt to theme changes:
 - Optimized with RequestAnimationFrame
 
 #### 2. **Particles Background** (WebGL)
+
 - Three.js powered 3D particle system
 - 150 floating particles with depth
 - Mouse interaction with hover effects
@@ -129,45 +133,45 @@ Custom `AnimateIn` component with multiple variants:
 
 ### Frontend Core
 
-| Technology | Version | Purpose |
-|------------|---------|---------|
-| **Next.js** | 16.1.1 | React framework with App Router & Turbopack |
-| **React** | 19.2.3 | UI library with latest features |
-| **TypeScript** | 5.x | Type-safe development |
-| **TailwindCSS** | 4.x | Utility-first CSS framework |
+| Technology      | Version | Purpose                                     |
+| --------------- | ------- | ------------------------------------------- |
+| **Next.js**     | 16.1.1  | React framework with App Router & Turbopack |
+| **React**       | 19.2.3  | UI library with latest features             |
+| **TypeScript**  | 5.x     | Type-safe development                       |
+| **TailwindCSS** | 4.x     | Utility-first CSS framework                 |
 
 ### Animations & Effects
 
-| Library | Purpose |
-|---------|---------|
+| Library             | Purpose                        |
+| ------------------- | ------------------------------ |
 | **Motion (Framer)** | 12.23.26 - Advanced animations |
-| **GSAP** | 3.14.2 - Timeline animations |
-| **Canvas Confetti** | 1.9.4 - Celebration effects |
+| **GSAP**            | 3.14.2 - Timeline animations   |
+| **Canvas Confetti** | 1.9.4 - Celebration effects    |
 
 ### 3D Graphics
 
-| Library | Purpose |
-|---------|---------|
-| **Three.js** | 0.182.0 - WebGL rendering |
+| Library               | Purpose                             |
+| --------------------- | ----------------------------------- |
+| **Three.js**          | 0.182.0 - WebGL rendering           |
 | **React Three Fiber** | 9.5.0 - React renderer for Three.js |
-| **Postprocessing** | 6.38.2 - Post-processing effects |
-| **OGL** | 1.0.11 - Minimal WebGL library |
+| **Postprocessing**    | 6.38.2 - Post-processing effects    |
+| **OGL**               | 1.0.11 - Minimal WebGL library      |
 
 ### AI & Analytics
 
-| Service | Purpose |
-|---------|---------|
-| **Groq API** | LLaMA 3.3 70B - AI chat assistant |
-| **Vercel Analytics** | Performance monitoring |
-| **Google Analytics** | User tracking |
+| Service              | Purpose                           |
+| -------------------- | --------------------------------- |
+| **Groq API**         | LLaMA 3.3 70B - AI chat assistant |
+| **Vercel Analytics** | Performance monitoring            |
+| **Google Analytics** | User tracking                     |
 
 ### UI Components
 
-| Library | Purpose |
-|---------|---------|
-| **Lucide React** | 0.562.0 - Icon library |
+| Library                      | Purpose                    |
+| ---------------------------- | -------------------------- |
+| **Lucide React**             | 0.562.0 - Icon library     |
 | **Class Variance Authority** | 0.7.1 - Component variants |
-| **clsx / tailwind-merge** | Conditional class merging |
+| **clsx / tailwind-merge**    | Conditional class merging  |
 
 ---
 
@@ -176,6 +180,7 @@ Custom `AnimateIn` component with multiple variants:
 ### Layout Components
 
 #### **ThemeProvider** (`src/components/ThemeProvider.tsx`)
+
 - Custom theme management with localStorage persistence
 - System preference detection via `prefers-color-scheme`
 - Three modes: `light`, `dark`, `system`
@@ -183,6 +188,7 @@ Custom `AnimateIn` component with multiple variants:
 - Hydration-safe implementation
 
 #### **Layout** (`src/app/layout.tsx`)
+
 - Root layout with Geist Sans & Geist Mono fonts
 - Metadata configuration for SEO
 - Viewport settings for mobile optimization
@@ -191,6 +197,7 @@ Custom `AnimateIn` component with multiple variants:
 ### Interactive Components
 
 #### **AIAssistant** (`src/components/AIAssistant.tsx`)
+
 - 794 lines of sophisticated chat interface
 - Floating chat button with animation
 - Expandable/collapsible window
@@ -202,6 +209,7 @@ Custom `AnimateIn` component with multiple variants:
 - Keyboard shortcuts
 
 #### **GitHubContributions** (`src/components/GitHubContributions.tsx`)
+
 - Fetches live GitHub contribution data
 - Interactive calendar heatmap
 - Hover tooltips with contribution counts
@@ -209,6 +217,7 @@ Custom `AnimateIn` component with multiple variants:
 - Responsive grid layout
 
 #### **VisitorGreeting** (`src/components/VisitorGreeting.tsx`)
+
 - Detects browser (Chrome, Firefox, Safari, Edge, Brave, Opera)
 - Detects OS (Windows, macOS, Linux, Android, iOS)
 - Personalized greeting messages
@@ -218,6 +227,7 @@ Custom `AnimateIn` component with multiple variants:
 ### Background Components
 
 #### **DotGridBackground** (`src/components/backgrounds/DotGridBackground.tsx`)
+
 - Canvas-based interactive dot grid
 - Mouse proximity effects (140px radius)
 - Shock wave propagation (280px radius, strength 5)
@@ -225,6 +235,7 @@ Custom `AnimateIn` component with multiple variants:
 - Theme-adaptive colors
 
 #### **ParticlesBackground** (`src/components/backgrounds/ParticlesBackground.tsx`)
+
 - WebGL particle system via Three.js
 - 150 particles with configurable properties
 - Mouse interaction (0.5x hover factor)
@@ -232,6 +243,7 @@ Custom `AnimateIn` component with multiple variants:
 - Camera distance: 25 units
 
 #### **DotGrid** (`src/components/backgrounds/DotGrid.tsx`)
+
 - Low-level Canvas API implementation
 - 423 lines of physics simulation
 - Optimized render loop with RAF
@@ -239,6 +251,7 @@ Custom `AnimateIn` component with multiple variants:
 - Smooth spring interpolation
 
 #### **Particles** (`src/components/backgrounds/Particles.tsx`)
+
 - 261 lines of Three.js logic
 - Point cloud rendering
 - Custom shader materials
@@ -248,6 +261,7 @@ Custom `AnimateIn` component with multiple variants:
 ### Animation Components
 
 #### **AnimateIn** (`src/components/animations/AnimateIn.tsx`)
+
 - 5 animation variants (fadeUp, fadeLeft, fadeRight, scale, reveal)
 - IntersectionObserver for viewport detection
 - Configurable delays and thresholds
@@ -257,18 +271,21 @@ Custom `AnimateIn` component with multiple variants:
 ### UI Components
 
 #### **ThemeToggle** (`src/components/ThemeToggle.tsx`)
+
 - Three-state toggle: System → Light → Dark
 - Icon-based visual feedback (Laptop, Sun, Moon)
 - Hover effects with backdrop
 - Accessibility labels
 
 #### **SocialMedia** (`src/components/SocialMedia.tsx`)
+
 - Configurable social links from utilities
 - Custom SVG icons (GitHub, X, Email, LinkedIn)
 - Hover state transitions
 - Screen reader support
 
 #### **Tooltip** (`src/components/Tooltip.tsx`)
+
 - Hover-based tooltip display
 - Positioned relative to trigger
 - Fade animations
@@ -277,6 +294,7 @@ Custom `AnimateIn` component with multiple variants:
 ### Icon Components
 
 Located in `src/components/icons/`:
+
 - `Codepen.tsx`
 - `Email.tsx`
 - `Github.tsx`
@@ -325,6 +343,7 @@ NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
 ```
 
 **Get Your Groq API Key:**
+
 1. Visit [console.groq.com](https://console.groq.com/)
 2. Sign up or log in
 3. Navigate to API Keys
@@ -371,11 +390,12 @@ The project uses **static export** mode (`next.config.mjs`):
 
 ```javascript
 const nextConfig = {
-    output: "export",
+  output: "export",
 };
 ```
 
 This enables deployment to:
+
 - Netlify
 - GitHub Pages
 - Vercel (static)
@@ -386,6 +406,7 @@ This enables deployment to:
 `postcss.config.mjs` uses TailwindCSS 4 with `@tailwindcss/postcss` plugin.
 
 Custom CSS utilities in `src/app/globals.css`:
+
 - `.soft-container`: Glassmorphism cards
 - `.glass-card`: Backdrop blur effects
 - `.hover-lift`: Transform on hover
@@ -402,20 +423,21 @@ Using Next.js 16's optimized font loading:
 ```typescript
 import { Geist, Geist_Mono } from "next/font/google";
 
-const GeistSans = Geist({ 
-  subsets: ["latin"], 
-  variable: "--font-geist-sans" 
+const GeistSans = Geist({
+  subsets: ["latin"],
+  variable: "--font-geist-sans",
 });
 
-const GeistMono = Geist_Mono({ 
-  subsets: ["latin"], 
-  variable: "--font-geist-mono" 
+const GeistMono = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-geist-mono",
 });
 ```
 
 ### TypeScript Configuration
 
 Strict mode enabled with:
+
 - Target: ES2017
 - Module: ESNext
 - Path aliases: `@/*` → `./src/*`
@@ -493,6 +515,7 @@ portfolio/
 ### Animation Variants
 
 #### **fadeUp** - Upward Slide In
+
 ```typescript
 {
   opacity: isVisible ? 1 : 0,
@@ -502,6 +525,7 @@ portfolio/
 ```
 
 #### **fadeLeft** - Slide from Left
+
 ```typescript
 {
   opacity: isVisible ? 1 : 0,
@@ -510,6 +534,7 @@ portfolio/
 ```
 
 #### **fadeRight** - Slide from Right
+
 ```typescript
 {
   opacity: isVisible ? 1 : 0,
@@ -518,6 +543,7 @@ portfolio/
 ```
 
 #### **scale** - Scale Up
+
 ```typescript
 {
   opacity: isVisible ? 1 : 0,
@@ -526,6 +552,7 @@ portfolio/
 ```
 
 #### **reveal** - Horizontal Wipe
+
 ```typescript
 {
   clipPath: isVisible ? "inset(0 0 0 0)" : "inset(0 100% 0 0)",
@@ -536,12 +563,14 @@ portfolio/
 ### Motion (Framer Motion) Usage
 
 Used in **AIAssistant** for:
+
 - Chat window entrance/exit
 - Button hover effects
 - Message animations
 - Dropdown menus
 
 Example:
+
 ```tsx
 <motion.div
   initial={{ opacity: 0, y: 20, scale: 0.95 }}
@@ -560,7 +589,7 @@ Heart rain animation on footer click (`page.tsx`):
 ```typescript
 const handleHeartRain = () => {
   const heartShape = confetti.shapeFromText({ text: "🤍", scalar: 2 });
-  
+
   const rainConfetti = () => {
     confetti({
       particleCount: 3,
@@ -569,10 +598,10 @@ const handleHeartRain = () => {
       gravity: 0.5,
       origin: { x: Math.random(), y: -0.1 },
       shapes: [heartShape],
-      colors: ["#ffffff", "#f8fafc", "#f1f5f9"]
+      colors: ["#ffffff", "#f8fafc", "#f1f5f9"],
     });
   };
-  
+
   // Create continuous rain for 3 seconds
   // ...
 };
@@ -606,12 +635,14 @@ Client displays message
 ### Features Breakdown
 
 #### **1. Context Management**
+
 - Pre-loaded portfolio information (257 lines of context)
 - Real-time GitHub statistics integration
 - Conversation history (last 8 messages)
 - Current timestamp in IST timezone
 
 #### **2. Message System**
+
 - User messages with timestamps
 - AI responses with copy-to-clipboard
 - Reaction buttons (like/dislike)
@@ -619,6 +650,7 @@ Client displays message
 - Message export (TXT/JSON)
 
 #### **3. UI/UX Features**
+
 - Floating chat button with pulse animation
 - Expand/collapse/minimize controls
 - Skeleton loading states during AI response
@@ -628,6 +660,7 @@ Client displays message
 - Keyboard shortcuts (Ctrl+K, Escape)
 
 #### **4. Conversation Management**
+
 - Clear chat with confirmation dialog
 - Export chat history
 - Persistent state during session
@@ -638,6 +671,7 @@ Client displays message
 **Endpoint**: `POST /api/chat`
 
 **Request Body**:
+
 ```json
 {
   "messages": [
@@ -655,6 +689,7 @@ Client displays message
 ```
 
 **Response**:
+
 ```json
 {
   "message": "AI response text...",
@@ -676,6 +711,7 @@ Client displays message
 ### Portfolio Context
 
 The AI has complete knowledge of:
+
 - Personal information (name, location, email, links)
 - Education (BCA in Cybersecurity, Sushant University)
 - 6 projects with descriptions and tech stacks
@@ -690,32 +726,28 @@ The AI has complete knowledge of:
 ### Color Palette
 
 #### Light Mode
+
 ```css
---background: #ffffff
---foreground: #18181b (zinc-900)
---muted: #f4f4f5 (zinc-100)
---border: #e4e4e7 (zinc-200)
---accent: #14b8a6 (teal-500)
---accent-secondary: #f97316 (orange-500)
+--background: #ffffff --foreground: #18181b (zinc-900) --muted: #f4f4f5 (zinc-100) --border: #e4e4e7
+  (zinc-200) --accent: #14b8a6 (teal-500) --accent-secondary: #f97316 (orange-500);
 ```
 
 #### Dark Mode
+
 ```css
---background: #09090b (zinc-950)
---foreground: #fafafa (zinc-50)
---muted: #27272a (zinc-800)
---border: #3f3f46 (zinc-700)
---accent: #2dd4bf (teal-400)
---accent-secondary: #fb923c (orange-400)
+--background: #09090b (zinc-950) --foreground: #fafafa (zinc-50) --muted: #27272a (zinc-800)
+  --border: #3f3f46 (zinc-700) --accent: #2dd4bf (teal-400) --accent-secondary: #fb923c (orange-400);
 ```
 
 ### Typography
 
 **Fonts**:
+
 - Primary: Geist Sans (variable font)
 - Monospace: Geist Mono (for code)
 
 **Scale**:
+
 - Headings: 2xl (1.5rem) to 3xl (1.875rem)
 - Body: sm (0.875rem) to base (1rem)
 - Captions: xs (0.75rem)
@@ -723,6 +755,7 @@ The AI has complete knowledge of:
 ### Spacing System
 
 Following TailwindCSS spacing scale (4px base):
+
 - Micro: 0.5 (2px), 1 (4px), 2 (8px)
 - Small: 3 (12px), 4 (16px)
 - Medium: 5 (20px), 6 (24px)
@@ -732,6 +765,7 @@ Following TailwindCSS spacing scale (4px base):
 ### Custom Utilities
 
 #### `.soft-container`
+
 ```css
 .soft-container {
   @apply bg-white/60 dark:bg-card/50 backdrop-blur-sm 
@@ -741,6 +775,7 @@ Following TailwindCSS spacing scale (4px base):
 ```
 
 #### `.glass-card`
+
 ```css
 .glass-card {
   @apply bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md 
@@ -750,6 +785,7 @@ Following TailwindCSS spacing scale (4px base):
 ```
 
 #### `.hover-lift`
+
 ```css
 .hover-lift:hover {
   @apply -translate-y-1 shadow-md transition-all duration-300;
@@ -757,6 +793,7 @@ Following TailwindCSS spacing scale (4px base):
 ```
 
 #### `.shine-effect`
+
 ```css
 .shine-effect {
   @apply relative overflow-hidden;
@@ -768,7 +805,7 @@ Following TailwindCSS spacing scale (4px base):
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
   transition: left 0.6s ease;
 }
 .shine-effect:hover::before {
@@ -779,16 +816,19 @@ Following TailwindCSS spacing scale (4px base):
 ### Gradient Utilities
 
 **Project badges**:
+
 ```css
 from-teal-500/8 to-cyan-500/8 dark:from-teal-500/15 dark:to-cyan-500/15
 ```
 
 **Experience badges**:
+
 ```css
 from-orange-500/8 to-amber-500/8 dark:from-orange-500/15 dark:to-amber-500/15
 ```
 
 **Buttons**:
+
 ```css
 from-teal-500/10 to-cyan-500/10 dark:from-teal-500/20 dark:to-cyan-500/20
 ```
@@ -804,7 +844,7 @@ The project is configured for static site generation:
 ```javascript
 // next.config.mjs
 const nextConfig = {
-    output: "export",
+  output: "export",
 };
 ```
 
@@ -820,6 +860,7 @@ This generates a static `out` folder that can be deployed anywhere.
    - Select your GitHub repository
 
 2. **Build Settings**:
+
    ```
    Build command: npm run build
    Publish directory: out
@@ -846,6 +887,7 @@ vercel --prod
 ```
 
 Or connect via GitHub integration:
+
 1. Import project in Vercel dashboard
 2. Add environment variables
 3. Deploy automatically
@@ -858,6 +900,7 @@ Or connect via GitHub integration:
    - Branch: gh-pages
 
 2. **GitHub Actions Workflow** (`.github/workflows/deploy.yml`):
+
 ```yaml
 name: Deploy to GitHub Pages
 
@@ -872,7 +915,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: "18"
       - run: npm ci
       - run: npm run build
       - name: Deploy
@@ -913,10 +956,12 @@ NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
 After deployment, add your custom domain:
 
 **Netlify**:
+
 - Domain settings → Add custom domain
 - Update DNS records (A or CNAME)
 
 **Vercel**:
+
 - Project settings → Domains
 - Add domain and configure DNS
 
@@ -930,7 +975,7 @@ After deployment, add your custom domain:
 
 ![Home Light](https://via.placeholder.com/1200x800/ffffff/000000?text=Home+Light+Mode)
 
-*Clean and minimal design with interactive dot grid background*
+_Clean and minimal design with interactive dot grid background_
 
 ---
 
@@ -938,7 +983,7 @@ After deployment, add your custom domain:
 
 ![Home Dark](https://via.placeholder.com/1200x800/09090b/ffffff?text=Home+Dark+Mode)
 
-*Elegant dark theme with perfect contrast ratios*
+_Elegant dark theme with perfect contrast ratios_
 
 ---
 
@@ -946,7 +991,7 @@ After deployment, add your custom domain:
 
 ![AI Chat](https://via.placeholder.com/600x800/14b8a6/ffffff?text=AI+Chat+Assistant)
 
-*Intelligent portfolio assistant powered by Groq LLaMA 3.3*
+_Intelligent portfolio assistant powered by Groq LLaMA 3.3_
 
 ---
 
@@ -954,7 +999,7 @@ After deployment, add your custom domain:
 
 ![GitHub Stats](https://via.placeholder.com/1200x400/ffffff/000000?text=GitHub+Contribution+Heatmap)
 
-*Live GitHub activity visualization*
+_Live GitHub activity visualization_
 
 ---
 
@@ -962,7 +1007,7 @@ After deployment, add your custom domain:
 
 ![Dot Grid](https://via.placeholder.com/800x600/f4f4f5/14b8a6?text=Interactive+Dot+Grid)
 
-*Physics-based interactive dot grid with mouse effects*
+_Physics-based interactive dot grid with mouse effects_
 
 ---
 
@@ -970,7 +1015,7 @@ After deployment, add your custom domain:
 
 <img src="https://via.placeholder.com/400x800/ffffff/000000?text=Mobile+View" alt="Mobile" width="300"/>
 
-*Fully optimized for mobile devices*
+_Fully optimized for mobile devices_
 
 ---
 
@@ -978,7 +1023,7 @@ After deployment, add your custom domain:
 
 ![Theme Switch](https://via.placeholder.com/800x200/ffffff/000000?text=System+→+Light+→+Dark)
 
-*Seamless theme switching with system preference detection*
+_Seamless theme switching with system preference detection_
 
 </div>
 
@@ -1030,6 +1075,7 @@ After deployment, add your custom domain:
 ### Custom Hooks
 
 #### **useTheme** (from ThemeProvider)
+
 ```typescript
 const { theme, resolvedTheme, setTheme } = useTheme();
 
@@ -1041,10 +1087,11 @@ const { theme, resolvedTheme, setTheme } = useTheme();
 ### Performance Optimizations
 
 1. **Dynamic Imports**:
+
    ```typescript
-   const Particles = dynamic(() => import('./Particles'), {
+   const Particles = dynamic(() => import("./Particles"), {
      ssr: false,
-     loading: () => null
+     loading: () => null,
    });
    ```
 
@@ -1076,6 +1123,7 @@ const { theme, resolvedTheme, setTheme } = useTheme();
 ### SEO Optimization
 
 **Metadata** (`layout.tsx`):
+
 ```typescript
 export const metadata: Metadata = {
   metadataBase: new URL(getUrl),
@@ -1083,9 +1131,10 @@ export const metadata: Metadata = {
     default: "Aditya Kumar Tiwari",
     template: `%s - Aditya Kumar Tiwari`,
   },
-  description: "Cybersecurity Specialist & Full-Stack Developer. Explore my projects, experience, and get in touch for collaboration.",
+  description:
+    "Cybersecurity Specialist & Full-Stack Developer. Explore my projects, experience, and get in touch for collaboration.",
   icons: {
-    icon: '/icon.svg',
+    icon: "/icon.svg",
   },
   openGraph: {
     images: [],
@@ -1094,6 +1143,7 @@ export const metadata: Metadata = {
 ```
 
 **Viewport**:
+
 ```typescript
 export const viewport: Viewport = {
   themeColor: "#ffffff",
@@ -1111,12 +1161,11 @@ Using Next.js recommended ESLint config:
 
 ```javascript
 // eslint.config.mjs
-const eslintConfig = [
-  ...compat.extends("next/core-web-vitals", "next/typescript"),
-];
+const eslintConfig = [...compat.extends("next/core-web-vitals", "next/typescript")];
 ```
 
 Custom rules (`.eslintrc.json`):
+
 ```json
 {
   "rules": {
@@ -1134,6 +1183,7 @@ Custom rules (`.eslintrc.json`):
 ### Browser Compatibility
 
 Tested and working on:
+
 - ✅ Chrome 90+
 - ✅ Firefox 88+
 - ✅ Safari 14+
@@ -1147,12 +1197,12 @@ Tested and working on:
 
 ### Lighthouse Scores (Production)
 
-| Metric | Score |
-|--------|-------|
-| 🎯 Performance | 95+ |
-| ♿ Accessibility | 100 |
-| ✅ Best Practices | 100 |
-| 🔍 SEO | 100 |
+| Metric            | Score |
+| ----------------- | ----- |
+| 🎯 Performance    | 95+   |
+| ♿ Accessibility  | 100   |
+| ✅ Best Practices | 100   |
+| 🔍 SEO            | 100   |
 
 ### Core Web Vitals
 
@@ -1163,6 +1213,7 @@ Tested and working on:
 ### Bundle Analysis
 
 Optimized bundle sizes:
+
 - **First Load JS**: ~180 KB
 - **Route JS**: ~50 KB per page
 - **CSS**: ~15 KB (Tailwind purged)
@@ -1337,18 +1388,21 @@ Thank you to all the open-source contributors who make projects like this possib
 ## 🔗 Quick Links
 
 ### Documentation
+
 - [Getting Started](#-getting-started)
 - [Configuration](#️-configuration)
 - [Deployment](#-deployment)
 - [Components](#-components-overview)
 
 ### Resources
+
 - [Live Demo](https://iaddy.netlify.app)
 - [GitHub Repository](https://github.com/Xenonesis/portfolio)
 - [Issue Tracker](https://github.com/Xenonesis/portfolio/issues)
 - [Discussions](https://github.com/Xenonesis/portfolio/discussions)
 
 ### Social
+
 - [LinkedIn Profile](https://www.linkedin.com/in/itisaddy/)
 - [GitHub Profile](https://github.com/Xenonesis)
 - [Twitter/X](https://x.com/itisaddy7)
@@ -1392,6 +1446,7 @@ Thank you to all the open-source contributors who make projects like this possib
 **Problem**: Chat returns errors or doesn't respond
 
 **Solution**:
+
 1. Check `GROQ_API_KEY` is set in `.env.local`
 2. Verify API key is valid at [console.groq.com](https://console.groq.com/)
 3. Check browser console for errors
@@ -1402,6 +1457,7 @@ Thank you to all the open-source contributors who make projects like this possib
 **Problem**: `npm run build` fails
 
 **Solution**:
+
 1. Delete `.next` folder: `rm -rf .next`
 2. Delete `node_modules`: `rm -rf node_modules`
 3. Clear npm cache: `npm cache clean --force`
@@ -1413,6 +1469,7 @@ Thank you to all the open-source contributors who make projects like this possib
 **Problem**: Dark/light mode not working
 
 **Solution**:
+
 1. Check browser console for errors
 2. Clear localStorage: `localStorage.clear()`
 3. Verify ThemeProvider is wrapping app in `layout.tsx`
@@ -1423,6 +1480,7 @@ Thank you to all the open-source contributors who make projects like this possib
 **Problem**: Contribution graph shows "Failed to load"
 
 **Solution**:
+
 1. Check internet connection
 2. Verify GitHub username in `GitHubContributions.tsx`
 3. Check GitHub API rate limits (60 requests/hour unauthenticated)
@@ -1433,6 +1491,7 @@ Thank you to all the open-source contributors who make projects like this possib
 **Problem**: AnimateIn components not animating
 
 **Solution**:
+
 1. Check IntersectionObserver browser support
 2. Verify `delay` prop is set correctly
 3. Check element is within viewport
@@ -1478,7 +1537,7 @@ Thank you to all the open-source contributors who make projects like this possib
 ✅ Conventional commits  
 ✅ Component modularity  
 ✅ DRY principle  
-✅ Single Responsibility Principle  
+✅ Single Responsibility Principle
 
 ### Performance
 
@@ -1487,7 +1546,7 @@ Thank you to all the open-source contributors who make projects like this possib
 ✅ Image optimization  
 ✅ Lazy loading  
 ✅ Bundle size optimization  
-✅ RequestAnimationFrame for animations  
+✅ RequestAnimationFrame for animations
 
 ### SEO
 
@@ -1496,7 +1555,7 @@ Thank you to all the open-source contributors who make projects like this possib
 ✅ OpenGraph tags  
 ✅ Structured data  
 ✅ Mobile-first  
-✅ Fast page load  
+✅ Fast page load
 
 ### Accessibility
 
@@ -1505,7 +1564,7 @@ Thank you to all the open-source contributors who make projects like this possib
 ✅ Focus indicators  
 ✅ Color contrast  
 ✅ Screen reader support  
-✅ Alt text for images  
+✅ Alt text for images
 
 ### Security
 
@@ -1513,7 +1572,7 @@ Thank you to all the open-source contributors who make projects like this possib
 ✅ No hardcoded API keys  
 ✅ HTTPS only in production  
 ✅ Input sanitization  
-✅ CORS configuration  
+✅ CORS configuration
 
 ---
 
@@ -1533,7 +1592,7 @@ If you find this project useful, please consider giving it a star!
 
 ---
 
-*Last Updated: December 31, 2025*
+_Last Updated: December 31, 2025_
 
 </div>
 
@@ -1548,6 +1607,7 @@ If you find this project useful, please consider giving it a star!
 ![AI Chat Opening Animation](https://via.placeholder.com/800x600/14b8a6/ffffff?text=AI+Chat+Opening+Animation)
 
 **Features Shown:**
+
 - Floating chat button with pulse animation
 - Smooth expand/collapse transitions
 - Message bubbles with fade-in effect
@@ -1561,6 +1621,7 @@ If you find this project useful, please consider giving it a star!
 ![Dot Grid Physics](https://via.placeholder.com/1200x600/f4f4f5/14b8a6?text=Dot+Grid+Physics+Simulation)
 
 **Animation Details:**
+
 - Mouse proximity detection (140px radius)
 - Spring-based physics simulation
 - Shock wave propagation on fast movement
@@ -1571,8 +1632,8 @@ If you find this project useful, please consider giving it a star!
 
 \\\
 [Hover Effect] → [Dots Move] → [Ripple Effect] → [Smooth Return]
-    ↓              ↓              ↓                  ↓
-  Mouse In    Physics Apply   Fast Movement    Auto-restore
+↓ ↓ ↓ ↓
+Mouse In Physics Apply Fast Movement Auto-restore
 \\\
 
 ---
@@ -1582,6 +1643,7 @@ If you find this project useful, please consider giving it a star!
 ![Particles WebGL](https://via.placeholder.com/1200x600/09090b/2dd4bf?text=3D+Particles+WebGL+Rendering)
 
 **Technical Features:**
+
 - 150 particles rendered with Three.js
 - Real-time mouse interaction
 - Particle rotation and depth
@@ -1591,18 +1653,19 @@ If you find this project useful, please consider giving it a star!
 **Animation Flow:**
 \\\
 Initialize → Position Particles → Animate Loop → Mouse Hover → Apply Force
-    ↓            ↓                    ↓              ↓            ↓
-  Scene       Random XYZ          60fps RAF      Detect       Push Away
+↓ ↓ ↓ ↓ ↓
+Scene Random XYZ 60fps RAF Detect Push Away
 \\\
 
 ---
 
 #### Theme Toggle Animation
 
-![Theme Switch](https://via.placeholder.com/800x300/ffffff/000000?text=Light+Mode) 
+![Theme Switch](https://via.placeholder.com/800x300/ffffff/000000?text=Light+Mode)
 ![Theme Switch](https://via.placeholder.com/800x300/09090b/ffffff?text=Dark+Mode)
 
 **Transition States:**
+
 1. **Click Button** → Icon morphs (0.3s)
 2. **CSS Variables Update** → Colors transition (0.2s)
 3. **LocalStorage Save** → Persist preference
@@ -1615,6 +1678,7 @@ Initialize → Position Particles → Animate Loop → Mouse Hover → Apply For
 ![GitHub Heatmap](https://via.placeholder.com/1200x300/ffffff/10b981?text=GitHub+Contribution+Calendar)
 
 **Dynamic Features:**
+
 - Live data fetch from GitHub API
 - Hover tooltips with contribution count
 - Color intensity based on activity
@@ -1623,10 +1687,10 @@ Initialize → Position Particles → Animate Loop → Mouse Hover → Apply For
 
 **Color Scale:**
 \\\
-None → Low  → Medium → High → Very High
-  □      ▢       ▣       ▦       ■
-gray   light   medium  dark    darkest
-       green   green   green   green
+None → Low → Medium → High → Very High
+□ ▢ ▣ ▦ ■
+gray light medium dark darkest
+green green green green
 \\\
 
 ---
@@ -1638,10 +1702,10 @@ gray   light   medium  dark    darkest
 ![FadeUp Animation](https://via.placeholder.com/600x200/ffffff/14b8a6?text=Fade+Up+Animation)
 
 \\\css
-Initial:  opacity: 0, translateY(20px)
-Final:    opacity: 1, translateY(0)
+Initial: opacity: 0, translateY(20px)
+Final: opacity: 1, translateY(0)
 Duration: 600ms
-Easing:   cubic-bezier(0.16, 1, 0.3, 1)
+Easing: cubic-bezier(0.16, 1, 0.3, 1)
 \\\
 
 ---
@@ -1651,8 +1715,8 @@ Easing:   cubic-bezier(0.16, 1, 0.3, 1)
 ![FadeLeft Animation](https://via.placeholder.com/600x200/ffffff/f97316?text=Fade+Left+Animation)
 
 \\\css
-Initial:  opacity: 0, translateX(-20px)
-Final:    opacity: 1, translateX(0)
+Initial: opacity: 0, translateX(-20px)
+Final: opacity: 1, translateX(0)
 Duration: 600ms
 \\\
 
@@ -1663,8 +1727,8 @@ Duration: 600ms
 ![FadeRight Animation](https://via.placeholder.com/600x200/ffffff/8b5cf6?text=Fade+Right+Animation)
 
 \\\css
-Initial:  opacity: 0, translateX(20px)
-Final:    opacity: 1, translateX(0)
+Initial: opacity: 0, translateX(20px)
+Final: opacity: 1, translateX(0)
 Duration: 600ms
 \\\
 
@@ -1675,8 +1739,8 @@ Duration: 600ms
 ![Scale Animation](https://via.placeholder.com/600x200/ffffff/ec4899?text=Scale+Animation)
 
 \\\css
-Initial:  opacity: 0, scale(0.95)
-Final:    opacity: 1, scale(1)
+Initial: opacity: 0, scale(0.95)
+Final: opacity: 1, scale(1)
 Duration: 600ms
 \\\
 
@@ -1687,8 +1751,8 @@ Duration: 600ms
 ![Reveal Animation](https://via.placeholder.com/600x200/ffffff/06b6d4?text=Reveal+Animation)
 
 \\\css
-Initial:  clip-path: inset(0 100% 0 0)
-Final:    clip-path: inset(0 0 0 0)
+Initial: clip-path: inset(0 100% 0 0)
+Final: clip-path: inset(0 0 0 0)
 Duration: 600ms
 \\\
 
@@ -1698,19 +1762,23 @@ Duration: 600ms
 
 ![Staggered Cards](https://via.placeholder.com/1200x400/f4f4f5/14b8a6?text=Staggered+Card+Animations)
 
-\\\	sx
+\\\ sx
 {projects.map((project, index) => (
-  <AnimateIn 
-    key={index} 
-    variant="fadeUp" 
-    delay={0.1 + index * 0.1}
-  >
+<AnimateIn
+key={index}
+variant="fadeUp"
+delay={0.1 + index \* 0.1}
+
+>
+
     <ProjectCard data={project} />
+
   </AnimateIn>
 ))}
 \\\
 
 **Timing:**
+
 - Card 1: 0.1s delay
 - Card 2: 0.2s delay
 - Card 3: 0.3s delay
@@ -1725,11 +1793,12 @@ Duration: 600ms
 **Detection Flow:**
 \\\
 Page Load → Detect Browser → Detect OS → Fetch Logo → Animate In
-    ↓           ↓               ↓           ↓           ↓
-  Mount      UserAgent      Platform     CDN SVG    fadeUp
+↓ ↓ ↓ ↓ ↓
+Mount UserAgent Platform CDN SVG fadeUp
 \\\
 
 **Supported Browsers:**
+
 - 🌐 Chrome / Chromium
 - 🦊 Firefox
 - 🧭 Safari
@@ -1738,6 +1807,7 @@ Page Load → Detect Browser → Detect OS → Fetch Logo → Animate In
 - 🔴 Opera
 
 **Supported OS:**
+
 - 🪟 Windows
 - 🍎 macOS
 - 🐧 Linux
@@ -1753,18 +1823,18 @@ Page Load → Detect Browser → Detect OS → Fetch Logo → Animate In
 **Trigger:** Click footer heart icon
 
 **Animation Parameters:**
-\\\	ypescript
+\\\ ypescript
 {
-  particleCount: 3,        // Per burst
-  startVelocity: 0,        // Drop from top
-  ticks: 300,              // Animation lifetime
-  gravity: 0.5,            // Fall speed
-  origin: { 
-    x: Math.random(),      // Random horizontal
-    y: -0.1                // Start above screen
-  },
-  shapes: [heartShape],    // Custom heart
-  colors: ["#ffffff", "#f8fafc", "#f1f5f9"]
+particleCount: 3, // Per burst
+startVelocity: 0, // Drop from top
+ticks: 300, // Animation lifetime
+gravity: 0.5, // Fall speed
+origin: {
+x: Math.random(), // Random horizontal
+y: -0.1 // Start above screen
+},
+shapes: [heartShape], // Custom heart
+colors: ["#ffffff", "#f8fafc", "#f1f5f9"]
 }
 \\\
 
@@ -1779,6 +1849,7 @@ Page Load → Detect Browser → Detect OS → Fetch Logo → Animate In
 <img src="https://via.placeholder.com/375x812/ffffff/000000?text=Mobile+Portrait+View" alt="Mobile" width="375"/>
 
 **Optimizations:**
+
 - Single column layout
 - Larger touch targets (44px minimum)
 - Simplified navigation
@@ -1792,6 +1863,7 @@ Page Load → Detect Browser → Detect OS → Fetch Logo → Animate In
 <img src="https://via.placeholder.com/768x1024/ffffff/000000?text=Tablet+View" alt="Tablet" width="600"/>
 
 **Layout Changes:**
+
 - Two-column grid for projects
 - Side-by-side experience cards
 - Expanded navigation menu
@@ -1804,6 +1876,7 @@ Page Load → Detect Browser → Detect OS → Fetch Logo → Animate In
 ![Desktop View](https://via.placeholder.com/1920x1080/ffffff/000000?text=Desktop+Full+View)
 
 **Features:**
+
 - Three-column layouts
 - Full particle effects (150)
 - Expanded content sections
@@ -1819,23 +1892,23 @@ Page Load → Detect Browser → Detect OS → Fetch Logo → Animate In
 ##### Light Mode Colors
 
 \\\
-Background:  #ffffff  ███████
-Foreground:  #18181b  ███████
-Muted:       #f4f4f5  ███████
-Border:      #e4e4e7  ███████
-Accent:      #14b8a6  ███████ (Teal)
-Secondary:   #f97316  ███████ (Orange)
+Background: #ffffff ███████
+Foreground: #18181b ███████
+Muted: #f4f4f5 ███████
+Border: #e4e4e7 ███████
+Accent: #14b8a6 ███████ (Teal)
+Secondary: #f97316 ███████ (Orange)
 \\\
 
 ##### Dark Mode Colors
 
 \\\
-Background:  #09090b  ███████
-Foreground:  #fafafa  ███████
-Muted:       #27272a  ███████
-Border:      #3f3f46  ███████
-Accent:      #2dd4bf  ███████ (Teal)
-Secondary:   #fb923c  ███████ (Orange)
+Background: #09090b ███████
+Foreground: #fafafa ███████
+Muted: #27272a ███████
+Border: #3f3f46 ███████
+Accent: #2dd4bf ███████ (Teal)
+Secondary: #fb923c ███████ (Orange)
 \\\
 
 ---
@@ -1843,14 +1916,14 @@ Secondary:   #fb923c  ███████ (Orange)
 #### Typography Scale
 
 \\\
-4xl:  2.25rem (36px)  ████████████████████████
-3xl:  1.875rem (30px) ████████████████████
-2xl:  1.5rem (24px)   ████████████████
-xl:   1.25rem (20px)  ██████████████
-lg:   1.125rem (18px) █████████████
-base: 1rem (16px)     ████████████
-sm:   0.875rem (14px) ███████████
-xs:   0.75rem (12px)  ██████████
+4xl: 2.25rem (36px) ████████████████████████
+3xl: 1.875rem (30px) ████████████████████
+2xl: 1.5rem (24px) ████████████████
+xl: 1.25rem (20px) ██████████████
+lg: 1.125rem (18px) █████████████
+base: 1rem (16px) ████████████
+sm: 0.875rem (14px) ███████████
+xs: 0.75rem (12px) ██████████
 \\\
 
 ---
@@ -1858,15 +1931,15 @@ xs:   0.75rem (12px)  ██████████
 #### Spacing System
 
 \\\
-0.5: 2px   ▪
-1:   4px   ▪▪
-2:   8px   ▪▪▪▪
-3:   12px  ▪▪▪▪▪▪
-4:   16px  ▪▪▪▪▪▪▪▪
-6:   24px  ▪▪▪▪▪▪▪▪▪▪▪▪
-8:   32px  ▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪
-12:  48px  ▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪
-16:  64px  ▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪
+0.5: 2px ▪
+1: 4px ▪▪
+2: 8px ▪▪▪▪
+3: 12px ▪▪▪▪▪▪
+4: 16px ▪▪▪▪▪▪▪▪
+6: 24px ▪▪▪▪▪▪▪▪▪▪▪▪
+8: 32px ▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪
+12: 48px ▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪
+16: 64px ▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪
 \\\
 
 ---
@@ -1874,19 +1947,21 @@ xs:   0.75rem (12px)  ██████████
 #### Shadow System
 
 ##### Light Mode
+
 \\\css
-sm:   0 1px 2px rgba(0,0,0,0.05)
-md:   0 4px 6px rgba(0,0,0,0.1)
-lg:   0 10px 15px rgba(0,0,0,0.15)
-xl:   0 20px 25px rgba(0,0,0,0.2)
+sm: 0 1px 2px rgba(0,0,0,0.05)
+md: 0 4px 6px rgba(0,0,0,0.1)
+lg: 0 10px 15px rgba(0,0,0,0.15)
+xl: 0 20px 25px rgba(0,0,0,0.2)
 \\\
 
 ##### Dark Mode
+
 \\\css
-sm:   0 1px 2px rgba(0,0,0,0.3)
-md:   0 4px 6px rgba(0,0,0,0.4)
-lg:   0 10px 15px rgba(0,0,0,0.5)
-xl:   0 20px 25px rgba(0,0,0,0.6)
+sm: 0 1px 2px rgba(0,0,0,0.3)
+md: 0 4px 6px rgba(0,0,0,0.4)
+lg: 0 10px 15px rgba(0,0,0,0.5)
+xl: 0 20px 25px rgba(0,0,0,0.6)
 \\\
 
 ---
@@ -1896,19 +1971,19 @@ xl:   0 20px 25px rgba(0,0,0,0.6)
 #### Cubic Bezier Curves
 
 \\\
-ease-in:       cubic-bezier(0.42, 0, 1, 1)
-ease-out:      cubic-bezier(0, 0, 0.58, 1)
-ease-in-out:   cubic-bezier(0.42, 0, 0.58, 1)
-custom (main): cubic-bezier(0.16, 1, 0.3, 1)  ← Used throughout
+ease-in: cubic-bezier(0.42, 0, 1, 1)
+ease-out: cubic-bezier(0, 0, 0.58, 1)
+ease-in-out: cubic-bezier(0.42, 0, 0.58, 1)
+custom (main): cubic-bezier(0.16, 1, 0.3, 1) ← Used throughout
 \\\
 
 #### Animation Durations
 
 \\\
-Fast:    150ms   ▪▪▪
-Normal:  300ms   ▪▪▪▪▪▪
-Smooth:  600ms   ▪▪▪▪▪▪▪▪▪▪▪▪
-Slow:    1000ms  ▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪
+Fast: 150ms ▪▪▪
+Normal: 300ms ▪▪▪▪▪▪
+Smooth: 600ms ▪▪▪▪▪▪▪▪▪▪▪▪
+Slow: 1000ms ▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪
 \\\
 
 ---
@@ -1921,19 +1996,19 @@ Slow:    1000ms  ▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪
 
 \\\css
 @keyframes shimmer {
-  0% { background-position: -1000px 0; }
-  100% { background-position: 1000px 0; }
+0% { background-position: -1000px 0; }
+100% { background-position: 1000px 0; }
 }
 
 .skeleton {
-  background: linear-gradient(
-    90deg,
-    #f4f4f5 0%,
-    #e4e4e7 50%,
-    #f4f4f5 100%
-  );
-  background-size: 1000px 100%;
-  animation: shimmer 2s infinite;
+background: linear-gradient(
+90deg,
+#f4f4f5 0%,
+#e4e4e7 50%,
+#f4f4f5 100%
+);
+background-size: 1000px 100%;
+animation: shimmer 2s infinite;
 }
 \\\
 
@@ -1945,12 +2020,12 @@ Slow:    1000ms  ▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪
 
 \\\css
 @keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+from { transform: rotate(0deg); }
+to { transform: rotate(360deg); }
 }
 
 .spinner {
-  animation: spin 1s linear infinite;
+animation: spin 1s linear infinite;
 }
 \\\
 
@@ -1962,12 +2037,12 @@ Slow:    1000ms  ▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪
 
 \\\css
 @keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
+0%, 100% { opacity: 1; }
+50% { opacity: 0.5; }
 }
 
 .pulse {
-  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 \\\
 
@@ -1978,17 +2053,19 @@ Slow:    1000ms  ▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪
 #### Button Hover States
 
 ##### Primary Button
+
 \\\
-[Normal]  → [Hover]     → [Active]
-bg-teal   → scale(1.05) → scale(0.95)
-          → shadow-lg   → shadow-sm
+[Normal] → [Hover] → [Active]
+bg-teal → scale(1.05) → scale(0.95)
+→ shadow-lg → shadow-sm
 \\\
 
 ##### Secondary Button
+
 \\\
-[Normal]    → [Hover]        → [Active]
-border-teal → bg-teal/10     → bg-teal/20
-            → border-teal-600
+[Normal] → [Hover] → [Active]
+border-teal → bg-teal/10 → bg-teal/20
+→ border-teal-600
 \\\
 
 ---
@@ -1996,32 +2073,34 @@ border-teal → bg-teal/10     → bg-teal/20
 #### Card Hover Effects
 
 ##### Lift Effect
+
 \\\css
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-  transition: all 300ms cubic-bezier(0.16, 1, 0.3, 1);
+transform: translateY(-4px);
+box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+transition: all 300ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 \\\
 
 ##### Shine Effect
+
 \\\css
 .card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255,255,255,0.1),
-    transparent
-  );
-  transform: translateX(-100%);
+content: '';
+position: absolute;
+inset: 0;
+background: linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,0.1),
+transparent
+);
+transform: translateX(-100%);
 }
 
 .card:hover::before {
-  transform: translateX(100%);
-  transition: transform 600ms;
+transform: translateX(100%);
+transition: transform 600ms;
 }
 \\\
 
@@ -2032,10 +2111,10 @@ border-teal → bg-teal/10     → bg-teal/20
 #### Lighthouse Score Breakdown
 
 \\\
-Performance:     ████████████████████ 98/100
-Accessibility:   █████████████████████ 100/100
-Best Practices:  █████████████████████ 100/100
-SEO:            █████████████████████ 100/100
+Performance: ████████████████████ 98/100
+Accessibility: █████████████████████ 100/100
+Best Practices: █████████████████████ 100/100
+SEO: █████████████████████ 100/100
 \\\
 
 ---
@@ -2045,15 +2124,15 @@ SEO:            █████████████████████ 
 \\\
 LCP (Largest Contentful Paint)
 Target: < 2.5s
-Actual: 1.4s  ████████████░░░░░░░░  56%
+Actual: 1.4s ████████████░░░░░░░░ 56%
 
 FID (First Input Delay)
 Target: < 100ms
-Actual: 35ms  ████████████████████  35%
+Actual: 35ms ████████████████████ 35%
 
 CLS (Cumulative Layout Shift)
 Target: < 0.1
-Actual: 0.02  ████████████████████  20%
+Actual: 0.02 ████████████████████ 20%
 \\\
 
 ---
@@ -2061,10 +2140,10 @@ Actual: 0.02  ████████████████████  20%
 #### Bundle Size Analysis
 
 \\\
-First Load JS:  180 KB  ████████████████░░░░
-Route JS:       50 KB   ██████░░░░░░░░░░░░░░
-CSS:           15 KB   ██░░░░░░░░░░░░░░░░░░
-Images:        200 KB  ████████████████████
+First Load JS: 180 KB ████████████████░░░░
+Route JS: 50 KB ██████░░░░░░░░░░░░░░
+CSS: 15 KB ██░░░░░░░░░░░░░░░░░░
+Images: 200 KB ████████████████████
 \\\
 
 ---
@@ -2077,15 +2156,15 @@ Images:        200 KB  ███████████████████
 
 \\\css
 .glass-card {
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+background: rgba(255, 255, 255, 0.8);
+backdrop-filter: blur(12px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
 .dark .glass-card {
-  background: rgba(39, 39, 42, 0.8);
-  border: 1px solid rgba(63, 63, 70, 0.3);
+background: rgba(39, 39, 42, 0.8);
+border: 1px solid rgba(63, 63, 70, 0.3);
 }
 \\\
 
@@ -2096,43 +2175,42 @@ Images:        200 KB  ███████████████████
 #### Project Badge Gradients
 
 \\\css
-/* Light Mode */
+/_ Light Mode _/
 background: linear-gradient(
-  135deg,
-  rgba(20, 184, 166, 0.08),
-  rgba(6, 182, 212, 0.08)
+135deg,
+rgba(20, 184, 166, 0.08),
+rgba(6, 182, 212, 0.08)
 );
 
-/* Dark Mode */
+/_ Dark Mode _/
 background: linear-gradient(
-  135deg,
-  rgba(20, 184, 166, 0.15),
-  rgba(6, 182, 212, 0.15)
+135deg,
+rgba(20, 184, 166, 0.15),
+rgba(6, 182, 212, 0.15)
 );
 \\\
 
 #### Experience Badge Gradients
 
 \\\css
-/* Light Mode */
+/_ Light Mode _/
 background: linear-gradient(
-  135deg,
-  rgba(249, 115, 22, 0.08),
-  rgba(251, 191, 36, 0.08)
+135deg,
+rgba(249, 115, 22, 0.08),
+rgba(251, 191, 36, 0.08)
 );
 
-/* Dark Mode */
+/_ Dark Mode _/
 background: linear-gradient(
-  135deg,
-  rgba(249, 115, 22, 0.15),
-  rgba(251, 191, 36, 0.15)
+135deg,
+rgba(249, 115, 22, 0.15),
+rgba(251, 191, 36, 0.15)
 );
 \\\
 
 ---
 
 </div>
-
 
 ## 🎓 In-Depth Tutorial Sections
 
@@ -2141,22 +2219,31 @@ background: linear-gradient(
 #### Step 1: Environment Setup
 
 \\\ash
+
 # Check Node.js version
+
 node --version
+
 # Should be 18.x or higher
 
 # Check npm version
+
 npm --version
+
 # Should be 9.x or higher
 
 # Verify Git installation
+
 git --version
+
 # Should be 2.x or higher
+
 \\\
 
 **Troubleshooting:**
 
 If Node.js is not installed:
+
 - **Windows**: Download from [nodejs.org](https://nodejs.org/)
 - **macOS**: \rew install node\
 - **Linux**: \sudo apt install nodejs npm\
@@ -2166,22 +2253,34 @@ If Node.js is not installed:
 #### Step 2: Clone and Install
 
 \\\ash
+
 # 1. Clone the repository
+
 git clone https://github.com/Xenonesis/portfolio.git
 cd portfolio
 
 # 2. Install dependencies
+
 npm install
 
 # This will install:
+
 # - next@16.1.1
+
 # - react@19.2.3
+
 # - typescript@5.x
+
 # - tailwindcss@4.x
+
 # - motion@12.23.26
+
 # - three@0.182.0
+
 # - groq-sdk@0.9.0
+
 # - And 50+ other dependencies
+
 \\\
 
 **Expected Output:**
@@ -2189,7 +2288,7 @@ npm install
 added 234 packages, and audited 235 packages in 45s
 
 64 packages are looking for funding
-  run \
+run \
 pm fund\ for details
 
 found 0 vulnerabilities
@@ -2200,10 +2299,13 @@ found 0 vulnerabilities
 #### Step 3: Configure Environment
 
 \\\ash
+
 # Create .env.local file
+
 touch .env.local
 
 # Add your API keys
+
 echo "GROQ_API_KEY=your_groq_api_key_here" >> .env.local
 echo "NEXT_PUBLIC_GA_ID=your_google_analytics_id" >> .env.local
 \\\
@@ -2215,10 +2317,11 @@ echo "NEXT_PUBLIC_GA_ID=your_google_analytics_id" >> .env.local
 3. Navigate to "API Keys"
 4. Click "Create API Key"
 5. Name it "Portfolio Development"
-6. Copy the key (starts with \gsk_\)
+6. Copy the key (starts with \gsk\_\)
 7. Paste into \.env.local\
 
 **⚠️ Important:**
+
 - Never commit \.env.local\ to Git
 - Add to \.gitignore\ (already included)
 - Use different keys for dev/production
@@ -2228,18 +2331,27 @@ echo "NEXT_PUBLIC_GA_ID=your_google_analytics_id" >> .env.local
 #### Step 4: Start Development Server
 
 \\\ash
+
 # Start dev server with Turbopack
+
 npm run dev
 
 # Output:
-#   ▲ Next.js 16.1.1
-#   - Local:        http://localhost:3000
-#   - Turbopack:    Enabled
-# 
-#  ✓ Ready in 1.2s
+
+# ▲ Next.js 16.1.1
+
+# - Local: http://localhost:3000
+
+# - Turbopack: Enabled
+
+#
+
+# ✓ Ready in 1.2s
+
 \\\
 
 **Development Features:**
+
 - ✅ Hot Module Replacement (HMR)
 - ✅ Fast Refresh
 - ✅ TypeScript error checking
@@ -2248,11 +2360,11 @@ npm run dev
 
 **Common Dev Commands:**
 \\\ash
-npm run dev          # Start dev server
-npm run build        # Create production build
-npm run start        # Start production server
-npm run lint         # Run ESLint
-npm run lint:fix     # Auto-fix linting issues
+npm run dev # Start dev server
+npm run build # Create production build
+npm run start # Start production server
+npm run lint # Run ESLint
+npm run lint:fix # Auto-fix linting issues
 \\\
 
 ---
@@ -2261,69 +2373,70 @@ npm run lint:fix     # Auto-fix linting issues
 
 #### Example: Creating a Custom Card Component
 
-\\\	sx
+\\\ sx
 // src/components/CustomCard.tsx
 import { ReactNode } from 'react';
 import { AnimateIn } from './animations/AnimateIn';
 
 interface CustomCardProps {
-  title: string;
-  description: string;
-  icon?: ReactNode;
-  variant?: 'default' | 'accent';
-  onClick?: () => void;
+title: string;
+description: string;
+icon?: ReactNode;
+variant?: 'default' | 'accent';
+onClick?: () => void;
 }
 
 export const CustomCard: React.FC<CustomCardProps> = ({
-  title,
-  description,
-  icon,
-  variant = 'default',
-  onClick
+title,
+description,
+icon,
+variant = 'default',
+onClick
 }) => {
-  const baseClasses = "p-6 rounded-2xl border transition-all duration-300";
-  
-  const variantClasses = {
-    default: "bg-white dark:bg-zinc-900 border-zinc-200 dark:border-zinc-700 hover:shadow-lg",
-    accent: "bg-gradient-to-br from-teal-500/10 to-cyan-500/10 border-teal-500/20 hover:border-teal-500/40"
-  };
+const baseClasses = "p-6 rounded-2xl border transition-all duration-300";
 
-  return (
-    <AnimateIn variant="fadeUp" delay={0.2}>
-      <div 
-        className={\\ \ \\}
-        onClick={onClick}
-      >
-        {icon && (
-          <div className="mb-4 text-teal-500">
-            {icon}
-          </div>
-        )}
-        
+const variantClasses = {
+default: "bg-white dark:bg-zinc-900 border-zinc-200 dark:border-zinc-700 hover:shadow-lg",
+accent: "bg-gradient-to-br from-teal-500/10 to-cyan-500/10 border-teal-500/20 hover:border-teal-500/40"
+};
+
+return (
+<AnimateIn variant="fadeUp" delay={0.2}>
+
+<div
+className={\\ \ \\}
+onClick={onClick} >
+{icon && (
+<div className="mb-4 text-teal-500">
+{icon}
+</div>
+)}
+
         <h3 className="text-xl font-bold mb-2 text-zinc-900 dark:text-zinc-50">
           {title}
         </h3>
-        
+
         <p className="text-sm text-zinc-600 dark:text-zinc-400">
           {description}
         </p>
       </div>
     </AnimateIn>
-  );
+
+);
 };
 \\\
 
 **Usage:**
-\\\	sx
+\\\ sx
 import { CustomCard } from '@/components/CustomCard';
 import { Code2 } from 'lucide-react';
 
 <CustomCard
-  title="Clean Code"
-  description="Writing maintainable and scalable code"
-  icon={<Code2 size={32} />}
-  variant="accent"
-  onClick={() => console.log('Card clicked!')}
+title="Clean Code"
+description="Writing maintainable and scalable code"
+icon={<Code2 size={32} />}
+variant="accent"
+onClick={() => console.log('Card clicked!')}
 />
 \\\
 
@@ -2331,59 +2444,60 @@ import { Code2 } from 'lucide-react';
 
 #### Example: Creating a Custom Hook
 
-\\\	sx
+\\\ sx
 // src/hooks/useLocalStorage.ts
 import { useState, useEffect } from 'react';
 
 export function useLocalStorage<T>(
-  key: string,
-  initialValue: T
+key: string,
+initialValue: T
 ): [T, (value: T) => void] {
-  // State to store our value
-  const [storedValue, setStoredValue] = useState<T>(initialValue);
+// State to store our value
+const [storedValue, setStoredValue] = useState<T>(initialValue);
 
-  // Load from localStorage on mount
-  useEffect(() => {
-    try {
-      const item = window.localStorage.getItem(key);
-      if (item) {
-        setStoredValue(JSON.parse(item));
-      }
-    } catch (error) {
-      console.error(\Error loading \ from localStorage:\, error);
-    }
-  }, [key]);
+// Load from localStorage on mount
+useEffect(() => {
+try {
+const item = window.localStorage.getItem(key);
+if (item) {
+setStoredValue(JSON.parse(item));
+}
+} catch (error) {
+console.error(\Error loading \ from localStorage:\, error);
+}
+}, [key]);
 
-  // Save to localStorage on change
-  const setValue = (value: T) => {
-    try {
-      setStoredValue(value);
-      window.localStorage.setItem(key, JSON.stringify(value));
-    } catch (error) {
-      console.error(\Error saving \ to localStorage:\, error);
-    }
-  };
+// Save to localStorage on change
+const setValue = (value: T) => {
+try {
+setStoredValue(value);
+window.localStorage.setItem(key, JSON.stringify(value));
+} catch (error) {
+console.error(\Error saving \ to localStorage:\, error);
+}
+};
 
-  return [storedValue, setValue];
+return [storedValue, setValue];
 }
 \\\
 
 **Usage:**
-\\\	sx
+\\\ sx
 import { useLocalStorage } from '@/hooks/useLocalStorage';
 
 function MyComponent() {
-  const [name, setName] = useLocalStorage('userName', 'Guest');
-  
-  return (
-    <div>
-      <p>Hello, {name}!</p>
-      <input 
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
-    </div>
-  );
+const [name, setName] = useLocalStorage('userName', 'Guest');
+
+return (
+
+<div>
+<p>Hello, {name}!</p>
+<input
+value={name}
+onChange={(e) => setName(e.target.value)}
+/>
+</div>
+);
 }
 \\\
 
@@ -2397,62 +2511,63 @@ Add these to \src/app/globals.css\:
 
 \\\css
 @layer utilities {
-  /* Text Gradient */
-  .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-teal-500 to-cyan-500;
-  }
+/_ Text Gradient _/
+.text-gradient {
+@apply bg-clip-text text-transparent bg-gradient-to-r from-teal-500 to-cyan-500;
+}
 
-  /* Animated Border */
-  .animated-border {
-    position: relative;
-    background: linear-gradient(
-      90deg,
-      rgba(20, 184, 166, 0.1),
-      rgba(6, 182, 212, 0.1)
-    );
-  }
+/_ Animated Border _/
+.animated-border {
+position: relative;
+background: linear-gradient(
+90deg,
+rgba(20, 184, 166, 0.1),
+rgba(6, 182, 212, 0.1)
+);
+}
 
-  .animated-border::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    padding: 2px;
-    background: linear-gradient(
-      90deg,
-      rgba(20, 184, 166, 0.5),
-      rgba(6, 182, 212, 0.5)
-    );
-    -webkit-mask: 
-      linear-gradient(#fff 0 0) content-box, 
-      linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    animation: borderRotate 2s linear infinite;
-  }
+.animated-border::before {
+content: '';
+position: absolute;
+inset: 0;
+border-radius: inherit;
+padding: 2px;
+background: linear-gradient(
+90deg,
+rgba(20, 184, 166, 0.5),
+rgba(6, 182, 212, 0.5)
+);
+-webkit-mask:
+linear-gradient(#fff 0 0) content-box,
+linear-gradient(#fff 0 0);
+-webkit-mask-composite: xor;
+mask-composite: exclude;
+animation: borderRotate 2s linear infinite;
+}
 
-  @keyframes borderRotate {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
+@keyframes borderRotate {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
 
-  /* Glow Effect */
-  .glow {
-    box-shadow: 
-      0 0 20px rgba(20, 184, 166, 0.3),
-      0 0 40px rgba(20, 184, 166, 0.2),
-      0 0 60px rgba(20, 184, 166, 0.1);
-  }
+/_ Glow Effect _/
+.glow {
+box-shadow:
+0 0 20px rgba(20, 184, 166, 0.3),
+0 0 40px rgba(20, 184, 166, 0.2),
+0 0 60px rgba(20, 184, 166, 0.1);
+}
 
-  /* Noise Texture */
-  .noise-texture {
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
-  }
+/_ Noise Texture _/
+.noise-texture {
+background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+}
 }
 \\\
 
 **Usage:**
-\\\	sx
+\\\ sx
+
 <h1 className="text-gradient text-4xl font-bold">
   Gradient Text
 </h1>
@@ -2476,7 +2591,7 @@ Add these to \src/app/globals.css\:
 
 #### Image Optimization
 
-\\\	sx
+\\\ sx
 import Image from 'next/image';
 
 // ✅ Optimized
@@ -2496,6 +2611,7 @@ import Image from 'next/image';
 \\\
 
 **Best Practices:**
+
 - Use WebP format when possible
 - Serve responsive images
 - Implement lazy loading
@@ -2506,32 +2622,33 @@ import Image from 'next/image';
 
 #### Code Splitting
 
-\\\	sx
+\\\ sx
 import dynamic from 'next/dynamic';
 
 // ✅ Lazy load heavy components
 const HeavyComponent = dynamic(
-  () => import('@/components/HeavyComponent'),
-  {
-    loading: () => <div>Loading...</div>,
-    ssr: false, // Don't render on server
-  }
+() => import('@/components/HeavyComponent'),
+{
+loading: () => <div>Loading...</div>,
+ssr: false, // Don't render on server
+}
 );
 
 // ✅ Conditional loading
 const AdminPanel = dynamic(
-  () => import('@/components/AdminPanel'),
-  { ssr: false }
+() => import('@/components/AdminPanel'),
+{ ssr: false }
 );
 
 function MyPage() {
-  const [showAdmin, setShowAdmin] = useState(false);
-  
-  return (
-    <div>
-      {showAdmin && <AdminPanel />}
-    </div>
-  );
+const [showAdmin, setShowAdmin] = useState(false);
+
+return (
+
+<div>
+{showAdmin && <AdminPanel />}
+</div>
+);
 }
 \\\
 
@@ -2539,32 +2656,33 @@ function MyPage() {
 
 #### Memoization
 
-\\\	sx
+\\\ sx
 import { useMemo, useCallback } from 'react';
 
 function ExpensiveComponent({ data }: { data: Item[] }) {
-  // ✅ Memoize expensive calculations
-  const processedData = useMemo(() => {
-    return data
-      .filter(item => item.active)
-      .sort((a, b) => b.score - a.score)
-      .slice(0, 10);
-  }, [data]);
+// ✅ Memoize expensive calculations
+const processedData = useMemo(() => {
+return data
+.filter(item => item.active)
+.sort((a, b) => b.score - a.score)
+.slice(0, 10);
+}, [data]);
 
-  // ✅ Memoize callback functions
-  const handleClick = useCallback((id: string) => {
-    console.log(\Clicked: \\);
-  }, []);
+// ✅ Memoize callback functions
+const handleClick = useCallback((id: string) => {
+console.log(\Clicked: \\);
+}, []);
 
-  return (
-    <div>
-      {processedData.map(item => (
-        <div key={item.id} onClick={() => handleClick(item.id)}>
-          {item.name}
-        </div>
-      ))}
-    </div>
-  );
+return (
+
+<div>
+{processedData.map(item => (
+<div key={item.id} onClick={() => handleClick(item.id)}>
+{item.name}
+</div>
+))}
+</div>
+);
 }
 \\\
 
@@ -2574,37 +2692,37 @@ function ExpensiveComponent({ data }: { data: Item[] }) {
 
 #### Dynamic Metadata
 
-\\\	sx
+\\\ sx
 // src/app/projects/[slug]/page.tsx
 import { Metadata } from 'next';
 
 interface Props {
-  params: { slug: string };
+params: { slug: string };
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const project = await fetchProject(params.slug);
-  
-  return {
-    title: \\ - Aditya Kumar Tiwari\,
-    description: project.description,
-    openGraph: {
-      title: project.name,
-      description: project.description,
-      images: [project.image],
-      type: 'website',
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: project.name,
-      description: project.description,
-      images: [project.image],
-    },
-  };
+const project = await fetchProject(params.slug);
+
+return {
+title: \\ - Aditya Kumar Tiwari\,
+description: project.description,
+openGraph: {
+title: project.name,
+description: project.description,
+images: [project.image],
+type: 'website',
+},
+twitter: {
+card: 'summary_large_image',
+title: project.name,
+description: project.description,
+images: [project.image],
+},
+};
 }
 
 export default function ProjectPage({ params }: Props) {
-  // Page content
+// Page content
 }
 \\\
 
@@ -2612,42 +2730,43 @@ export default function ProjectPage({ params }: Props) {
 
 #### Structured Data
 
-\\\	sx
+\\\ sx
 // src/app/layout.tsx
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Aditya Kumar Tiwari",
-    "jobTitle": "Cybersecurity Specialist & Full-Stack Developer",
-    "url": "https://iaddy.netlify.app",
-    "sameAs": [
-      "https://github.com/Xenonesis",
-      "https://linkedin.com/in/itisaddy",
-      "https://twitter.com/itisaddy7"
-    ],
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Delhi",
-      "addressCountry": "IN"
-    },
-    "alumniOf": {
-      "@type": "CollegeOrUniversity",
-      "name": "Sushant University"
-    }
-  };
+const structuredData = {
+"@context": "https://schema.org",
+"@type": "Person",
+"name": "Aditya Kumar Tiwari",
+"jobTitle": "Cybersecurity Specialist & Full-Stack Developer",
+"url": "https://iaddy.netlify.app",
+"sameAs": [
+"https://github.com/Xenonesis",
+"https://linkedin.com/in/itisaddy",
+"https://twitter.com/itisaddy7"
+],
+"address": {
+"@type": "PostalAddress",
+"addressLocality": "Delhi",
+"addressCountry": "IN"
+},
+"alumniOf": {
+"@type": "CollegeOrUniversity",
+"name": "Sushant University"
+}
+};
 
-  return (
-    <html lang="en">
-      <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-        />
-      </head>
-      <body>{children}</body>
-    </html>
-  );
+return (
+
+<html lang="en">
+<head>
+<script
+type="application/ld+json"
+dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+/>
+</head>
+<body>{children}</body>
+</html>
+);
 }
 \\\
 
@@ -2660,74 +2779,74 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 \\\javascript
 // next.config.mjs
 const nextConfig = {
-  // Static export for Netlify/GitHub Pages
-  output: "export",
-  
-  // Custom image optimization
-  images: {
-    unoptimized: true, // Required for static export
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'avatars.githubusercontent.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'images.unsplash.com',
-      },
-    ],
-  },
-  
-  // Webpack customization
-  webpack: (config, { dev, isServer }) => {
-    // Custom webpack config
-    if (!dev && !isServer) {
-      config.optimization.splitChunks.cacheGroups = {
-        ...config.optimization.splitChunks.cacheGroups,
-        commons: {
-          test: /[\\\\/]node_modules[\\\\/]/,
-          name: 'vendors',
-          chunks: 'all',
-        },
-      };
-    }
-    return config;
-  },
-  
-  // Environment variables
-  env: {
-    CUSTOM_KEY: process.env.CUSTOM_KEY,
-  },
-  
-  // Redirects
-  async redirects() {
-    return [
-      {
-        source: '/old-route',
-        destination: '/new-route',
-        permanent: true,
-      },
-    ];
-  },
-  
-  // Headers
-  async headers() {
-    return [
-      {
-        source: '/:path*',
-        headers: [
-          {
-            key: 'X-DNS-Prefetch-Control',
-            value: 'on',
-          },
-          {
-            key: 'X-Frame-Options',
-            value: 'SAMEORIGIN',
-          },
-        ],
-      },
-    ];
-  },
+// Static export for Netlify/GitHub Pages
+output: "export",
+
+// Custom image optimization
+images: {
+unoptimized: true, // Required for static export
+remotePatterns: [
+{
+protocol: 'https',
+hostname: 'avatars.githubusercontent.com',
+},
+{
+protocol: 'https',
+hostname: 'images.unsplash.com',
+},
+],
+},
+
+// Webpack customization
+webpack: (config, { dev, isServer }) => {
+// Custom webpack config
+if (!dev && !isServer) {
+config.optimization.splitChunks.cacheGroups = {
+...config.optimization.splitChunks.cacheGroups,
+commons: {
+test: /[\\\\/]node_modules[\\\\/]/,
+name: 'vendors',
+chunks: 'all',
+},
+};
+}
+return config;
+},
+
+// Environment variables
+env: {
+CUSTOM_KEY: process.env.CUSTOM_KEY,
+},
+
+// Redirects
+async redirects() {
+return [
+{
+source: '/old-route',
+destination: '/new-route',
+permanent: true,
+},
+];
+},
+
+// Headers
+async headers() {
+return [
+{
+source: '/:path\*',
+headers: [
+{
+key: 'X-DNS-Prefetch-Control',
+value: 'on',
+},
+{
+key: 'X-Frame-Options',
+value: 'SAMEORIGIN',
+},
+],
+},
+];
+},
 };
 
 export default nextConfig;
@@ -2740,26 +2859,26 @@ export default nextConfig;
 \\\json
 // tsconfig.json
 {
-  "compilerOptions": {
-    // Strict type checking
-    "strict": true,
-    "noImplicitAny": true,
-    "strictNullChecks": true,
-    "strictFunctionTypes": true,
-    "strictPropertyInitialization": true,
-    
+"compilerOptions": {
+// Strict type checking
+"strict": true,
+"noImplicitAny": true,
+"strictNullChecks": true,
+"strictFunctionTypes": true,
+"strictPropertyInitialization": true,
+
     // Module resolution
     "module": "esnext",
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    
+
     // Emit
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
-    
+
     // Path mapping
     "baseUrl": ".",
     "paths": {
@@ -2768,23 +2887,24 @@ export default nextConfig;
       "@/lib/*": ["./src/lib/*"],
       "@/utilities/*": ["./src/utilities/*"]
     },
-    
+
     // JSX
     "jsx": "preserve",
     "lib": ["dom", "dom.iterable", "esnext"],
-    
+
     // Other options
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "incremental": true
-  },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts"
-  ],
-  "exclude": ["node_modules"]
+
+},
+"include": [
+"next-env.d.ts",
+"**/*.ts",
+"**/*.tsx",
+".next/types/**/*.ts"
+],
+"exclude": ["node_modules"]
 }
 \\\
 
@@ -2798,32 +2918,32 @@ import { dirname } from "path";
 import { fileURLToPath } from "url";
 import { FlatCompat } from "@eslint/eslintrc";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const **filename = fileURLToPath(import.meta.url);
+const **dirname = dirname(\_\_filename);
 
 const compat = new FlatCompat({
-  baseDirectory: __dirname,
+baseDirectory: \_\_dirname,
 });
 
 const eslintConfig = [
-  ...compat.extends(
-    "next/core-web-vitals",
-    "next/typescript"
-  ),
-  {
-    rules: {
-      // Custom rules
-      "@next/next/no-img-element": "off",
-      "@typescript-eslint/no-explicit-any": "warn",
-      "@typescript-eslint/no-unused-vars": ["error", {
-        "argsIgnorePattern": "^_",
-        "varsIgnorePattern": "^_"
-      }],
-      "react/no-unescaped-entities": "off",
-      "prefer-const": "error",
-      "no-console": ["warn", { allow: ["warn", "error"] }],
-    },
-  },
+...compat.extends(
+"next/core-web-vitals",
+"next/typescript"
+),
+{
+rules: {
+// Custom rules
+"@next/next/no-img-element": "off",
+"@typescript-eslint/no-explicit-any": "warn",
+"@typescript-eslint/no-unused-vars": ["error", {
+"argsIgnorePattern": "^_",
+"varsIgnorePattern": "^_"
+}],
+"react/no-unescaped-entities": "off",
+"prefer-const": "error",
+"no-console": ["warn", { allow: ["warn", "error"] }],
+},
+},
 ];
 
 export default eslintConfig;
@@ -2836,26 +2956,26 @@ export default eslintConfig;
 ### Touch-Friendly Design
 
 \\\css
-/* Minimum touch target size */
+/_ Minimum touch target size _/
 .touch-target {
-  min-width: 44px;
-  min-height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+min-width: 44px;
+min-height: 44px;
+display: flex;
+align-items: center;
+justify-content: center;
 }
 
-/* Prevent text selection on mobile */
+/_ Prevent text selection on mobile _/
 .no-select {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
 }
 
-/* Smooth scrolling on iOS */
+/_ Smooth scrolling on iOS _/
 .smooth-scroll {
-  -webkit-overflow-scrolling: touch;
+-webkit-overflow-scrolling: touch;
 }
 \\\
 
@@ -2863,37 +2983,38 @@ export default eslintConfig;
 
 ### Mobile-Specific Hooks
 
-\\\	sx
+\\\ sx
 import { useState, useEffect } from 'react';
 
 export function useMediaQuery(query: string): boolean {
-  const [matches, setMatches] = useState(false);
+const [matches, setMatches] = useState(false);
 
-  useEffect(() => {
-    const media = window.matchMedia(query);
-    
+useEffect(() => {
+const media = window.matchMedia(query);
+
     if (media.matches !== matches) {
       setMatches(media.matches);
     }
 
     const listener = () => setMatches(media.matches);
     media.addEventListener('change', listener);
-    
-    return () => media.removeEventListener('change', listener);
-  }, [matches, query]);
 
-  return matches;
+    return () => media.removeEventListener('change', listener);
+
+}, [matches, query]);
+
+return matches;
 }
 
 // Usage
 function ResponsiveComponent() {
-  const isMobile = useMediaQuery('(max-width: 768px)');
-  const isTablet = useMediaQuery('(min-width: 769px) and (max-width: 1024px)');
-  const isDesktop = useMediaQuery('(min-width: 1025px)');
+const isMobile = useMediaQuery('(max-width: 768px)');
+const isTablet = useMediaQuery('(min-width: 769px) and (max-width: 1024px)');
+const isDesktop = useMediaQuery('(min-width: 1025px)');
 
-  if (isMobile) return <MobileView />;
-  if (isTablet) return <TabletView />;
-  return <DesktopView />;
+if (isMobile) return <MobileView />;
+if (isTablet) return <TabletView />;
+return <DesktopView />;
 }
 \\\
 
@@ -2901,47 +3022,48 @@ function ResponsiveComponent() {
 
 ### Viewport Detection
 
-\\\	sx
+\\\ sx
 import { useState, useEffect } from 'react';
 
 export function useViewport() {
-  const [viewport, setViewport] = useState({
-    width: 0,
-    height: 0,
-  });
+const [viewport, setViewport] = useState({
+width: 0,
+height: 0,
+});
 
-  useEffect(() => {
-    const handleResize = () => {
-      setViewport({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      });
-    };
+useEffect(() => {
+const handleResize = () => {
+setViewport({
+width: window.innerWidth,
+height: window.innerHeight,
+});
+};
 
     handleResize();
     window.addEventListener('resize', handleResize);
-    
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
 
-  return viewport;
+    return () => window.removeEventListener('resize', handleResize);
+
+}, []);
+
+return viewport;
 }
 
 // Usage
 function App() {
-  const { width, height } = useViewport();
-  
-  return (
-    <div>
-      <p>Width: {width}px</p>
-      <p>Height: {height}px</p>
-    </div>
-  );
+const { width, height } = useViewport();
+
+return (
+
+<div>
+<p>Width: {width}px</p>
+<p>Height: {height}px</p>
+</div>
+);
 }
 \\\
 
 ---
-
 
 ## 🎯 Complete Component API Reference
 
@@ -2949,15 +3071,15 @@ function App() {
 
 #### Props
 
-\\\	ypescript
+\\\ ypescript
 interface AIAssistantProps {
-  // No props - fully self-contained
+// No props - fully self-contained
 }
 \\\
 
 #### State Management
 
-\\\	ypescript
+\\\ ypescript
 // UI State
 const [isOpen, setIsOpen] = useState<boolean>(false);
 const [isExpanded, setIsExpanded] = useState<boolean>(false);
@@ -2979,170 +3101,177 @@ const [user, setUser] = useState<GitHubUser | null>(null);
 #### Methods
 
 ##### sendMessage()
-\\\	ypescript
+
+\\\ ypescript
 const sendMessage = async (messageContent: string) => {
-  // 1. Create user message
-  const userMessage: Message = {
-    id: Date.now().toString(),
-    role: "user",
-    content: messageContent,
-    timestamp: new Date(),
-  };
-  
-  // 2. Update messages
-  const updatedMessages = [...messages, userMessage];
-  setMessages(updatedMessages);
-  
-  // 3. Show typing indicator
-  setIsTyping(true);
-  
-  // 4. Prepare GitHub data
-  const githubData = {
-    repos: user?.public_repos,
-    followers: user?.followers,
-    following: user?.following,
-    languages: [...new Set(repos.map(r => r.language).filter(Boolean))],
-    topRepos: repos.slice(0, 5).map(repo => ({
-      name: repo.name,
-      description: repo.description,
-      language: repo.language,
-      stargazers_count: repo.stargazers_count,
-      forks_count: repo.forks_count,
-      html_url: repo.html_url,
-    })),
-  };
-  
-  // 5. Call API
-  const response = await fetch("/api/chat", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      messages: updatedMessages.slice(-8).map(m => ({
-        role: m.role,
-        content: m.content,
-      })),
-      githubData,
-      currentTime: new Date().toLocaleString('en-US', {
-        weekday: 'long',
-        month: 'long',
-        day: 'numeric',
-        year: 'numeric',
-        hour: 'numeric',
-        minute: 'numeric',
-      }),
-    }),
-  });
-  
-  // 6. Process response
-  const data = await response.json();
-  
-  // 7. Add assistant message
-  const assistantMessage: Message = {
-    id: (Date.now() + 1).toString(),
-    role: "assistant",
-    content: data.message,
-    timestamp: new Date(),
-  };
-  
-  setMessages([...updatedMessages, assistantMessage]);
-  setIsTyping(false);
+// 1. Create user message
+const userMessage: Message = {
+id: Date.now().toString(),
+role: "user",
+content: messageContent,
+timestamp: new Date(),
+};
+
+// 2. Update messages
+const updatedMessages = [...messages, userMessage];
+setMessages(updatedMessages);
+
+// 3. Show typing indicator
+setIsTyping(true);
+
+// 4. Prepare GitHub data
+const githubData = {
+repos: user?.public_repos,
+followers: user?.followers,
+following: user?.following,
+languages: [...new Set(repos.map(r => r.language).filter(Boolean))],
+topRepos: repos.slice(0, 5).map(repo => ({
+name: repo.name,
+description: repo.description,
+language: repo.language,
+stargazers_count: repo.stargazers_count,
+forks_count: repo.forks_count,
+html_url: repo.html_url,
+})),
+};
+
+// 5. Call API
+const response = await fetch("/api/chat", {
+method: "POST",
+headers: { "Content-Type": "application/json" },
+body: JSON.stringify({
+messages: updatedMessages.slice(-8).map(m => ({
+role: m.role,
+content: m.content,
+})),
+githubData,
+currentTime: new Date().toLocaleString('en-US', {
+weekday: 'long',
+month: 'long',
+day: 'numeric',
+year: 'numeric',
+hour: 'numeric',
+minute: 'numeric',
+}),
+}),
+});
+
+// 6. Process response
+const data = await response.json();
+
+// 7. Add assistant message
+const assistantMessage: Message = {
+id: (Date.now() + 1).toString(),
+role: "assistant",
+content: data.message,
+timestamp: new Date(),
+};
+
+setMessages([...updatedMessages, assistantMessage]);
+setIsTyping(false);
 };
 \\\
 
 ##### clearChat()
-\\\	ypescript
+
+\\\ ypescript
 const clearChat = () => {
-  setMessages([]);
-  setShowClearConfirm(false);
+setMessages([]);
+setShowClearConfirm(false);
 };
 \\\
 
 ##### exportChat()
-\\\	ypescript
+
+\\\ ypescript
 const exportChat = (format: 'txt' | 'json') => {
-  let content: string;
-  let filename: string;
-  let mimeType: string;
+let content: string;
+let filename: string;
+let mimeType: string;
 
-  if (format === 'txt') {
-    content = messages
-      .map(msg => \[\] \\)
-      .join('\\n\\n---\\n\\n');
-    filename = \chat-export-\.txt\;
-    mimeType = 'text/plain';
-  } else {
-    const chatContent = messages.map(msg => ({
-      role: msg.role,
-      content: msg.content,
-      timestamp: msg.timestamp.toISOString(),
-    }));
-    content = JSON.stringify(chatContent, null, 2);
-    filename = \chat-export-\.json\;
-    mimeType = 'application/json';
-  }
+if (format === 'txt') {
+content = messages
+.map(msg => \[\] \\)
+.join('\\n\\n---\\n\\n');
+filename = \chat-export-\.txt\;
+mimeType = 'text/plain';
+} else {
+const chatContent = messages.map(msg => ({
+role: msg.role,
+content: msg.content,
+timestamp: msg.timestamp.toISOString(),
+}));
+content = JSON.stringify(chatContent, null, 2);
+filename = \chat-export-\.json\;
+mimeType = 'application/json';
+}
 
-  const blob = new Blob([content], { type: mimeType });
-  const url = URL.createObjectURL(blob);
-  const link = document.createElement('a');
-  link.href = url;
-  link.download = filename;
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-  URL.revokeObjectURL(url);
+const blob = new Blob([content], { type: mimeType });
+const url = URL.createObjectURL(blob);
+const link = document.createElement('a');
+link.href = url;
+link.download = filename;
+document.body.appendChild(link);
+link.click();
+document.body.removeChild(link);
+URL.revokeObjectURL(url);
 };
 \\\
 
 ##### reactToMessage()
-\\\	ypescript
+
+\\\ ypescript
 const reactToMessage = (messageId: string, reaction: 'like' | 'dislike') => {
-  setMessages(messages.map(msg =>
-    msg.id === messageId
-      ? { ...msg, reaction: msg.reaction === reaction ? null : reaction }
-      : msg
-  ));
+setMessages(messages.map(msg =>
+msg.id === messageId
+? { ...msg, reaction: msg.reaction === reaction ? null : reaction }
+: msg
+));
 };
 \\\
 
 ##### regenerateResponse()
-\\\	ypescript
+
+\\\ ypescript
 const regenerateResponse = async () => {
-  if (lastQuery) {
-    // Remove last assistant message
-    const messagesWithoutLast = messages.slice(0, -1);
-    setMessages(messagesWithoutLast);
-    
+if (lastQuery) {
+// Remove last assistant message
+const messagesWithoutLast = messages.slice(0, -1);
+setMessages(messagesWithoutLast);
+
     // Resend the query
     await sendMessage(lastQuery);
-  }
+
+}
 };
 \\\
 
 #### Keyboard Shortcuts
 
-\\\	ypescript
+\\\ ypescript
 useEffect(() => {
-  const handleKeyDown = (e: KeyboardEvent) => {
-    // Ctrl/Cmd + K: Toggle chat
-    if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
-      e.preventDefault();
-      setIsOpen(prev => !prev);
-    }
-    
+const handleKeyDown = (e: KeyboardEvent) => {
+// Ctrl/Cmd + K: Toggle chat
+if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+e.preventDefault();
+setIsOpen(prev => !prev);
+}
+
     // Escape: Close chat
     if (e.key === 'Escape' && isOpen) {
       setIsOpen(false);
     }
-    
+
     // Enter: Send message (when input focused)
     if (e.key === 'Enter' && !e.shiftKey && input.trim()) {
       e.preventDefault();
       handleSend();
     }
-  };
 
-  window.addEventListener('keydown', handleKeyDown);
-  return () => window.removeEventListener('keydown', handleKeyDown);
+};
+
+window.addEventListener('keydown', handleKeyDown);
+return () => window.removeEventListener('keydown', handleKeyDown);
 }, [isOpen, input]);
 \\\
 
@@ -3152,44 +3281,50 @@ useEffect(() => {
 
 #### Props
 
-\\\	ypescript
+\\\ ypescript
 interface AnimateInProps {
-  children: React.ReactNode;
-  delay?: number;              // Delay in seconds (default: 0)
-  className?: string;          // Additional CSS classes
-  variant?: AnimationVariant;  // Animation type (default: "fadeUp")
-  once?: boolean;             // Animate only once (default: true)
-  threshold?: number;         // IntersectionObserver threshold (default: 0.1)
+children: React.ReactNode;
+delay?: number; // Delay in seconds (default: 0)
+className?: string; // Additional CSS classes
+variant?: AnimationVariant; // Animation type (default: "fadeUp")
+once?: boolean; // Animate only once (default: true)
+threshold?: number; // IntersectionObserver threshold (default: 0.1)
 }
 
-type AnimationVariant = 
-  | "fadeUp"      // Fade in with upward slide
-  | "fadeLeft"    // Fade in from left
-  | "fadeRight"   // Fade in from right
-  | "reveal"      // Horizontal wipe reveal
-  | "scale"       // Scale up animation
-  | "none";       // No animation
+type AnimationVariant =
+| "fadeUp" // Fade in with upward slide
+| "fadeLeft" // Fade in from left
+| "fadeRight" // Fade in from right
+| "reveal" // Horizontal wipe reveal
+| "scale" // Scale up animation
+| "none"; // No animation
 \\\
 
 #### Usage Examples
 
 ##### Basic Usage
-\\\	sx
+
+\\\ sx
 <AnimateIn>
+
   <div>Animated content</div>
 </AnimateIn>
 \\\
 
 ##### With Delay
-\\\	sx
+
+\\\ sx
 <AnimateIn delay={0.3}>
+
   <h1>Delayed heading</h1>
 </AnimateIn>
 \\\
 
 ##### Different Variants
-\\\	sx
+
+\\\ sx
 <AnimateIn variant="fadeLeft">
+
   <p>Slides from left</p>
 </AnimateIn>
 
@@ -3203,28 +3338,36 @@ type AnimationVariant =
 \\\
 
 ##### Repeat Animation
-\\\	sx
+
+\\\ sx
 <AnimateIn once={false}>
+
   <div>Animates every time it enters viewport</div>
 </AnimateIn>
 \\\
 
 ##### Custom Threshold
-\\\	sx
+
+\\\ sx
 <AnimateIn threshold={0.5}>
+
   <div>Triggers when 50% visible</div>
 </AnimateIn>
 \\\
 
 ##### Staggered List
-\\\	sx
+
+\\\ sx
 {items.map((item, index) => (
-  <AnimateIn 
-    key={item.id}
-    variant="fadeUp"
-    delay={0.1 * index}
-  >
+<AnimateIn
+key={item.id}
+variant="fadeUp"
+delay={0.1 \* index}
+
+>
+
     <Card data={item} />
+
   </AnimateIn>
 ))}
 \\\
@@ -3235,45 +3378,46 @@ type AnimationVariant =
 
 #### Props
 
-\\\	ypescript
+\\\ ypescript
 interface ThemeProviderProps {
-  children: React.ReactNode;
-  defaultTheme?: "light" | "dark" | "system";
-  storageKey?: string;
+children: React.ReactNode;
+defaultTheme?: "light" | "dark" | "system";
+storageKey?: string;
 }
 \\\
 
 #### Context Value
 
-\\\	ypescript
+\\\ ypescript
 interface ThemeContextValue {
-  theme: "light" | "dark" | "system";
-  resolvedTheme: "light" | "dark";
-  setTheme: (theme: "light" | "dark" | "system") => void;
+theme: "light" | "dark" | "system";
+resolvedTheme: "light" | "dark";
+setTheme: (theme: "light" | "dark" | "system") => void;
 }
 \\\
 
 #### Usage
 
-\\\	sx
+\\\ sx
 // Wrap app with provider
 <ThemeProvider defaultTheme="system" storageKey="portfolio-theme">
-  <App />
+<App />
 </ThemeProvider>
 
 // Use in components
 import { useTheme } from '@/components/ThemeProvider';
 
 function MyComponent() {
-  const { theme, resolvedTheme, setTheme } = useTheme();
-  
-  return (
-    <div>
-      <p>Current theme: {theme}</p>
-      <p>Resolved theme: {resolvedTheme}</p>
-      <button onClick={() => setTheme('dark')}>Dark Mode</button>
-    </div>
-  );
+const { theme, resolvedTheme, setTheme } = useTheme();
+
+return (
+
+<div>
+<p>Current theme: {theme}</p>
+<p>Resolved theme: {resolvedTheme}</p>
+<button onClick={() => setTheme('dark')}>Dark Mode</button>
+</div>
+);
 }
 \\\
 
@@ -3283,30 +3427,32 @@ function MyComponent() {
 
 #### Props
 
-\\\	ypescript
+\\\ ypescript
 interface DotGridBackgroundProps {
-  dotSize?: number;        // Dot diameter (default: 5)
-  gap?: number;           // Gap between dots (default: 24)
-  baseColor?: string;     // Default dot color
-  activeColor?: string;   // Hover/active color
-  proximity?: number;     // Mouse effect radius (default: 140)
-  speedTrigger?: number;  // Fast movement threshold (default: 60)
-  shockRadius?: number;   // Shockwave radius (default: 280)
-  shockStrength?: number; // Shockwave intensity (default: 5)
-  resistance?: number;    // Spring resistance (default: 500)
-  returnDuration?: number;// Return animation time (default: 1.8s)
+dotSize?: number; // Dot diameter (default: 5)
+gap?: number; // Gap between dots (default: 24)
+baseColor?: string; // Default dot color
+activeColor?: string; // Hover/active color
+proximity?: number; // Mouse effect radius (default: 140)
+speedTrigger?: number; // Fast movement threshold (default: 60)
+shockRadius?: number; // Shockwave radius (default: 280)
+shockStrength?: number; // Shockwave intensity (default: 5)
+resistance?: number; // Spring resistance (default: 500)
+returnDuration?: number;// Return animation time (default: 1.8s)
 }
 \\\
 
 #### Usage Examples
 
 ##### Default Configuration
-\\\	sx
+
+\\\ sx
 <DotGridBackground />
 \\\
 
 ##### Custom Colors
-\\\	sx
+
+\\\ sx
 <DotGridBackground
   baseColor="#e4e4e7"
   activeColor="#14b8a6"
@@ -3314,7 +3460,8 @@ interface DotGridBackgroundProps {
 \\\
 
 ##### Larger Dots
-\\\	sx
+
+\\\ sx
 <DotGridBackground
   dotSize={8}
   gap={32}
@@ -3322,7 +3469,8 @@ interface DotGridBackgroundProps {
 \\\
 
 ##### Stronger Effects
-\\\	sx
+
+\\\ sx
 <DotGridBackground
   proximity={200}
   shockRadius={400}
@@ -3331,7 +3479,8 @@ interface DotGridBackgroundProps {
 \\\
 
 ##### Slower Animation
-\\\	sx
+
+\\\ sx
 <DotGridBackground
   resistance={1000}
   returnDuration={3}
@@ -3344,31 +3493,33 @@ interface DotGridBackgroundProps {
 
 #### Props
 
-\\\	ypescript
+\\\ ypescript
 interface ParticlesBackgroundProps {
-  particleCount?: number;        // Number of particles (default: 150)
-  particleSpread?: number;       // Distribution radius (default: 12)
-  speed?: number;                // Movement speed (default: 0.08)
-  particleColors?: string[];     // Color palette
-  moveParticlesOnHover?: boolean;// Mouse interaction (default: true)
-  particleHoverFactor?: number;  // Interaction strength (default: 0.5)
-  alphaParticles?: boolean;      // Enable transparency (default: true)
-  particleBaseSize?: number;     // Base size (default: 80)
-  sizeRandomness?: number;       // Size variation (default: 0.8)
-  cameraDistance?: number;       // Camera Z position (default: 25)
-  disableRotation?: boolean;     // Scene rotation (default: false)
+particleCount?: number; // Number of particles (default: 150)
+particleSpread?: number; // Distribution radius (default: 12)
+speed?: number; // Movement speed (default: 0.08)
+particleColors?: string[]; // Color palette
+moveParticlesOnHover?: boolean;// Mouse interaction (default: true)
+particleHoverFactor?: number; // Interaction strength (default: 0.5)
+alphaParticles?: boolean; // Enable transparency (default: true)
+particleBaseSize?: number; // Base size (default: 80)
+sizeRandomness?: number; // Size variation (default: 0.8)
+cameraDistance?: number; // Camera Z position (default: 25)
+disableRotation?: boolean; // Scene rotation (default: false)
 }
 \\\
 
 #### Usage Examples
 
 ##### Default Configuration
-\\\	sx
+
+\\\ sx
 <ParticlesBackground />
 \\\
 
 ##### More Particles
-\\\	sx
+
+\\\ sx
 <ParticlesBackground
   particleCount={300}
   particleSpread={20}
@@ -3376,19 +3527,21 @@ interface ParticlesBackgroundProps {
 \\\
 
 ##### Custom Colors
-\\\	sx
+
+\\\ sx
 <ParticlesBackground
-  particleColors={[
-    '#14b8a6',
-    '#2dd4bf',
-    '#5eead4',
-    '#99f6e4',
-  ]}
+particleColors={[
+'#14b8a6',
+'#2dd4bf',
+'#5eead4',
+'#99f6e4',
+]}
 />
 \\\
 
 ##### Faster Movement
-\\\	sx
+
+\\\ sx
 <ParticlesBackground
   speed={0.2}
   cameraDistance={20}
@@ -3396,7 +3549,8 @@ interface ParticlesBackgroundProps {
 \\\
 
 ##### No Interaction
-\\\	sx
+
+\\\ sx
 <ParticlesBackground
   moveParticlesOnHover={false}
   disableRotation={true}
@@ -3409,42 +3563,46 @@ interface ParticlesBackgroundProps {
 
 #### Props
 
-\\\	ypescript
+\\\ ypescript
 interface GitHubContributionsProps {
-  username?: string;        // GitHub username (default: "Xenonesis")
-  year?: number;           // Year to display (default: current year)
-  showTooltip?: boolean;   // Show hover tooltips (default: true)
-  colorScheme?: {
-    level0: string;        // No contributions
-    level1: string;        // Low
-    level2: string;        // Medium
-    level3: string;        // High
-    level4: string;        // Very high
-  };
+username?: string; // GitHub username (default: "Xenonesis")
+year?: number; // Year to display (default: current year)
+showTooltip?: boolean; // Show hover tooltips (default: true)
+colorScheme?: {
+level0: string; // No contributions
+level1: string; // Low
+level2: string; // Medium
+level3: string; // High
+level4: string; // Very high
+};
 }
 \\\
 
 #### Usage Examples
 
 ##### Default
-\\\	sx
+
+\\\ sx
 <GitHubContributions />
 \\\
 
 ##### Different User
-\\\	sx
+
+\\\ sx
 <GitHubContributions username="torvalds" />
 \\\
 
 ##### Specific Year
-\\\	sx
+
+\\\ sx
 <GitHubContributions year={2024} />
 \\\
 
 ##### Custom Colors
-\\\	sx
+
+\\\ sx
 <GitHubContributions
-  colorScheme={{
+colorScheme={{
     level0: '#1e1e1e',
     level1: '#0e4429',
     level2: '#006d32',
@@ -3460,33 +3618,37 @@ interface GitHubContributionsProps {
 
 #### Props
 
-\\\	ypescript
+\\\ ypescript
 interface VisitorGreetingProps {
-  showBrowser?: boolean;   // Show browser icon (default: true)
-  showOS?: boolean;        // Show OS icon (default: true)
-  customMessage?: string;  // Custom greeting text
+showBrowser?: boolean; // Show browser icon (default: true)
+showOS?: boolean; // Show OS icon (default: true)
+customMessage?: string; // Custom greeting text
 }
 \\\
 
 #### Usage Examples
 
 ##### Default
-\\\	sx
+
+\\\ sx
 <VisitorGreeting />
 \\\
 
 ##### Browser Only
-\\\	sx
+
+\\\ sx
 <VisitorGreeting showOS={false} />
 \\\
 
 ##### OS Only
-\\\	sx
+
+\\\ sx
 <VisitorGreeting showBrowser={false} />
 \\\
 
 ##### Custom Message
-\\\	sx
+
+\\\ sx
 <VisitorGreeting customMessage="Welcome back!" />
 \\\
 
@@ -3496,27 +3658,30 @@ interface VisitorGreetingProps {
 
 #### Props
 
-\\\	ypescript
+\\\ ypescript
 interface ThemeToggleProps {
-  className?: string;      // Additional CSS classes
-  size?: 'sm' | 'md' | 'lg'; // Button size
+className?: string; // Additional CSS classes
+size?: 'sm' | 'md' | 'lg'; // Button size
 }
 \\\
 
 #### Usage Examples
 
 ##### Default
-\\\	sx
+
+\\\ sx
 <ThemeToggle />
 \\\
 
 ##### Different Size
-\\\	sx
+
+\\\ sx
 <ThemeToggle size="lg" />
 \\\
 
 ##### With Custom Styling
-\\\	sx
+
+\\\ sx
 <ThemeToggle className="fixed top-4 right-4" />
 \\\
 
@@ -3526,58 +3691,62 @@ interface ThemeToggleProps {
 
 #### Props
 
-\\\	ypescript
+\\\ ypescript
 interface SocialMediaProps {
-  links?: SocialLink[];    // Custom links array
-  size?: number;          // Icon size (default: 24)
-  className?: string;     // Additional classes
-  orientation?: 'horizontal' | 'vertical'; // Layout
+links?: SocialLink[]; // Custom links array
+size?: number; // Icon size (default: 24)
+className?: string; // Additional classes
+orientation?: 'horizontal' | 'vertical'; // Layout
 }
 
 interface SocialLink {
-  name: string;
-  url: string;
-  icon: React.ComponentType<{ size?: number }>;
-  ariaLabel: string;
+name: string;
+url: string;
+icon: React.ComponentType<{ size?: number }>;
+ariaLabel: string;
 }
 \\\
 
 #### Usage Examples
 
 ##### Default
-\\\	sx
+
+\\\ sx
 <SocialMedia />
 \\\
 
 ##### Larger Icons
-\\\	sx
+
+\\\ sx
 <SocialMedia size={32} />
 \\\
 
 ##### Vertical Layout
-\\\	sx
+
+\\\ sx
 <SocialMedia orientation="vertical" />
 \\\
 
 ##### Custom Links
-\\\	sx
+
+\\\ sx
 import { Github, Twitter, LinkedIn } from 'lucide-react';
 
 <SocialMedia
-  links={[
-    {
-      name: 'GitHub',
-      url: 'https://github.com/username',
-      icon: Github,
-      ariaLabel: 'Visit GitHub profile'
-    },
-    {
-      name: 'Twitter',
-      url: 'https://twitter.com/username',
-      icon: Twitter,
-      ariaLabel: 'Follow on Twitter'
-    }
-  ]}
+links={[
+{
+name: 'GitHub',
+url: 'https://github.com/username',
+icon: Github,
+ariaLabel: 'Visit GitHub profile'
+},
+{
+name: 'Twitter',
+url: 'https://twitter.com/username',
+icon: Twitter,
+ariaLabel: 'Follow on Twitter'
+}
+]}
 />
 \\\
 
@@ -3588,166 +3757,166 @@ import { Github, Twitter, LinkedIn } from 'lucide-react';
 ### Custom Animations Library
 
 \\\css
-/* Bounce Animation */
+/_ Bounce Animation _/
 @keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+0%, 100% {
+transform: translateY(0);
+}
+50% {
+transform: translateY(-10px);
+}
 }
 
 .bounce {
-  animation: bounce 2s ease-in-out infinite;
+animation: bounce 2s ease-in-out infinite;
 }
 
-/* Shake Animation */
+/_ Shake Animation _/
 @keyframes shake {
-  0%, 100% {
-    transform: translateX(0);
-  }
-  10%, 30%, 50%, 70%, 90% {
-    transform: translateX(-5px);
-  }
-  20%, 40%, 60%, 80% {
-    transform: translateX(5px);
-  }
+0%, 100% {
+transform: translateX(0);
+}
+10%, 30%, 50%, 70%, 90% {
+transform: translateX(-5px);
+}
+20%, 40%, 60%, 80% {
+transform: translateX(5px);
+}
 }
 
 .shake {
-  animation: shake 0.5s ease-in-out;
+animation: shake 0.5s ease-in-out;
 }
 
-/* Fade In Up */
+/_ Fade In Up _/
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+from {
+opacity: 0;
+transform: translateY(20px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
 }
 
 .fade-in-up {
-  animation: fadeInUp 0.6s ease-out forwards;
+animation: fadeInUp 0.6s ease-out forwards;
 }
 
-/* Slide In Left */
+/_ Slide In Left _/
 @keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+from {
+opacity: 0;
+transform: translateX(-30px);
+}
+to {
+opacity: 1;
+transform: translateX(0);
+}
 }
 
 .slide-in-left {
-  animation: slideInLeft 0.5s ease-out forwards;
+animation: slideInLeft 0.5s ease-out forwards;
 }
 
-/* Rotate In */
+/_ Rotate In _/
 @keyframes rotateIn {
-  from {
-    opacity: 0;
-    transform: rotate(-180deg) scale(0.5);
-  }
-  to {
-    opacity: 1;
-    transform: rotate(0) scale(1);
-  }
+from {
+opacity: 0;
+transform: rotate(-180deg) scale(0.5);
+}
+to {
+opacity: 1;
+transform: rotate(0) scale(1);
+}
 }
 
 .rotate-in {
-  animation: rotateIn 0.6s ease-out forwards;
+animation: rotateIn 0.6s ease-out forwards;
 }
 
-/* Flip */
+/_ Flip _/
 @keyframes flip {
-  0% {
-    transform: perspective(400px) rotateY(0);
-  }
-  100% {
-    transform: perspective(400px) rotateY(360deg);
-  }
+0% {
+transform: perspective(400px) rotateY(0);
+}
+100% {
+transform: perspective(400px) rotateY(360deg);
+}
 }
 
 .flip {
-  animation: flip 1s ease-in-out;
+animation: flip 1s ease-in-out;
 }
 
-/* Pulse Glow */
+/_ Pulse Glow _/
 @keyframes pulseGlow {
-  0%, 100% {
-    box-shadow: 0 0 10px rgba(20, 184, 166, 0.3);
-  }
-  50% {
-    box-shadow: 0 0 30px rgba(20, 184, 166, 0.6);
-  }
+0%, 100% {
+box-shadow: 0 0 10px rgba(20, 184, 166, 0.3);
+}
+50% {
+box-shadow: 0 0 30px rgba(20, 184, 166, 0.6);
+}
 }
 
 .pulse-glow {
-  animation: pulseGlow 2s ease-in-out infinite;
+animation: pulseGlow 2s ease-in-out infinite;
 }
 
-/* Typewriter */
+/_ Typewriter _/
 @keyframes typewriter {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
+from {
+width: 0;
+}
+to {
+width: 100%;
+}
 }
 
 .typewriter {
-  overflow: hidden;
-  white-space: nowrap;
-  animation: typewriter 2s steps(40) forwards;
+overflow: hidden;
+white-space: nowrap;
+animation: typewriter 2s steps(40) forwards;
 }
 
-/* Gradient Shift */
+/_ Gradient Shift _/
 @keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+0% {
+background-position: 0% 50%;
+}
+50% {
+background-position: 100% 50%;
+}
+100% {
+background-position: 0% 50%;
+}
 }
 
 .gradient-shift {
-  background: linear-gradient(
-    270deg,
-    #14b8a6,
-    #2dd4bf,
-    #5eead4,
-    #14b8a6
-  );
-  background-size: 400% 400%;
-  animation: gradientShift 10s ease infinite;
+background: linear-gradient(
+270deg,
+#14b8a6,
+#2dd4bf,
+#5eead4,
+#14b8a6
+);
+background-size: 400% 400%;
+animation: gradientShift 10s ease infinite;
 }
 
-/* Float */
+/_ Float _/
 @keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-15px);
-  }
+0%, 100% {
+transform: translateY(0);
+}
+50% {
+transform: translateY(-15px);
+}
 }
 
 .float {
-  animation: float 3s ease-in-out infinite;
+animation: float 3s ease-in-out infinite;
 }
 \\\
 
@@ -3756,48 +3925,48 @@ import { Github, Twitter, LinkedIn } from 'lucide-react';
 ### CSS Grid Patterns
 
 \\\css
-/* Basic Grid */
+/_ Basic Grid _/
 .grid-basic {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 1.5rem;
 }
 
-/* Masonry-like Grid */
+/_ Masonry-like Grid _/
 .grid-masonry {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-auto-rows: 10px;
-  gap: 1rem;
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+grid-auto-rows: 10px;
+gap: 1rem;
 }
 
-.grid-masonry > * {
-  grid-row-end: span var(--row-span, 20);
+.grid-masonry > \* {
+grid-row-end: span var(--row-span, 20);
 }
 
-/* Asymmetric Grid */
+/_ Asymmetric Grid _/
 .grid-asymmetric {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-template-rows: auto;
-  gap: 2rem;
+display: grid;
+grid-template-columns: 2fr 1fr;
+grid-template-rows: auto;
+gap: 2rem;
 }
 
 .grid-asymmetric > :first-child {
-  grid-row: span 2;
+grid-row: span 2;
 }
 
-/* Holy Grail Layout */
+/_ Holy Grail Layout _/
 .grid-holy-grail {
-  display: grid;
-  grid-template-areas:
-    "header header header"
-    "nav main aside"
-    "footer footer footer";
-  grid-template-columns: 200px 1fr 200px;
-  grid-template-rows: auto 1fr auto;
-  min-height: 100vh;
-  gap: 1rem;
+display: grid;
+grid-template-areas:
+"header header header"
+"nav main aside"
+"footer footer footer";
+grid-template-columns: 200px 1fr 200px;
+grid-template-rows: auto 1fr auto;
+min-height: 100vh;
+gap: 1rem;
 }
 
 .grid-holy-grail > header { grid-area: header; }
@@ -3806,16 +3975,16 @@ import { Github, Twitter, LinkedIn } from 'lucide-react';
 .grid-holy-grail > aside { grid-area: aside; }
 .grid-holy-grail > footer { grid-area: footer; }
 
-/* Card Grid with Feature */
+/_ Card Grid with Feature _/
 .grid-featured {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 1rem;
 }
 
 .grid-featured > :first-child {
-  grid-column: span 2;
-  grid-row: span 2;
+grid-column: span 2;
+grid-row: span 2;
 }
 \\\
 
@@ -3824,84 +3993,83 @@ import { Github, Twitter, LinkedIn } from 'lucide-react';
 ### Advanced Flexbox Patterns
 
 \\\css
-/* Center Everything */
+/_ Center Everything _/
 .flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+display: flex;
+justify-content: center;
+align-items: center;
 }
 
-/* Responsive Stack */
+/_ Responsive Stack _/
 .flex-stack {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+display: flex;
+flex-direction: column;
+gap: 1rem;
 }
 
 @media (min-width: 768px) {
-  .flex-stack {
-    flex-direction: row;
-  }
+.flex-stack {
+flex-direction: row;
+}
 }
 
-/* Space Between with Wrap */
+/_ Space Between with Wrap _/
 .flex-space-wrap {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 1rem;
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+gap: 1rem;
 }
 
-/* Sidebar Layout */
+/_ Sidebar Layout _/
 .flex-sidebar {
-  display: flex;
-  gap: 2rem;
+display: flex;
+gap: 2rem;
 }
 
 .flex-sidebar > aside {
-  flex: 0 0 250px;
+flex: 0 0 250px;
 }
 
 .flex-sidebar > main {
-  flex: 1;
-  min-width: 0;
+flex: 1;
+min-width: 0;
 }
 
-/* Card Grid */
+/_ Card Grid _/
 .flex-card-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+display: flex;
+flex-wrap: wrap;
+gap: 1rem;
 }
 
-.flex-card-grid > * {
-  flex: 1 1 300px;
+.flex-card-grid > \* {
+flex: 1 1 300px;
 }
 
-/* Holy Grail with Flexbox */
+/_ Holy Grail with Flexbox _/
 .flex-holy-grail {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+display: flex;
+flex-direction: column;
+min-height: 100vh;
 }
 
 .flex-holy-grail > main {
-  display: flex;
-  flex: 1;
+display: flex;
+flex: 1;
 }
 
 .flex-holy-grail > main > nav,
 .flex-holy-grail > main > aside {
-  flex: 0 0 200px;
+flex: 0 0 200px;
 }
 
 .flex-holy-grail > main > article {
-  flex: 1;
+flex: 1;
 }
 \\\
 
 ---
-
 
 ## 🔍 Detailed Code Examples
 
@@ -3909,31 +4077,31 @@ import { Github, Twitter, LinkedIn } from 'lucide-react';
 
 #### Step 1: Define Types
 
-\\\	ypescript
+\\\ ypescript
 // src/types/project.ts
 export interface Project {
-  id: string;
-  name: string;
-  description: string;
-  longDescription?: string;
-  image?: string;
-  tags: string[];
-  technologies: string[];
-  github?: string;
-  demo?: string;
-  featured?: boolean;
-  completedAt: Date;
-  metrics?: {
-    stars?: number;
-    forks?: number;
-    downloads?: number;
-  };
+id: string;
+name: string;
+description: string;
+longDescription?: string;
+image?: string;
+tags: string[];
+technologies: string[];
+github?: string;
+demo?: string;
+featured?: boolean;
+completedAt: Date;
+metrics?: {
+stars?: number;
+forks?: number;
+downloads?: number;
+};
 }
 \\\
 
 #### Step 2: Create Component
 
-\\\	sx
+\\\ sx
 // src/components/ProjectCard.tsx
 import { useState } from 'react';
 import { AnimateIn } from './animations/AnimateIn';
@@ -3941,31 +4109,31 @@ import { Github, ExternalLink, Star, GitFork } from 'lucide-react';
 import type { Project } from '@/types/project';
 
 interface ProjectCardProps {
-  project: Project;
-  delay?: number;
+project: Project;
+delay?: number;
 }
 
-export const ProjectCard: React.FC<ProjectCardProps> = ({ 
-  project, 
-  delay = 0 
+export const ProjectCard: React.FC<ProjectCardProps> = ({
+project,
+delay = 0
 }) => {
-  const [isHovered, setIsHovered] = useState(false);
+const [isHovered, setIsHovered] = useState(false);
 
-  return (
-    <AnimateIn variant="fadeUp" delay={delay}>
-      <article
-        className="group relative bg-white dark:bg-zinc-900 rounded-2xl border border-zinc-200 dark:border-zinc-700 overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-        {/* Featured Badge */}
-        {project.featured && (
-          <div className="absolute top-4 right-4 z-10">
-            <span className="px-3 py-1 text-xs font-semibold bg-teal-500 text-white rounded-full">
-              Featured
-            </span>
-          </div>
-        )}
+return (
+<AnimateIn variant="fadeUp" delay={delay}>
+
+<article
+className="group relative bg-white dark:bg-zinc-900 rounded-2xl border border-zinc-200 dark:border-zinc-700 overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+onMouseEnter={() => setIsHovered(true)}
+onMouseLeave={() => setIsHovered(false)} >
+{/_ Featured Badge _/}
+{project.featured && (
+<div className="absolute top-4 right-4 z-10">
+<span className="px-3 py-1 text-xs font-semibold bg-teal-500 text-white rounded-full">
+Featured
+</span>
+</div>
+)}
 
         {/* Image */}
         {project.image && (
@@ -4070,81 +4238,84 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
         />
       </article>
     </AnimateIn>
-  );
+
+);
 };
 \\\
 
 #### Step 3: Create Grid Layout
 
-\\\	sx
+\\\ sx
 // src/components/ProjectGrid.tsx
 import { ProjectCard } from './ProjectCard';
 import type { Project } from '@/types/project';
 
 interface ProjectGridProps {
-  projects: Project[];
-  columns?: 1 | 2 | 3 | 4;
+projects: Project[];
+columns?: 1 | 2 | 3 | 4;
 }
 
-export const ProjectGrid: React.FC<ProjectGridProps> = ({ 
-  projects,
-  columns = 3 
+export const ProjectGrid: React.FC<ProjectGridProps> = ({
+projects,
+columns = 3
 }) => {
-  const gridClasses = {
-    1: 'grid-cols-1',
-    2: 'grid-cols-1 md:grid-cols-2',
-    3: 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3',
-    4: 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4',
-  };
+const gridClasses = {
+1: 'grid-cols-1',
+2: 'grid-cols-1 md:grid-cols-2',
+3: 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3',
+4: 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4',
+};
 
-  return (
-    <div className={\grid \ gap-6\}>
-      {projects.map((project, index) => (
-        <ProjectCard
-          key={project.id}
-          project={project}
-          delay={0.1 + index * 0.1}
-        />
-      ))}
-    </div>
-  );
+return (
+
+<div className={\grid \ gap-6\}>
+{projects.map((project, index) => (
+<ProjectCard
+key={project.id}
+project={project}
+delay={0.1 + index \* 0.1}
+/>
+))}
+</div>
+);
 };
 \\\
 
 #### Step 4: Usage in Page
 
-\\\	sx
+\\\ sx
 // src/app/projects/page.tsx
 import { ProjectGrid } from '@/components/ProjectGrid';
 
 const projects = [
-  {
-    id: '1',
-    name: 'Portfolio Website',
-    description: 'A modern portfolio with AI chat and interactive backgrounds',
-    tags: ['Featured', 'Web'],
-    technologies: ['Next.js', 'TypeScript', 'TailwindCSS', 'Three.js'],
-    github: 'https://github.com/Xenonesis/portfolio',
-    demo: 'https://iaddy.netlify.app',
-    featured: true,
-    completedAt: new Date('2025-12-31'),
-    metrics: {
-      stars: 25,
-      forks: 5,
-    },
-  },
-  // ... more projects
+{
+id: '1',
+name: 'Portfolio Website',
+description: 'A modern portfolio with AI chat and interactive backgrounds',
+tags: ['Featured', 'Web'],
+technologies: ['Next.js', 'TypeScript', 'TailwindCSS', 'Three.js'],
+github: 'https://github.com/Xenonesis/portfolio',
+demo: 'https://iaddy.netlify.app',
+featured: true,
+completedAt: new Date('2025-12-31'),
+metrics: {
+stars: 25,
+forks: 5,
+},
+},
+// ... more projects
 ];
 
 export default function ProjectsPage() {
-  return (
-    <main className="min-h-screen py-12 px-4">
-      <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl font-bold mb-8">Projects</h1>
-        <ProjectGrid projects={projects} columns={3} />
-      </div>
-    </main>
-  );
+return (
+
+<main className="min-h-screen py-12 px-4">
+<div className="max-w-7xl mx-auto">
+<h1 className="text-4xl font-bold mb-8">Projects</h1>
+<ProjectGrid projects={projects} columns={3} />
+</div>
+</main>
+);
 }
 \\\
 
@@ -4160,28 +4331,28 @@ npm install react-hook-form zod @hookform/resolvers
 
 #### Step 2: Define Schema
 
-\\\	ypescript
+\\\ ypescript
 // src/schemas/contact.ts
 import { z } from 'zod';
 
 export const contactSchema = z.object({
-  name: z.string()
-    .min(2, 'Name must be at least 2 characters')
-    .max(50, 'Name must be less than 50 characters'),
-  
-  email: z.string()
-    .email('Invalid email address')
-    .min(5, 'Email is required'),
-  
-  subject: z.string()
-    .min(5, 'Subject must be at least 5 characters')
-    .max(100, 'Subject must be less than 100 characters'),
-  
-  message: z.string()
-    .min(10, 'Message must be at least 10 characters')
-    .max(1000, 'Message must be less than 1000 characters'),
-  
-  category: z.enum(['general', 'project', 'collaboration', 'other']),
+name: z.string()
+.min(2, 'Name must be at least 2 characters')
+.max(50, 'Name must be less than 50 characters'),
+
+email: z.string()
+.email('Invalid email address')
+.min(5, 'Email is required'),
+
+subject: z.string()
+.min(5, 'Subject must be at least 5 characters')
+.max(100, 'Subject must be less than 100 characters'),
+
+message: z.string()
+.min(10, 'Message must be at least 10 characters')
+.max(1000, 'Message must be less than 1000 characters'),
+
+category: z.enum(['general', 'project', 'collaboration', 'other']),
 });
 
 export type ContactFormData = z.infer<typeof contactSchema>;
@@ -4189,7 +4360,7 @@ export type ContactFormData = z.infer<typeof contactSchema>;
 
 #### Step 3: Create Form Component
 
-\\\	sx
+\\\ sx
 // src/components/ContactForm.tsx
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -4197,21 +4368,21 @@ import { contactSchema, type ContactFormData } from '@/schemas/contact';
 import { useState } from 'react';
 
 export const ContactForm: React.FC = () => {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+const [isSubmitting, setIsSubmitting] = useState(false);
+const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    reset,
-  } = useForm<ContactFormData>({
-    resolver: zodResolver(contactSchema),
-  });
+const {
+register,
+handleSubmit,
+formState: { errors },
+reset,
+} = useForm<ContactFormData>({
+resolver: zodResolver(contactSchema),
+});
 
-  const onSubmit = async (data: ContactFormData) => {
-    setIsSubmitting(true);
-    
+const onSubmit = async (data: ContactFormData) => {
+setIsSubmitting(true);
+
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
@@ -4223,7 +4394,7 @@ export const ContactForm: React.FC = () => {
 
       setSubmitStatus('success');
       reset();
-      
+
       // Reset success message after 3 seconds
       setTimeout(() => setSubmitStatus('idle'), 3000);
     } catch (error) {
@@ -4232,34 +4403,36 @@ export const ContactForm: React.FC = () => {
     } finally {
       setIsSubmitting(false);
     }
-  };
 
-  return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-      {/* Name Field */}
-      <div>
-        <label 
+};
+
+return (
+
+<form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+{/_ Name Field _/}
+<div>
+<label 
           htmlFor="name" 
           className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2"
         >
-          Name *
-        </label>
-        <input
-          {...register('name')}
-          type="text"
-          id="name"
-          className={\w-full px-4 py-2 rounded-lg border \ bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-50 focus:outline-none focus:ring-2 focus:ring-teal-500/20 transition-colors\}
-          placeholder="John Doe"
-        />
-        {errors.name && (
-          <p className="mt-1 text-sm text-red-500">{errors.name.message}</p>
-        )}
-      </div>
+Name \*
+</label>
+<input
+{...register('name')}
+type="text"
+id="name"
+className={\w-full px-4 py-2 rounded-lg border \ bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-50 focus:outline-none focus:ring-2 focus:ring-teal-500/20 transition-colors\}
+placeholder="John Doe"
+/>
+{errors.name && (
+<p className="mt-1 text-sm text-red-500">{errors.name.message}</p>
+)}
+</div>
 
       {/* Email Field */}
       <div>
-        <label 
-          htmlFor="email" 
+        <label
+          htmlFor="email"
           className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2"
         >
           Email *
@@ -4278,8 +4451,8 @@ export const ContactForm: React.FC = () => {
 
       {/* Category Field */}
       <div>
-        <label 
-          htmlFor="category" 
+        <label
+          htmlFor="category"
           className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2"
         >
           Category *
@@ -4301,8 +4474,8 @@ export const ContactForm: React.FC = () => {
 
       {/* Subject Field */}
       <div>
-        <label 
-          htmlFor="subject" 
+        <label
+          htmlFor="subject"
           className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2"
         >
           Subject *
@@ -4321,8 +4494,8 @@ export const ContactForm: React.FC = () => {
 
       {/* Message Field */}
       <div>
-        <label 
-          htmlFor="message" 
+        <label
+          htmlFor="message"
           className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2"
         >
           Message *
@@ -4365,46 +4538,49 @@ export const ContactForm: React.FC = () => {
         {isSubmitting ? 'Sending...' : 'Send Message'}
       </button>
     </form>
-  );
+
+);
 };
 \\\
 
 #### Step 4: Create API Route
 
-\\\	ypescript
+\\\ ypescript
 // src/app/api/contact/route.ts
 import { NextRequest, NextResponse } from 'next/server';
 import { contactSchema } from '@/schemas/contact';
 
 export async function POST(request: NextRequest) {
-  try {
-    const body = await request.json();
-    
+try {
+const body = await request.json();
+
     // Validate request body
     const validatedData = contactSchema.parse(body);
-    
+
     // Here you would typically:
     // 1. Send email via service (SendGrid, Resend, etc.)
     // 2. Store in database
     // 3. Send notification
-    
+
     console.log('Contact form submission:', validatedData);
-    
+
     // Simulate processing delay
     await new Promise(resolve => setTimeout(resolve, 1000));
-    
+
     return NextResponse.json(
       { message: 'Message sent successfully' },
       { status: 200 }
     );
-  } catch (error) {
-    console.error('Contact form error:', error);
-    
+
+} catch (error) {
+console.error('Contact form error:', error);
+
     return NextResponse.json(
       { error: 'Failed to process request' },
       { status: 400 }
     );
-  }
+
+}
 }
 \\\
 
@@ -4414,81 +4590,83 @@ export async function POST(request: NextRequest) {
 
 #### Step 1: Create Search Hook
 
-\\\	ypescript
+\\\ ypescript
 // src/hooks/useSearch.ts
 import { useState, useMemo } from 'react';
 
 interface UseSearchOptions<T> {
-  data: T[];
-  searchKeys: (keyof T)[];
-  caseSensitive?: boolean;
+data: T[];
+searchKeys: (keyof T)[];
+caseSensitive?: boolean;
 }
 
 export function useSearch<T>({
-  data,
-  searchKeys,
-  caseSensitive = false,
+data,
+searchKeys,
+caseSensitive = false,
 }: UseSearchOptions<T>) {
-  const [query, setQuery] = useState('');
+const [query, setQuery] = useState('');
 
-  const results = useMemo(() => {
-    if (!query.trim()) return data;
+const results = useMemo(() => {
+if (!query.trim()) return data;
 
     const searchTerm = caseSensitive ? query : query.toLowerCase();
 
     return data.filter(item => {
       return searchKeys.some(key => {
         const value = item[key];
-        
+
         if (typeof value !== 'string' && typeof value !== 'number') {
           return false;
         }
 
         const stringValue = String(value);
-        const compareValue = caseSensitive 
-          ? stringValue 
+        const compareValue = caseSensitive
+          ? stringValue
           : stringValue.toLowerCase();
 
         return compareValue.includes(searchTerm);
       });
     });
-  }, [data, query, searchKeys, caseSensitive]);
 
-  return {
-    query,
-    setQuery,
-    results,
-    hasResults: results.length > 0,
-    resultCount: results.length,
-  };
+}, [data, query, searchKeys, caseSensitive]);
+
+return {
+query,
+setQuery,
+results,
+hasResults: results.length > 0,
+resultCount: results.length,
+};
 }
 \\\
 
 #### Step 2: Create Search Component
 
-\\\	sx
+\\\ sx
 // src/components/SearchBar.tsx
 import { Search, X } from 'lucide-react';
 
 interface SearchBarProps {
-  value: string;
-  onChange: (value: string) => void;
-  placeholder?: string;
-  resultCount?: number;
+value: string;
+onChange: (value: string) => void;
+placeholder?: string;
+resultCount?: number;
 }
 
 export const SearchBar: React.FC<SearchBarProps> = ({
-  value,
-  onChange,
-  placeholder = 'Search...',
-  resultCount,
+value,
+onChange,
+placeholder = 'Search...',
+resultCount,
 }) => {
-  return (
-    <div className="relative">
-      {/* Search Icon */}
-      <div className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-400">
-        <Search size={20} />
-      </div>
+return (
+
+<div className="relative">
+{/_ Search Icon _/}
+<div className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-400">
+<Search size={20} />
+</div>
 
       {/* Input */}
       <input
@@ -4517,13 +4695,14 @@ export const SearchBar: React.FC<SearchBarProps> = ({
         </div>
       )}
     </div>
-  );
+
+);
 };
 \\\
 
 #### Step 3: Usage Example
 
-\\\	sx
+\\\ sx
 // src/app/projects/page.tsx
 import { useState } from 'react';
 import { useSearch } from '@/hooks/useSearch';
@@ -4531,25 +4710,26 @@ import { SearchBar } from '@/components/SearchBar';
 import { ProjectCard } from '@/components/ProjectCard';
 
 const projects = [
-  // ... your projects data
+// ... your projects data
 ];
 
 export default function ProjectsPage() {
-  const {
-    query,
-    setQuery,
-    results,
-    resultCount,
-  } = useSearch({
-    data: projects,
-    searchKeys: ['name', 'description', 'tags', 'technologies'],
-  });
+const {
+query,
+setQuery,
+results,
+resultCount,
+} = useSearch({
+data: projects,
+searchKeys: ['name', 'description', 'tags', 'technologies'],
+});
 
-  return (
-    <main className="min-h-screen py-12 px-4">
-      <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl font-bold mb-8">Projects</h1>
-        
+return (
+
+<main className="min-h-screen py-12 px-4">
+<div className="max-w-7xl mx-auto">
+<h1 className="text-4xl font-bold mb-8">Projects</h1>
+
         {/* Search Bar */}
         <div className="mb-8">
           <SearchBar
@@ -4581,18 +4761,19 @@ export default function ProjectsPage() {
         )}
       </div>
     </main>
-  );
+
+);
 }
 \\\
 
 ---
-
 
 ## 🚀 Deployment Guides (Extended)
 
 ### Netlify Deployment (Detailed)
 
 #### Prerequisites
+
 - GitHub account
 - Netlify account (free tier available)
 - Repository pushed to GitHub
@@ -4602,7 +4783,9 @@ export default function ProjectsPage() {
 **Step 1: Prepare Repository**
 
 \\\ash
+
 # Ensure all changes are committed
+
 git add .
 git commit -m "chore: prepare for deployment"
 git push origin main
@@ -4659,6 +4842,7 @@ Click "Deploy site" and wait for the build to complete.
 **Step 1: Purchase Domain**
 
 Popular registrars:
+
 - Namecheap
 - Google Domains
 - GoDaddy
@@ -4706,16 +4890,23 @@ Value: your-site.netlify.app
 Every push to main branch automatically triggers a new deployment:
 
 \\\ash
+
 # Make changes
+
 git add .
 git commit -m "feat: add new feature"
 git push origin main
 
 # Netlify automatically:
+
 # 1. Detects the push
+
 # 2. Starts a new build
+
 # 3. Deploys if successful
+
 # 4. Sends notification
+
 \\\
 
 #### Deploy Previews
@@ -4723,15 +4914,21 @@ git push origin main
 For pull requests:
 
 \\\ash
+
 # Create feature branch
+
 git checkout -b feature/new-feature
 
 # Make changes and push
+
 git push origin feature/new-feature
 
 # Create PR on GitHub
+
 # Netlify automatically creates a deploy preview
+
 # Preview URL: deploy-preview-123--your-site.netlify.app
+
 \\\
 
 #### Rollback to Previous Deploy
@@ -4755,26 +4952,39 @@ npm install -g vercel
 
 \\\ash
 vercel login
+
 # Enter your email
+
 # Click the verification link sent to your email
+
 \\\
 
 #### Step 3: Deploy
 
 \\\ash
+
 # Navigate to project directory
+
 cd portfolio
 
 # Deploy
+
 vercel
 
 # Follow the prompts:
+
 # Set up and deploy? Yes
+
 # Which scope? Your account
+
 # Link to existing project? No
+
 # What's your project's name? portfolio
+
 # In which directory is your code located? ./
+
 # Want to override settings? No
+
 \\\
 
 #### Step 4: Production Deployment
@@ -4786,13 +4996,19 @@ vercel --prod
 #### Step 5: Environment Variables
 
 \\\ash
+
 # Add environment variable
+
 vercel env add GROQ_API_KEY
+
 # Select production
+
 # Paste your API key
 
 # Or add via dashboard
+
 # Visit vercel.com/your-project/settings/environment-variables
+
 \\\
 
 #### Vercel Configuration
@@ -4801,11 +5017,11 @@ Create \ercel.json\:
 
 \\\json
 {
-  "buildCommand": "npm run build",
-  "devCommand": "npm run dev",
-  "installCommand": "npm install",
-  "framework": "nextjs",
-  "outputDirectory": "out"
+"buildCommand": "npm run build",
+"devCommand": "npm run dev",
+"installCommand": "npm install",
+"framework": "nextjs",
+"outputDirectory": "out"
 }
 \\\
 
@@ -4823,10 +5039,10 @@ npm install --save-dev gh-pages
 
 \\\json
 {
-  "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d out"
-  }
+"scripts": {
+"predeploy": "npm run build",
+"deploy": "gh-pages -d out"
+}
 }
 \\\
 
@@ -4837,12 +5053,12 @@ const isProd = process.env.NODE_ENV === 'production';
 const repoName = 'portfolio'; // Your repo name
 
 const nextConfig = {
-  output: 'export',
-  basePath: isProd ? \/\\ : '',
-  assetPrefix: isProd ? \/\/\ : '',
-  images: {
-    unoptimized: true,
-  },
+output: 'export',
+basePath: isProd ? \/\\ : '',
+assetPrefix: isProd ? \/\/\ : '',
+images: {
+unoptimized: true,
+},
 };
 
 export default nextConfig;
@@ -4875,19 +5091,19 @@ npm run deploy
    Type: A
    Name: @
    Value: 185.199.108.153
-   
+
    Type: A
    Name: @
    Value: 185.199.109.153
-   
+
    Type: A
    Name: @
    Value: 185.199.110.153
-   
+
    Type: A
    Name: @
    Value: 185.199.111.153
-   
+
    Type: CNAME
    Name: www
    Value: yourusername.github.io
@@ -4902,42 +5118,53 @@ npm run deploy
 #### Create Dockerfile
 
 \\\dockerfile
+
 # Build stage
+
 FROM node:18-alpine AS builder
 
 WORKDIR /app
 
 # Copy package files
-COPY package*.json ./
+
+COPY package\*.json ./
 
 # Install dependencies
+
 RUN npm ci
 
 # Copy source code
+
 COPY . .
 
 # Build application
+
 RUN npm run build
 
 # Production stage
+
 FROM node:18-alpine AS runner
 
 WORKDIR /app
 
 # Copy built files
+
 COPY --from=builder /app/out ./out
 COPY --from=builder /app/public ./public
-COPY --from=builder /app/package*.json ./
+COPY --from=builder /app/package\*.json ./
 
 # Install production dependencies
+
 RUN npm ci --only=production
 
 # Install serve to serve static files
+
 RUN npm install -g serve
 
 EXPOSE 3000
 
 # Start application
+
 CMD ["serve", "-s", "out", "-l", "3000"]
 \\\
 
@@ -4956,13 +5183,17 @@ README.md
 #### Build and Run
 
 \\\ash
+
 # Build image
+
 docker build -t portfolio:latest .
 
 # Run container
+
 docker run -p 3000:3000 -e GROQ_API_KEY=your_key portfolio:latest
 
 # Run with env file
+
 docker run -p 3000:3000 --env-file .env.local portfolio:latest
 \\\
 
@@ -4974,15 +5205,14 @@ Create \docker-compose.yml\:
 version: '3.8'
 
 services:
-  portfolio:
-    build: .
-    ports:
-      - "3000:3000"
-    environment:
-      - GROQ_API_KEY=\
-      - NEXT_PUBLIC_GA_ID=\
-    restart: unless-stopped
-\\\
+portfolio:
+build: .
+ports: - "3000:3000"
+environment: - GROQ_API_KEY=\
+
+- NEXT_PUBLIC_GA_ID=\
+   restart: unless-stopped
+  \\\
 
 Run with Docker Compose:
 
@@ -5004,24 +5234,24 @@ aws s3 mb s3://your-portfolio-bucket --region us-east-1
 
 \\\ash
 aws s3 website s3://your-portfolio-bucket \
-  --index-document index.html \
-  --error-document 404.html
+ --index-document index.html \
+ --error-document 404.html
 \\\
 
 #### Step 3: Set Bucket Policy
 
 \\\json
 {
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Sid": "PublicReadGetObject",
-      "Effect": "Allow",
-      "Principal": "*",
-      "Action": "s3:GetObject",
-      "Resource": "arn:aws:s3:::your-portfolio-bucket/*"
-    }
-  ]
+"Version": "2012-10-17",
+"Statement": [
+{
+"Sid": "PublicReadGetObject",
+"Effect": "Allow",
+"Principal": "*",
+"Action": "s3:GetObject",
+"Resource": "arn:aws:s3:::your-portfolio-bucket/*"
+}
+]
 }
 \\\
 
@@ -5029,33 +5259,37 @@ Apply policy:
 
 \\\ash
 aws s3api put-bucket-policy \
-  --bucket your-portfolio-bucket \
-  --policy file://bucket-policy.json
+ --bucket your-portfolio-bucket \
+ --policy file://bucket-policy.json
 \\\
 
 #### Step 4: Build and Upload
 
 \\\ash
+
 # Build
+
 npm run build
 
 # Upload
+
 aws s3 sync out/ s3://your-portfolio-bucket --delete
 
 # Set correct content types
+
 aws s3 sync out/ s3://your-portfolio-bucket \
-  --content-type "text/html" \
-  --exclude "*" \
-  --include "*.html" \
-  --metadata-directive REPLACE
+ --content-type "text/html" \
+ --exclude "_" \
+ --include "_.html" \
+ --metadata-directive REPLACE
 \\\
 
 #### Step 5: Create CloudFront Distribution
 
 \\\ash
 aws cloudfront create-distribution \
-  --origin-domain-name your-portfolio-bucket.s3.amazonaws.com \
-  --default-root-object index.html
+ --origin-domain-name your-portfolio-bucket.s3.amazonaws.com \
+ --default-root-object index.html
 \\\
 
 ---
@@ -5072,104 +5306,107 @@ npm install -D vitest @testing-library/react @testing-library/jest-dom @testing-
 
 #### Configure Vitest
 
-\\\	ypescript
+\\\ ypescript
 // vitest.config.ts
 import { defineConfig } from 'vitest/config';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 
 export default defineConfig({
-  plugins: [react()],
-  test: {
-    environment: 'jsdom',
-    globals: true,
-    setupFiles: './src/test/setup.ts',
-  },
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, './src'),
-    },
-  },
+plugins: [react()],
+test: {
+environment: 'jsdom',
+globals: true,
+setupFiles: './src/test/setup.ts',
+},
+resolve: {
+alias: {
+'@': path.resolve(\_\_dirname, './src'),
+},
+},
 });
 \\\
 
 #### Setup File
 
-\\\	ypescript
+\\\ ypescript
 // src/test/setup.ts
 import { expect, afterEach } from 'vitest';
 import { cleanup } from '@testing-library/react';
-import * as matchers from '@testing-library/jest-dom/matchers';
+import \* as matchers from '@testing-library/jest-dom/matchers';
 
 expect.extend(matchers);
 
 afterEach(() => {
-  cleanup();
+cleanup();
 });
 \\\
 
 #### Example Test: Button Component
 
-\\\	ypescript
-// src/components/__tests__/Button.test.tsx
+\\\ ypescript
+// src/components/**tests**/Button.test.tsx
 import { describe, it, expect, vi } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { Button } from '../Button';
 
 describe('Button', () => {
-  it('renders with correct text', () => {
-    render(<Button>Click me</Button>);
-    expect(screen.getByText('Click me')).toBeInTheDocument();
-  });
+it('renders with correct text', () => {
+render(<Button>Click me</Button>);
+expect(screen.getByText('Click me')).toBeInTheDocument();
+});
 
-  it('calls onClick when clicked', () => {
-    const handleClick = vi.fn();
-    render(<Button onClick={handleClick}>Click me</Button>);
-    
+it('calls onClick when clicked', () => {
+const handleClick = vi.fn();
+render(<Button onClick={handleClick}>Click me</Button>);
+
     fireEvent.click(screen.getByText('Click me'));
     expect(handleClick).toHaveBeenCalledOnce();
-  });
 
-  it('is disabled when disabled prop is true', () => {
-    render(<Button disabled>Click me</Button>);
-    expect(screen.getByText('Click me')).toBeDisabled();
-  });
+});
 
-  it('applies correct variant classes', () => {
-    const { rerender } = render(<Button variant="primary">Button</Button>);
-    expect(screen.getByText('Button')).toHaveClass('btn-primary');
+it('is disabled when disabled prop is true', () => {
+render(<Button disabled>Click me</Button>);
+expect(screen.getByText('Click me')).toBeDisabled();
+});
+
+it('applies correct variant classes', () => {
+const { rerender } = render(<Button variant="primary">Button</Button>);
+expect(screen.getByText('Button')).toHaveClass('btn-primary');
 
     rerender(<Button variant="secondary">Button</Button>);
     expect(screen.getByText('Button')).toHaveClass('btn-secondary');
-  });
+
+});
 });
 \\\
 
 #### Example Test: Custom Hook
 
-\\\	ypescript
-// src/hooks/__tests__/useLocalStorage.test.ts
+\\\ ypescript
+// src/hooks/**tests**/useLocalStorage.test.ts
 import { describe, it, expect, beforeEach } from 'vitest';
 import { renderHook, act } from '@testing-library/react';
 import { useLocalStorage } from '../useLocalStorage';
 
 describe('useLocalStorage', () => {
-  beforeEach(() => {
-    localStorage.clear();
-  });
+beforeEach(() => {
+localStorage.clear();
+});
 
-  it('returns initial value when localStorage is empty', () => {
-    const { result } = renderHook(() => 
-      useLocalStorage('test-key', 'initial')
-    );
+it('returns initial value when localStorage is empty', () => {
+const { result } = renderHook(() =>
+useLocalStorage('test-key', 'initial')
+);
 
     expect(result.current[0]).toBe('initial');
-  });
 
-  it('stores value in localStorage', () => {
-    const { result } = renderHook(() => 
-      useLocalStorage('test-key', 'initial')
-    );
+});
+
+it('stores value in localStorage', () => {
+const { result } = renderHook(() =>
+useLocalStorage('test-key', 'initial')
+);
 
     act(() => {
       result.current[1]('new value');
@@ -5177,30 +5414,36 @@ describe('useLocalStorage', () => {
 
     expect(result.current[0]).toBe('new value');
     expect(localStorage.getItem('test-key')).toBe('"new value"');
-  });
 
-  it('loads value from localStorage on mount', () => {
-    localStorage.setItem('test-key', '"stored value"');
+});
 
-    const { result } = renderHook(() => 
+it('loads value from localStorage on mount', () => {
+localStorage.setItem('test-key', '"stored value"');
+
+    const { result } = renderHook(() =>
       useLocalStorage('test-key', 'initial')
     );
 
     expect(result.current[0]).toBe('stored value');
-  });
+
+});
 });
 \\\
 
 #### Run Tests
 
 \\\ash
+
 # Run once
+
 npm test
 
 # Watch mode
+
 npm test -- --watch
 
 # Coverage
+
 npm test -- --coverage
 \\\
 
@@ -5217,129 +5460,138 @@ npx playwright install
 
 #### Configure Playwright
 
-\\\	ypescript
+\\\ ypescript
 // playwright.config.ts
 import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
-  testDir: './e2e',
-  fullyParallel: true,
-  forbidOnly: !!process.env.CI,
-  retries: process.env.CI ? 2 : 0,
-  workers: process.env.CI ? 1 : undefined,
-  reporter: 'html',
-  use: {
-    baseURL: 'http://localhost:3000',
-    trace: 'on-first-retry',
-  },
+testDir: './e2e',
+fullyParallel: true,
+forbidOnly: !!process.env.CI,
+retries: process.env.CI ? 2 : 0,
+workers: process.env.CI ? 1 : undefined,
+reporter: 'html',
+use: {
+baseURL: 'http://localhost:3000',
+trace: 'on-first-retry',
+},
 
-  projects: [
-    {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
-    },
-    {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
-    },
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
-    },
-    {
-      name: 'Mobile Chrome',
-      use: { ...devices['Pixel 5'] },
-    },
-  ],
+projects: [
+{
+name: 'chromium',
+use: { ...devices['Desktop Chrome'] },
+},
+{
+name: 'firefox',
+use: { ...devices['Desktop Firefox'] },
+},
+{
+name: 'webkit',
+use: { ...devices['Desktop Safari'] },
+},
+{
+name: 'Mobile Chrome',
+use: { ...devices['Pixel 5'] },
+},
+],
 
-  webServer: {
-    command: 'npm run dev',
-    url: 'http://localhost:3000',
-    reuseExistingServer: !process.env.CI,
-  },
+webServer: {
+command: 'npm run dev',
+url: 'http://localhost:3000',
+reuseExistingServer: !process.env.CI,
+},
 });
 \\\
 
 #### Example E2E Test
 
-\\\	ypescript
+\\\ ypescript
 // e2e/homepage.spec.ts
 import { test, expect } from '@playwright/test';
 
 test.describe('Homepage', () => {
-  test('has correct title', async ({ page }) => {
-    await page.goto('/');
-    await expect(page).toHaveTitle(/Aditya Kumar Tiwari/);
-  });
+test('has correct title', async ({ page }) => {
+await page.goto('/');
+await expect(page).toHaveTitle(/Aditya Kumar Tiwari/);
+});
 
-  test('displays hero section', async ({ page }) => {
-    await page.goto('/');
-    
-    const heading = page.getByRole('heading', { 
-      name: /Cybersecurity Specialist/ 
+test('displays hero section', async ({ page }) => {
+await page.goto('/');
+
+    const heading = page.getByRole('heading', {
+      name: /Cybersecurity Specialist/
     });
     await expect(heading).toBeVisible();
-  });
 
-  test('theme toggle works', async ({ page }) => {
-    await page.goto('/');
-    
+});
+
+test('theme toggle works', async ({ page }) => {
+await page.goto('/');
+
     // Click theme toggle
     await page.getByRole('button', { name: /theme/i }).click();
-    
+
     // Check dark mode is applied
     await expect(page.locator('html')).toHaveClass(/dark/);
-  });
 
-  test('navigation works', async ({ page }) => {
-    await page.goto('/');
-    
+});
+
+test('navigation works', async ({ page }) => {
+await page.goto('/');
+
     // Click projects link
     await page.getByRole('link', { name: /projects/i }).click();
-    
+
     // Check URL changed
     await expect(page).toHaveURL(/projects/);
-  });
 
-  test('AI chat opens and closes', async ({ page }) => {
-    await page.goto('/');
-    
+});
+
+test('AI chat opens and closes', async ({ page }) => {
+await page.goto('/');
+
     // Open chat
     await page.getByRole('button', { name: /chat/i }).click();
     await expect(page.getByText(/ask me anything/i)).toBeVisible();
-    
+
     // Close chat
     await page.getByRole('button', { name: /close/i }).click();
     await expect(page.getByText(/ask me anything/i)).not.toBeVisible();
-  });
 
-  test('social links are present', async ({ page }) => {
-    await page.goto('/');
-    
+});
+
+test('social links are present', async ({ page }) => {
+await page.goto('/');
+
     await expect(page.getByRole('link', { name: /github/i })).toBeVisible();
     await expect(page.getByRole('link', { name: /linkedin/i })).toBeVisible();
-  });
+
+});
 });
 \\\
 
 #### Run E2E Tests
 
 \\\ash
+
 # Run all tests
+
 npx playwright test
 
 # Run specific test
+
 npx playwright test e2e/homepage.spec.ts
 
 # Run in UI mode
+
 npx playwright test --ui
 
 # Generate report
+
 npx playwright show-report
 \\\
 
 ---
-
 
 ### Visual Regression Testing
 
@@ -5351,43 +5603,46 @@ npm install -D @playwright/test playwright-chromium
 
 #### Configure Visual Tests
 
-\\\	ypescript
+\\\ ypescript
 // e2e/visual.spec.ts
 import { test, expect } from '@playwright/test';
 
 test.describe('Visual Regression Tests', () => {
-  test('homepage light mode', async ({ page }) => {
-    await page.goto('/');
-    await expect(page).toHaveScreenshot('homepage-light.png');
-  });
+test('homepage light mode', async ({ page }) => {
+await page.goto('/');
+await expect(page).toHaveScreenshot('homepage-light.png');
+});
 
-  test('homepage dark mode', async ({ page }) => {
-    await page.goto('/');
-    await page.getByRole('button', { name: /theme/i }).click();
-    await expect(page).toHaveScreenshot('homepage-dark.png');
-  });
+test('homepage dark mode', async ({ page }) => {
+await page.goto('/');
+await page.getByRole('button', { name: /theme/i }).click();
+await expect(page).toHaveScreenshot('homepage-dark.png');
+});
 
-  test('mobile viewport', async ({ page }) => {
-    await page.setViewportSize({ width: 375, height: 667 });
-    await page.goto('/');
-    await expect(page).toHaveScreenshot('mobile-homepage.png');
-  });
+test('mobile viewport', async ({ page }) => {
+await page.setViewportSize({ width: 375, height: 667 });
+await page.goto('/');
+await expect(page).toHaveScreenshot('mobile-homepage.png');
+});
 
-  test('AI chat interface', async ({ page }) => {
-    await page.goto('/');
-    await page.getByRole('button', { name: /chat/i }).click();
-    await expect(page.getByTestId('chat-window')).toHaveScreenshot('chat-interface.png');
-  });
+test('AI chat interface', async ({ page }) => {
+await page.goto('/');
+await page.getByRole('button', { name: /chat/i }).click();
+await expect(page.getByTestId('chat-window')).toHaveScreenshot('chat-interface.png');
+});
 });
 \\\
 
 #### Update Visual Snapshots
 
 \\\ash
+
 # Update snapshots
+
 npx playwright test --update-snapshots
 
 # Compare against baseline
+
 npx playwright test
 \\\
 
@@ -5397,88 +5652,90 @@ npx playwright test
 
 ### Compound Components Pattern
 
-\\\	sx
+\\\ sx
 // src/components/Card/Card.tsx
 import { createContext, useContext, ReactNode } from 'react';
 
 interface CardContextValue {
-  variant: 'default' | 'featured';
+variant: 'default' | 'featured';
 }
 
 const CardContext = createContext<CardContextValue | undefined>(undefined);
 
 const useCardContext = () => {
-  const context = useContext(CardContext);
-  if (!context) {
-    throw new Error('Card components must be used within Card');
-  }
-  return context;
+const context = useContext(CardContext);
+if (!context) {
+throw new Error('Card components must be used within Card');
+}
+return context;
 };
 
 // Main Card component
 interface CardProps {
-  children: ReactNode;
-  variant?: 'default' | 'featured';
-  className?: string;
+children: ReactNode;
+variant?: 'default' | 'featured';
+className?: string;
 }
 
-export const Card = ({ 
-  children, 
-  variant = 'default',
-  className = '' 
+export const Card = ({
+children,
+variant = 'default',
+className = ''
 }: CardProps) => {
-  return (
-    <CardContext.Provider value={{ variant }}>
-      <div className={\card \\}>
-        {children}
-      </div>
-    </CardContext.Provider>
-  );
+return (
+<CardContext.Provider value={{ variant }}>
+
+<div className={\card \\}>
+{children}
+</div>
+</CardContext.Provider>
+);
 };
 
 // Sub-components
 Card.Header = function CardHeader({ children }: { children: ReactNode }) {
-  const { variant } = useCardContext();
-  
-  return (
-    <div className={\card-header card-header-\\}>
-      {children}
-    </div>
-  );
+const { variant } = useCardContext();
+
+return (
+
+<div className={\card-header card-header-\\}>
+{children}
+</div>
+);
 };
 
 Card.Body = function CardBody({ children }: { children: ReactNode }) {
-  return <div className="card-body">{children}</div>;
+return <div className="card-body">{children}</div>;
 };
 
 Card.Footer = function CardFooter({ children }: { children: ReactNode }) {
-  return <div className="card-footer">{children}</div>;
+return <div className="card-footer">{children}</div>;
 };
 
 Card.Title = function CardTitle({ children }: { children: ReactNode }) {
-  return <h3 className="card-title">{children}</h3>;
+return <h3 className="card-title">{children}</h3>;
 };
 
 Card.Description = function CardDescription({ children }: { children: ReactNode }) {
-  return <p className="card-description">{children}</p>;
+return <p className="card-description">{children}</p>;
 };
 \\\
 
 #### Usage
 
-\\\	sx
+\\\ sx
 <Card variant="featured">
-  <Card.Header>
-    <Card.Title>Featured Project</Card.Title>
-  </Card.Header>
-  <Card.Body>
-    <Card.Description>
-      This is a featured project with special styling.
-    </Card.Description>
-  </Card.Body>
-  <Card.Footer>
-    <button>View Details</button>
-  </Card.Footer>
+<Card.Header>
+<Card.Title>Featured Project</Card.Title>
+</Card.Header>
+<Card.Body>
+<Card.Description>
+This is a featured project with special styling.
+</Card.Description>
+</Card.Body>
+<Card.Footer>
+<button>View Details</button>
+</Card.Footer>
 </Card>
 \\\
 
@@ -5486,28 +5743,28 @@ Card.Description = function CardDescription({ children }: { children: ReactNode 
 
 ### Render Props Pattern
 
-\\\	sx
+\\\ sx
 // src/components/DataFetcher.tsx
 import { useState, useEffect, ReactNode } from 'react';
 
 interface DataFetcherProps<T> {
-  url: string;
-  children: (data: {
-    data: T | null;
-    loading: boolean;
-    error: Error | null;
-    refetch: () => void;
-  }) => ReactNode;
+url: string;
+children: (data: {
+data: T | null;
+loading: boolean;
+error: Error | null;
+refetch: () => void;
+}) => ReactNode;
 }
 
 export function DataFetcher<T>({ url, children }: DataFetcherProps<T>) {
-  const [data, setData] = useState<T | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<Error | null>(null);
+const [data, setData] = useState<T | null>(null);
+const [loading, setLoading] = useState(true);
+const [error, setError] = useState<Error | null>(null);
 
-  const fetchData = async () => {
-    setLoading(true);
-    setError(null);
+const fetchData = async () => {
+setLoading(true);
+setError(null);
 
     try {
       const response = await fetch(url);
@@ -5519,24 +5776,25 @@ export function DataFetcher<T>({ url, children }: DataFetcherProps<T>) {
     } finally {
       setLoading(false);
     }
-  };
 
-  useEffect(() => {
-    fetchData();
-  }, [url]);
+};
 
-  return <>{children({ data, loading, error, refetch: fetchData })}</>;
+useEffect(() => {
+fetchData();
+}, [url]);
+
+return <>{children({ data, loading, error, refetch: fetchData })}</>;
 }
 \\\
 
 #### Usage
 
-\\\	sx
+\\\ sx
 <DataFetcher<GitHubUser> url="https://api.github.com/users/Xenonesis">
-  {({ data, loading, error, refetch }) => {
-    if (loading) return <div>Loading...</div>;
-    if (error) return <div>Error: {error.message}</div>;
-    if (!data) return null;
+{({ data, loading, error, refetch }) => {
+if (loading) return <div>Loading...</div>;
+if (error) return <div>Error: {error.message}</div>;
+if (!data) return null;
 
     return (
       <div>
@@ -5545,7 +5803,8 @@ export function DataFetcher<T>({ url, children }: DataFetcherProps<T>) {
         <button onClick={refetch}>Refresh</button>
       </div>
     );
-  }}
+
+}}
 </DataFetcher>
 \\\
 
@@ -5553,36 +5812,36 @@ export function DataFetcher<T>({ url, children }: DataFetcherProps<T>) {
 
 ### Custom Hook Pattern
 
-\\\	ypescript
+\\\ ypescript
 // src/hooks/useAsync.ts
 import { useState, useEffect, useCallback } from 'react';
 
 interface UseAsyncOptions {
-  immediate?: boolean;
+immediate?: boolean;
 }
 
 interface UseAsyncReturn<T> {
-  execute: (...args: any[]) => Promise<void>;
-  data: T | null;
-  loading: boolean;
-  error: Error | null;
-  reset: () => void;
+execute: (...args: any[]) => Promise<void>;
+data: T | null;
+loading: boolean;
+error: Error | null;
+reset: () => void;
 }
 
 export function useAsync<T>(
-  asyncFunction: (...args: any[]) => Promise<T>,
-  options: UseAsyncOptions = {}
+asyncFunction: (...args: any[]) => Promise<T>,
+options: UseAsyncOptions = {}
 ): UseAsyncReturn<T> {
-  const { immediate = false } = options;
-  
-  const [data, setData] = useState<T | null>(null);
-  const [loading, setLoading] = useState(immediate);
-  const [error, setError] = useState<Error | null>(null);
+const { immediate = false } = options;
 
-  const execute = useCallback(
-    async (...args: any[]) => {
-      setLoading(true);
-      setError(null);
+const [data, setData] = useState<T | null>(null);
+const [loading, setLoading] = useState(immediate);
+const [error, setError] = useState<Error | null>(null);
+
+const execute = useCallback(
+async (...args: any[]) => {
+setLoading(true);
+setError(null);
 
       try {
         const result = await asyncFunction(...args);
@@ -5596,39 +5855,41 @@ export function useAsync<T>(
       }
     },
     [asyncFunction]
-  );
 
-  const reset = useCallback(() => {
-    setData(null);
-    setError(null);
-    setLoading(false);
-  }, []);
+);
 
-  useEffect(() => {
-    if (immediate) {
-      execute();
-    }
-  }, [immediate, execute]);
+const reset = useCallback(() => {
+setData(null);
+setError(null);
+setLoading(false);
+}, []);
 
-  return { execute, data, loading, error, reset };
+useEffect(() => {
+if (immediate) {
+execute();
+}
+}, [immediate, execute]);
+
+return { execute, data, loading, error, reset };
 }
 \\\
 
 #### Usage
 
-\\\	sx
+\\\ sx
 function UserProfile() {
-  const fetchUser = async (id: string) => {
-    const response = await fetch(\/api/users/\\);
-    return response.json();
-  };
+const fetchUser = async (id: string) => {
+const response = await fetch(\/api/users/\\);
+return response.json();
+};
 
-  const { execute, data, loading, error } = useAsync(fetchUser);
+const { execute, data, loading, error } = useAsync(fetchUser);
 
-  return (
-    <div>
-      <button onClick={() => execute('123')}>Load User</button>
-      
+return (
+
+<div>
+<button onClick={() => execute('123')}>Load User</button>
+
       {loading && <p>Loading...</p>}
       {error && <p>Error: {error.message}</p>}
       {data && (
@@ -5638,7 +5899,8 @@ function UserProfile() {
         </div>
       )}
     </div>
-  );
+
+);
 }
 \\\
 
@@ -5646,17 +5908,17 @@ function UserProfile() {
 
 ### Higher-Order Component Pattern
 
-\\\	sx
+\\\ sx
 // src/hoc/withAuth.tsx
 import { useRouter } from 'next/navigation';
 import { useEffect, ComponentType } from 'react';
 
 export function withAuth<P extends object>(
-  Component: ComponentType<P>
+Component: ComponentType<P>
 ) {
-  return function WithAuthComponent(props: P) {
-    const router = useRouter();
-    const isAuthenticated = checkAuth(); // Your auth logic
+return function WithAuthComponent(props: P) {
+const router = useRouter();
+const isAuthenticated = checkAuth(); // Your auth logic
 
     useEffect(() => {
       if (!isAuthenticated) {
@@ -5669,21 +5931,22 @@ export function withAuth<P extends object>(
     }
 
     return <Component {...props} />;
-  };
+
+};
 }
 
 function checkAuth(): boolean {
-  // Implement your auth check
-  return typeof window !== 'undefined' && 
-         localStorage.getItem('token') !== null;
+// Implement your auth check
+return typeof window !== 'undefined' &&
+localStorage.getItem('token') !== null;
 }
 \\\
 
 #### Usage
 
-\\\	sx
+\\\ sx
 const AdminDashboard = () => {
-  return <div>Admin Dashboard</div>;
+return <div>Admin Dashboard</div>;
 };
 
 export default withAuth(AdminDashboard);
@@ -5695,58 +5958,58 @@ export default withAuth(AdminDashboard);
 
 ### GitHub API Integration
 
-\\\	ypescript
+\\\ ypescript
 // src/lib/github.ts
 
 interface GitHubUser {
-  login: string;
-  id: number;
-  avatar_url: string;
-  name: string;
-  company: string;
-  blog: string;
-  location: string;
-  email: string;
-  bio: string;
-  public_repos: number;
-  followers: number;
-  following: number;
-  created_at: string;
+login: string;
+id: number;
+avatar_url: string;
+name: string;
+company: string;
+blog: string;
+location: string;
+email: string;
+bio: string;
+public_repos: number;
+followers: number;
+following: number;
+created_at: string;
 }
 
 interface GitHubRepo {
-  id: number;
-  name: string;
-  full_name: string;
-  description: string;
-  html_url: string;
-  stargazers_count: number;
-  forks_count: number;
-  language: string;
-  topics: string[];
-  created_at: string;
-  updated_at: string;
-  pushed_at: string;
+id: number;
+name: string;
+full_name: string;
+description: string;
+html_url: string;
+stargazers_count: number;
+forks_count: number;
+language: string;
+topics: string[];
+created_at: string;
+updated_at: string;
+pushed_at: string;
 }
 
 interface GitHubContribution {
-  date: string;
-  count: number;
-  level: 0 | 1 | 2 | 3 | 4;
+date: string;
+count: number;
+level: 0 | 1 | 2 | 3 | 4;
 }
 
 export class GitHubAPI {
-  private baseURL = 'https://api.github.com';
-  private token?: string;
+private baseURL = 'https://api.github.com';
+private token?: string;
 
-  constructor(token?: string) {
-    this.token = token;
-  }
+constructor(token?: string) {
+this.token = token;
+}
 
-  private async fetch<T>(endpoint: string): Promise<T> {
-    const headers: HeadersInit = {
-      'Accept': 'application/vnd.github.v3+json',
-    };
+private async fetch<T>(endpoint: string): Promise<T> {
+const headers: HeadersInit = {
+'Accept': 'application/vnd.github.v3+json',
+};
 
     if (this.token) {
       headers['Authorization'] = \	oken \\;
@@ -5761,27 +6024,28 @@ export class GitHubAPI {
     }
 
     return response.json();
-  }
 
-  async getUser(username: string): Promise<GitHubUser> {
-    return this.fetch<GitHubUser>(\/users/\\);
-  }
+}
 
-  async getUserRepos(
-    username: string,
-    options: {
-      sort?: 'created' | 'updated' | 'pushed' | 'full_name';
-      direction?: 'asc' | 'desc';
-      per_page?: number;
-      page?: number;
-    } = {}
-  ): Promise<GitHubRepo[]> {
-    const {
-      sort = 'pushed',
-      direction = 'desc',
-      per_page = 30,
-      page = 1,
-    } = options;
+async getUser(username: string): Promise<GitHubUser> {
+return this.fetch<GitHubUser>(\/users/\\);
+}
+
+async getUserRepos(
+username: string,
+options: {
+sort?: 'created' | 'updated' | 'pushed' | 'full_name';
+direction?: 'asc' | 'desc';
+per_page?: number;
+page?: number;
+} = {}
+): Promise<GitHubRepo[]> {
+const {
+sort = 'pushed',
+direction = 'desc',
+per_page = 30,
+page = 1,
+} = options;
 
     const params = new URLSearchParams({
       sort,
@@ -5793,45 +6057,47 @@ export class GitHubAPI {
     return this.fetch<GitHubRepo[]>(
       \/users/\/repos?\\
     );
-  }
 
-  async getRepo(owner: string, repo: string): Promise<GitHubRepo> {
-    return this.fetch<GitHubRepo>(\/repos/\/\\);
-  }
+}
 
-  async getContributions(
-    username: string,
-    year: number
-  ): Promise<GitHubContribution[]> {
-    // Note: This requires GraphQL API or scraping
-    // Here's a simplified example
-    const response = await fetch(
-      \https://github-contributions-api.jogruber.de/v4/\?y=\\
-    );
-    
+async getRepo(owner: string, repo: string): Promise<GitHubRepo> {
+return this.fetch<GitHubRepo>(\/repos/\/\\);
+}
+
+async getContributions(
+username: string,
+year: number
+): Promise<GitHubContribution[]> {
+// Note: This requires GraphQL API or scraping
+// Here's a simplified example
+const response = await fetch(
+\https://github-contributions-api.jogruber.de/v4/\?y=\\
+);
+
     if (!response.ok) {
       throw new Error('Failed to fetch contributions');
     }
 
     const data = await response.json();
     return data.contributions;
-  }
 
-  async searchRepos(
-    query: string,
-    options: {
-      sort?: 'stars' | 'forks' | 'updated';
-      order?: 'asc' | 'desc';
-      per_page?: number;
-      page?: number;
-    } = {}
-  ): Promise<{ items: GitHubRepo[]; total_count: number }> {
-    const {
-      sort = 'stars',
-      order = 'desc',
-      per_page = 30,
-      page = 1,
-    } = options;
+}
+
+async searchRepos(
+query: string,
+options: {
+sort?: 'stars' | 'forks' | 'updated';
+order?: 'asc' | 'desc';
+per_page?: number;
+page?: number;
+} = {}
+): Promise<{ items: GitHubRepo[]; total_count: number }> {
+const {
+sort = 'stars',
+order = 'desc',
+per_page = 30,
+page = 1,
+} = options;
 
     const params = new URLSearchParams({
       q: query,
@@ -5844,16 +6110,17 @@ export class GitHubAPI {
     return this.fetch<{ items: GitHubRepo[]; total_count: number }>(
       \/search/repositories?\\
     );
-  }
 
-  async getRateLimit(): Promise<{
-    limit: number;
-    remaining: number;
-    reset: number;
-  }> {
-    const data = await this.fetch<any>('/rate_limit');
-    return data.rate;
-  }
+}
+
+async getRateLimit(): Promise<{
+limit: number;
+remaining: number;
+reset: number;
+}> {
+const data = await this.fetch<any>('/rate_limit');
+return data.rate;
+}
 }
 
 // Usage
@@ -5862,63 +6129,65 @@ export const githubAPI = new GitHubAPI(process.env.GITHUB_TOKEN);
 
 #### Usage Examples
 
-\\\	sx
+\\\ sx
 import { githubAPI } from '@/lib/github';
 
 // Get user profile
 async function getUserProfile() {
-  try {
-    const user = await githubAPI.getUser('Xenonesis');
-    console.log(\Name: \\);
-    console.log(\Bio: \\);
-    console.log(\Followers: \\);
-  } catch (error) {
-    console.error('Error fetching user:', error);
-  }
+try {
+const user = await githubAPI.getUser('Xenonesis');
+console.log(\Name: \\);
+console.log(\Bio: \\);
+console.log(\Followers: \\);
+} catch (error) {
+console.error('Error fetching user:', error);
+}
 }
 
 // Get repositories
 async function getUserRepos() {
-  try {
-    const repos = await githubAPI.getUserRepos('Xenonesis', {
-      sort: 'pushed',
-      per_page: 10,
-    });
-    
+try {
+const repos = await githubAPI.getUserRepos('Xenonesis', {
+sort: 'pushed',
+per_page: 10,
+});
+
     repos.forEach(repo => {
       console.log(\\: \ stars\);
     });
-  } catch (error) {
-    console.error('Error fetching repos:', error);
-  }
+
+} catch (error) {
+console.error('Error fetching repos:', error);
+}
 }
 
 // Search repositories
 async function searchRepos() {
-  try {
-    const results = await githubAPI.searchRepos('nextjs typescript', {
-      sort: 'stars',
-      per_page: 5,
-    });
-    
+try {
+const results = await githubAPI.searchRepos('nextjs typescript', {
+sort: 'stars',
+per_page: 5,
+});
+
     console.log(\Found \ repositories\);
     results.items.forEach(repo => {
       console.log(repo.full_name);
     });
-  } catch (error) {
-    console.error('Error searching repos:', error);
-  }
+
+} catch (error) {
+console.error('Error searching repos:', error);
+}
 }
 
 // Check rate limit
 async function checkRateLimit() {
-  try {
-    const rateLimit = await githubAPI.getRateLimit();
-    console.log(\Remaining: \/\\);
-    console.log(\Resets at: \\);
-  } catch (error) {
-    console.error('Error checking rate limit:', error);
-  }
+try {
+const rateLimit = await githubAPI.getRateLimit();
+console.log(\Remaining: \/\\);
+console.log(\Resets at: \\);
+} catch (error) {
+console.error('Error checking rate limit:', error);
+}
 }
 \\\
 
@@ -5926,61 +6195,61 @@ async function checkRateLimit() {
 
 ### Groq API Integration (Extended)
 
-\\\	ypescript
+\\\ ypescript
 // src/lib/groq.ts
 import Groq from 'groq-sdk';
 
 interface Message {
-  role: 'system' | 'user' | 'assistant';
-  content: string;
+role: 'system' | 'user' | 'assistant';
+content: string;
 }
 
 interface ChatCompletionOptions {
-  model?: string;
-  temperature?: number;
-  max_tokens?: number;
-  top_p?: number;
-  stream?: boolean;
-  stop?: string[];
+model?: string;
+temperature?: number;
+max_tokens?: number;
+top_p?: number;
+stream?: boolean;
+stop?: string[];
 }
 
 interface ChatResponse {
-  id: string;
-  object: string;
-  created: number;
-  model: string;
-  choices: Array<{
-    index: number;
-    message: Message;
-    finish_reason: string;
-  }>;
-  usage: {
-    prompt_tokens: number;
-    completion_tokens: number;
-    total_tokens: number;
-  };
+id: string;
+object: string;
+created: number;
+model: string;
+choices: Array<{
+index: number;
+message: Message;
+finish_reason: string;
+}>;
+usage: {
+prompt_tokens: number;
+completion_tokens: number;
+total_tokens: number;
+};
 }
 
 export class GroqClient {
-  private client: Groq;
-  private defaultModel = 'llama-3.3-70b-versatile';
+private client: Groq;
+private defaultModel = 'llama-3.3-70b-versatile';
 
-  constructor(apiKey: string) {
-    this.client = new Groq({ apiKey });
-  }
+constructor(apiKey: string) {
+this.client = new Groq({ apiKey });
+}
 
-  async chat(
-    messages: Message[],
-    options: ChatCompletionOptions = {}
-  ): Promise<ChatResponse> {
-    const {
-      model = this.defaultModel,
-      temperature = 0.7,
-      max_tokens = 1024,
-      top_p = 1,
-      stream = false,
-      stop,
-    } = options;
+async chat(
+messages: Message[],
+options: ChatCompletionOptions = {}
+): Promise<ChatResponse> {
+const {
+model = this.defaultModel,
+temperature = 0.7,
+max_tokens = 1024,
+top_p = 1,
+stream = false,
+stop,
+} = options;
 
     const response = await this.client.chat.completions.create({
       model,
@@ -5993,19 +6262,20 @@ export class GroqClient {
     });
 
     return response as ChatResponse;
-  }
 
-  async streamChat(
-    messages: Message[],
-    options: ChatCompletionOptions = {},
-    onChunk: (chunk: string) => void
-  ): Promise<void> {
-    const {
-      model = this.defaultModel,
-      temperature = 0.7,
-      max_tokens = 1024,
-      top_p = 1,
-    } = options;
+}
+
+async streamChat(
+messages: Message[],
+options: ChatCompletionOptions = {},
+onChunk: (chunk: string) => void
+): Promise<void> {
+const {
+model = this.defaultModel,
+temperature = 0.7,
+max_tokens = 1024,
+top_p = 1,
+} = options;
 
     const stream = await this.client.chat.completions.create({
       model,
@@ -6022,14 +6292,15 @@ export class GroqClient {
         onChunk(content);
       }
     }
-  }
 
-  async simpleQuery(
-    prompt: string,
-    systemPrompt?: string,
-    options?: ChatCompletionOptions
-  ): Promise<string> {
-    const messages: Message[] = [];
+}
+
+async simpleQuery(
+prompt: string,
+systemPrompt?: string,
+options?: ChatCompletionOptions
+): Promise<string> {
+const messages: Message[] = [];
 
     if (systemPrompt) {
       messages.push({
@@ -6045,61 +6316,62 @@ export class GroqClient {
 
     const response = await this.chat(messages, options);
     return response.choices[0].message.content;
-  }
 
-  async getAvailableModels(): Promise<string[]> {
-    // Groq supported models
-    return [
-      'llama-3.3-70b-versatile',
-      'llama-3.1-70b-versatile',
-      'llama-3.1-8b-instant',
-      'mixtral-8x7b-32768',
-      'gemma-7b-it',
-    ];
-  }
+}
+
+async getAvailableModels(): Promise<string[]> {
+// Groq supported models
+return [
+'llama-3.3-70b-versatile',
+'llama-3.1-70b-versatile',
+'llama-3.1-8b-instant',
+'mixtral-8x7b-32768',
+'gemma-7b-it',
+];
+}
 }
 
 // Usage
 export const groqClient = new GroqClient(
-  process.env.GROQ_API_KEY || ''
+process.env.GROQ_API_KEY || ''
 );
 \\\
 
 #### Usage Examples
 
-\\\	ypescript
+\\\ ypescript
 import { groqClient } from '@/lib/groq';
 
 // Simple query
 async function askQuestion() {
-  try {
-    const answer = await groqClient.simpleQuery(
-      'What is the capital of France?',
-      'You are a helpful geography assistant.'
-    );
-    console.log(answer);
-  } catch (error) {
-    console.error('Error:', error);
-  }
+try {
+const answer = await groqClient.simpleQuery(
+'What is the capital of France?',
+'You are a helpful geography assistant.'
+);
+console.log(answer);
+} catch (error) {
+console.error('Error:', error);
+}
 }
 
 // Conversation
 async function conversation() {
-  try {
-    const messages = [
-      {
-        role: 'system' as const,
-        content: 'You are a helpful coding assistant.',
-      },
-      {
-        role: 'user' as const,
-        content: 'How do I create a React component?',
-      },
-    ];
+try {
+const messages = [
+{
+role: 'system' as const,
+content: 'You are a helpful coding assistant.',
+},
+{
+role: 'user' as const,
+content: 'How do I create a React component?',
+},
+];
 
     const response = await groqClient.chat(messages);
     console.log(response.choices[0].message.content);
-    
+
     // Continue conversation
     messages.push(response.choices[0].message);
     messages.push({
@@ -6109,15 +6381,16 @@ async function conversation() {
 
     const response2 = await groqClient.chat(messages);
     console.log(response2.choices[0].message.content);
-  } catch (error) {
-    console.error('Error:', error);
-  }
+
+} catch (error) {
+console.error('Error:', error);
+}
 }
 
 // Streaming response
 async function streamingChat() {
-  try {
-    let fullResponse = '';
+try {
+let fullResponse = '';
 
     await groqClient.streamChat(
       [
@@ -6134,63 +6407,63 @@ async function streamingChat() {
     );
 
     console.log('\\n\\nFull response:', fullResponse);
-  } catch (error) {
-    console.error('Error:', error);
-  }
+
+} catch (error) {
+console.error('Error:', error);
+}
 }
 
 // With custom options
 async function customOptions() {
-  try {
-    const response = await groqClient.simpleQuery(
-      'Explain quantum computing',
-      'You are a physics professor.',
-      {
-        temperature: 0.5,
-        max_tokens: 500,
-        top_p: 0.9,
-      }
-    );
-    console.log(response);
-  } catch (error) {
-    console.error('Error:', error);
-  }
+try {
+const response = await groqClient.simpleQuery(
+'Explain quantum computing',
+'You are a physics professor.',
+{
+temperature: 0.5,
+max_tokens: 500,
+top_p: 0.9,
+}
+);
+console.log(response);
+} catch (error) {
+console.error('Error:', error);
+}
 }
 \\\
 
 ---
 
-
 ## 🔐 Security Best Practices
 
 ### Environment Variables Security
 
-\\\	ypescript
+\\\ ypescript
 // src/lib/env.ts
 import { z } from 'zod';
 
 const envSchema = z.object({
-  // Server-side only
-  GROQ_API_KEY: z.string().min(1, 'GROQ_API_KEY is required'),
-  GITHUB_TOKEN: z.string().optional(),
-  
-  // Client-side (must start with NEXT_PUBLIC_)
-  NEXT_PUBLIC_GA_ID: z.string().optional(),
-  NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL: z.string().optional(),
-  
-  // Node environment
-  NODE_ENV: z.enum(['development', 'production', 'test']),
+// Server-side only
+GROQ_API_KEY: z.string().min(1, 'GROQ_API_KEY is required'),
+GITHUB_TOKEN: z.string().optional(),
+
+// Client-side (must start with NEXT*PUBLIC*)
+NEXT_PUBLIC_GA_ID: z.string().optional(),
+NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL: z.string().optional(),
+
+// Node environment
+NODE_ENV: z.enum(['development', 'production', 'test']),
 });
 
 export type Env = z.infer<typeof envSchema>;
 
 export function validateEnv(): Env {
-  try {
-    return envSchema.parse(process.env);
-  } catch (error) {
-    console.error('❌ Invalid environment variables:', error);
-    throw new Error('Invalid environment variables');
-  }
+try {
+return envSchema.parse(process.env);
+} catch (error) {
+console.error('❌ Invalid environment variables:', error);
+throw new Error('Invalid environment variables');
+}
 }
 
 // Validate on startup
@@ -6199,103 +6472,109 @@ export const env = validateEnv();
 
 ### Input Sanitization
 
-\\\	ypescript
+\\\ ypescript
 // src/lib/sanitize.ts
 import DOMPurify from 'isomorphic-dompurify';
 
-/**
- * Sanitize HTML content to prevent XSS attacks
- */
-export function sanitizeHTML(dirty: string): string {
+/\*\*
+
+- Sanitize HTML content to prevent XSS attacks
+  \*/
+  export function sanitizeHTML(dirty: string): string {
   return DOMPurify.sanitize(dirty, {
-    ALLOWED_TAGS: ['b', 'i', 'em', 'strong', 'a', 'p', 'br'],
-    ALLOWED_ATTR: ['href', 'target', 'rel'],
+  ALLOWED_TAGS: ['b', 'i', 'em', 'strong', 'a', 'p', 'br'],
+  ALLOWED_ATTR: ['href', 'target', 'rel'],
   });
-}
+  }
 
-/**
- * Escape special characters for safe use in HTML
- */
-export function escapeHTML(text: string): string {
+/\*\*
+
+- Escape special characters for safe use in HTML
+  \*/
+  export function escapeHTML(text: string): string {
   const map: Record<string, string> = {
-    '&': '&amp;',
-    '<': '&lt;',
-    '>': '&gt;',
-    '"': '&quot;',
-    "'": '&#x27;',
-    '/': '&#x2F;',
+  '&': '&amp;',
+  '<': '&lt;',
+  '>': '&gt;',
+  '"': '&quot;',
+  "'": '&#x27;',
+  '/': '&#x2F;',
   };
-  
-  return text.replace(/[&<>"'/]/g, (char) => map[char]);
+
+return text.replace(/[&<>"'/]/g, (char) => map[char]);
 }
 
-/**
- * Sanitize user input for database queries
- */
-export function sanitizeInput(input: string): string {
+/\*\*
+
+- Sanitize user input for database queries
+  \*/
+  export function sanitizeInput(input: string): string {
   return input
-    .trim()
-    .replace(/[^\w\s@.-]/gi, '') // Allow only alphanumeric, spaces, @, ., -
-    .slice(0, 500); // Limit length
-}
+  .trim()
+  .replace(/[^\w\s@.-]/gi, '') // Allow only alphanumeric, spaces, @, ., -
+  .slice(0, 500); // Limit length
+  }
 
-/**
- * Validate email format
- */
-export function isValidEmail(email: string): boolean {
+/\*\*
+
+- Validate email format
+  \*/
+  export function isValidEmail(email: string): boolean {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);
-}
-
-/**
- * Validate URL format
- */
-export function isValidURL(url: string): boolean {
-  try {
-    new URL(url);
-    return true;
-  } catch {
-    return false;
   }
-}
 
-/**
- * Remove potentially dangerous characters from filenames
- */
-export function sanitizeFilename(filename: string): string {
+/\*\*
+
+- Validate URL format
+  \*/
+  export function isValidURL(url: string): boolean {
+  try {
+  new URL(url);
+  return true;
+  } catch {
+  return false;
+  }
+  }
+
+/\*\*
+
+- Remove potentially dangerous characters from filenames
+  \*/
+  export function sanitizeFilename(filename: string): string {
   return filename
-    .replace(/[^a-z0-9.-]/gi, '_')
-    .replace(/\.{2,}/g, '.')
-    .slice(0, 255);
-}
-\\\
+  .replace(/[^a-z0-9.-]/gi, '\_')
+  .replace(/\.{2,}/g, '.')
+  .slice(0, 255);
+  }
+  \\\
 
 ### Rate Limiting
 
-\\\	ypescript
+\\\ ypescript
 // src/lib/rateLimit.ts
 import { LRUCache } from 'lru-cache';
 
 interface RateLimitOptions {
-  interval: number; // Time window in milliseconds
-  uniqueTokenPerInterval: number; // Max unique IPs/tokens
+interval: number; // Time window in milliseconds
+uniqueTokenPerInterval: number; // Max unique IPs/tokens
 }
 
 export class RateLimiter {
-  private tokenCache: LRUCache<string, number[]>;
-  private interval: number;
-  
-  constructor(options: RateLimitOptions) {
-    this.interval = options.interval;
-    this.tokenCache = new LRUCache({
-      max: options.uniqueTokenPerInterval,
-      ttl: options.interval,
-    });
-  }
+private tokenCache: LRUCache<string, number[]>;
+private interval: number;
 
-  check(limit: number, token: string): { success: boolean; remaining: number } {
-    const tokenCount = this.tokenCache.get(token) || [0];
-    const currentCount = tokenCount[0];
+constructor(options: RateLimitOptions) {
+this.interval = options.interval;
+this.tokenCache = new LRUCache({
+max: options.uniqueTokenPerInterval,
+ttl: options.interval,
+});
+}
+
+check(limit: number, token: string): { success: boolean; remaining: number } {
+const tokenCount = this.tokenCache.get(token) || [0];
+const currentCount = tokenCount[0];
 
     if (currentCount >= limit) {
       return { success: false, remaining: 0 };
@@ -6308,152 +6587,153 @@ export class RateLimiter {
       success: true,
       remaining: limit - tokenCount[0],
     };
-  }
 
-  reset(token: string): void {
-    this.tokenCache.delete(token);
-  }
+}
+
+reset(token: string): void {
+this.tokenCache.delete(token);
+}
 }
 
 // Create rate limiter instance
 export const rateLimiter = new RateLimiter({
-  interval: 60 * 1000, // 1 minute
-  uniqueTokenPerInterval: 500,
+interval: 60 \* 1000, // 1 minute
+uniqueTokenPerInterval: 500,
 });
 
 // Middleware for API routes
 export async function withRateLimit(
-  request: Request,
-  limit: number = 10
+request: Request,
+limit: number = 10
 ): Promise<{ allowed: boolean; remaining: number }> {
-  const ip = request.headers.get('x-forwarded-for') || 
-             request.headers.get('x-real-ip') || 
-             'anonymous';
+const ip = request.headers.get('x-forwarded-for') ||
+request.headers.get('x-real-ip') ||
+'anonymous';
 
-  const { success, remaining } = rateLimiter.check(limit, ip);
+const { success, remaining } = rateLimiter.check(limit, ip);
 
-  return { allowed: success, remaining };
+return { allowed: success, remaining };
 }
 \\\
 
 #### Usage in API Route
 
-\\\	ypescript
+\\\ ypescript
 // src/app/api/chat/route.ts
 import { NextRequest, NextResponse } from 'next/server';
 import { withRateLimit } from '@/lib/rateLimit';
 
 export async function POST(request: NextRequest) {
-  // Check rate limit (10 requests per minute)
-  const { allowed, remaining } = await withRateLimit(request, 10);
+// Check rate limit (10 requests per minute)
+const { allowed, remaining } = await withRateLimit(request, 10);
 
-  if (!allowed) {
-    return NextResponse.json(
-      { error: 'Too many requests. Please try again later.' },
-      { 
-        status: 429,
-        headers: {
-          'X-RateLimit-Limit': '10',
-          'X-RateLimit-Remaining': '0',
-          'Retry-After': '60',
-        },
-      }
-    );
-  }
+if (!allowed) {
+return NextResponse.json(
+{ error: 'Too many requests. Please try again later.' },
+{
+status: 429,
+headers: {
+'X-RateLimit-Limit': '10',
+'X-RateLimit-Remaining': '0',
+'Retry-After': '60',
+},
+}
+);
+}
 
-  // Process request...
-  const body = await request.json();
-  
-  return NextResponse.json(
-    { message: 'Success' },
-    {
-      headers: {
-        'X-RateLimit-Limit': '10',
-        'X-RateLimit-Remaining': remaining.toString(),
-      },
-    }
-  );
+// Process request...
+const body = await request.json();
+
+return NextResponse.json(
+{ message: 'Success' },
+{
+headers: {
+'X-RateLimit-Limit': '10',
+'X-RateLimit-Remaining': remaining.toString(),
+},
+}
+);
 }
 \\\
 
 ### CORS Configuration
 
-\\\	ypescript
+\\\ ypescript
 // src/middleware.ts
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
 export function middleware(request: NextRequest) {
-  const origin = request.headers.get('origin');
-  
-  // List of allowed origins
-  const allowedOrigins = [
-    'https://iaddy.netlify.app',
-    'https://yourdomain.com',
-    process.env.NODE_ENV === 'development' && 'http://localhost:3000',
-  ].filter(Boolean) as string[];
+const origin = request.headers.get('origin');
 
-  const response = NextResponse.next();
+// List of allowed origins
+const allowedOrigins = [
+'https://iaddy.netlify.app',
+'https://yourdomain.com',
+process.env.NODE_ENV === 'development' && 'http://localhost:3000',
+].filter(Boolean) as string[];
 
-  // Check if origin is allowed
-  if (origin && allowedOrigins.includes(origin)) {
-    response.headers.set('Access-Control-Allow-Origin', origin);
-  }
+const response = NextResponse.next();
 
-  // Handle preflight requests
-  if (request.method === 'OPTIONS') {
-    response.headers.set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-    response.headers.set('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-    response.headers.set('Access-Control-Max-Age', '86400');
-    return response;
-  }
+// Check if origin is allowed
+if (origin && allowedOrigins.includes(origin)) {
+response.headers.set('Access-Control-Allow-Origin', origin);
+}
 
-  // Security headers
-  response.headers.set('X-DNS-Prefetch-Control', 'on');
-  response.headers.set('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
-  response.headers.set('X-Frame-Options', 'SAMEORIGIN');
-  response.headers.set('X-Content-Type-Options', 'nosniff');
-  response.headers.set('X-XSS-Protection', '1; mode=block');
-  response.headers.set('Referrer-Policy', 'origin-when-cross-origin');
-  response.headers.set(
-    'Permissions-Policy',
-    'camera=(), microphone=(), geolocation=()'
-  );
+// Handle preflight requests
+if (request.method === 'OPTIONS') {
+response.headers.set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+response.headers.set('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+response.headers.set('Access-Control-Max-Age', '86400');
+return response;
+}
 
-  return response;
+// Security headers
+response.headers.set('X-DNS-Prefetch-Control', 'on');
+response.headers.set('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
+response.headers.set('X-Frame-Options', 'SAMEORIGIN');
+response.headers.set('X-Content-Type-Options', 'nosniff');
+response.headers.set('X-XSS-Protection', '1; mode=block');
+response.headers.set('Referrer-Policy', 'origin-when-cross-origin');
+response.headers.set(
+'Permissions-Policy',
+'camera=(), microphone=(), geolocation=()'
+);
+
+return response;
 }
 
 export const config = {
-  matcher: '/api/:path*',
+matcher: '/api/:path\*',
 };
 \\\
 
 ### Content Security Policy
 
-\\\	ypescript
+\\\ ypescript
 // src/app/layout.tsx
 import { Metadata, Viewport } from 'next';
 
 export const metadata: Metadata = {
-  // ... other metadata
-  
-  // Content Security Policy
-  other: {
-    'Content-Security-Policy': [
-      "default-src 'self'",
-      "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com",
-      "style-src 'self' 'unsafe-inline'",
-      "img-src 'self' data: https: blob:",
-      "font-src 'self' data:",
-      "connect-src 'self' https://api.groq.com https://api.github.com https://www.google-analytics.com",
-      "frame-src 'self' https://www.youtube.com https://open.spotify.com",
-      "object-src 'none'",
-      "base-uri 'self'",
-      "form-action 'self'",
-      "frame-ancestors 'none'",
-      "upgrade-insecure-requests",
-    ].join('; '),
-  },
+// ... other metadata
+
+// Content Security Policy
+other: {
+'Content-Security-Policy': [
+"default-src 'self'",
+"script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com",
+"style-src 'self' 'unsafe-inline'",
+"img-src 'self' data: https: blob:",
+"font-src 'self' data:",
+"connect-src 'self' https://api.groq.com https://api.github.com https://www.google-analytics.com",
+"frame-src 'self' https://www.youtube.com https://open.spotify.com",
+"object-src 'none'",
+"base-uri 'self'",
+"form-action 'self'",
+"frame-ancestors 'none'",
+"upgrade-insecure-requests",
+].join('; '),
+},
 };
 \\\
 
@@ -6463,37 +6743,39 @@ export const metadata: Metadata = {
 
 ### Image Optimization Strategies
 
-\\\	ypescript
+\\\ ypescript
 // src/components/OptimizedImage.tsx
 import Image from 'next/image';
 import { useState } from 'react';
 
 interface OptimizedImageProps {
-  src: string;
-  alt: string;
-  width: number;
-  height: number;
-  priority?: boolean;
-  className?: string;
+src: string;
+alt: string;
+width: number;
+height: number;
+priority?: boolean;
+className?: string;
 }
 
 export const OptimizedImage: React.FC<OptimizedImageProps> = ({
-  src,
-  alt,
-  width,
-  height,
-  priority = false,
-  className = '',
+src,
+alt,
+width,
+height,
+priority = false,
+className = '',
 }) => {
-  const [isLoading, setIsLoading] = useState(true);
+const [isLoading, setIsLoading] = useState(true);
 
-  return (
-    <div className={\elative overflow-hidden \\}>
-      {/* Skeleton loader */}
-      {isLoading && (
-        <div className="absolute inset-0 bg-zinc-200 dark:bg-zinc-800 animate-pulse" />
-      )}
-      
+return (
+
+<div className={\
+elative overflow-hidden \\}>
+{/_ Skeleton loader _/}
+{isLoading && (
+<div className="absolute inset-0 bg-zinc-200 dark:bg-zinc-800 animate-pulse" />
+)}
+
       {/* Optimized image */}
       <Image
         src={src}
@@ -6509,65 +6791,72 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
       />
     </div>
-  );
+
+);
 };
 \\\
 
 ### Code Splitting Strategies
 
-\\\	ypescript
+\\\ ypescript
 // src/app/page.tsx
 import dynamic from 'next/dynamic';
 
 // Lazy load heavy components
 const AIAssistant = dynamic(
-  () => import('@/components/AIAssistant').then(mod => mod.AIAssistant),
-  {
-    loading: () => (
-      <div className="fixed bottom-4 right-4 w-16 h-16 bg-teal-500 rounded-full animate-pulse" />
-    ),
-    ssr: false,
-  }
+() => import('@/components/AIAssistant').then(mod => mod.AIAssistant),
+{
+loading: () => (
+
+<div className="fixed bottom-4 right-4 w-16 h-16 bg-teal-500 rounded-full animate-pulse" />
+),
+ssr: false,
+}
 );
 
 const ParticlesBackground = dynamic(
-  () => import('@/components/backgrounds/ParticlesBackground'),
-  {
-    loading: () => null,
-    ssr: false,
-  }
+() => import('@/components/backgrounds/ParticlesBackground'),
+{
+loading: () => null,
+ssr: false,
+}
 );
 
 const GitHubContributions = dynamic(
-  () => import('@/components/GitHubContributions'),
-  {
-    loading: () => (
-      <div className="h-40 bg-zinc-100 dark:bg-zinc-800 rounded-lg animate-pulse" />
-    ),
-  }
+() => import('@/components/GitHubContributions'),
+{
+loading: () => (
+
+<div className="h-40 bg-zinc-100 dark:bg-zinc-800 rounded-lg animate-pulse" />
+),
+}
 );
 
 export default function Home() {
-  return (
-    <>
-      <ParticlesBackground />
-      <main>
-        {/* ... content ... */}
-        <GitHubContributions />
-      </main>
-      <AIAssistant />
-    </>
-  );
+return (
+<>
+<ParticlesBackground />
+
+<main>
+{/_ ... content ... _/}
+<GitHubContributions />
+</main>
+<AIAssistant />
+</>
+);
 }
 \\\
 
 ### Bundle Analysis
 
 \\\ash
+
 # Install bundle analyzer
+
 npm install -D @next/bundle-analyzer
 
 # Create next.config.analyzer.mjs
+
 \\\
 
 \\\javascript
@@ -6575,12 +6864,12 @@ npm install -D @next/bundle-analyzer
 import bundleAnalyzer from '@next/bundle-analyzer';
 
 const withBundleAnalyzer = bundleAnalyzer({
-  enabled: process.env.ANALYZE === 'true',
+enabled: process.env.ANALYZE === 'true',
 });
 
 const nextConfig = {
-  output: 'export',
-  // ... other config
+output: 'export',
+// ... other config
 };
 
 export default withBundleAnalyzer(nextConfig);
@@ -6589,63 +6878,64 @@ export default withBundleAnalyzer(nextConfig);
 \\\json
 // package.json
 {
-  "scripts": {
-    "analyze": "ANALYZE=true npm run build"
-  }
+"scripts": {
+"analyze": "ANALYZE=true npm run build"
+}
 }
 \\\
 
 ### Web Worker for Heavy Computations
 
-\\\	ypescript
+\\\ ypescript
 // public/workers/compute.worker.js
 self.addEventListener('message', (e) => {
-  const { type, data } = e.data;
+const { type, data } = e.data;
 
-  switch (type) {
-    case 'HEAVY_CALCULATION':
-      const result = performHeavyCalculation(data);
-      self.postMessage({ type: 'RESULT', result });
-      break;
-      
+switch (type) {
+case 'HEAVY_CALCULATION':
+const result = performHeavyCalculation(data);
+self.postMessage({ type: 'RESULT', result });
+break;
+
     case 'PROCESS_DATA':
       const processed = processLargeDataset(data);
       self.postMessage({ type: 'PROCESSED', data: processed });
       break;
-  }
+
+}
 });
 
 function performHeavyCalculation(input) {
-  // Expensive computation
-  let result = 0;
-  for (let i = 0; i < input.iterations; i++) {
-    result += Math.sqrt(i) * Math.sin(i);
-  }
-  return result;
+// Expensive computation
+let result = 0;
+for (let i = 0; i < input.iterations; i++) {
+result += Math.sqrt(i) \* Math.sin(i);
+}
+return result;
 }
 
 function processLargeDataset(data) {
-  return data.map(item => ({
-    ...item,
-    processed: true,
-    timestamp: Date.now(),
-  }));
+return data.map(item => ({
+...item,
+processed: true,
+timestamp: Date.now(),
+}));
 }
 \\\
 
-\\\	ypescript
+\\\ ypescript
 // src/hooks/useWebWorker.ts
 import { useEffect, useRef, useState } from 'react';
 
 export function useWebWorker<T, R>(workerPath: string) {
-  const workerRef = useRef<Worker | null>(null);
-  const [result, setResult] = useState<R | null>(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<Error | null>(null);
+const workerRef = useRef<Worker | null>(null);
+const [result, setResult] = useState<R | null>(null);
+const [loading, setLoading] = useState(false);
+const [error, setError] = useState<Error | null>(null);
 
-  useEffect(() => {
-    // Create worker
-    workerRef.current = new Worker(workerPath);
+useEffect(() => {
+// Create worker
+workerRef.current = new Worker(workerPath);
 
     // Handle messages
     workerRef.current.onmessage = (e) => {
@@ -6663,99 +6953,100 @@ export function useWebWorker<T, R>(workerPath: string) {
     return () => {
       workerRef.current?.terminate();
     };
-  }, [workerPath]);
 
-  const execute = (data: T) => {
-    setLoading(true);
-    setError(null);
-    workerRef.current?.postMessage(data);
-  };
+}, [workerPath]);
 
-  return { execute, result, loading, error };
+const execute = (data: T) => {
+setLoading(true);
+setError(null);
+workerRef.current?.postMessage(data);
+};
+
+return { execute, result, loading, error };
 }
 \\\
 
 ### Virtual Scrolling for Large Lists
 
-\\\	ypescript
+\\\ ypescript
 // src/components/VirtualList.tsx
 import { useRef, useState, useEffect } from 'react';
 
 interface VirtualListProps<T> {
-  items: T[];
-  itemHeight: number;
-  containerHeight: number;
-  renderItem: (item: T, index: number) => React.ReactNode;
-  overscan?: number;
+items: T[];
+itemHeight: number;
+containerHeight: number;
+renderItem: (item: T, index: number) => React.ReactNode;
+overscan?: number;
 }
 
 export function VirtualList<T>({
-  items,
-  itemHeight,
-  containerHeight,
-  renderItem,
-  overscan = 3,
+items,
+itemHeight,
+containerHeight,
+renderItem,
+overscan = 3,
 }: VirtualListProps<T>) {
-  const [scrollTop, setScrollTop] = useState(0);
-  const containerRef = useRef<HTMLDivElement>(null);
+const [scrollTop, setScrollTop] = useState(0);
+const containerRef = useRef<HTMLDivElement>(null);
 
-  const totalHeight = items.length * itemHeight;
-  const startIndex = Math.max(0, Math.floor(scrollTop / itemHeight) - overscan);
-  const endIndex = Math.min(
-    items.length - 1,
-    Math.ceil((scrollTop + containerHeight) / itemHeight) + overscan
-  );
+const totalHeight = items.length \* itemHeight;
+const startIndex = Math.max(0, Math.floor(scrollTop / itemHeight) - overscan);
+const endIndex = Math.min(
+items.length - 1,
+Math.ceil((scrollTop + containerHeight) / itemHeight) + overscan
+);
 
-  const visibleItems = items.slice(startIndex, endIndex + 1);
-  const offsetY = startIndex * itemHeight;
+const visibleItems = items.slice(startIndex, endIndex + 1);
+const offsetY = startIndex \* itemHeight;
 
-  const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
-    setScrollTop(e.currentTarget.scrollTop);
-  };
+const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
+setScrollTop(e.currentTarget.scrollTop);
+};
 
-  return (
-    <div
-      ref={containerRef}
-      style={{ height: containerHeight, overflow: 'auto' }}
-      onScroll={handleScroll}
-    >
-      <div style={{ height: totalHeight, position: 'relative' }}>
-        <div style={{ transform: \	ranslateY(\px)\ }}>
-          {visibleItems.map((item, index) =>
-            renderItem(item, startIndex + index)
-          )}
-        </div>
-      </div>
-    </div>
-  );
+return (
+
+<div
+ref={containerRef}
+style={{ height: containerHeight, overflow: 'auto' }}
+onScroll={handleScroll} >
+<div style={{ height: totalHeight, position: 'relative' }}>
+<div style={{ transform: \	ranslateY(\px)\ }}>
+{visibleItems.map((item, index) =>
+renderItem(item, startIndex + index)
+)}
+</div>
+</div>
+</div>
+);
 }
 \\\
 
 #### Usage
 
-\\\	sx
+\\\ sx
 const LargeList = () => {
-  const items = Array.from({ length: 10000 }, (_, i) => ({
-    id: i,
-    name: \Item \\,
-  }));
+const items = Array.from({ length: 10000 }, (\_, i) => ({
+id: i,
+name: \Item \\,
+}));
 
-  return (
-    <VirtualList
-      items={items}
-      itemHeight={50}
-      containerHeight={600}
-      renderItem={(item) => (
-        <div
-          key={item.id}
-          style={{ height: 50 }}
-          className="border-b p-4"
-        >
-          {item.name}
-        </div>
-      )}
-    />
-  );
+return (
+<VirtualList
+items={items}
+itemHeight={50}
+containerHeight={600}
+renderItem={(item) => (
+
+<div
+key={item.id}
+style={{ height: 50 }}
+className="border-b p-4" >
+{item.name}
+</div>
+)}
+/>
+);
 };
 \\\
 
@@ -6765,158 +7056,159 @@ const LargeList = () => {
 
 ### Google Analytics 4 Setup
 
-\\\	ypescript
+\\\ ypescript
 // src/lib/analytics.ts
 
 declare global {
-  interface Window {
-    gtag: (
-      command: 'config' | 'event' | 'set',
-      targetId: string,
-      config?: any
-    ) => void;
-    dataLayer: any[];
-  }
+interface Window {
+gtag: (
+command: 'config' | 'event' | 'set',
+targetId: string,
+config?: any
+) => void;
+dataLayer: any[];
+}
 }
 
 export const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID;
 
 // Initialize GA
 export const initGA = () => {
-  if (typeof window !== 'undefined' && GA_MEASUREMENT_ID) {
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function gtag() {
-      window.dataLayer.push(arguments);
-    };
-    window.gtag('js', new Date());
-    window.gtag('config', GA_MEASUREMENT_ID, {
-      page_path: window.location.pathname,
-    });
-  }
+if (typeof window !== 'undefined' && GA_MEASUREMENT_ID) {
+window.dataLayer = window.dataLayer || [];
+window.gtag = function gtag() {
+window.dataLayer.push(arguments);
+};
+window.gtag('js', new Date());
+window.gtag('config', GA_MEASUREMENT_ID, {
+page_path: window.location.pathname,
+});
+}
 };
 
 // Page view tracking
 export const trackPageView = (url: string) => {
-  if (typeof window !== 'undefined' && GA_MEASUREMENT_ID) {
-    window.gtag('config', GA_MEASUREMENT_ID, {
-      page_path: url,
-    });
-  }
+if (typeof window !== 'undefined' && GA_MEASUREMENT_ID) {
+window.gtag('config', GA_MEASUREMENT_ID, {
+page_path: url,
+});
+}
 };
 
 // Event tracking
 export const trackEvent = (
-  action: string,
-  category: string,
-  label?: string,
-  value?: number
+action: string,
+category: string,
+label?: string,
+value?: number
 ) => {
-  if (typeof window !== 'undefined' && GA_MEASUREMENT_ID) {
-    window.gtag('event', action, {
-      event_category: category,
-      event_label: label,
-      value: value,
-    });
-  }
+if (typeof window !== 'undefined' && GA_MEASUREMENT_ID) {
+window.gtag('event', action, {
+event_category: category,
+event_label: label,
+value: value,
+});
+}
 };
 
 // Custom events
 export const analytics = {
-  // User interactions
-  clickButton: (buttonName: string) => {
-    trackEvent('click', 'Button', buttonName);
-  },
+// User interactions
+clickButton: (buttonName: string) => {
+trackEvent('click', 'Button', buttonName);
+},
 
-  // Navigation
-  navigate: (page: string) => {
-    trackEvent('navigate', 'Navigation', page);
-  },
+// Navigation
+navigate: (page: string) => {
+trackEvent('navigate', 'Navigation', page);
+},
 
-  // AI Chat events
-  chatOpen: () => {
-    trackEvent('open', 'AI Chat');
-  },
+// AI Chat events
+chatOpen: () => {
+trackEvent('open', 'AI Chat');
+},
 
-  chatMessage: (messageLength: number) => {
-    trackEvent('message', 'AI Chat', 'Message sent', messageLength);
-  },
+chatMessage: (messageLength: number) => {
+trackEvent('message', 'AI Chat', 'Message sent', messageLength);
+},
 
-  chatExport: (format: string) => {
-    trackEvent('export', 'AI Chat', format);
-  },
+chatExport: (format: string) => {
+trackEvent('export', 'AI Chat', format);
+},
 
-  // Downloads
-  downloadResume: () => {
-    trackEvent('download', 'Resume', 'PDF');
-  },
+// Downloads
+downloadResume: () => {
+trackEvent('download', 'Resume', 'PDF');
+},
 
-  // External links
-  clickExternalLink: (url: string, label: string) => {
-    trackEvent('click', 'External Link', label);
-    trackEvent('outbound', 'Link', url);
-  },
+// External links
+clickExternalLink: (url: string, label: string) => {
+trackEvent('click', 'External Link', label);
+trackEvent('outbound', 'Link', url);
+},
 
-  // Theme
-  changeTheme: (theme: string) => {
-    trackEvent('change', 'Theme', theme);
-  },
+// Theme
+changeTheme: (theme: string) => {
+trackEvent('change', 'Theme', theme);
+},
 
-  // Projects
-  viewProject: (projectName: string) => {
-    trackEvent('view', 'Project', projectName);
-  },
+// Projects
+viewProject: (projectName: string) => {
+trackEvent('view', 'Project', projectName);
+},
 
-  clickProjectLink: (projectName: string, linkType: string) => {
-    trackEvent('click', 'Project Link', \\ - \\);
-  },
+clickProjectLink: (projectName: string, linkType: string) => {
+trackEvent('click', 'Project Link', \\ - \\);
+},
 
-  // Search
-  search: (query: string, resultCount: number) => {
-    trackEvent('search', 'Search', query, resultCount);
-  },
+// Search
+search: (query: string, resultCount: number) => {
+trackEvent('search', 'Search', query, resultCount);
+},
 
-  // Errors
-  error: (errorMessage: string, errorLocation: string) => {
-    trackEvent('error', 'Error', \\: \\);
-  },
+// Errors
+error: (errorMessage: string, errorLocation: string) => {
+trackEvent('error', 'Error', \\: \\);
+},
 
-  // Performance
-  performanceMetric: (metric: string, value: number) => {
-    trackEvent('performance', 'Performance', metric, value);
-  },
+// Performance
+performanceMetric: (metric: string, value: number) => {
+trackEvent('performance', 'Performance', metric, value);
+},
 };
 \\\
 
 #### Usage in Components
 
-\\\	sx
+\\\ sx
 import { analytics } from '@/lib/analytics';
 
 function ProjectCard({ project }: { project: Project }) {
-  const handleViewDetails = () => {
-    analytics.viewProject(project.name);
-    // ... navigate to project
-  };
+const handleViewDetails = () => {
+analytics.viewProject(project.name);
+// ... navigate to project
+};
 
-  const handleClickGitHub = () => {
-    analytics.clickProjectLink(project.name, 'GitHub');
-  };
+const handleClickGitHub = () => {
+analytics.clickProjectLink(project.name, 'GitHub');
+};
 
-  return (
-    <div>
-      <h3>{project.name}</h3>
-      <button onClick={handleViewDetails}>View Details</button>
-      <a href={project.github} onClick={handleClickGitHub}>
-        GitHub
-      </a>
-    </div>
-  );
+return (
+
+<div>
+<h3>{project.name}</h3>
+<button onClick={handleViewDetails}>View Details</button>
+<a href={project.github} onClick={handleClickGitHub}>
+GitHub
+</a>
+</div>
+);
 }
 \\\
 
 #### Track Page Views (App Router)
 
-\\\	ypescript
+\\\ ypescript
 // src/app/layout.tsx
 'use client';
 
@@ -6925,58 +7217,58 @@ import { usePathname, useSearchParams } from 'next/navigation';
 import { initGA, trackPageView } from '@/lib/analytics';
 
 export function AnalyticsProvider({ children }: { children: React.ReactNode }) {
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
+const pathname = usePathname();
+const searchParams = useSearchParams();
 
-  useEffect(() => {
-    initGA();
-  }, []);
+useEffect(() => {
+initGA();
+}, []);
 
-  useEffect(() => {
-    const url = pathname + searchParams.toString();
-    trackPageView(url);
-  }, [pathname, searchParams]);
+useEffect(() => {
+const url = pathname + searchParams.toString();
+trackPageView(url);
+}, [pathname, searchParams]);
 
-  return <>{children}</>;
+return <>{children}</>;
 }
 \\\
 
 ### Custom Analytics Dashboard
 
-\\\	ypescript
+\\\ ypescript
 // src/lib/customAnalytics.ts
 
 interface AnalyticsEvent {
-  id: string;
-  timestamp: number;
-  event: string;
-  category: string;
-  label?: string;
-  value?: number;
-  userAgent: string;
-  page: string;
+id: string;
+timestamp: number;
+event: string;
+category: string;
+label?: string;
+value?: number;
+userAgent: string;
+page: string;
 }
 
 class CustomAnalytics {
-  private events: AnalyticsEvent[] = [];
-  private endpoint = '/api/analytics';
+private events: AnalyticsEvent[] = [];
+private endpoint = '/api/analytics';
 
-  track(
-    event: string,
-    category: string,
-    label?: string,
-    value?: number
-  ): void {
-    const analyticsEvent: AnalyticsEvent = {
-      id: crypto.randomUUID(),
-      timestamp: Date.now(),
-      event,
-      category,
-      label,
-      value,
-      userAgent: navigator.userAgent,
-      page: window.location.pathname,
-    };
+track(
+event: string,
+category: string,
+label?: string,
+value?: number
+): void {
+const analyticsEvent: AnalyticsEvent = {
+id: crypto.randomUUID(),
+timestamp: Date.now(),
+event,
+category,
+label,
+value,
+userAgent: navigator.userAgent,
+page: window.location.pathname,
+};
 
     this.events.push(analyticsEvent);
 
@@ -6989,10 +7281,11 @@ class CustomAnalytics {
     if (this.events.length >= 10) {
       this.flush();
     }
-  }
 
-  async flush(): Promise<void> {
-    if (this.events.length === 0) return;
+}
+
+async flush(): Promise<void> {
+if (this.events.length === 0) return;
 
     const eventsToSend = [...this.events];
     this.events = [];
@@ -7008,11 +7301,12 @@ class CustomAnalytics {
       // Re-add events if send failed
       this.events.push(...eventsToSend);
     }
-  }
 
-  // Send remaining events before page unload
-  flushBeforeUnload(): void {
-    if (this.events.length === 0) return;
+}
+
+// Send remaining events before page unload
+flushBeforeUnload(): void {
+if (this.events.length === 0) return;
 
     const blob = new Blob(
       [JSON.stringify({ events: this.events })],
@@ -7021,17 +7315,18 @@ class CustomAnalytics {
 
     navigator.sendBeacon(this.endpoint, blob);
     this.events = [];
-  }
 
-  getSessionData(): {
-    duration: number;
-    pageViews: number;
-    events: number;
-  } {
-    const sessionStart = parseInt(
-      sessionStorage.getItem('sessionStart') || Date.now().toString()
-    );
-    
+}
+
+getSessionData(): {
+duration: number;
+pageViews: number;
+events: number;
+} {
+const sessionStart = parseInt(
+sessionStorage.getItem('sessionStart') || Date.now().toString()
+);
+
     if (!sessionStorage.getItem('sessionStart')) {
       sessionStorage.setItem('sessionStart', Date.now().toString());
     }
@@ -7041,26 +7336,26 @@ class CustomAnalytics {
       pageViews: parseInt(sessionStorage.getItem('pageViews') || '0'),
       events: this.events.length,
     };
-  }
+
+}
 }
 
 export const customAnalytics = new CustomAnalytics();
 
 // Setup auto-flush on unload
 if (typeof window !== 'undefined') {
-  window.addEventListener('beforeunload', () => {
-    customAnalytics.flushBeforeUnload();
-  });
+window.addEventListener('beforeunload', () => {
+customAnalytics.flushBeforeUnload();
+});
 
-  // Periodic flush every 30 seconds
-  setInterval(() => {
-    customAnalytics.flush();
-  }, 30000);
+// Periodic flush every 30 seconds
+setInterval(() => {
+customAnalytics.flush();
+}, 30000);
 }
 \\\
 
 ---
-
 
 ## 🎨 UI/UX Design Guidelines
 
@@ -7068,82 +7363,87 @@ if (typeof window !== 'undefined') {
 
 #### WCAG AA Compliance
 
-\\\	ypescript
+\\\ ypescript
 // src/lib/colorContrast.ts
 
-/**
- * Calculate relative luminance of a color
- * Formula: https://www.w3.org/WAI/GL/wiki/Relative_luminance
- */
-function getLuminance(r: number, g: number, b: number): number {
+/\*\*
+
+- Calculate relative luminance of a color
+- Formula: https://www.w3.org/WAI/GL/wiki/Relative_luminance
+  \*/
+  function getLuminance(r: number, g: number, b: number): number {
   const [rs, gs, bs] = [r, g, b].map((c) => {
-    c = c / 255;
-    return c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
+  c = c / 255;
+  return c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
   });
-  
-  return 0.2126 * rs + 0.7152 * gs + 0.0722 * bs;
+
+return 0.2126 _ rs + 0.7152 _ gs + 0.0722 \* bs;
 }
 
-/**
- * Calculate contrast ratio between two colors
- * Formula: https://www.w3.org/WAI/GL/wiki/Contrast_ratio
- */
-export function getContrastRatio(
+/\*\*
+
+- Calculate contrast ratio between two colors
+- Formula: https://www.w3.org/WAI/GL/wiki/Contrast_ratio
+  \*/
+  export function getContrastRatio(
   color1: [number, number, number],
   color2: [number, number, number]
-): number {
+  ): number {
   const lum1 = getLuminance(...color1);
   const lum2 = getLuminance(...color2);
-  
-  const lighter = Math.max(lum1, lum2);
-  const darker = Math.min(lum1, lum2);
-  
-  return (lighter + 0.05) / (darker + 0.05);
+
+const lighter = Math.max(lum1, lum2);
+const darker = Math.min(lum1, lum2);
+
+return (lighter + 0.05) / (darker + 0.05);
 }
 
-/**
- * Check if color combination meets WCAG AA standard
- */
-export function meetsWCAG_AA(
+/\*\*
+
+- Check if color combination meets WCAG AA standard
+  \*/
+  export function meetsWCAG_AA(
   textColor: [number, number, number],
   backgroundColor: [number, number, number],
   isLargeText: boolean = false
-): boolean {
+  ): boolean {
   const ratio = getContrastRatio(textColor, backgroundColor);
   const minRatio = isLargeText ? 3 : 4.5;
-  
-  return ratio >= minRatio;
+
+return ratio >= minRatio;
 }
 
-/**
- * Check if color combination meets WCAG AAA standard
- */
-export function meetsWCAG_AAA(
+/\*\*
+
+- Check if color combination meets WCAG AAA standard
+  \*/
+  export function meetsWCAG_AAA(
   textColor: [number, number, number],
   backgroundColor: [number, number, number],
   isLargeText: boolean = false
-): boolean {
+  ): boolean {
   const ratio = getContrastRatio(textColor, backgroundColor);
   const minRatio = isLargeText ? 4.5 : 7;
-  
-  return ratio >= minRatio;
+
+return ratio >= minRatio;
 }
 
-/**
- * Convert hex color to RGB
- */
-export function hexToRGB(hex: string): [number, number, number] {
+/\*\*
+
+- Convert hex color to RGB
+  \*/
+  export function hexToRGB(hex: string): [number, number, number] {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-  
-  if (!result) {
-    throw new Error('Invalid hex color');
-  }
-  
-  return [
-    parseInt(result[1], 16),
-    parseInt(result[2], 16),
-    parseInt(result[3], 16),
-  ];
+
+if (!result) {
+throw new Error('Invalid hex color');
+}
+
+return [
+parseInt(result[1], 16),
+parseInt(result[2], 16),
+parseInt(result[3], 16),
+];
 }
 
 // Example usage
@@ -7158,23 +7458,23 @@ console.log('WCAG AAA:', meetsWCAG_AAA(tealText, whiteBackground));
 ### Responsive Typography System
 
 \\\css
-/* src/app/globals.css */
+/_ src/app/globals.css _/
 
-/* Fluid typography using clamp() */
+/_ Fluid typography using clamp() _/
 :root {
-  /* Base scale: 16px at 375px viewport, 18px at 1920px */
-  --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
-  --text-sm: clamp(0.875rem, 0.825rem + 0.25vw, 1rem);
-  --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
-  --text-lg: clamp(1.125rem, 1.05rem + 0.375vw, 1.25rem);
-  --text-xl: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
-  --text-2xl: clamp(1.5rem, 1.35rem + 0.75vw, 1.875rem);
-  --text-3xl: clamp(1.875rem, 1.65rem + 1.125vw, 2.25rem);
-  --text-4xl: clamp(2.25rem, 1.95rem + 1.5vw, 3rem);
-  --text-5xl: clamp(3rem, 2.55rem + 2.25vw, 4rem);
+/_ Base scale: 16px at 375px viewport, 18px at 1920px _/
+--text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+--text-sm: clamp(0.875rem, 0.825rem + 0.25vw, 1rem);
+--text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+--text-lg: clamp(1.125rem, 1.05rem + 0.375vw, 1.25rem);
+--text-xl: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
+--text-2xl: clamp(1.5rem, 1.35rem + 0.75vw, 1.875rem);
+--text-3xl: clamp(1.875rem, 1.65rem + 1.125vw, 2.25rem);
+--text-4xl: clamp(2.25rem, 1.95rem + 1.5vw, 3rem);
+--text-5xl: clamp(3rem, 2.55rem + 2.25vw, 4rem);
 }
 
-/* Apply to elements */
+/_ Apply to elements _/
 .text-xs { font-size: var(--text-xs); }
 .text-sm { font-size: var(--text-sm); }
 .text-base { font-size: var(--text-base); }
@@ -7185,14 +7485,14 @@ console.log('WCAG AAA:', meetsWCAG_AAA(tealText, whiteBackground));
 .text-4xl { font-size: var(--text-4xl); }
 .text-5xl { font-size: var(--text-5xl); }
 
-/* Responsive line heights */
+/_ Responsive line heights _/
 .leading-tight { line-height: 1.25; }
 .leading-snug { line-height: 1.375; }
 .leading-normal { line-height: 1.5; }
 .leading-relaxed { line-height: 1.625; }
 .leading-loose { line-height: 2; }
 
-/* Responsive letter spacing */
+/_ Responsive letter spacing _/
 .tracking-tighter { letter-spacing: -0.05em; }
 .tracking-tight { letter-spacing: -0.025em; }
 .tracking-normal { letter-spacing: 0; }
@@ -7203,192 +7503,192 @@ console.log('WCAG AAA:', meetsWCAG_AAA(tealText, whiteBackground));
 ### Micro-interactions Library
 
 \\\css
-/* Button hover effects */
+/_ Button hover effects _/
 .btn-hover-lift {
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .btn-hover-lift:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+transform: translateY(-2px);
+box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .btn-hover-lift:active {
-  transform: translateY(0);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+transform: translateY(0);
+box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Card hover expansion */
+/_ Card hover expansion _/
 .card-expand {
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .card-expand:hover {
-  transform: scale(1.02);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+transform: scale(1.02);
+box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
-/* Input focus animation */
+/_ Input focus animation _/
 .input-focus {
-  position: relative;
+position: relative;
 }
 
 .input-focus::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--color-primary);
-  transition: width 0.3s ease;
+content: '';
+position: absolute;
+bottom: 0;
+left: 0;
+width: 0;
+height: 2px;
+background: var(--color-primary);
+transition: width 0.3s ease;
 }
 
 .input-focus:focus-within::after {
-  width: 100%;
+width: 100%;
 }
 
-/* Ripple effect */
+/_ Ripple effect _/
 .ripple {
-  position: relative;
-  overflow: hidden;
+position: relative;
+overflow: hidden;
 }
 
 .ripple::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.5);
-  transform: translate(-50%, -50%);
-  transition: width 0.6s, height 0.6s;
+content: '';
+position: absolute;
+top: 50%;
+left: 50%;
+width: 0;
+height: 0;
+border-radius: 50%;
+background: rgba(255, 255, 255, 0.5);
+transform: translate(-50%, -50%);
+transition: width 0.6s, height 0.6s;
 }
 
 .ripple:active::before {
-  width: 300px;
-  height: 300px;
+width: 300px;
+height: 300px;
 }
 
-/* Loading spinner */
+/_ Loading spinner _/
 @keyframes spin {
-  to { transform: rotate(360deg); }
+to { transform: rotate(360deg); }
 }
 
 .spinner {
-  width: 40px;
-  height: 40px;
-  border: 4px solid rgba(0, 0, 0, 0.1);
-  border-top-color: var(--color-primary);
-  border-radius: 50%;
-  animation: spin 0.8s linear infinite;
+width: 40px;
+height: 40px;
+border: 4px solid rgba(0, 0, 0, 0.1);
+border-top-color: var(--color-primary);
+border-radius: 50%;
+animation: spin 0.8s linear infinite;
 }
 
-/* Progress bar */
+/_ Progress bar _/
 @keyframes progress {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
+0% { transform: translateX(-100%); }
+100% { transform: translateX(100%); }
 }
 
 .progress-indeterminate {
-  position: relative;
-  overflow: hidden;
+position: relative;
+overflow: hidden;
 }
 
 .progress-indeterminate::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 30%;
-  height: 100%;
-  background: var(--color-primary);
-  animation: progress 1.5s ease-in-out infinite;
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 30%;
+height: 100%;
+background: var(--color-primary);
+animation: progress 1.5s ease-in-out infinite;
 }
 
-/* Skeleton loading */
+/_ Skeleton loading _/
 @keyframes skeleton {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+0% { background-position: -200% 0; }
+100% { background-position: 200% 0; }
 }
 
 .skeleton {
-  background: linear-gradient(
-    90deg,
-    #f0f0f0 0%,
-    #e0e0e0 50%,
-    #f0f0f0 100%
-  );
-  background-size: 200% 100%;
-  animation: skeleton 1.5s ease-in-out infinite;
+background: linear-gradient(
+90deg,
+#f0f0f0 0%,
+#e0e0e0 50%,
+#f0f0f0 100%
+);
+background-size: 200% 100%;
+animation: skeleton 1.5s ease-in-out infinite;
 }
 
 .dark .skeleton {
-  background: linear-gradient(
-    90deg,
-    #2a2a2a 0%,
-    #3a3a3a 50%,
-    #2a2a2a 100%
-  );
-  background-size: 200% 100%;
+background: linear-gradient(
+90deg,
+#2a2a2a 0%,
+#3a3a3a 50%,
+#2a2a2a 100%
+);
+background-size: 200% 100%;
 }
 
-/* Toast notification slide in */
+/_ Toast notification slide in _/
 @keyframes toast-in {
-  from {
-    opacity: 0;
-    transform: translateX(100%);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+from {
+opacity: 0;
+transform: translateX(100%);
+}
+to {
+opacity: 1;
+transform: translateX(0);
+}
 }
 
 .toast {
-  animation: toast-in 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+animation: toast-in 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Modal backdrop fade */
+/_ Modal backdrop fade _/
 @keyframes backdrop-fade {
-  from { opacity: 0; }
-  to { opacity: 1; }
+from { opacity: 0; }
+to { opacity: 1; }
 }
 
 .modal-backdrop {
-  animation: backdrop-fade 0.2s ease-out;
+animation: backdrop-fade 0.2s ease-out;
 }
 
-/* Drawer slide */
+/_ Drawer slide _/
 @keyframes drawer-slide {
-  from { transform: translateX(-100%); }
-  to { transform: translateX(0); }
+from { transform: translateX(-100%); }
+to { transform: translateX(0); }
 }
 
 .drawer {
-  animation: drawer-slide 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+animation: drawer-slide 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Accordion expand */
+/_ Accordion expand _/
 .accordion-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+max-height: 0;
+overflow: hidden;
+transition: max-height 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .accordion-content.expanded {
-  max-height: 1000px;
+max-height: 1000px;
 }
 
-/* Tab underline animation */
+/_ Tab underline animation _/
 .tab-indicator {
-  position: absolute;
-  bottom: 0;
-  height: 2px;
-  background: var(--color-primary);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+position: absolute;
+bottom: 0;
+height: 2px;
+background: var(--color-primary);
+transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 \\\
 
@@ -7398,13 +7698,14 @@ console.log('WCAG AAA:', meetsWCAG_AAA(tealText, whiteBackground));
 
 ### Date & Time Utilities
 
-\\\	ypescript
+\\\ ypescript
 // src/lib/date.ts
 
-/**
- * Format date to relative time (e.g., "2 hours ago")
- */
-export function formatRelativeTime(date: Date): string {
+/\*\*
+
+- Format date to relative time (e.g., "2 hours ago")
+  \*/
+  export function formatRelativeTime(date: Date): string {
   const now = new Date();
   const diffMs = now.getTime() - date.getTime();
   const diffSec = Math.floor(diffMs / 1000);
@@ -7414,581 +7715,631 @@ export function formatRelativeTime(date: Date): string {
   const diffMonth = Math.floor(diffDay / 30);
   const diffYear = Math.floor(diffDay / 365);
 
-  if (diffSec < 60) return 'just now';
-  if (diffMin < 60) return \\ minute\ ago\;
-  if (diffHour < 24) return \\ hour\ ago\;
-  if (diffDay < 30) return \\ day\ ago\;
-  if (diffMonth < 12) return \\ month\ ago\;
-  return \\ year\ ago\;
+if (diffSec < 60) return 'just now';
+if (diffMin < 60) return \\ minute\ ago\;
+if (diffHour < 24) return \\ hour\ ago\;
+if (diffDay < 30) return \\ day\ ago\;
+if (diffMonth < 12) return \\ month\ ago\;
+return \\ year\ ago\;
 }
 
-/**
- * Format date to readable string
- */
-export function formatDate(date: Date, format: 'short' | 'long' | 'full' = 'short'): string {
+/\*\*
+
+- Format date to readable string
+  \*/
+  export function formatDate(date: Date, format: 'short' | 'long' | 'full' = 'short'): string {
   const options: Intl.DateTimeFormatOptions = {
-    short: { month: 'short', day: 'numeric', year: 'numeric' },
-    long: { month: 'long', day: 'numeric', year: 'numeric' },
-    full: { 
-      weekday: 'long', 
-      month: 'long', 
-      day: 'numeric', 
-      year: 'numeric',
-      hour: 'numeric',
-      minute: '2-digit',
-    },
+  short: { month: 'short', day: 'numeric', year: 'numeric' },
+  long: { month: 'long', day: 'numeric', year: 'numeric' },
+  full: {
+  weekday: 'long',
+  month: 'long',
+  day: 'numeric',
+  year: 'numeric',
+  hour: 'numeric',
+  minute: '2-digit',
+  },
   }[format];
 
-  return new Intl.DateTimeFormat('en-US', options).format(date);
+return new Intl.DateTimeFormat('en-US', options).format(date);
 }
 
-/**
- * Get time difference in human-readable format
- */
-export function getTimeDifference(start: Date, end: Date): string {
+/\*\*
+
+- Get time difference in human-readable format
+  \*/
+  export function getTimeDifference(start: Date, end: Date): string {
   const diffMs = end.getTime() - start.getTime();
   const diffSec = Math.floor(diffMs / 1000);
   const diffMin = Math.floor(diffSec / 60);
   const diffHour = Math.floor(diffMin / 60);
   const diffDay = Math.floor(diffHour / 24);
 
-  const days = diffDay;
-  const hours = diffHour % 24;
-  const minutes = diffMin % 60;
-  const seconds = diffSec % 60;
+const days = diffDay;
+const hours = diffHour % 24;
+const minutes = diffMin % 60;
+const seconds = diffSec % 60;
 
-  const parts = [];
-  if (days > 0) parts.push(\\d\);
-  if (hours > 0) parts.push(\\h\);
-  if (minutes > 0) parts.push(\\m\);
-  if (seconds > 0 && days === 0) parts.push(\\s\);
+const parts = [];
+if (days > 0) parts.push(\\d\);
+if (hours > 0) parts.push(\\h\);
+if (minutes > 0) parts.push(\\m\);
+if (seconds > 0 && days === 0) parts.push(\\s\);
 
-  return parts.join(' ') || '0s';
+return parts.join(' ') || '0s';
 }
 
-/**
- * Check if date is today
- */
-export function isToday(date: Date): boolean {
+/\*\*
+
+- Check if date is today
+  \*/
+  export function isToday(date: Date): boolean {
   const today = new Date();
   return date.toDateString() === today.toDateString();
-}
+  }
 
-/**
- * Check if date is within last N days
- */
-export function isWithinDays(date: Date, days: number): boolean {
+/\*\*
+
+- Check if date is within last N days
+  _/
+  export function isWithinDays(date: Date, days: number): boolean {
   const now = new Date();
   const diffMs = now.getTime() - date.getTime();
-  const diffDays = diffMs / (1000 * 60 * 60 * 24);
+  const diffDays = diffMs / (1000 _ 60 _ 60 _ 24);
   return diffDays <= days;
-}
+  }
 
-/**
- * Get start and end of day
- */
-export function getDayBounds(date: Date): { start: Date; end: Date } {
+/\*\*
+
+- Get start and end of day
+  \*/
+  export function getDayBounds(date: Date): { start: Date; end: Date } {
   const start = new Date(date);
   start.setHours(0, 0, 0, 0);
-  
-  const end = new Date(date);
-  end.setHours(23, 59, 59, 999);
-  
-  return { start, end };
+
+const end = new Date(date);
+end.setHours(23, 59, 59, 999);
+
+return { start, end };
 }
 
-/**
- * Add days to date
- */
-export function addDays(date: Date, days: number): Date {
+/\*\*
+
+- Add days to date
+  \*/
+  export function addDays(date: Date, days: number): Date {
   const result = new Date(date);
   result.setDate(result.getDate() + days);
   return result;
-}
+  }
 
-/**
- * Format duration in milliseconds to readable string
- */
-export function formatDuration(ms: number): string {
+/\*\*
+
+- Format duration in milliseconds to readable string
+  \*/
+  export function formatDuration(ms: number): string {
   const seconds = Math.floor(ms / 1000);
   const minutes = Math.floor(seconds / 60);
   const hours = Math.floor(minutes / 60);
 
-  if (hours > 0) {
-    return \\h \m\;
-  }
-  if (minutes > 0) {
-    return \\m \s\;
-  }
-  return \\s\;
+if (hours > 0) {
+return \\h \m\;
+}
+if (minutes > 0) {
+return \\m \s\;
+}
+return \\s\;
 }
 \\\
 
 ### String Utilities
 
-\\\	ypescript
+\\\ ypescript
 // src/lib/string.ts
 
-/**
- * Capitalize first letter
- */
-export function capitalize(str: string): string {
+/\*\*
+
+- Capitalize first letter
+  \*/
+  export function capitalize(str: string): string {
   return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
-}
+  }
 
-/**
- * Capitalize each word
- */
-export function titleCase(str: string): string {
+/\*\*
+
+- Capitalize each word
+  \*/
+  export function titleCase(str: string): string {
   return str
-    .toLowerCase()
-    .split(' ')
-    .map(word => capitalize(word))
-    .join(' ');
-}
+  .toLowerCase()
+  .split(' ')
+  .map(word => capitalize(word))
+  .join(' ');
+  }
 
-/**
- * Convert to kebab-case
- */
-export function kebabCase(str: string): string {
+/\*\*
+
+- Convert to kebab-case
+  \*/
+  export function kebabCase(str: string): string {
   return str
-    .replace(/([a-z])([A-Z])/g, '\-\')
-    .replace(/[\s_]+/g, '-')
-    .toLowerCase();
-}
+  .replace(/([a-z])([A-Z])/g, '\-\')
+  .replace(/[\s_]+/g, '-')
+  .toLowerCase();
+  }
 
-/**
- * Convert to camelCase
- */
-export function camelCase(str: string): string {
+/\*\*
+
+- Convert to camelCase
+  \*/
+  export function camelCase(str: string): string {
   return str
-    .toLowerCase()
-    .replace(/[^a-zA-Z0-9]+(.)/g, (_, char) => char.toUpperCase());
-}
+  .toLowerCase()
+  .replace(/[^a-zA-Z0-9]+(.)/g, (\_, char) => char.toUpperCase());
+  }
 
-/**
- * Convert to snake_case
- */
-export function snakeCase(str: string): string {
+/\*\*
+
+- Convert to snake*case
+  \*/
+  export function snakeCase(str: string): string {
   return str
-    .replace(/([a-z])([A-Z])/g, '\\')
-    .replace(/[\s-]+/g, '_')
-    .toLowerCase();
-}
+  .replace(/([a-z])([A-Z])/g, '\\')
+  .replace(/[\s-]+/g, '*')
+  .toLowerCase();
+  }
 
-/**
- * Truncate string with ellipsis
- */
-export function truncate(str: string, maxLength: number): string {
+/\*\*
+
+- Truncate string with ellipsis
+  \*/
+  export function truncate(str: string, maxLength: number): string {
   if (str.length <= maxLength) return str;
   return str.slice(0, maxLength - 3) + '...';
-}
+  }
 
-/**
- * Truncate to word boundary
- */
-export function truncateWords(str: string, maxWords: number): string {
+/\*\*
+
+- Truncate to word boundary
+  \*/
+  export function truncateWords(str: string, maxWords: number): string {
   const words = str.split(' ');
   if (words.length <= maxWords) return str;
   return words.slice(0, maxWords).join(' ') + '...';
-}
-
-/**
- * Remove HTML tags
- */
-export function stripHTML(str: string): string {
-  return str.replace(/<[^>]*>/g, '');
-}
-
-/**
- * Extract domain from URL
- */
-export function extractDomain(url: string): string {
-  try {
-    const urlObj = new URL(url);
-    return urlObj.hostname.replace('www.', '');
-  } catch {
-    return url;
   }
-}
 
-/**
- * Slugify string for URLs
- */
-export function slugify(str: string): string {
+/\*\*
+
+- Remove HTML tags
+  _/
+  export function stripHTML(str: string): string {
+  return str.replace(/<[^>]_>/g, '');
+  }
+
+/\*\*
+
+- Extract domain from URL
+  \*/
+  export function extractDomain(url: string): string {
+  try {
+  const urlObj = new URL(url);
+  return urlObj.hostname.replace('www.', '');
+  } catch {
+  return url;
+  }
+  }
+
+/\*\*
+
+- Slugify string for URLs
+  \*/
+  export function slugify(str: string): string {
   return str
-    .toLowerCase()
-    .trim()
-    .replace(/[^\w\s-]/g, '')
-    .replace(/[\s_-]+/g, '-')
-    .replace(/^-+|-+$/g, '');
-}
+  .toLowerCase()
+  .trim()
+  .replace(/[^\w\s-]/g, '')
+  .replace(/[\s_-]+/g, '-')
+  .replace(/^-+|-+$/g, '');
+  }
 
-/**
- * Generate random string
- */
-export function randomString(length: number): string {
+/\*\*
+
+- Generate random string
+  _/
+  export function randomString(length: number): string {
   const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
   let result = '';
   for (let i = 0; i < length; i++) {
-    result += chars.charAt(Math.floor(Math.random() * chars.length));
+  result += chars.charAt(Math.floor(Math.random() _ chars.length));
   }
   return result;
-}
+  }
 
-/**
- * Count words in string
- */
-export function wordCount(str: string): number {
+/\*\*
+
+- Count words in string
+  \*/
+  export function wordCount(str: string): number {
   return str.trim().split(/\s+/).length;
-}
+  }
 
-/**
- * Estimate reading time
- */
-export function estimateReadingTime(str: string, wordsPerMinute: number = 200): string {
+/\*\*
+
+- Estimate reading time
+  \*/
+  export function estimateReadingTime(str: string, wordsPerMinute: number = 200): string {
   const words = wordCount(str);
   const minutes = Math.ceil(words / wordsPerMinute);
   return \\ min read\;
-}
+  }
 
-/**
- * Highlight search term in text
- */
-export function highlightText(text: string, search: string): string {
+/\*\*
+
+- Highlight search term in text
+  \*/
+  export function highlightText(text: string, search: string): string {
   if (!search) return text;
-  
-  const regex = new RegExp(\(\)\, 'gi');
-  return text.replace(regex, '<mark>\</mark>');
+
+const regex = new RegExp(\(\)\, 'gi');
+return text.replace(regex, '<mark>\</mark>');
 }
 
-/**
- * Format file size
- */
-export function formatFileSize(bytes: number): string {
+/\*\*
+
+- Format file size
+  \*/
+  export function formatFileSize(bytes: number): string {
   const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
   if (bytes === 0) return '0 Bytes';
-  
-  const i = Math.floor(Math.log(bytes) / Math.log(1024));
-  return Math.round((bytes / Math.pow(1024, i)) * 100) / 100 + ' ' + sizes[i];
+
+const i = Math.floor(Math.log(bytes) / Math.log(1024));
+return Math.round((bytes / Math.pow(1024, i)) \* 100) / 100 + ' ' + sizes[i];
 }
 \\\
 
 ### Number Utilities
 
-\\\	ypescript
+\\\ ypescript
 // src/lib/number.ts
 
-/**
- * Format number with commas
- */
-export function formatNumber(num: number): string {
-  return new Intl.NumberFormat('en-US').format(num);
-}
+/\*\*
 
-/**
- * Format number as currency
- */
-export function formatCurrency(
+- Format number with commas
+  \*/
+  export function formatNumber(num: number): string {
+  return new Intl.NumberFormat('en-US').format(num);
+  }
+
+/\*\*
+
+- Format number as currency
+  \*/
+  export function formatCurrency(
   amount: number,
   currency: string = 'USD',
   locale: string = 'en-US'
-): string {
+  ): string {
   return new Intl.NumberFormat(locale, {
-    style: 'currency',
-    currency,
+  style: 'currency',
+  currency,
   }).format(amount);
-}
+  }
 
-/**
- * Format number as percentage
- */
-export function formatPercentage(value: number, decimals: number = 0): string {
+/\*\*
+
+- Format number as percentage
+  \*/
+  export function formatPercentage(value: number, decimals: number = 0): string {
   return \\%\;
-}
+  }
 
-/**
- * Abbreviate large numbers (e.g., 1.5K, 2.3M)
- */
-export function abbreviateNumber(num: number): string {
+/\*\*
+
+- Abbreviate large numbers (e.g., 1.5K, 2.3M)
+  \*/
+  export function abbreviateNumber(num: number): string {
   if (num < 1000) return num.toString();
   if (num < 1000000) return (num / 1000).toFixed(1) + 'K';
   if (num < 1000000000) return (num / 1000000).toFixed(1) + 'M';
   return (num / 1000000000).toFixed(1) + 'B';
-}
+  }
 
-/**
- * Clamp number between min and max
- */
-export function clamp(num: number, min: number, max: number): number {
+/\*\*
+
+- Clamp number between min and max
+  \*/
+  export function clamp(num: number, min: number, max: number): number {
   return Math.min(Math.max(num, min), max);
-}
+  }
 
-/**
- * Round to decimal places
- */
-export function roundTo(num: number, decimals: number): number {
+/\*\*
+
+- Round to decimal places
+  _/
+  export function roundTo(num: number, decimals: number): number {
   const factor = Math.pow(10, decimals);
-  return Math.round(num * factor) / factor;
-}
+  return Math.round(num _ factor) / factor;
+  }
 
-/**
- * Generate random number between min and max
- */
-export function randomBetween(min: number, max: number): number {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+/\*\*
 
-/**
- * Calculate percentage change
- */
-export function percentageChange(oldValue: number, newValue: number): number {
+- Generate random number between min and max
+  _/
+  export function randomBetween(min: number, max: number): number {
+  return Math.floor(Math.random() _ (max - min + 1)) + min;
+  }
+
+/\*\*
+
+- Calculate percentage change
+  _/
+  export function percentageChange(oldValue: number, newValue: number): number {
   if (oldValue === 0) return 0;
-  return ((newValue - oldValue) / oldValue) * 100;
-}
+  return ((newValue - oldValue) / oldValue) _ 100;
+  }
 
-/**
- * Linear interpolation
- */
-export function lerp(start: number, end: number, t: number): number {
-  return start + (end - start) * t;
-}
+/\*\*
 
-/**
- * Map value from one range to another
- */
-export function mapRange(
+- Linear interpolation
+  _/
+  export function lerp(start: number, end: number, t: number): number {
+  return start + (end - start) _ t;
+  }
+
+/\*\*
+
+- Map value from one range to another
+  _/
+  export function mapRange(
   value: number,
   inMin: number,
   inMax: number,
   outMin: number,
   outMax: number
-): number {
-  return ((value - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin;
-}
+  ): number {
+  return ((value - inMin) _ (outMax - outMin)) / (inMax - inMin) + outMin;
+  }
 
-/**
- * Check if number is in range
- */
-export function inRange(num: number, min: number, max: number): boolean {
+/\*\*
+
+- Check if number is in range
+  \*/
+  export function inRange(num: number, min: number, max: number): boolean {
   return num >= min && num <= max;
-}
+  }
 
-/**
- * Sum array of numbers
- */
-export function sum(numbers: number[]): number {
+/\*\*
+
+- Sum array of numbers
+  \*/
+  export function sum(numbers: number[]): number {
   return numbers.reduce((acc, num) => acc + num, 0);
-}
+  }
 
-/**
- * Calculate average
- */
-export function average(numbers: number[]): number {
+/\*\*
+
+- Calculate average
+  \*/
+  export function average(numbers: number[]): number {
   if (numbers.length === 0) return 0;
   return sum(numbers) / numbers.length;
-}
-
-/**
- * Find median
- */
-export function median(numbers: number[]): number {
-  if (numbers.length === 0) return 0;
-  
-  const sorted = [...numbers].sort((a, b) => a - b);
-  const middle = Math.floor(sorted.length / 2);
-  
-  if (sorted.length % 2 === 0) {
-    return (sorted[middle - 1] + sorted[middle]) / 2;
   }
-  
-  return sorted[middle];
+
+/\*\*
+
+- Find median
+  \*/
+  export function median(numbers: number[]): number {
+  if (numbers.length === 0) return 0;
+
+const sorted = [...numbers].sort((a, b) => a - b);
+const middle = Math.floor(sorted.length / 2);
+
+if (sorted.length % 2 === 0) {
+return (sorted[middle - 1] + sorted[middle]) / 2;
 }
 
-/**
- * Find mode (most frequent number)
- */
-export function mode(numbers: number[]): number {
+return sorted[middle];
+}
+
+/\*\*
+
+- Find mode (most frequent number)
+  \*/
+  export function mode(numbers: number[]): number {
   if (numbers.length === 0) return 0;
-  
-  const frequency: Record<number, number> = {};
-  let maxFreq = 0;
-  let modeValue = numbers[0];
-  
-  numbers.forEach(num => {
-    frequency[num] = (frequency[num] || 0) + 1;
-    if (frequency[num] > maxFreq) {
-      maxFreq = frequency[num];
-      modeValue = num;
-    }
-  });
-  
-  return modeValue;
+
+const frequency: Record<number, number> = {};
+let maxFreq = 0;
+let modeValue = numbers[0];
+
+numbers.forEach(num => {
+frequency[num] = (frequency[num] || 0) + 1;
+if (frequency[num] > maxFreq) {
+maxFreq = frequency[num];
+modeValue = num;
+}
+});
+
+return modeValue;
 }
 \\\
 
 ### Array Utilities
 
-\\\	ypescript
+\\\ ypescript
 // src/lib/array.ts
 
-/**
- * Remove duplicates from array
- */
-export function unique<T>(arr: T[]): T[] {
-  return [...new Set(arr)];
-}
+/\*\*
 
-/**
- * Shuffle array randomly
- */
-export function shuffle<T>(arr: T[]): T[] {
+- Remove duplicates from array
+  \*/
+  export function unique<T>(arr: T[]): T[] {
+  return [...new Set(arr)];
+  }
+
+/\*\*
+
+- Shuffle array randomly
+  _/
+  export function shuffle<T>(arr: T[]): T[] {
   const result = [...arr];
   for (let i = result.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [result[i], result[j]] = [result[j], result[i]];
+  const j = Math.floor(Math.random() _ (i + 1));
+  [result[i], result[j]] = [result[j], result[i]];
   }
   return result;
-}
+  }
 
-/**
- * Chunk array into smaller arrays
- */
-export function chunk<T>(arr: T[], size: number): T[][] {
+/\*\*
+
+- Chunk array into smaller arrays
+  \*/
+  export function chunk<T>(arr: T[], size: number): T[][] {
   const chunks: T[][] = [];
   for (let i = 0; i < arr.length; i += size) {
-    chunks.push(arr.slice(i, i + size));
+  chunks.push(arr.slice(i, i + size));
   }
   return chunks;
-}
+  }
 
-/**
- * Group array by key
- */
-export function groupBy<T>(arr: T[], key: keyof T): Record<string, T[]> {
+/\*\*
+
+- Group array by key
+  \*/
+  export function groupBy<T>(arr: T[], key: keyof T): Record<string, T[]> {
   return arr.reduce((groups, item) => {
-    const groupKey = String(item[key]);
-    if (!groups[groupKey]) {
-      groups[groupKey] = [];
-    }
-    groups[groupKey].push(item);
-    return groups;
+  const groupKey = String(item[key]);
+  if (!groups[groupKey]) {
+  groups[groupKey] = [];
+  }
+  groups[groupKey].push(item);
+  return groups;
   }, {} as Record<string, T[]>);
-}
+  }
 
-/**
- * Sort array of objects by key
- */
-export function sortBy<T>(
+/\*\*
+
+- Sort array of objects by key
+  \*/
+  export function sortBy<T>(
   arr: T[],
   key: keyof T,
   order: 'asc' | 'desc' = 'asc'
-): T[] {
+  ): T[] {
   return [...arr].sort((a, b) => {
-    const aVal = a[key];
-    const bVal = b[key];
-    
-    if (aVal < bVal) return order === 'asc' ? -1 : 1;
-    if (aVal > bVal) return order === 'asc' ? 1 : -1;
-    return 0;
+  const aVal = a[key];
+  const bVal = b[key];
+  if (aVal < bVal) return order === 'asc' ? -1 : 1;
+  if (aVal > bVal) return order === 'asc' ? 1 : -1;
+  return 0;
   });
-}
+  }
 
-/**
- * Get random item from array
- */
-export function randomItem<T>(arr: T[]): T {
-  return arr[Math.floor(Math.random() * arr.length)];
-}
+/\*\*
 
-/**
- * Get random items from array
- */
-export function randomItems<T>(arr: T[], count: number): T[] {
+- Get random item from array
+  _/
+  export function randomItem<T>(arr: T[]): T {
+  return arr[Math.floor(Math.random() _ arr.length)];
+  }
+
+/\*\*
+
+- Get random items from array
+  \*/
+  export function randomItems<T>(arr: T[], count: number): T[] {
   const shuffled = shuffle(arr);
   return shuffled.slice(0, count);
-}
+  }
 
-/**
- * Flatten nested array
- */
-export function flatten<T>(arr: any[]): T[] {
+/\*\*
+
+- Flatten nested array
+  \*/
+  export function flatten<T>(arr: any[]): T[] {
   return arr.reduce(
-    (flat, item) =>
-      flat.concat(Array.isArray(item) ? flatten(item) : item),
-    []
+  (flat, item) =>
+  flat.concat(Array.isArray(item) ? flatten(item) : item),
+  []
   );
-}
+  }
 
-/**
- * Find differences between two arrays
- */
-export function difference<T>(arr1: T[], arr2: T[]): T[] {
+/\*\*
+
+- Find differences between two arrays
+  \*/
+  export function difference<T>(arr1: T[], arr2: T[]): T[] {
   return arr1.filter(item => !arr2.includes(item));
-}
+  }
 
-/**
- * Find intersection of two arrays
- */
-export function intersection<T>(arr1: T[], arr2: T[]): T[] {
+/\*\*
+
+- Find intersection of two arrays
+  \*/
+  export function intersection<T>(arr1: T[], arr2: T[]): T[] {
   return arr1.filter(item => arr2.includes(item));
-}
+  }
 
-/**
- * Find union of two arrays
- */
-export function union<T>(arr1: T[], arr2: T[]): T[] {
+/\*\*
+
+- Find union of two arrays
+  \*/
+  export function union<T>(arr1: T[], arr2: T[]): T[] {
   return unique([...arr1, ...arr2]);
-}
+  }
 
-/**
- * Partition array based on condition
- */
-export function partition<T>(
+/\*\*
+
+- Partition array based on condition
+  \*/
+  export function partition<T>(
   arr: T[],
   predicate: (item: T) => boolean
-): [T[], T[]] {
+  ): [T[], T[]] {
   const pass: T[] = [];
   const fail: T[] = [];
-  
-  arr.forEach(item => {
-    if (predicate(item)) {
-      pass.push(item);
-    } else {
-      fail.push(item);
-    }
-  });
-  
-  return [pass, fail];
+
+arr.forEach(item => {
+if (predicate(item)) {
+pass.push(item);
+} else {
+fail.push(item);
+}
+});
+
+return [pass, fail];
 }
 
-/**
- * Compact array (remove falsy values)
- */
-export function compact<T>(arr: (T | null | undefined | false | 0 | '')[]): T[] {
+/\*\*
+
+- Compact array (remove falsy values)
+  \*/
+  export function compact<T>(arr: (T | null | undefined | false | 0 | '')[]): T[] {
   return arr.filter(Boolean) as T[];
-}
+  }
 
-/**
- * Range of numbers
- */
-export function range(start: number, end: number, step: number = 1): number[] {
+/\*\*
+
+- Range of numbers
+  \*/
+  export function range(start: number, end: number, step: number = 1): number[] {
   const result: number[] = [];
   for (let i = start; i <= end; i += step) {
-    result.push(i);
+  result.push(i);
   }
   return result;
-}
-\\\
+  }
+  \\\
 
 ---
-
 
 ## 🎓 Learning Path & Resources
 
 ### Frontend Development Roadmap
 
 #### Level 1: Foundations (Months 1-2)
+
 - ✅ HTML5 semantic elements
 - ✅ CSS3 & Flexbox/Grid
 - ✅ JavaScript ES6+
@@ -7997,11 +8348,13 @@ export function range(start: number, end: number, step: number = 1): number[] {
 - ✅ Git & GitHub basics
 
 **Resources:**
+
 - [MDN Web Docs](https://developer.mozilla.org/)
 - [JavaScript.info](https://javascript.info/)
 - [CSS Tricks](https://css-tricks.com/)
 
 #### Level 2: React Fundamentals (Months 3-4)
+
 - ✅ JSX syntax
 - ✅ Components & Props
 - ✅ State & Lifecycle
@@ -8010,11 +8363,13 @@ export function range(start: number, end: number, step: number = 1): number[] {
 - ✅ Conditional rendering
 
 **Resources:**
+
 - [React Official Docs](https://react.dev/)
 - [React Patterns](https://reactpatterns.com/)
 - [Kent C. Dodds Blog](https://kentcdodds.com/blog)
 
 #### Level 3: TypeScript (Month 5)
+
 - ✅ Basic types
 - ✅ Interfaces & Types
 - ✅ Generics
@@ -8023,11 +8378,13 @@ export function range(start: number, end: number, step: number = 1): number[] {
 - ✅ Utility types
 
 **Resources:**
+
 - [TypeScript Handbook](https://www.typescriptlang.org/docs/)
 - [Type Challenges](https://github.com/type-challenges/type-challenges)
 - [Total TypeScript](https://www.totaltypescript.com/)
 
 #### Level 4: Next.js (Month 6)
+
 - ✅ App Router
 - ✅ Server Components
 - ✅ API Routes
@@ -8036,11 +8393,13 @@ export function range(start: number, end: number, step: number = 1): number[] {
 - ✅ Middleware
 
 **Resources:**
+
 - [Next.js Docs](https://nextjs.org/docs)
 - [Next.js Learn Course](https://nextjs.org/learn)
 - [Lee Robinson's Blog](https://leerob.io/)
 
 #### Level 5: Advanced Topics (Months 7-9)
+
 - ✅ State management (Zustand, Jotai)
 - ✅ Testing (Vitest, Playwright)
 - ✅ Performance optimization
@@ -8049,11 +8408,13 @@ export function range(start: number, end: number, step: number = 1): number[] {
 - ✅ 3D graphics (Three.js)
 
 **Resources:**
+
 - [Web.dev](https://web.dev/)
 - [Frontend Masters](https://frontendmasters.com/)
 - [Egghead.io](https://egghead.io/)
 
 #### Level 6: Full Stack (Months 10-12)
+
 - ✅ Database (PostgreSQL, MongoDB)
 - ✅ ORM (Prisma, Drizzle)
 - ✅ Authentication (NextAuth.js)
@@ -8062,6 +8423,7 @@ export function range(start: number, end: number, step: number = 1): number[] {
 - ✅ CI/CD
 
 **Resources:**
+
 - [Full Stack Open](https://fullstackopen.com/)
 - [The Odin Project](https://www.theodinproject.com/)
 - [freeCodeCamp](https://www.freecodecamp.org/)
@@ -8071,26 +8433,31 @@ export function range(start: number, end: number, step: number = 1): number[] {
 ### Recommended Books
 
 #### JavaScript
+
 1. **"JavaScript: The Good Parts"** by Douglas Crockford
 2. **"You Don't Know JS"** series by Kyle Simpson
 3. **"Eloquent JavaScript"** by Marijn Haverbeke
 4. **"JavaScript Patterns"** by Stoyan Stefanov
 
 #### React
+
 1. **"Learning React"** by Alex Banks & Eve Porcello
 2. **"React Design Patterns"** by Michele Bertoli
 3. **"Full Stack React"** by Anthony Accomazzo
 
 #### TypeScript
+
 1. **"Programming TypeScript"** by Boris Cherny
 2. **"Effective TypeScript"** by Dan Vanderkam
 
 #### Design & UX
+
 1. **"Don't Make Me Think"** by Steve Krug
 2. **"The Design of Everyday Things"** by Don Norman
 3. **"Refactoring UI"** by Adam Wathan & Steve Schoger
 
 #### Performance
+
 1. **"High Performance Browser Networking"** by Ilya Grigorik
 2. **"Web Performance in Action"** by Jeremy Wagner
 
@@ -8112,18 +8479,21 @@ export function range(start: number, end: number, step: number = 1): number[] {
 ### Practice Platforms
 
 #### Coding Challenges
+
 - [LeetCode](https://leetcode.com/) - Algorithm problems
 - [Frontend Mentor](https://www.frontendmentor.io/) - Real designs
 - [Codewars](https://www.codewars.com/) - Kata challenges
 - [HackerRank](https://www.hackerrank.com/) - Interview prep
 
 #### Design Inspiration
+
 - [Dribbble](https://dribbble.com/)
 - [Behance](https://www.behance.net/)
 - [Awwwards](https://www.awwwards.com/)
 - [Mobbin](https://mobbin.com/)
 
 #### Component Libraries
+
 - [shadcn/ui](https://ui.shadcn.com/)
 - [Radix UI](https://www.radix-ui.com/)
 - [Headless UI](https://headlessui.com/)
@@ -8138,63 +8508,63 @@ export function range(start: number, end: number, step: number = 1): number[] {
 
 #### 1. Blog Post Type
 
-\\\	ypescript
+\\\ ypescript
 // src/types/blog.ts
 export interface BlogPost {
-  id: string;
-  slug: string;
-  title: string;
-  excerpt: string;
-  content: string;
-  coverImage: string;
-  author: Author;
-  category: Category;
-  tags: string[];
-  publishedAt: Date;
-  updatedAt: Date;
-  readingTime: number;
-  views: number;
-  likes: number;
-  featured: boolean;
+id: string;
+slug: string;
+title: string;
+excerpt: string;
+content: string;
+coverImage: string;
+author: Author;
+category: Category;
+tags: string[];
+publishedAt: Date;
+updatedAt: Date;
+readingTime: number;
+views: number;
+likes: number;
+featured: boolean;
 }
 
 export interface Author {
-  id: string;
-  name: string;
-  avatar: string;
-  bio: string;
-  social: {
-    twitter?: string;
-    github?: string;
-    linkedin?: string;
-  };
+id: string;
+name: string;
+avatar: string;
+bio: string;
+social: {
+twitter?: string;
+github?: string;
+linkedin?: string;
+};
 }
 
 export interface Category {
-  id: string;
-  name: string;
-  slug: string;
-  description: string;
-  color: string;
+id: string;
+name: string;
+slug: string;
+description: string;
+color: string;
 }
 
 export interface Comment {
-  id: string;
-  postId: string;
-  author: {
-    name: string;
-    email: string;
-    avatar?: string;
-  };
-  content: string;
-  createdAt: Date;
-  replies: Comment[];
+id: string;
+postId: string;
+author: {
+name: string;
+email: string;
+avatar?: string;
+};
+content: string;
+createdAt: Date;
+replies: Comment[];
 }
 \\\
 
 #### 2. Blog Post Card Component
 
-\\\	sx
+\\\ sx
 // src/components/blog/BlogPostCard.tsx
 import Image from 'next/image';
 import Link from 'next/link';
@@ -8204,48 +8574,51 @@ import { formatDate, formatRelativeTime } from '@/lib/date';
 import type { BlogPost } from '@/types/blog';
 
 interface BlogPostCardProps {
-  post: BlogPost;
-  featured?: boolean;
-  delay?: number;
+post: BlogPost;
+featured?: boolean;
+delay?: number;
 }
 
 export const BlogPostCard: React.FC<BlogPostCardProps> = ({
-  post,
-  featured = false,
-  delay = 0,
+post,
+featured = false,
+delay = 0,
 }) => {
-  return (
-    <AnimateIn variant="fadeUp" delay={delay}>
-      <article
-        className={\
-          group relative overflow-hidden rounded-2xl
-          bg-white dark:bg-zinc-900
-          border border-zinc-200 dark:border-zinc-700
-          transition-all duration-300
-          hover:shadow-xl hover:-translate-y-1
-          \
-        \}
-      >
-        {/* Featured Badge */}
-        {post.featured && (
-          <div className="absolute top-4 left-4 z-10">
-            <span className="px-3 py-1 text-xs font-bold bg-gradient-to-r from-teal-500 to-cyan-500 text-white rounded-full">
-              Featured
-            </span>
-          </div>
-        )}
+return (
+<AnimateIn variant="fadeUp" delay={delay}>
+
+<article
+className={\
+ group relative overflow-hidden rounded-2xl
+bg-white dark:bg-zinc-900
+border border-zinc-200 dark:border-zinc-700
+transition-all duration-300
+hover:shadow-xl hover:-translate-y-1
+\
+ \} >
+{/_ Featured Badge _/}
+{post.featured && (
+<div className="absolute top-4 left-4 z-10">
+<span className="px-3 py-1 text-xs font-bold bg-gradient-to-r from-teal-500 to-cyan-500 text-white rounded-full">
+Featured
+</span>
+</div>
+)}
 
         {/* Cover Image */}
         <Link href={\/blog/\\} className="block relative">
-          <div className={\elative \ overflow-hidden\}>
-            <Image
+          <div className={\
+
+elative \ overflow-hidden\}>
+<Image
               src={post.coverImage}
               alt={post.title}
               fill
               className="object-cover transition-transform duration-300 group-hover:scale-110"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          </div>
+
+<div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+</div>
 
           {/* Category Badge */}
           <div className="absolute top-4 right-4">
@@ -8342,13 +8715,14 @@ export const BlogPostCard: React.FC<BlogPostCardProps> = ({
         </div>
       </article>
     </AnimateIn>
-  );
+
+);
 };
 \\\
 
 #### 3. Blog Post Page
 
-\\\	sx
+\\\ sx
 // src/app/blog/[slug]/page.tsx
 import { Metadata } from 'next';
 import Image from 'next/image';
@@ -8359,62 +8733,63 @@ import { formatDate } from '@/lib/date';
 import { getBlogPost, incrementViews } from '@/lib/blog';
 
 interface PageProps {
-  params: { slug: string };
+params: { slug: string };
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const post = await getBlogPost(params.slug);
-  
-  if (!post) {
-    return {
-      title: 'Post Not Found',
-    };
-  }
+const post = await getBlogPost(params.slug);
 
-  return {
-    title: post.title,
-    description: post.excerpt,
-    openGraph: {
-      title: post.title,
-      description: post.excerpt,
-      images: [post.coverImage],
-      type: 'article',
-      publishedTime: post.publishedAt.toISOString(),
-      authors: [post.author.name],
-      tags: post.tags,
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: post.title,
-      description: post.excerpt,
-      images: [post.coverImage],
-    },
-  };
+if (!post) {
+return {
+title: 'Post Not Found',
+};
+}
+
+return {
+title: post.title,
+description: post.excerpt,
+openGraph: {
+title: post.title,
+description: post.excerpt,
+images: [post.coverImage],
+type: 'article',
+publishedTime: post.publishedAt.toISOString(),
+authors: [post.author.name],
+tags: post.tags,
+},
+twitter: {
+card: 'summary_large_image',
+title: post.title,
+description: post.excerpt,
+images: [post.coverImage],
+},
+};
 }
 
 export default async function BlogPostPage({ params }: PageProps) {
-  const post = await getBlogPost(params.slug);
+const post = await getBlogPost(params.slug);
 
-  if (!post) {
-    notFound();
-  }
+if (!post) {
+notFound();
+}
 
-  // Increment view count
-  await incrementViews(post.id);
+// Increment view count
+await incrementViews(post.id);
 
-  return (
-    <article className="min-h-screen">
-      {/* Header */}
-      <header className="relative h-[60vh] flex items-end">
-        {/* Cover Image */}
-        <Image
+return (
+
+<article className="min-h-screen">
+{/_ Header _/}
+<header className="relative h-[60vh] flex items-end">
+{/_ Cover Image _/}
+<Image
           src={post.coverImage}
           alt={post.title}
           fill
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
+<div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
 
         {/* Back Button */}
         <Link
@@ -8552,7 +8927,8 @@ export default async function BlogPostPage({ params }: PageProps) {
         </div>
       </main>
     </article>
-  );
+
+);
 }
 \\\
 
@@ -8574,24 +8950,25 @@ Congratulations! You now have a **complete, production-ready portfolio** featuri
 ✅ **Production Deployment** on Netlify  
 ✅ **Performance Optimized** (Lighthouse 95+)  
 ✅ **Fully Responsive** (Mobile/Tablet/Desktop)  
-✅ **Accessibility Compliant** (WCAG AA)  
+✅ **Accessibility Compliant** (WCAG AA)
 
 ### Project Statistics
 
 \\\
-Total Lines of Code:     ~3,500
-TypeScript Files:        25+
-React Components:        25+
-API Routes:             1
-Custom Hooks:           5+
-Utilities:              10+
-Tests:                  0 (planned)
-Documentation Lines:    7,000+
+Total Lines of Code: ~3,500
+TypeScript Files: 25+
+React Components: 25+
+API Routes: 1
+Custom Hooks: 5+
+Utilities: 10+
+Tests: 0 (planned)
+Documentation Lines: 7,000+
 \\\
 
 ### Next Steps
 
 #### Immediate Improvements
+
 1. **Add Blog Section**: Implement the blog system from examples above
 2. **Contact Form**: Create functional contact form with email integration
 3. **Testing**: Add unit tests with Vitest and E2E tests with Playwright
@@ -8599,6 +8976,7 @@ Documentation Lines:    7,000+
 5. **PWA**: Add service worker for offline functionality
 
 #### Medium-Term Goals
+
 1. **CMS Integration**: Connect to Sanity or Contentful
 2. **Authentication**: Add admin panel with NextAuth.js
 3. **Database**: Store analytics and form submissions
@@ -8606,6 +8984,7 @@ Documentation Lines:    7,000+
 5. **Search**: Implement full-text search for content
 
 #### Long-Term Vision
+
 1. **Multi-language**: Add i18n support
 2. **Advanced Analytics**: Custom analytics dashboard
 3. **Interactive Demos**: Add live code sandboxes
@@ -8661,4 +9040,3 @@ Thank you to everyone who contributes to the amazing open-source projects that m
 **[⬆ Back to Top](#-aditya-kumar-tiwari---portfolio)**
 
 </div>
-

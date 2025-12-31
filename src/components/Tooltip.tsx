@@ -26,11 +26,7 @@ export function Tooltip({ children, content, delay = 300 }: TooltipProps) {
   };
 
   return (
-    <div 
-      className="relative inline-block"
-      onMouseEnter={showTooltip}
-      onMouseLeave={hideTooltip}
-    >
+    <div className="relative inline-block" onMouseEnter={showTooltip} onMouseLeave={hideTooltip}>
       {children}
       {isVisible && (
         <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 z-50">

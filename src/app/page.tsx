@@ -7,14 +7,207 @@ import { Tooltip } from "@/components/Tooltip";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { GitHubContributions } from "@/components/GitHubContributions";
 import { ExternalLink, ChevronDown, ChevronUp } from "lucide-react";
-import { useState } from "react";
+import { Star } from "lucide-react";
+import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import confetti from "canvas-confetti";
+
+type Project = {
+  title: string;
+  description: string;
+  link?: string;
+  github?: string;
+  technologies: string[];
+};
+
+type ProjectWithStars = Project & { stars?: number; repoSlug?: string };
+
+const GITHUB_API_BASE = "https://api.github.com";
+const GITHUB_USERNAME = "Xenonesis";
+
+function parseGitHubRepoSlug(url?: string) {
+  if (!url) return null;
+  try {
+    const parsed = new URL(url);
+    if (parsed.hostname !== "github.com") return null;
+    const parts = parsed.pathname.split("/").filter(Boolean);
+    if (parts.length < 2) return null;
+
+    const owner = parts[0];
+    const repo = parts[1].replace(/\.git$/, "");
+    return `${owner}/${repo}`;
+  } catch {
+    return null;
+  }
+}
+
+function formatCompactNumber(value: number) {
+  return Intl.NumberFormat(undefined, {
+    notation: "compact",
+    maximumFractionDigits: 1,
+  }).format(value);
+}
 
 export default function Home() {
   const [isProjectsExpanded, setIsProjectsExpanded] = useState(false);
   const initialProjectCount = 3;
-  const visibleProjects = isProjectsExpanded ? projects : projects.slice(0, initialProjectCount);
+
+  const [projectStars, setProjectStars] = useState<Record<string, number>>({});
+  const [topProjects, setTopProjects] = useState<ProjectWithStars[] | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    const twelveHours = 12 * 60 * 60 * 1000;
+
+    const fetchTopRepos = async () => {
+      const cacheKey = `githubTopRepos:${GITHUB_USERNAME}:v1`;
+      const cachedRaw =
+        typeof window !== "undefined" ? window.localStorage.getItem(cacheKey) : null;
+      const cached: { updatedAt: number; repos: ProjectWithStars[] } | null = cachedRaw
+        ? JSON.parse(cachedRaw)
+        : null;
+
+      const cacheIsFresh = cached && Date.now() - cached.updatedAt < twelveHours;
+      if (cacheIsFresh && cached?.repos && !cancelled) {
+        setTopProjects(cached.repos);
+        return;
+      }
+
+      try {
+        // Fetch up to 100 repos, then sort by stars client-side
+        const res = await fetch(
+          `${GITHUB_API_BASE}/users/${GITHUB_USERNAME}/repos?per_page=100&type=owner&sort=updated`,
+        );
+        if (!res.ok) throw new Error(`GitHub API error: ${res.status}`);
+        const data: any[] = await res.json();
+
+        const mapped: ProjectWithStars[] = (data || [])
+          .filter((r) => !r?.fork)
+          .map((r) => {
+            const repoSlug = r?.full_name as string | undefined;
+            const stars = typeof r?.stargazers_count === "number" ? r.stargazers_count : 0;
+            return {
+              title: r?.name || "Untitled",
+              description: r?.description || "",
+              link: r?.homepage || "",
+              github: r?.html_url || "",
+              technologies: r?.language ? [r.language] : [],
+              repoSlug,
+              stars,
+            };
+          })
+          .sort((a, b) => (b.stars ?? 0) - (a.stars ?? 0));
+
+        if (cancelled) return;
+        setTopProjects(mapped);
+
+        try {
+          window.localStorage.setItem(
+            cacheKey,
+            JSON.stringify({ updatedAt: Date.now(), repos: mapped }),
+          );
+        } catch {
+          // ignore
+        }
+      } catch {
+        // If this fails (rate limit / offline), we fall back to the local projects list.
+        if (!cancelled) setTopProjects(null);
+      }
+    };
+
+    const fetchStarsForLocalProjects = async () => {
+      // Fetch only repos that have a GitHub URL
+      const slugs = projects
+        .map((p) => parseGitHubRepoSlug(p.github))
+        .filter((s): s is string => Boolean(s));
+
+      // De-dupe
+      const uniqueSlugs = Array.from(new Set(slugs));
+
+      // Pull from localStorage cache first to avoid rate limits
+      const cacheKey = "projectStars:v1";
+      const cachedRaw =
+        typeof window !== "undefined" ? window.localStorage.getItem(cacheKey) : null;
+      const cached: { updatedAt: number; stars: Record<string, number> } | null = cachedRaw
+        ? JSON.parse(cachedRaw)
+        : null;
+
+      const cacheIsFresh = cached && Date.now() - cached.updatedAt < twelveHours;
+
+      if (cacheIsFresh && cached?.stars && !cancelled) {
+        setProjectStars(cached.stars);
+      }
+
+      // Fetch any missing (or if cache is stale)
+      const toFetch = cacheIsFresh
+        ? uniqueSlugs.filter((slug) => typeof cached?.stars?.[slug] !== "number")
+        : uniqueSlugs;
+
+      if (toFetch.length === 0) return;
+
+      const results: Record<string, number> = cacheIsFresh ? { ...(cached?.stars || {}) } : {};
+
+      await Promise.all(
+        toFetch.map(async (slug) => {
+          try {
+            const res = await fetch(`${GITHUB_API_BASE}/repos/${slug}`);
+            if (!res.ok) return;
+            const data = await res.json();
+            const stars = typeof data?.stargazers_count === "number" ? data.stargazers_count : 0;
+            results[slug] = stars;
+          } catch {
+            // ignore
+          }
+        }),
+      );
+
+      if (cancelled) return;
+
+      setProjectStars(results);
+      try {
+        window.localStorage.setItem(
+          cacheKey,
+          JSON.stringify({ updatedAt: Date.now(), stars: results }),
+        );
+      } catch {
+        // ignore
+      }
+    };
+
+    // Try live top repos first
+    fetchTopRepos();
+    // Also fetch stars for the static list as a fallback
+    fetchStarsForLocalProjects();
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  const projectsWithStars: ProjectWithStars[] = useMemo(() => {
+    // Prefer fetched GitHub repos when available
+    if (topProjects && topProjects.length > 0) return topProjects;
+
+    // Fallback to local projects list with per-repo star fetch
+    return projects.map((p) => {
+      const repoSlug = parseGitHubRepoSlug(p.github) || undefined;
+      const stars = repoSlug ? projectStars[repoSlug] : undefined;
+      return { ...p, repoSlug, stars };
+    });
+  }, [projectStars, topProjects]);
+
+  const sortedProjects: ProjectWithStars[] = useMemo(() => {
+    return [...projectsWithStars].sort((a, b) => {
+      const aStars = a.stars ?? -1;
+      const bStars = b.stars ?? -1;
+      return bStars - aStars;
+    });
+  }, [projectsWithStars]);
+
+  const visibleProjects = isProjectsExpanded
+    ? sortedProjects
+    : sortedProjects.slice(0, initialProjectCount);
 
   const [isExperienceExpanded, setIsExperienceExpanded] = useState(false);
   const initialExperienceCount = 2;
@@ -266,7 +459,15 @@ export default function Home() {
                   <AnimateIn key={index} variant="fadeLeft" delay={delay}>
                     <li className="soft-container p-5 hover-lift shine-effect">
                       <div className="flex items-start justify-between mb-3">
-                        <h3 className="text-lg font-medium">{project.title}</h3>
+                        <div className="flex items-center gap-3">
+                          <h3 className="text-lg font-medium">{project.title}</h3>
+                          {typeof project.stars === "number" ? (
+                            <span className="inline-flex items-center gap-1 rounded-full border border-zinc-200/60 dark:border-zinc-700/60 bg-white/60 dark:bg-muted/40 px-2 py-0.5 text-xs text-zinc-600 dark:text-zinc-300">
+                              <Star className="h-3.5 w-3.5" />
+                              {formatCompactNumber(project.stars)}
+                            </span>
+                          ) : null}
+                        </div>
                         <div className="flex flex-row gap-3">
                           {project.github ? (
                             <a
@@ -308,7 +509,7 @@ export default function Home() {
                 );
               })}
             </ul>
-            {projects.length > initialProjectCount && (
+            {sortedProjects.length > initialProjectCount && (
               <button
                 onClick={() => setIsProjectsExpanded(!isProjectsExpanded)}
                 className="flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400 hover:text-teal-600 dark:hover:text-teal-400 transition-all duration-300 mx-auto font-medium py-3 px-5 rounded-xl hover:bg-zinc-100/50 dark:hover:bg-muted/50"
@@ -319,7 +520,7 @@ export default function Home() {
                   </>
                 ) : (
                   <>
-                    Show More Projects <ChevronDown className="w-4 h-4" />
+                    Show More Projects ({sortedProjects.length}) <ChevronDown className="w-4 h-4" />
                   </>
                 )}
               </button>

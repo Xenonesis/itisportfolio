@@ -5,6 +5,7 @@ import { AnimateIn } from "@/components/animations/AnimateIn";
 import { VisitorGreeting } from "@/components/VisitorGreeting";
 import { Tooltip } from "@/components/Tooltip";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { useTheme } from "@/components/ThemeProvider";
 import { GitHubContributions } from "@/components/GitHubContributions";
 import { ExternalLink, ChevronDown, ChevronUp } from "lucide-react";
 import { Star } from "lucide-react";
@@ -49,6 +50,7 @@ function formatCompactNumber(value: number) {
 }
 
 export default function Home() {
+  const { resolvedTheme } = useTheme();
   const [isProjectsExpanded, setIsProjectsExpanded] = useState(false);
   const initialProjectCount = 3;
 
@@ -299,8 +301,9 @@ export default function Home() {
               <div className="px-3 pb-3">
                 <div className="overflow-hidden rounded-xl">
                   <iframe
+                    key={resolvedTheme}
                     style={{ borderRadius: "16px" }}
-                    src="https://open.spotify.com/embed/playlist/0vvXsWCC9xrXsKd4FyS8kM?utm_source=generator&theme=0"
+                    src={`https://open.spotify.com/embed/playlist/0vvXsWCC9xrXsKd4FyS8kM?utm_source=generator&theme=${resolvedTheme === "dark" ? "0" : "1"}`}
                     width="100%"
                     height="152"
                     frameBorder="0"

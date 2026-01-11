@@ -85,44 +85,68 @@
 }
 
 .dark {
+  /* Premium dark base - deep charcoal black */
   --background: #0c0c0c;
-  --foreground: oklch(0.96 0.005 60);
-  /* Surfaces (matched to #0C0C0C base) */
-  --card: #141414;
-  --card-foreground: oklch(0.96 0.005 60);
-  --popover: #141414;
-  --popover-foreground: oklch(0.96 0.005 60);
+
+  /* Silver-tinted text for premium feel */
+  --foreground: #d4d4d8;
+
+  /* Premium silver tokens */
+  --silver: #c0c0c0;
+  --silver-light: #d4d4d8;
+  --silver-muted: #a1a1aa;
+  --silver-dark: #71717a;
+
+  /* Surfaces with subtle silver undertones */
+  --card: #121214;
+  --card-foreground: #d4d4d8;
+  --popover: #121214;
+  --popover-foreground: #d4d4d8;
+
+  /* Primary with silver-complementary teal */
   --primary: oklch(0.65 0.14 175);
-  --primary-foreground: oklch(0.16 0 0);
-  --secondary: #1a1a1a;
-  --secondary-foreground: oklch(0.96 0.005 60);
-  --muted: #1a1a1a;
-  --muted-foreground: oklch(0.65 0.01 60);
+  --primary-foreground: #0c0c0c;
+
+  /* Secondary surfaces - charcoal with silver hint */
+  --secondary: #18181b;
+  --secondary-foreground: #d4d4d8;
+  --muted: #18181b;
+  --muted-foreground: #a1a1aa;
+
+  /* Accent remains warm but silver-balanced */
   --accent: oklch(0.72 0.12 25);
-  --accent-foreground: oklch(0.96 0 0);
+  --accent-foreground: #fafafa;
+
   --destructive: oklch(0.704 0.191 22.216);
-  --border: #2a2a2a;
-  --input: #2a2a2a;
-  --ring: oklch(0.65 0.14 175);
+
+  /* Silver-tinted borders for premium look */
+  --border: #27272a;
+  --input: #27272a;
+  --ring: #c0c0c0;
+
+  /* Charts with silver undertones */
   --chart-1: oklch(0.65 0.14 175);
   --chart-2: oklch(0.72 0.12 25);
-  --chart-3: oklch(0.7 0.12 280);
+  --chart-3: #a1a1aa;
   --chart-4: oklch(0.78 0.15 85);
   --chart-5: oklch(0.65 0.12 145);
-  --sidebar: oklch(0.18 0.015 260);
-  --sidebar-foreground: oklch(0.96 0.005 60);
-  --sidebar-primary: oklch(0.65 0.14 175);
-  --sidebar-primary-foreground: oklch(0.96 0 0);
-  --sidebar-accent: oklch(0.25 0.01 260);
-  --sidebar-accent-foreground: oklch(0.96 0.005 60);
-  --sidebar-border: oklch(0.3 0.01 260);
-  --sidebar-ring: oklch(0.65 0.14 175);
 
-  /* Humanized dark mode accent colors */
+  /* Sidebar with silver accents */
+  --sidebar: #0c0c0c;
+  --sidebar-foreground: #d4d4d8;
+  --sidebar-primary: oklch(0.65 0.14 175);
+  --sidebar-primary-foreground: #fafafa;
+  --sidebar-accent: #18181b;
+  --sidebar-accent-foreground: #d4d4d8;
+  --sidebar-border: #27272a;
+  --sidebar-ring: #c0c0c0;
+
+  /* Premium dark mode accent colors */
   --accent-teal: oklch(0.65 0.14 175);
   --accent-coral: oklch(0.72 0.12 25);
-  --accent-lavender: oklch(0.7 0.12 280);
-  --accent-warm: oklch(0.78 0.12 60);
+  --accent-lavender: #a1a1aa;
+  --accent-warm: #d4d4d8;
+  --accent-silver: #c0c0c0;
 }
 
 /* Grid Background Pattern */
@@ -626,14 +650,14 @@ html.dark .contribution-scrollbar::-webkit-scrollbar-thumb:hover,
 }
 
 .dark .soft-container {
-  background: linear-gradient(145deg, rgba(38, 38, 45, 0.97), rgba(28, 28, 35, 0.99));
+  background: linear-gradient(145deg, #141416 0%, #0c0c0c 100%);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(192, 192, 192, 0.08);
   box-shadow:
-    0 4px 6px -1px rgba(0, 0, 0, 0.2),
-    0 2px 4px -2px rgba(0, 0, 0, 0.15),
-    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    0 4px 6px -1px rgba(0, 0, 0, 0.3),
+    0 2px 4px -2px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(192, 192, 192, 0.03);
 }
 
 .soft-container:hover {
@@ -646,9 +670,9 @@ html.dark .contribution-scrollbar::-webkit-scrollbar-thumb:hover,
 
 .dark .soft-container:hover {
   box-shadow:
-    0 12px 24px -4px rgba(0, 0, 0, 0.25),
-    0 4px 8px -2px rgba(0, 0, 0, 0.15),
-    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    0 12px 24px -4px rgba(0, 0, 0, 0.35),
+    0 4px 8px -2px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(192, 192, 192, 0.05);
 }
 
 /* Glassmorphism Cards - Humanized Trend */
@@ -662,9 +686,9 @@ html.dark .contribution-scrollbar::-webkit-scrollbar-thumb:hover,
 }
 
 .dark .glass-card {
-  background: rgba(30, 30, 40, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  background: rgba(18, 18, 20, 0.9);
+  border: 1px solid rgba(192, 192, 192, 0.08);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
 }
 
 /* Typography-First Headings - Trend 2 */
